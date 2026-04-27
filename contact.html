@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg" />
+    <title>اتصل بنا - مجموعة شمول</title>
+    <meta name="description" content="تواصل مع مجموعة شمول للحصول على استشارات هندسية معتمدة. فروعنا في الرياض، جدة، والدمام جاهزة لخدمتكم." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <style>
+      /* حاوية الخريطة للتوسيط */
+.map-container {
+    display: flex;
+    justify-content: center; /* توسيط أفقي */
+    align-items: center;     /* توسيط رأسي إذا كان للحاوية ارتفاع */
+    padding: 20px;
+    width: 100%;
+}
+
+/* تنسيق الرابط والصورة */
+.google-map {
+    display: inline-block;
+    overflow: hidden;        /* لمنع الصورة من الخروج عن الحدود عند التكبير */
+    border-radius: 12px;     /* حواف ناعمة تعطي لمسة عصرية */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ظل خفيف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تنعيم الحركة */
+    line-height: 0;          /* إزالة الفراغ أسفل الصورة */
+}
+
+.google-map img {
+    max-width: 100%;         /* لضمان التوافق مع الشاشات الصغيرة */
+    height: auto;
+    transition: filter 0.3s ease; /* تنعيم تأثير الألوان */
+}
+
+/* تأثير الهوفر (Hover) */
+.google-map:hover {
+    transform: scale(1.02);  /* تكبير بسيط جداً */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* زيادة الظل لإعطاء عمق */
+}
+
+.google-map:hover img {
+    filter: brightness(0.9); /* تغميق الصورة قليلاً عند الهوفر */
+}
+
+.branches-section {
+    padding: 80px 0;
+    background-color: #121212; /* خلفية داكنة لتناسب شعارك */
+    font-family: 'Cairo', sans-serif;
+}
+
+.section-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.branch-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.branch-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4a373; /* لون برونزي */
+    box-shadow: 0 10px 30px rgba(212, 163, 115, 0.15);
+}
+
+.branch-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.branch-header h3 {
+    color: #d4a373;
+    margin: 0;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.address {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    height: 50px; /* لتوحيد الارتفاع */
+}
+
+.phone-box {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.phone-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.phone-link:hover {
+    color: #d4a373;
+    padding-left: 5px;
+}
+
+.coming-soon {
+    border-style: dashed;
+    opacity: 0.8;
+}
+
+.coming-soon .address {
+    color: #ffb703; /* لون يميز الفروع القريبة */
+    font-weight: bold;
+}
+    </style>
+    <div id="header-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>اتصل بنا</h1>
+        <p>نحن هنا لمساعدتك. تواصل معنا للحصول على استشارة هندسية معتمدة</p>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <img src="assets/icons/location-color.png" alt="موقعنا" loading="lazy">
+            </div>
+            <h3>الموقع</h3>
+            <p><a href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8">العنوان: الخبر، المملكة العربية السعودية</a></p>
+            <p>الأحد - الخميس: 8:00 ص - 6:00 م</p>
+            
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <img src="assets/icons/mail-color.png" alt="البريد الإلكتروني" loading="lazy">
+            </div>
+            <h3>البريد الإلكتروني</h3>
+            <p><a href="mailto:info@shomoulgroup.com">info@shomoulgroup.com</a></p>
+            <p>نرد على جميع الاستفسارات خلال 24 ساعة</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <img src="assets/icons/whatsapp-color.png" alt="واتساب" loading="lazy">
+            </div>
+            <h3>واتساب</h3>
+            <p><a href="https://api.whatsapp.com/send/?phone=966920031520">920031520</a></p>
+            <p>استشارة سريعة ومباشرة</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+  <div class="map-container">
+   <a class="google-map" href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8" target="_blank">
+      <img src="assets/imges/Screenshot 2026-04-27 150920.png" alt="Google Map Location">
+   </a>
+</div>
+
+<section class="branches-section">
+    <div class="container">
+        <h2 class="section-title">Global Branches • فروعنا</h2>
+        <div class="branches-grid" id="branches-container">
+            </div>
+    </div>
+</section>
+
+
+        <!-- زر واتساب العائم -->
+    <a href="https://api.whatsapp.com/send/?phone=966920031520" class="whatsapp-float" target="_blank">
+      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp">
+    </a>
+
+
+ 
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/location.js"></script>
+
+    <script src="js/script.js"></script>
+  </body> 
+</html>
