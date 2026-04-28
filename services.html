@@ -3,165 +3,306 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg" />
+    <link
+      rel="icon"
+      href="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg"
+    />
     <title>خدماتنا - مجموعة شمول</title>
     <meta
       name="description"
       content="اكتشف خدمات مجموعة شمول المتكاملة: تصاميم هندسية، رفع مساحي، إشراف فني، استشارات سلامة، ودراسات بيئية وجيوتقنية معتمدة."
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
-
     <div id="header-placeholder"></div>
-    <!-- Page Header -->
-    <section class="page-header">
+
+    <section class="page-header" data-aos="fade-down">
       <div class="container">
         <h1>خدمات مجموعة شمول</h1>
         <p>حلول هندسية واستشارية متكاملة مصممة لتلبية احتياجات كافة القطاعات وفق أعلى المعايير</p>
       </div>
     </section>
 
-    <div class="page-content">
-      <!-- Services Grid Section -->
-      <section class="services-preview">
-        <div class="container">
-          <div class="services-grid">
-            <!-- الخدمة 1 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/buildings_8129177.png" alt="Architecture">
-              </div>
-              <h3>التصاميم المعمارية والإنشائية</h3>
-              <p>إعداد المخططات الهندسية المتكاملة للمشاريع السكنية والتجارية بما يتوافق مع كود البناء السعودي.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+    <style>
+      :root {
+        --primary-dark: #2b2b3a;
+        --accent-gold: #c5a87c;
+        --light-gray: #f9f9f9;
+      }
 
-            <!-- الخدمة 2 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/servies.png" alt="Surveying">
-              </div>
-              <h3>الرفع المساحي والفرز</h3>
-              <p>تقديم خدمات الرفع المساحي الدقيق، فرز الوحدات العقارية، وتحديث الصكوك عبر منصة إحكام وبلدي.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .services-container {
+        padding: 80px 0;
+        background: var(--light-gray);
+      }
 
-            <!-- الخدمة 3 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/worker.png" alt="Supervision">
-              </div>
-              <h3>الإشراف الهندسي وإدارة المشاريع</h3>
-              <p>إشراف فني دقيق على كافة مراحل التنفيذ لضمان مطابقة الأعمال للمواصفات الفنية والجودة المطلوبة.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .services-wrapper {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: #fff;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
+        min-height: 550px;
+        overflow: hidden;
+        border-radius: 4px;
+      }
 
-            <!-- الخدمة 4 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/buildings_8129177.png" alt="Safety">
-              </div>
-              <h3>استشارات السلامة والحريق</h3>
-              <p>تصميم واعتماد مخططات السلامة والوقاية من الحريق وإصدار التقارير الفنية المعتمدة من الدفاع المدني.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      /* تحسين منطقة الصور */
+      .service-preview {
+        flex: 1.2;
+        position: relative;
+        overflow: hidden;
+      }
 
-            <!-- الخدمة 5 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/servies.png" alt="Environment">
-              </div>
-              <h3>الدراسات البيئية والهيدرولوجية</h3>
-              <p>إعداد دراسات الأثر البيئي، تقارير درء أخطار السيول، وتصريف مياه الأمطار للمشاريع الكبرى.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .image-holder {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: #000; /* خلفية سوداء تظهر أثناء التلاشي */
+      }
 
-            <!-- الخدمة 6 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/buildings_8129177.png" alt="Geotechnical">
-              </div>
-              <h3>فحص التربة والدراسات الجيوتقنية</h3>
-              <p>إجراء اختبارات التربة المختبرية والميدانية وتقديم التقارير الفنية اللازمة لتأسيس المنشآت.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .service-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: opacity 0.6s ease-in-out, transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        opacity: 1;
+      }
 
-            <!-- الخدمة 7 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/worker.png" alt="Planning">
-              </div>
-              <h3>التخطيط العمراني وتنسيق المواقع</h3>
-              <p>دراسات تخطيط المدن، تنسيق المواقع (Landscape)، وتصميم المساحات العامة بلمسات إبداعية.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .image-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+        color: #fff;
+        padding: 50px 40px;
+        z-index: 2;
+      }
 
-            <!-- الخدمة 8 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/buildings_8129177.png" alt="MEP">
-              </div>
-              <h3>الأعمال الميكانيكية والكهربائية (MEP)</h3>
-              <p>تصميم أنظمة التكييف، التغذية بالمياه، الصرف الصحي، والأنظمة الكهربائية المتكاملة للمباني.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .image-overlay h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        transform: translateY(0);
+        transition: 0.5s ease;
+      }
 
-            <!-- الخدمة 9 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/worker.png" alt="Legal">
-              </div>
-              <h3>التقارير الفنية والقضائية</h3>
-              <p>إعداد التقارير الهندسية المعتمدة للمحاكم، لجان النزاعات، وتقييم الأضرار الإنشائية للمباني.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      /* تحسين منطقة اختيار الخدمات */
+      .service-selection {
+        flex: 1;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-            <!-- الخدمة 10 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/servies.png" alt="Sustainable">
-              </div>
-              <h3>استدامة المباني (مستدام)</h3>
-              <p>تقديم استشارات المباني الخضراء وتأهيل المشاريع للحصول على شهادة "مستدام" المعتمدة من وزارة الإسكان.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .category-header span {
+        color: var(--accent-gold);
+        font-weight: bold;
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: 5px;
+      }
 
-            <!-- الخدمة 11 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/buildings_8129177.png" alt="Interior">
-              </div>
-              <h3>التصميم الداخلي والديكور</h3>
-              <p>تصاميم داخلية عصرية للمساحات السكنية والتجارية مع توزيع الإضاءة واختيار الخامات بدقة.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
+      .selection-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 20px;
+      }
 
-            <!-- الخدمة 12 -->
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="assets/icons/worker.png" alt="BOQ">
-              </div>
-              <h3>حساب الكميات وإعداد المواصفات</h3>
-              <p>إعداد جداول الكميات (BOQ) والمواصفات الفنية الدقيقة اللازمة لمرحلة طرح العطاءات والمناقصات.</p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
+      .select-item {
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 20px 25px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-right: 4px solid transparent;
+      }
+
+      .select-item h3 {
+        font-size: 1.05rem;
+        color: #444;
+        margin: 0;
+        z-index: 2;
+      }
+
+      .select-item .num {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #bbb;
+        min-width: 25px;
+      }
+
+      /* التأثير عند التأشير (Hover) */
+      .select-item:hover {
+        background: var(--primary-dark) !important;
+        border-right-color: var(--accent-gold);
+        padding-right: 35px; /* حركة انزلاق بسيطة */
+      }
+
+      .select-item:hover h3 { color: #fff !important; }
+      .select-item:hover .num { color: var(--accent-gold) !important; }
+
+      /* الحالة النشطة (Active) */
+      .active-service {
+        background: var(--primary-dark) !important;
+        border-right-color: var(--accent-gold);
+      }
+      .active-service h3 { color: #fff !important; }
+      .active-service .num { color: var(--accent-gold) !important; }
+
+      @media (max-width: 992px) {
+        .services-wrapper { flex-direction: column-reverse; }
+        .reverse-layout .services-wrapper { flex-direction: column-reverse; }
+        .service-preview { min-height: 350px; }
+      }
+    </style>
+
+    <section class="services-container" data-aos="fade-up">
+      <div class="services-wrapper">
+        <div class="service-preview">
+          <div class="image-holder">
+            <img src="assets/imges/DSC01114_RS-Flipped.jpg" id="main-img-1" alt="Preview">
+            <div class="image-overlay">
+              <h2 id="img-title-1">خدمات التصميم والتطوير</h2>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  
+        <div class="service-selection">
+          <div class="category-header">
+            <span>01</span>
+            <h2>خدمات التصميم والتطوير</h2>
+          </div>
+          <div class="selection-grid">
+            <div class="select-item active-service" onmouseover="updateService(1, 'assets/imges/Smarter Buildings Start with Integrated MEP BIM Services.jpg', 'التصاميم المعمارية والإنشائية', this)">
+              <span class="num">01</span>
+              <h3>التصاميم المعمارية والإنشائية</h3>
+            </div>
+            <div class="select-item" onmouseover="updateService(1, 'assets/imges/BIM Modeling Expert for Accurate, Efficient Building Design Solutions.jpg', 'التصميم الداخلي والديكور', this)">
+              <span class="num">02</span>
+              <h3>التصميم الداخلي والديكور</h3>
+            </div>
+            <div class="select-item" onmouseover="updateService(1, 'assets/imges/Architectural Design & Blueprint Inspiration _ Professional Workspace.jpg', 'الأعمال الميكانيكية والكهربائية (MEP)', this)">
+              <span class="num">03</span>
+              <h3>الأعمال الميكانيكية والكهربائية (MEP)</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="services-container reverse-layout" data-aos="fade-up">
+      <div class="services-wrapper">
+        <div class="service-selection">
+          <div class="category-header">
+            <span>02</span>
+            <h2>الخدمات الميدانية والمساحية</h2>
+          </div>
+          <div class="selection-grid">
+            <div class="select-item active-service" onmouseover="updateService(2, 'assets/imges/Impacto da Tecnologia 5G na Gestão de Projetos de Construção.jpg', 'الرفع المساحي والفرز', this)">
+              <span class="num">01</span>
+              <h3>الرفع المساحي والفرز</h3>
+            </div>
+            <div class="select-item" onmouseover="updateService(2, 'assets/imges/Construction Handshake.jpg', 'الإشراف الهندسي وإدارة المشاريع', this)">
+              <span class="num">02</span>
+              <h3>الإشراف الهندسي وإدارة المشاريع</h3>
+            </div>
+          </div>
+        </div>
+        <div class="service-preview">
+          <div class="image-holder">
+            <img src="assets/imges/DSC02365-1_RS.jpg" id="main-img-2" alt="Preview">
+            <div class="image-overlay">
+              <h2 id="img-title-2">الخدمات الميدانية والمساحية</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-container" data-aos="fade-up">
+      <div class="services-wrapper">
+        <div class="service-preview">
+          <div class="image-holder">
+            <img src="assets/imges/Construction Site Overview.jpg" id="main-img-3" alt="Preview">
+            <div class="image-overlay">
+              <h2 id="img-title-3">الدراسات والاستشارات الفنية</h2>
+            </div>
+          </div>
+        </div>
+        <div class="service-selection">
+          <div class="category-header">
+            <span>03</span>
+            <h2>الدراسات والاستشارات الفنية</h2>
+          </div>
+          <div class="selection-grid">
+            <div class="select-item active-service" onmouseover="updateService(3, 'assets/imges/fire.jpg', 'استشارات السلامة والحريق', this)">
+              <span class="num">01</span>
+              <h3>استشارات السلامة والحريق</h3>
+            </div>
+            <div class="select-item" onmouseover="updateService(3, 'assets/imges/Offshore Oil & Gas Platform.jpg', 'فحص التربة والدراسات الجيوتقنية', this)">
+              <span class="num">02</span>
+              <h3>فحص التربة والدراسات الجيوتقنية</h3>
+            </div>
+            <div class="select-item" onmouseover="updateService(3, 'assets/imges/International Property Consultants In India For Strategic Business Growth.jpg', 'استدامة المباني (مستدام)', this)">
+              <span class="num">03</span>
+              <h3>استدامة المباني (مستدام)</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div id="footer-placeholder"></div>
-    <!-- زر واتساب العائم -->
+
     <a href="https://api.whatsapp.com/send/?phone=966920031520" class="whatsapp-float" target="_blank">
-      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp">
+      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" />
     </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+
+      // وظيفة تبديل الصور الاحترافية
+      function updateService(sectionNum, imgSrc, title, element) {
+        const mainImg = document.getElementById(`main-img-${sectionNum}`);
+        const imgTitle = document.getElementById(`img-title-${sectionNum}`);
+        
+        if(mainImg.src.includes(imgSrc)) return; // منع التكرار إذا كانت نفس الصورة
+
+        // تأثير التلاشي والخروج
+        mainImg.style.opacity = '0';
+        mainImg.style.transform = 'scale(1.1)';
+
+        setTimeout(() => {
+          mainImg.src = imgSrc;
+          imgTitle.innerText = title;
+          // تأثير الظهور والدخول
+          mainImg.style.opacity = '1';
+          mainImg.style.transform = 'scale(1)';
+        }, 300);
+
+        // تحديث العنصر النشط
+        const siblings = element.parentElement.querySelectorAll('.select-item');
+        siblings.forEach(item => item.classList.remove('active-service'));
+        element.classList.add('active-service');
+      }
+    </script>
     <script src="js/script.js"></script>
   </body>
 </html>

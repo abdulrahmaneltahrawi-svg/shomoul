@@ -3,220 +3,545 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg" />
+    <link
+      rel="icon"
+      href="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg"
+    />
     <title>اتصل بنا - مجموعة شمول</title>
-    <meta name="description" content="تواصل مع مجموعة شمول للحصول على استشارات هندسية معتمدة. فروعنا في الرياض، جدة، والدمام جاهزة لخدمتكم." />
+    <meta
+      name="description"
+      content="تواصل مع مجموعة شمول للحصول على استشارات هندسية معتمدة. فروعنا في الرياض، جدة، والدمام جاهزة لخدمتكم."
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <style>
       /* حاوية الخريطة للتوسيط */
-.map-container {
-    display: flex;
-    justify-content: center; /* توسيط أفقي */
-    align-items: center;     /* توسيط رأسي إذا كان للحاوية ارتفاع */
-    padding: 20px;
-    width: 100%;
-}
+      .map-container {
+        display: flex;
+        justify-content: center; /* توسيط أفقي */
+        align-items: center; /* توسيط رأسي إذا كان للحاوية ارتفاع */
+        padding: 20px;
+        width: 100%;
+      }
 
-/* تنسيق الرابط والصورة */
-.google-map {
-    display: inline-block;
-    overflow: hidden;        /* لمنع الصورة من الخروج عن الحدود عند التكبير */
-    border-radius: 12px;     /* حواف ناعمة تعطي لمسة عصرية */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ظل خفيف */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تنعيم الحركة */
-    line-height: 0;          /* إزالة الفراغ أسفل الصورة */
-}
+      /* تنسيق الرابط والصورة */
+      .google-map {
+        display: inline-block;
+        overflow: hidden; /* لمنع الصورة من الخروج عن الحدود عند التكبير */
+        border-radius: 12px; /* حواف ناعمة تعطي لمسة عصرية */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease; /* تنعيم الحركة */
+        line-height: 0; /* إزالة الفراغ أسفل الصورة */
+      }
 
-.google-map img {
-    max-width: 100%;         /* لضمان التوافق مع الشاشات الصغيرة */
-    height: auto;
-    transition: filter 0.3s ease; /* تنعيم تأثير الألوان */
-}
+      .google-map img {
+        max-width: 100%; /* لضمان التوافق مع الشاشات الصغيرة */
+        height: auto;
+        transition: filter 0.3s ease; /* تنعيم تأثير الألوان */
+      }
 
-/* تأثير الهوفر (Hover) */
-.google-map:hover {
-    transform: scale(1.02);  /* تكبير بسيط جداً */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* زيادة الظل لإعطاء عمق */
-}
+      /* تأثير الهوفر (Hover) */
+      .google-map:hover {
+        transform: scale(1.02); /* تكبير بسيط جداً */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* زيادة الظل لإعطاء عمق */
+      }
 
-.google-map:hover img {
-    filter: brightness(0.9); /* تغميق الصورة قليلاً عند الهوفر */
-}
+      .google-map:hover img {
+        filter: brightness(0.9); /* تغميق الصورة قليلاً عند الهوفر */
+      }
 
-.branches-section {
-    padding: 80px 0;
-    background-color: #121212; /* خلفية داكنة لتناسب شعارك */
-    font-family: 'Cairo', sans-serif;
-}
+      .branches-section {
+        padding: 60px 0;
+        background-color: #fff;
+        font-family: "Inter", "Cairo", sans-serif;
+      }
 
-.section-title {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2rem;
-}
+      .branches-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
 
-.branches-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+      .branches-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* عمودين */
+        gap: 50px 80px; /* مسافة بين العناصر */
+      }
 
-.branch-card {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 25px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-}
+      .branch-item {
+        border-top: 1px solid #1a1a1a; /* الخط العلوي الأسود */
+        padding-top: 25px;
+      }
 
-.branch-card:hover {
-    transform: translateY(-8px);
-    border-color: #d4a373; /* لون برونزي */
-    box-shadow: 0 10px 30px rgba(212, 163, 115, 0.15);
-}
+      .branch-item h3 {
+        font-size: 2.2rem;
+        color: #1a1a1a;
+        margin-bottom: 20px;
+        font-weight: 500;
+        letter-spacing: -1px;
+      }
 
-.branch-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-}
+      .branch-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
 
-.branch-header h3 {
-    color: #d4a373;
-    margin: 0;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-}
+      .info-group {
+        flex: 1;
+      }
 
-.address {
-    color: #bbb;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    height: 50px; /* لتوحيد الارتفاع */
-}
+      .info-group strong {
+        display: block;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 5px;
+      }
 
-.phone-box {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-top: 1px solid #333;
-    padding-top: 15px;
-}
+      .info-group p {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.4;
+        margin: 0;
+      }
 
-.phone-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: 0.3s;
-}
+      /* تحسين للجوال لجعل الفروع تحت بعضها */
+      @media (max-width: 900px) {
+        .branches-grid {
+          grid-template-columns: 1fr;
+        }
+        .branch-info {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
 
-.phone-link:hover {
-    color: #d4a373;
-    padding-left: 5px;
-}
+      .contact-section {
+        padding: 100px 0;
+        background-color: #ffffff;
+        font-family: "Cairo", sans-serif;
+      }
 
-.coming-soon {
-    border-style: dashed;
-    opacity: 0.8;
-}
+      .contact-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-.coming-soon .address {
-    color: #ffb703; /* لون يميز الفروع القريبة */
-    font-weight: bold;
-}
+      .contact-header span {
+        color: #2b2b3a;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .contact-header h2 {
+        font-size: 3rem;
+        color: #1a1a54; /* لون أزرق داكن */
+        margin-top: 10px;
+        margin-bottom: 50px;
+      }
+
+      /* تنسيق الحقول */
+      .shomoul-form .form-row {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        flex: 1;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .shomoul-form input,
+      .shomoul-form select,
+      .shomoul-form textarea {
+        width: 100%;
+        padding: 15px 0;
+        border: none;
+        border-bottom: 1px solid #ccc; /* خط سفلي فقط مثل الصورة */
+        background: transparent;
+        font-size: 1.1rem;
+        color: #333;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .shomoul-form input::placeholder,
+      .shomoul-form textarea::placeholder {
+        color: #999;
+      }
+
+      .shomoul-form input:focus,
+      .shomoul-form textarea:focus {
+        border-bottom: 1px solid #1a1a54;
+      }
+
+      /* تنسيق الزر */
+      .submit-btn {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-top: 40px;
+        font-size: 1.2rem;
+        color: #1a1a54;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .arrow-circle {
+        width: 50px;
+        height: 50px;
+        background-color: #f4f4f4;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+      }
+
+      .submit-btn:hover .arrow-circle {
+        background-color: #1a1a54;
+        color: #fff;
+        transform: translateX(-10px); /* يتحرك لليسار قليلاً في العربي */
+      }
+
+      /* للتجاوب مع الجوال */
+      @media (max-width: 768px) {
+        .shomoul-form .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
     </style>
     <div id="header-placeholder"></div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-      <div class="container">
-        <h1>اتصل بنا</h1>
-        <p>نحن هنا لمساعدتك. تواصل معنا للحصول على استشارة هندسية معتمدة</p>
+    <section class="projects-hero">
+      <div class="hero-container0">
+        <div class="hero-bg-image">
+          <img
+            src="assets/imges/Gemini_Generated_Image_udi9bqudi9bqudi9.png"
+            alt="التواصل"
+          />
+
+          <div class="title-card-left">
+            <span class="sub-title">مجموعة شمول</span>
+            <h1>التواصل</h1>
+          </div>
+        </div>
       </div>
     </section>
-
     <!-- Contact Info -->
     <section class="contact-info">
       <div class="container">
         <div class="contact-grid">
           <div class="contact-card">
             <div class="contact-icon">
-              <img src="assets/icons/location-color.png" alt="موقعنا" loading="lazy">
+              <img
+                src="assets/icons/location-color.png"
+                alt="موقعنا"
+                loading="lazy"
+              />
             </div>
             <h3>الموقع</h3>
-            <p><a href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8">العنوان: الخبر، المملكة العربية السعودية</a></p>
+            <p>
+              <a href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8"
+                >العنوان: الخبر، المملكة العربية السعودية</a
+              >
+            </p>
             <p>الأحد - الخميس: 8:00 ص - 6:00 م</p>
-            
           </div>
+
           <div class="contact-card">
             <div class="contact-icon">
-              <img src="assets/icons/mail-color.png" alt="البريد الإلكتروني" loading="lazy">
-            </div>
-            <h3>البريد الإلكتروني</h3>
-            <p><a href="mailto:info@shomoulgroup.com">info@shomoulgroup.com</a></p>
-            <p>نرد على جميع الاستفسارات خلال 24 ساعة</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">
-              <img src="assets/icons/whatsapp-color.png" alt="واتساب" loading="lazy">
+              <img
+                src="assets/icons/whatsapp-color.png"
+                alt="واتساب"
+                loading="lazy"
+              />
             </div>
             <h3>واتساب</h3>
-            <p><a href="https://api.whatsapp.com/send/?phone=966920031520">920031520</a></p>
+            <p>
+              <a href="https://api.whatsapp.com/send/?phone=966920031520"
+                >920031520</a
+              >
+            </p>
             <p>استشارة سريعة ومباشرة</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <img
+                src="assets/icons/mail-color.png"
+                alt="البريد الإلكتروني"
+                loading="lazy"
+              />
+            </div>
+            <h3>البريد الإلكتروني</h3>
+            <p>
+              <a href="mailto:info@shomoulgroup.com">info@shomoulgroup.com</a>
+            </p>
+            <p>نرد على جميع الاستفسارات خلال 24 ساعة</p>
           </div>
         </div>
       </div>
-
     </section>
 
-
-
-  <div class="map-container">
-   <a class="google-map" href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8" target="_blank">
-      <img src="assets/imges/Screenshot 2026-04-27 150920.png" alt="Google Map Location">
-   </a>
-</div>
-
-<section class="branches-section">
-    <div class="container">
-        <h2 class="section-title">Global Branches • فروعنا</h2>
-        <div class="branches-grid" id="branches-container">
-            </div>
+    <div class="map-container">
+      <a
+        class="google-map"
+        href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8"
+        target="_blank"
+      >
+        <img
+          src="assets/imges/Screenshot 2026-04-27 150920.png"
+          alt="Google Map Location"
+        />
+      </a>
     </div>
-</section>
 
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-header">
+          <span>نموذج التواصل</span>
+          <h2>تواصل معنا</h2>
+        </div>
 
-        <!-- زر واتساب العائم -->
-    <a href="https://api.whatsapp.com/send/?phone=966920031520" class="whatsapp-float" target="_blank">
-      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp">
+        <form
+          class="shomoul-form"
+          id="contactForm"
+          action="mailto:info@shomoulgroup.com"
+          method="POST"
+          enctype="text/plain"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <input
+                type="text"
+                name="First_Name"
+                placeholder="الأسم الأول"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="Last_Name"
+                placeholder="اسم العائلة"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <input type="email" name="Email" placeholder="ايميلك" required />
+            </div>
+            <div class="form-group">
+              <input type="tel" name="Phone" placeholder="رقمك" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              name="Message"
+              rows="3"
+              placeholder="الرسالة *"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>إرسال الطلب</span>
+            <div class="arrow-circle">→</div>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="branches-section">
+      <div class="branches-container">
+        <div class="branches-grid">
+          <div class="branch-item">
+            <h3>Al Ahsa Branch</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>
+                  Al-Bustan Dist. in front of Othaim Mall, Al Ahsa, Saudi Arabia
+                </p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 966 4585<br />+966 56 992 4359</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>Jeddah Branch</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>
+                  Office 58, Al Qemah Business Center, Al-Baladyah Street,
+                  Azizyah
+                </p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 992 9320</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>Dammam Branch</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>
+                  AlFurqan Complex, King Fahd Rd., Al Faisaliyah, Dammam 32272
+                </p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 755 5900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>Riyadh Branch</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>King Faisal Dist. Sheikh Hassan bn Hussein St., Exit 10</p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 997 0640</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>Al Jubail Branch</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>Al Madinah Al Munawarah St, Near Jubail Mall, Al-Mirqab</p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 992 6801</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>Expansion (Medina, Tabuk, Abha)</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>Opening Soon!</p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 755 5900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>Egypt Office</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>28C Al Mostathmereen Al Shamaleya, New Cairo, Egypt</p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 278 0656</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>UAE Office</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>Third Floor, Dubai World Trade Center, Sheikh Zayed Road</p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+971 56 830 5900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-item">
+            <h3>Turkey Office</h3>
+            <div class="branch-info">
+              <div class="info-group">
+                <strong>Address:</strong>
+                <p>
+                  Aksemsettin Mah. Adnan Menderes Vatan Bul. Fatih, Istanbul
+                </p>
+              </div>
+              <div class="info-group">
+                <strong>Mobile:</strong>
+                <p dir="ltr">+966 56 755 5900</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- زر واتساب العائم -->
+    <a
+      href="https://api.whatsapp.com/send/?phone=966920031520"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" />
     </a>
-
-
- 
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/location.js"></script>
+    <script>
+      document.getElementById("contactForm").onsubmit = function (e) {
+        // سنسمح للفعل الافتراضي بالحدوث لفتح تطبيق الإيميل
+        const btn = this.querySelector(".submit-btn");
+        const span = btn.querySelector("span");
+
+        span.innerText = "جاري فتح تطبيق البريد...";
+
+        // إعادة النص بعد 3 ثوانٍ
+        setTimeout(() => {
+          span.innerText = "إرسال الطلب";
+        }, 3000);
+      };
+    </script>
 
     <script src="js/script.js"></script>
-  </body> 
+  </body>
 </html>
