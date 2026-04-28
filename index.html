@@ -26,8 +26,7 @@
   <body>
     <style>
 .wide-image-section {
-    width: 90%;            /* تعطي مساحة صغيرة على الجانبين في الجوال */
-    max-width: 1000px;     /* لا تزيد عن 1000px في الشاشات الكبيرة */
+    width: 100%;            /* تعطي مساحة صغيرة على الجانبين في الجوال */
     margin: 20px auto;     /* توسيط الحاوية مع مسافة عمودية */
     display: flex;
     justify-content: center;
@@ -37,6 +36,8 @@
 
 .wide-image-section img {
     width: 100%;           /* تجعل الصورة تملأ عرض الحاوية تماماً */
+    min-width: 900px;
+    min-height: 900px;
     height: auto;          /* تحافظ على التناسب ومنع التمطيط */
     display: block;
     object-fit: cover;     /* تضمن ملء المساحة بشكل جمالي */
