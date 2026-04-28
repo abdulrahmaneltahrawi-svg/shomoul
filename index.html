@@ -25,6 +25,22 @@
 
   <body>
     <style>
+.wide-image-section {
+    width: 90%;            /* تعطي مساحة صغيرة على الجانبين في الجوال */
+    max-width: 1000px;     /* لا تزيد عن 1000px في الشاشات الكبيرة */
+    margin: 20px auto;     /* توسيط الحاوية مع مسافة عمودية */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;      /* لضمان عدم خروج الصورة عن الحواف */
+}
+
+.wide-image-section img {
+    width: 100%;           /* تجعل الصورة تملأ عرض الحاوية تماماً */
+    height: auto;          /* تحافظ على التناسب ومنع التمطيط */
+    display: block;
+    object-fit: cover;     /* تضمن ملء المساحة بشكل جمالي */
+}
       /* تصميم شاشة التحميل */
       #preloader {
         position: fixed;
@@ -308,7 +324,7 @@
       </section>
     </div>
 
-    <section class="wide-image-section">
+    <section class="wide-image-section" data-aos="zoom-in" data-aos-duration="1500">
       <img
         src="assets/imges/3213131.jpg"
         alt="مجموعة شمول من الداخل"
@@ -391,7 +407,7 @@
             href="view.html?company=shomoul-industrial-engineering"
             class="company-card"
             data-aos="zoom-in-up"
-            data-aos-delay="600"
+            data-aos-delay="500"
           >
             <img src="assets/companies/i008.jpg" alt="شومول الصناعية" />
             <div class="company-overlay">
@@ -403,7 +419,7 @@
             href="view.html?company=shomoul-legal-consulting"
             class="company-card"
             data-aos="zoom-in-up"
-            data-aos-delay="700"
+            data-aos-delay="500"
           >
             <img src="assets/companies/ie06.jpg" alt="شومول القانونية" />
             <div class="company-overlay">
@@ -415,7 +431,7 @@
             href="view.html?company=shomoul-smart-technology"
             class="company-card"
             data-aos="zoom-in-up"
-            data-aos-delay="800"
+            data-aos-delay="500"
           >
             <img src="assets/companies/s00-3.jpg" alt="شومول التقنية" />
             <div class="company-overlay">
@@ -427,7 +443,7 @@
             href="view.html?company=shomoul-design-solutions"
             class="company-card"
             data-aos="zoom-in-up"
-            data-aos-delay="900"
+            data-aos-delay="500"
           >
             <img src="assets/companies/sd08.jpg" alt="شومول التصميم" />
             <div class="company-overlay">
@@ -439,7 +455,7 @@
             href="view.html?company=shomoul-synergy-solutions"
             class="company-card"
             data-aos="zoom-in-up"
-            data-aos-delay="1000"
+            data-aos-delay="500"
           >
             <img src="assets/companies/ss09.jpg" alt="شومول التكامل" />
             <div class="company-overlay">
