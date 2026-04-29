@@ -44,6 +44,12 @@
     text-align: center;
     flex: 1;
     padding: 10px;
+    text-decoration: none; /* إزالة الخط تحت النص */
+    transition: transform 0.3s ease; /* تنعيم الحركة */
+}
+
+.process-item:hover {
+    transform: translateY(-8px); /* رفع العنصر قليلاً عند اللمس */
 }
 
 .process-icon {
@@ -53,13 +59,22 @@
 .process-icon img {
     width: 70px; /* حجم الأيقونة */
     height: auto;
-    
+    transition: transform 0.3s ease;
+}
+
+.process-item:hover .process-icon img {
+    transform: scale(1.1); /* تكبير الأيقونة عند اللمس */
 }
 
 .process-item p {
     font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.4;
+    transition: color 0.3s ease; /* تنعيم تغيير لون الكلام */
+}
+
+.process-item:hover p {
+    color: #ffffff; /* تغيير لون الكلام للأبيض عند اللمس */
 }
 
 
