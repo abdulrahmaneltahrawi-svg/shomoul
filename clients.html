@@ -13,6 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <body>
@@ -43,7 +45,7 @@
           </p>
         </div>
       </div>
-      <div class="container">
+      <div class="container" data-aos="zoom-out-up">
         <div class="corporate-grid">
           <img src="assets/clients/001-1.jpg" alt="Partner" />
           <img src="assets/clients/002-1.jpg" alt="Partner" />
@@ -83,5 +85,16 @@
     <div id="footer-placeholder"></div>
 
     <script src="js/script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <script>
+            AOS.init({
+    duration: 1000, // سرعة الحركة (ثانية واحدة)
+    once: true,      // تشتغل الحركة مرة واحدة فقط أثناء النزول
+    offset: 120      // تبدأ الحركة قبل وصولك للعنصر بـ 120 بكسل
+  });
+    </script>
   </body>
 </html>

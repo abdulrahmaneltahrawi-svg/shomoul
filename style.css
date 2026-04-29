@@ -52,7 +52,7 @@ body {
   margin: 0;
   color: #ffffff !important;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 20px;
   padding-right: 12px;
   transition: all 0.3s ease;
 }
@@ -63,7 +63,7 @@ body {
 
 .top-logo-link:hover .top-logo {
   color: #c5a059 !important;
-  padding-bottom: 5px; /* تأثير حركة بسيط عند التمرير */
+  text-shadow: 0 0 15px rgba(255, 220, 100, 0.7);
 }
 
 .header-actions {
@@ -78,10 +78,26 @@ body {
 }
 
 .top-bar-contact {
-  display: flex;
-  align-items: center;
-  margin: 0; /* إزالة أي هوامش قد تسبب زحفاً غير مرغوب */
-  gap: 25px; /* زيادة المسافة بين معلومات الاتصال (الهاتف، الإيميل) */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* مسافة بين الإيميل والواتساب */
+}
+
+.top-bar-contact a {
+    display: inline-flex; /* لجعل الرابط مرن ويقبل الترتيب بجانب بعض */
+    align-items: center;  /* توسيط الصورة مع النص عمودياً */
+    text-decoration: none; /* إزالة الخط تحت الرابط */
+    gap: 8px; /* مسافة بسيطة بين الصورة والنص */
+    color: inherit; /* ليأخذ لون النص المحدد مسبقاً */
+}
+
+/* للتحكم في حجم الأيقونات */
+.top-bar-contact img {
+    width: 25px; /* حجم مناسب */
+    height: auto;
+    filter: brightness(0) invert(1); /* هذا الكود يحول أي صورة سوداء إلى أبيض تماماً */
+    opacity: 0.9; /* اختياري: لجعلها أقل سطوعاً قليلاً لتناسب التصميم */
+    margin-top: 3px;
 }
 
 /* الهيدر الرئيسي */
@@ -95,48 +111,115 @@ header {
 }
 
 .header-wrapper {
+    display: flex;
+    justify-content: space-between; /* هذا يوزع البحث والقائمة والزر */
+    align-items: center;
+    width: 95%;
+    max-width: 1700px;
+    margin: 0 auto;
+    direction: rtl; /* التأكد من أن التوزيع يبدأ من اليمين */
+    padding: 20px;
+}
+.s-and-l{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
-  max-width: 1700px;
-  margin: 0 auto;
+  gap: 10px;
+
 }
 
-header img {
-  margin-bottom: -100px; /* رفعه قليلاً ليلتصق بالخط الذهبي العلوي */
-  width: 150px;
-  height: 200px; /* زيادة الطول ليبرز من أسفل الهيدر */
-  margin-right: 0; /* إزالة الإزاحة السالبة التي تسبب التصاق الشعار بالقائمة */
-  object-fit: cover;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  position: relative;
-  z-index: 100;
+.language-btn {
+      order: 1; /* يضمن ظهوره أول عنصر على اليمين */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border: 1.5px solid #c5a059;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
+
+.language-btn img {
+    /* تصفير المارجن والخصائص التي قد تسبب بروز الصورة */
+    margin: 0 !important; 
+    width: 30px !important;
+    height: 30px !important;
+    position: static !important; /* لالغاء اي تأثيرات قديمة */
+    filter: invert(74%) sepia(21%) saturate(842%) hue-rotate(352deg) brightness(85%) contrast(85%);
+}
+
+/* زر البحث في أقصى اليمين */
+.search-btn {
+    order: 1; /* يضمن ظهوره أول عنصر على اليمين */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border: 1.5px solid #c5a059;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.search-btn img {
+    /* تصفير المارجن والخصائص التي قد تسبب بروز الصورة */
+    margin: 0 !important; 
+    width: 30px !important;
+    height: 30px !important;
+    position: static !important; /* لالغاء اي تأثيرات قديمة */
+    filter: invert(74%) sepia(21%) saturate(842%) hue-rotate(352deg) brightness(85%) contrast(85%);
+}
+
+
+/* القائمة في المنتصف */
+.header-nav {
+    order: 2;
+    flex-grow: 1; /* تسمح للقائمة بأخذ مساحة لضمان التوسط */
+    display: flex;
+    justify-content: center;
+}
+
+/* الأزرار في اليسار */
+.header-actions {
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
 
 a {
   color: black;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
 
 }
+
+
 
 .contact-btn {
   background: #c5a059;
   color: #1a1a1a !important;
-  padding: 10px 24px;
-  border-radius: 25px;
+  padding: 17px 40px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: 700;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(184, 134, 11, 0.25);
 }
 
 .contact-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(184, 134, 11, 0.35);
+  transform: scale(0.98);
+  background: #d1b073;
 }
 .header-nav ul {
   display: flex;
@@ -193,7 +276,7 @@ header.scrolled .logo p {
 
 /* اعطاء الهيرو الالوان */
 .hero {
-  padding: 200px 0;
+  padding: 250px 0;
   background: #1a1a1a;
   background-image: url('assets/imges/video-preview-ar-1.jpg');
   background-size: cover;
@@ -223,7 +306,7 @@ header.scrolled .logo p {
 /* مجموعة شمول */
 .hero-content h1 {
   display: inline-block; /* لجعل العنوان يظهر على نفس السطر مع ما يليه */
-  font-size: 4rem;
+  font-size:6rem;
   font-weight: 800;
   margin-bottom: 24px;
   line-height: 1.2;
@@ -235,7 +318,7 @@ header.scrolled .logo p {
 }
 
 .hero-content h2 {
-  font-size: 2.8rem;
+  font-size: 3.7rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 24px;
@@ -247,7 +330,7 @@ header.scrolled .logo p {
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   margin-bottom: 40px;
   max-width: 700px;
@@ -260,7 +343,7 @@ header.scrolled .logo p {
 }
 
 .btn-primary, .btn-secondary {
-  padding: 14px 32px;
+  padding: 18px 32px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
@@ -999,64 +1082,6 @@ display: grid;
 }
 
 
-/* Vision Mission */
-.vision-mission {
-  padding: 80px 0;
-  background: #f8fafc;
-}
-
-.vm-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.vm-card {
-  background: white;
-  padding: 100px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  border: 1px solid #e2e8f0;
-}
-
-.vm-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: #c5a059;
-}
-
-.vm-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 24px;
-  background: #1a1a1a;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.vm-icon img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.vm-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 16px;
-}
-
-.vm-card p {
-  color: #64748b;
-  line-height: 1.6;
-}
 
 
 /* Contact Page */
@@ -1644,7 +1669,7 @@ footer {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr)); /* تكبير كروت المشاريع لتشغل مساحة أكبر */
+  grid-template-columns: repeat(auto-fit, minmax(900px, 1fr)); /* تكبير كروت المشاريع لتشغل مساحة أكبر */
   gap: 20px; /* تقليل المسافة بين الكروت */
   margin-top: 40px;
 }
@@ -1658,6 +1683,7 @@ footer {
   display: flex;
   flex-direction: column;
   height: 100%;
+  gap: 20px;
 }
 
 .project-card:hover {
@@ -1667,7 +1693,7 @@ footer {
 
 .project-card h3 {
   color: #c5a059;
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   margin-bottom: 15px;
   font-weight: 700;
   border-right: 4px solid #c5a059;
@@ -1683,7 +1709,7 @@ footer {
 
 .project-images-inner img {
   width: 100%; /* جعل الصورة تملأ عرض الحاوية بدلاً من عرض ثابت */
-  height: 350px; /* زيادة الارتفاع قليلاً للوضوح */
+  height: 600px; /* زيادة الارتفاع قليلاً للوضوح */
   object-fit: cover;
   transition: transform 0.3s ease;
   cursor: pointer;

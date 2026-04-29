@@ -24,6 +24,96 @@
   </head>
 
   <style>
+    .process-section {
+    background-color: #c5a059; /* اللون الفيروزي الموضح في الصورة */
+    padding: 60px 20px;
+    width: 100%;
+    color: black; /* لون النص الداكن المتناسق */
+}
+
+.process-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* لضمان بقائها في سطر واحد */
+}
+
+.process-item {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+}
+
+.process-icon {
+    margin-bottom: 20px;
+}
+
+.process-icon img {
+    width: 70px; /* حجم الأيقونة */
+    height: auto;
+    
+}
+
+.process-item p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* تنسيق السهم الدائري ليكون متناسباً */
+.process-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px; /* مسافة جانبية متوازنة */
+}
+
+.arrow-circle {
+    width: 85px;      /* تصغير قطر الدائرة قليلاً للتناسب */
+    height: 85px;
+    background-color: rgba(255, 255, 255, 0.25); /* شفافية أفتح قليلاً */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* ضبط حجم أيقونة السهم داخل الدائرة */
+.arrow-circle img {
+    width: 30px;       /* حجم السهم الداخلي (حجم مثالي لا هو صغير ولا ضخم) */
+    height: auto;
+    opacity: 0.8;      /* شفافية بسيطة للسهم ليتداخل مع التصميم */
+    transition: transform 0.3s ease;
+}
+
+/* تأثير عند المرور بالماوس */
+.process-arrow:hover .arrow-circle {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1); /* تكبير بسيط جداً للدائرة */
+}
+
+.process-arrow:hover img {
+    opacity: 1;
+}
+
+/* تعديل الجوال ليبقى السهم متناسباً */
+@media (max-width: 768px) {
+    .process-arrow {
+        transform: rotate(90deg); /* تدوير السهم ليشير للأسفل */
+        margin: 15px 0;
+    }
+    .arrow-circle {
+        width: 40px; /* تصغير إضافي في الجوال */
+        height: 40px;
+    }
+    .arrow-circle img {
+        width: 16px;
+    }
+}
     /* تنسيق القسم الرئيسي */
     .split-section {
       width: 100%;
@@ -109,7 +199,7 @@
 
     .split-image {
       width: 100%;
-      max-width: 480px; /* تقليل العرض قليلاً لزيادة حدة الصورة (Sharpness) */
+      max-width: 600px; /* تقليل العرض قليلاً لزيادة حدة الصورة (Sharpness) */
       height: auto;
       object-fit: cover; /* لضمان عدم تمدد الصورة بشكل غير متناسق */
       border-radius: 8px; /* اختياري: زوايا مستديرة خفيفة */
@@ -248,36 +338,49 @@
       </div>
     </section>
 
-    <section class="vision-mission">
-      <div class="container">
-        <div class="vm-grid">
-          <a href="#vision" data-aos="zoom-in" data-aos-delay="100">
-            <div class="vm-card">
-              <div class="vm-icon">
-                <img src="assets/icons/view.png" alt="رؤيتنا" />
-              </div>
-              <h3>رؤيتنا</h3>
+    <section class="process-section" data-aos="zoom-in-up">
+    <div class="process-wrapper">
+        <!-- خطوة 1 -->
+        <a href="#vision" class="process-item">
+            <div class="process-icon">
+                <img src="assets/icons/view.png" alt="Advisory"> <!-- استبدلها بأيقونتك -->
             </div>
-          </a>
-          <a href="#mission" data-aos="zoom-in" data-aos-delay="300">
-            <div class="vm-card">
-              <div class="vm-icon">
-                <img src="assets/icons/massege.png" alt="رسالتنا" />
-              </div>
-              <h3>رسالتنا</h3>
+            <p>رؤيتنا</p>
+        </a>
+  
+        <a href="#vision" class="process-arrow">
+            <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
+        </a>
+
+        <!-- خطوة 2 -->
+        <a href="#mission" class="process-item">
+            <div class="process-icon">
+                <img src="assets/icons/massege.png" alt="Engineering">
             </div>
-          </a>
-          <a href="#values" data-aos="zoom-in" data-aos-delay="500">
-            <div class="vm-card">
-              <div class="vm-icon">
-                <img src="assets/icons/daimond.png" alt="قيمنا" />
-              </div>
-              <h3>قيمنا</h3>
+            <p>رسالتنا</p>
+        </a>
+
+        <a href="#mission" class="process-arrow">
+            <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></i></div>
+        </a>
+
+        <!-- خطوة 3 -->
+        <a href="#values" class="process-item">
+            <div class="process-icon">
+                <img src="assets/icons/daimond.png" alt="Completions">
             </div>
-          </a>
-        </div>
-      </div>
-    </section>
+            <p>قيمنا</p>
+        </a>
+
+                <a href="#values" class="process-arrow">
+            <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></i></div>
+        </a>
+
+    </div>
+</section>
+
+
+   
 
     <section class="split-section" id="vision">
       <div class="split-container">

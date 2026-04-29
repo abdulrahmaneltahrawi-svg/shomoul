@@ -22,6 +22,8 @@
     />
   </head>
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <body>
     <style>
       /* حاوية الخريطة للتوسيط */
@@ -249,9 +251,9 @@
       </div>
     </section>
     <!-- Contact Info -->
-    <section class="contact-info">
-      <div class="container">
-        <div class="contact-grid">
+    <section class="contact-info" >
+      <div class="container" data-aos="zoom-in-up" >
+        <div class="contact-grid" >
           <div class="contact-card">
             <div class="contact-icon">
               <img
@@ -527,7 +529,17 @@
 
     <div id="footer-placeholder"></div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+
+      AOS.init({
+    duration: 1000, // سرعة الحركة (ثانية واحدة)
+    once: true,      // تشتغل الحركة مرة واحدة فقط أثناء النزول
+    offset: 120      // تبدأ الحركة قبل وصولك للعنصر بـ 120 بكسل
+  });
+
+
       document.getElementById("contactForm").onsubmit = function (e) {
         // سنسمح للفعل الافتراضي بالحدوث لفتح تطبيق الإيميل
         const btn = this.querySelector(".submit-btn");
@@ -540,6 +552,7 @@
           span.innerText = "إرسال الطلب";
         }, 3000);
       };
+
     </script>
 
     <script src="js/script.js"></script>

@@ -40,21 +40,19 @@
         --light-gray: #f9f9f9;
       }
 
-      .services-container {
-        padding: 80px 0;
-        background: var(--light-gray);
-      }
+.services-container {
+    padding: 40px 40px; /* تقليل المسافة العمودية */
+    background: var(--light-gray);
+}
 
-      .services-wrapper {
-        display: flex;
-        max-width: 1200px;
-        margin: 0 auto;
-        background: #fff;
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
-        min-height: 550px;
-        overflow: hidden;
-        border-radius: 4px;
-      }
+  .services-wrapper {
+    display: flex;
+    max-width: 100% !important; /* ملء عرض المتصفح بالكامل */
+    margin: 0;
+    box-shadow: none; /* في التكبير الكامل نلغي الظل الخارجي ليكون التصميم Flat وعصري */
+    min-height: 100vh; /* يجعل الارتفاع يساوي طول شاشة المستخدم */
+    border-radius: 0; /* إلغاء الحواف الدائرية ليناسب العرض الكامل */
+}
 
       /* تحسين منطقة الصور */
       .service-preview {
@@ -64,10 +62,11 @@
       }
 
       .image-holder {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
         position: relative;
         background: #000; /* خلفية سوداء تظهر أثناء التلاشي */
+      
       }
 
       .service-preview img {
@@ -148,12 +147,6 @@
         min-width: 25px;
       }
 
-      /* التأثير عند التأشير (Hover) */
-      .select-item:hover {
-        background: var(--primary-dark) !important;
-        border-right-color: var(--accent-gold);
-        padding-right: 35px; /* حركة انزلاق بسيطة */
-      }
 
       .select-item:hover h3 { color: #fff !important; }
       .select-item:hover .num { color: var(--accent-gold) !important; }
@@ -287,7 +280,7 @@
 
         // تأثير التلاشي والخروج
         mainImg.style.opacity = '0';
-        mainImg.style.transform = 'scale(1.1)';
+
 
         setTimeout(() => {
           mainImg.src = imgSrc;
