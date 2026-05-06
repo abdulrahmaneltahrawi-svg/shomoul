@@ -27,8 +27,9 @@
     .process-section {
     background-color: #c5a059; /* اللون الفيروزي الموضح في الصورة */
     padding: 60px 20px;
-    width: 100%;
+    width: 80%;
     color: black; /* لون النص الداكن المتناسق */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
 }
 
 .process-wrapper {
@@ -54,12 +55,14 @@
 
 .process-icon {
     margin-bottom: 20px;
+    
 }
 
 .process-icon img {
     width: 70px; /* حجم الأيقونة */
     height: auto;
     transition: transform 0.3s ease;
+    
 }
 
 .process-item:hover .process-icon img {
@@ -84,6 +87,7 @@
     align-items: center;
     justify-content: center;
     padding: 0 15px; /* مسافة جانبية متوازنة */
+
 }
 
 .arrow-circle {
@@ -95,6 +99,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
 }
 
 /* ضبط حجم أيقونة السهم داخل الدائرة */

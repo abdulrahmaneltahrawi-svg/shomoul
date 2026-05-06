@@ -7,11 +7,12 @@
 
 /*تعديل البودي بشكل عام*/
 body {
-  background: #f8fafc;
+  background: white;
   font-family: "tajawal", sans-serif;
   scroll-behavior: smooth;
   color: #2d3748;
   padding-top: 120px; /* تم زيادة المسافة لتتناسب مع زيادة حجم الشريط العلوي */
+  margin-top: 33px;
 }
 /* حاوية الهيدر */
 .header-container {
@@ -102,7 +103,7 @@ body {
 
 /* الهيدر الرئيسي */
 header {
-  background: white;
+  background: rgba(255, 255, 255, 0.05); /* خلفية بيضاء شفافة جداً */
   backdrop-filter: blur(15px);
   transition: all 0.3s ease;
   border-top: 2px solid #c5a059;
@@ -160,12 +161,11 @@ header {
     align-items: center;
     width: 60px;
     height: 60px;
-    background: #ffffff;
-    border: 1.5px solid #c5a059;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
+    color: white;
 }
 
 .search-btn img {
@@ -174,7 +174,6 @@ header {
     width: 30px !important;
     height: 30px !important;
     position: static !important; /* لالغاء اي تأثيرات قديمة */
-    filter: invert(74%) sepia(21%) saturate(842%) hue-rotate(352deg) brightness(85%) contrast(85%);
 }
 
 
@@ -208,18 +207,18 @@ a {
 
 
 .contact-btn {
-  background: #c5a059;
-  color: #1a1a1a !important;
+  background: black;
+  border: 1px solid white;
+  color: white !important;
   padding: 17px 40px;
-  border-radius: 30px;
+  border-radius: 30px;  
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.25);
 }
 
 .contact-btn:hover {
-  transform: scale(0.98);
-  background: #d1b073;
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.25);
 }
 .header-nav ul {
   display: flex;
@@ -274,32 +273,55 @@ header.scrolled .logo p {
   font-size: 18px; /* تصغير حجم الخط عند التمرير */
 }
 
+header.scrolled a{
+  color: black;
+}
+
 /* اعطاء الهيرو الالوان */
 .hero {
-  padding: 250px 0;
+  /* سحب القسم للأعلى ليمر خلف الهيدر */
+  margin-top: -100px; /* جرب تغيير القيمة بناءً على ارتفاع الهيدر عندك */
+  
+  /* تقليل البادينج العلوي لرفع النصوص */
+  padding: 180px 0 100px 0; 
+  
   background: #1a1a1a;
-  background-image: url('assets/imges/video-preview-ar-1.jpg');
+  background-image: url('assets/imges/95f4d571c367d4253ba03e9698eef201.jpg');
   background-size: cover;
-  background-position: 5% 50%; /* تحريك الصورة لليسار أكثر لإفساح مجال للنص */
+  background-position: 5% 50%;
   background-blend-mode: overlay;
   color: white;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
+  min-height: 100vh; /* ليغطي كامل ارتفاع الشاشة */
 }
 /* اعطاء الهيرو التنسيق */
 .hero-container {
-  max-width: 1700px;
+  max-width: 650px;
   width: 95%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 40px; /* زيادة البادينج ليعطي مساحة للإطار */
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* ترتيب IRD يعتمد على محاذاة النص لجهة واحدة مع خلفية غامرة */
+  justify-content: flex-start;
   gap: 40px;
   position: relative;
   z-index: 1;
+  background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
+  margin-right: 50px;
+  
+  /* إضافة الإطار الشفاف */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* إطار أبيض شفاف بنسبة 15% */
+  border-radius: 24px; /* زوايا منحنية لتعطي مظهر عصري */
+  
+  /* تأثير الزجاج (التغبيش) خلف الإطار */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* ظل خفيف لتعميق تأثير الإطار */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 
@@ -409,6 +431,7 @@ header.scrolled .logo p {
     position: relative;
     width: 85%; /* ترك مساحة في اليسار ليبرز فيها الصندوق */
     height: 450px;
+    
 }
 
 .hero-bg-image img {
@@ -416,6 +439,7 @@ header.scrolled .logo p {
     height: 100%;
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    
 }
 
 /* الصندوق الأبيض يخرج من جهة اليسار */
@@ -610,7 +634,7 @@ header.scrolled .logo p {
   flex: 0 0 350px;
   scroll-snap-align: center;
   transition: all 0.3s ease; /* تأكد من وجود الانتقال لنعومة التكبير */
-  background: #fff;
+  background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
   border: 1px solid #eee;
   border-radius: 12px;
   overflow: hidden;
@@ -1118,7 +1142,7 @@ display: grid;
 .contact-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: #c5a059;
+  border-color: #d1b073;
 }
 
 .contact-icon {
@@ -1154,7 +1178,7 @@ display: grid;
 }
 
 .contact-card a {
-  color: #c5a059;
+  color: #d1b073;
   font-weight: 600;
   text-decoration: none;
 }
@@ -1186,13 +1210,16 @@ footer {
 
 .footer-content {
   text-align: center; /* توسيط النصوص */
-  margin-bottom: 0;
-  
+  margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
+  padding: 30px 180px;
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
 }
 
 .footer-content h3 {
   margin-bottom: 25px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   border-bottom: 3px solid #c5a059; /* زيادة سمك الخط السفلي */
   display: inline-block;
   padding-bottom: 8px;
@@ -1230,7 +1257,7 @@ footer {
 }
 
 .footer-content img {
-  width: 25px;
+  width: 30px;
   height: auto;
   filter: brightness(0) invert(1); /* جعل الأيقونات بيضاء لتناسب الخلفية السوداء */
   transition: 0.3s;

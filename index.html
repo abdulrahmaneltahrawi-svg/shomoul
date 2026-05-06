@@ -25,6 +25,9 @@
 
   <body>
     <style>
+      a{
+        color: white;
+      }
 .wide-image-section {
     width: 100%;            /* تعطي مساحة صغيرة على الجانبين في الجوال */
     margin: 20px auto;     /* توسيط الحاوية مع مسافة عمودية */
@@ -49,7 +52,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #000000; /* لون شمول الداكن */
+        background-color: #fff; /* لون شمول الداكن */
         z-index: 9999;
         display: flex;
         justify-content: center;
@@ -89,6 +92,11 @@
         background: #c5a87c; /* لون ذهبي */
         animation: loading 2s infinite;
       }
+.hero {
+    background-color: #313131; /* لون رمادي فاتح جداً أو أبيض #ffffff */
+    overflow: hidden;
+    position: relative;
+}
 
       /* حركات الـ Hero المطورة */
       .hero-content h1 {
@@ -104,7 +112,7 @@
       }
 
       .hero-image {
-        clip-path: inset(0 0 100% 0); /* تبدأ مخفية */
+        clip-path: inset(0 0 80% 0); /* تبدأ مخفية */
         transition: 1.5s all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
       }
 
