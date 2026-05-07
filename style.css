@@ -161,7 +161,7 @@ header {
     position: static !important;
     
     /* هذا الفلتر يحول الصورة السوداء إلى بيضاء تماماً */
-    filter: brightness(0) invert(1); 
+    filter: brightness(3) invert(0); 
     
     transition: transform 0.3s ease, filter 0.3s ease;
 }
