@@ -20,118 +20,123 @@
       rel="stylesheet"
     />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   
   </head>
 
   <style>
-    .process-section {
-    background-color: #c5a059; /* اللون الفيروزي الموضح في الصورة */
-    padding: 60px 20px;
-    width: 80%;
-    color: black; /* لون النص الداكن المتناسق */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
+/* الحاوية الأساسية */
+.process-section {
+    background: linear-gradient(135deg, #c5a059 0%, #b38f4d 100%);
+    padding: 80px 0;
+    width: 100%; /* جعل العرض كامل لإعطاء مساحة للتنفس */
+    display: flex;
+    justify-content: center;
 }
 
 .process-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap; /* لضمان بقائها في سطر واحد */
+}
+
+/* الحاوية المشتركة للهوفر */
+.process-group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
 }
 
 .process-item {
     text-align: center;
-    flex: 1;
-    padding: 10px;
-    text-decoration: none; /* إزالة الخط تحت النص */
-    transition: transform 0.3s ease; /* تنعيم الحركة */
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.process-item:hover {
-    transform: translateY(-8px); /* رفع العنصر قليلاً عند اللمس */
-}
-
-.process-icon {
-    margin-bottom: 20px;
-    
+/* الخط الذي يظهر تحت النص عند الهوفر */
+.process-item p::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
 }
 
 .process-icon img {
-    width: 70px; /* حجم الأيقونة */
+    width: 71px;
     height: auto;
-    transition: transform 0.3s ease;
-    
-}
-
-.process-item:hover .process-icon img {
-    transform: scale(1.1); /* تكبير الأيقونة عند اللمس */
-}
-
-.process-item p {
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.4;
-    transition: color 0.3s ease; /* تنعيم تغيير لون الكلام */
-}
-
-.process-item:hover p {
-    color: #ffffff; /* تغيير لون الكلام للأبيض عند اللمس */
-}
-
-
-/* تنسيق السهم الدائري ليكون متناسباً */
-.process-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 15px; /* مسافة جانبية متوازنة */
-
+    transition: all 0.4s ease;
 }
 
 .arrow-circle {
-    width: 85px;      /* تصغير قطر الدائرة قليلاً للتناسب */
-    height: 85px;
-    background-color: rgba(255, 255, 255, 0.25); /* شفافية أفتح قليلاً */
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
+    margin: 0 20px;
+    transition: all 0.4s ease;
 }
 
-/* ضبط حجم أيقونة السهم داخل الدائرة */
-.arrow-circle img {
-    width: 30px;       /* حجم السهم الداخلي (حجم مثالي لا هو صغير ولا ضخم) */
-    height: auto;
-    opacity: 0.8;      /* شفافية بسيطة للسهم ليتداخل مع التصميم */
-    transition: transform 0.3s ease;
+.arrow-circle img{
+  width: 50px;
 }
 
-/* تأثير عند المرور بالماوس */
-.process-arrow:hover .arrow-circle {
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: scale(1.1); /* تكبير بسيط جداً للدائرة */
+/* >>> السحر هنا: تأثير الهوفر المشترك <<< */
+
+/* 1. عندما نؤشر على المجموعة: نكبر الأيقونة */
+.process-group:hover .process-icon img {
+    transform: scale(1.15) translateY(-5px);
 }
 
-.process-arrow:hover img {
-    opacity: 1;
+/* 2. عندما نؤشر على المجموعة: نظهر الخط تحت النص */
+.process-group:hover .process-item p::after {
+    width: 80%;
 }
 
-/* تعديل الجوال ليبقى السهم متناسباً */
+/* 3. عندما نؤشر على المجموعة: نغير لون النص للأبيض */
+.process-group:hover .process-item p {
+    color: white;
+}
+
+/* 4. عندما نؤشر على المجموعة: نغير خلفية السهم ونحركه */
+.process-group:hover .arrow-circle {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-10px); /* تحريك السهم باتجاه اليسار (للعربي) */
+}
+
+/* إخفاء السهم في المجموعة الأخيرة */
+.last-group {
+    flex: 0; /* لكي لا تأخذ مساحة زائدة */
+}
+
+/* تحسينات الجوال */
 @media (max-width: 768px) {
+    .process-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .process-group {
+        flex-direction: column;
+    }
     .process-arrow {
-        transform: rotate(90deg); /* تدوير السهم ليشير للأسفل */
-        margin: 15px 0;
+        transform: rotate(90deg);
+        margin: 20px 0;
     }
-    .arrow-circle {
-        width: 40px; /* تصغير إضافي في الجوال */
-        height: 40px;
-    }
-    .arrow-circle img {
-        width: 16px;
+    .process-item p::after {
+        display: none; /* إخفاء الخط في الجوال لتقليل الزحمة */
     }
 }
     /* تنسيق القسم الرئيسي */
@@ -324,21 +329,21 @@
       <div class="container">
         <div class="about-grid">
          <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
-            <h2>مجموعة شمول الهندسية</h2>
+            <h2 data-aos="fade-left" data-aos-duration="1000">مجموعة شمول الهندسية</h2>
 
-            <p>
+            <p data-aos="fade-left" data-aos-duration="1200">
               مجموعة شمول للاستشارات (SCG) هي تحالف رائد يضم شركات متخصصة تقدم
               باقة شاملة من الخدمات الاستشارية.
             </p>
 
-            <p>
+            <p data-aos="fade-left" data-aos-duration="1300">
               تشمل خبراتنا الاستشارات الهندسية واستشارات السلامة، والخدمات
               القانونية والمالية والإدارية والفنية والبيئية والجيوتقنية،
               بالإضافة إلى حلول مسح الأراضي وتقسيمها. ومن خلال الاستفادة من أحدث
               التقنيات وأفضل الممارسات، نضمن لعملائنا نتائج استثنائية.
             </p>
 
-            <p>
+            <p data-aos="fade-left" data-aos-duration="1400">
               في شركة SCG، نفخر بإرثنا الحافل بالنجاحات، ونلتزم التزامًا راسخًا
               بالتقدم والابتكار. وانطلاقًا من مبادئنا الراسخة التي تتوافق مع
               المعايير الدولية والوطنية، نتبنى أحدث التقنيات لتعزيز النمو
@@ -358,43 +363,55 @@
       </div>
     </section>
 
-    <section class="process-section" data-aos="zoom-in-up">
+<section class="process-section" data-aos="zoom-in-up">
     <div class="process-wrapper">
-        <!-- خطوة 1 -->
-        <a href="#vision" class="process-item">
-            <div class="process-icon">
-                <img src="assets/icons/view.png" alt="Advisory"> <!-- استبدلها بأيقونتك -->
+        
+        <!-- المجموعة 1: رؤيتنا -->
+        <div class="process-group">
+            <a href="#vision" class="process-item">
+                <div class="process-icon">
+                    <img src="assets/icons/view.png" alt="Vision">
+                </div>
+                <p>رؤيتنا</p>
+      
+            <div class="process-arrow">
+                <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
+                </a>
             </div>
-            <p>رؤيتنا</p>
-        </a>
-  
-        <a href="#vision" class="process-arrow">
-            <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
-        </a>
+        </div>
 
-        <!-- خطوة 2 -->
-        <a href="#mission" class="process-item">
-            <div class="process-icon">
-                <img src="assets/icons/massege.png" alt="Engineering">
+        <!-- المجموعة 2: رسالتنا -->
+        <div class="process-group">
+            <a href="#mission" class="process-item">
+                <div class="process-icon">
+                    <img src="assets/icons/massege.png" alt="Mission">
+                </div>
+                <p>رسالتنا</p>
+    
+            <div class="process-arrow">
+                <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
+                </a>
             </div>
-            <p>رسالتنا</p>
-        </a>
+            
+        </div>
 
-        <a href="#mission" class="process-arrow">
-            <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></i></div>
-        </a>
 
-        <!-- خطوة 3 -->
-        <a href="#values" class="process-item">
-            <div class="process-icon">
-                <img src="assets/icons/daimond.png" alt="Completions">
-            </div>
-            <p>قيمنا</p>
-        </a>
 
-                <a href="#values" class="process-arrow">
-            <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></i></div>
-        </a>
+
+        
+
+        <!-- المجموعة 3: قيمنا -->
+        <div class="process-group last-group">
+            <a href="#values" class="process-item">
+                <div class="process-icon">
+                    <img src="assets/icons/daimond.png" alt="Values">
+                </div>
+                <p>قيمنا</p>
+            
+                        <div class="process-arrow">
+                <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
+            </a>
+        </div>
 
     </div>
 </section>
@@ -479,5 +496,37 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="js/script.js"></script>
+    <script>
+            AOS.init({
+        duration: 1000, // سرعة الحركة العامة
+        once: true, // تتحرك مرة واحدة فقط عند التنزيل
+        offset: 100, // تبدأ الحركة قبل وصول المستخدم للعنصر بـ 100 بكسل
+      });
+
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        const heroH1 = document.querySelector(".hero-content h1");
+        const heroH2 = document.querySelector(".hero-content h2");
+        const heroImg = document.querySelector(".hero-image");
+
+        // 1. إخفاء شاشة التحميل بعد ثانية واحدة
+        setTimeout(() => {
+          preloader.classList.add("loaded");
+
+          // 2. تشغيل حركات الـ Hero بالترتيب
+          setTimeout(() => {
+            heroH1.classList.add("appear");
+          }, 200);
+
+          setTimeout(() => {
+            heroH2.classList.add("appear");
+          }, 400);
+
+          setTimeout(() => {
+            heroImg.classList.add("reveal-img");
+          }, 100);
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
