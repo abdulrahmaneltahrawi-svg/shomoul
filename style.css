@@ -129,33 +129,10 @@ header {
 
 }
 
-.language-btn {
-      order: 1; /* يضمن ظهوره أول عنصر على اليمين */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    background: #ffffff;
-    border: 1.5px solid #c5a059;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
 
-.language-btn img {
-    /* تصفير المارجن والخصائص التي قد تسبب بروز الصورة */
-    margin: 0 !important; 
-    width: 30px !important;
-    height: 30px !important;
-    position: static !important; /* لالغاء اي تأثيرات قديمة */
-    filter: invert(74%) sepia(21%) saturate(842%) hue-rotate(352deg) brightness(85%) contrast(85%);
-}
-
-/* زر البحث في أقصى اليمين */
+/* زر البحث */
 .search-btn {
-    order: 1; /* يضمن ظهوره أول عنصر على اليمين */
+    order: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,15 +142,60 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    color: white;
+    /* أضفنا خلفية خفيفة جداً لتمييز مكان الزر عند التمرير */
+    background: rgba(255, 255, 255, 0.05); 
 }
 
 .search-btn img {
-    /* تصفير المارجن والخصائص التي قد تسبب بروز الصورة */
     margin: 0 !important; 
-    width: 30px !important;
-    height: 30px !important;
-    position: static !important; /* لالغاء اي تأثيرات قديمة */
+    width: 24px !important; /* حجم متناسق أكثر */
+    height: 24px !important;
+    position: static !important;
+    
+    /* هذا الفلتر يحول الصورة السوداء إلى بيضاء تماماً */
+    filter: brightness(0) invert(1); 
+    
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس */
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.15); /* تفتيح الخلفية الدائرية */
+}
+
+.search-btn:hover img {
+    transform: scale(1.1); /* تكبير الأيقونة قليلاً */
+    /* إذا أردت تحويلها للذهبي عند تمرير الماوس جرب هذا الفلتر: */
+    /* filter: invert(72%) sepia(54%) saturate(452%) hue-rotate(3deg) brightness(92%) contrast(88%); */
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    order: 1; /* ليبقى في اليمين كما أردت */
+}
+
+.search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    border-bottom: 2px solid #d4af37; /* لون ذهبي */
+    background: transparent;
+    color: white;
+    transition: all 0.4s ease;
+    direction: rtl;
+}
+
+/* عندما نضيف كلاس active بواسطة الجافاسكريبت */
+.search-input.active {
+    width: 200px; /* طول حقل البحث */
+    opacity: 1;
+    padding: 8px 15px;
+    margin-left: 10px;
 }
 
 
@@ -277,6 +299,12 @@ header.scrolled a{
   color: black;
 }
 
+header.scrolled .search-btn img {
+    /* تحويل اللون للأبيض ثم عكسه تماماً ليصبح أسود */
+    filter: brightness(0) saturate(100%) !important;
+    transition: filter 0.3s ease;
+}
+
 /* اعطاء الهيرو الالوان */
 .hero {
   /* سحب القسم للأعلى ليمر خلف الهيدر */
@@ -285,11 +313,12 @@ header.scrolled a{
   /* تقليل البادينج العلوي لرفع النصوص */
   padding: 180px 0 100px 0; 
   
-  background: #222222;
-  background-image: url('assets/imges/95f4d571c367d4253ba03e9698eef201.jpg');
+ 
+background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+              url('assets/imges/95f4d571c367d4253ba03e9698eef201.jpg');
+  
   background-size: cover;
   background-position: 5% 50%;
-  background-blend-mode: overlay;
   color: white;
   position: relative;
   overflow: hidden;

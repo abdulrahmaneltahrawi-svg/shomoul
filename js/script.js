@@ -99,3 +99,29 @@ function setupScrollAnimations() {
         observer.observe(el);
     });
 }
+
+
+
+
+
+
+
+
+function toggleSearch() {
+    const input = document.getElementById('searchInput');
+    input.classList.toggle('active');
+    
+    // لكي يتم التركيز على الحقل فور ظهوره
+    if (input.classList.contains('active')) {
+        input.focus();
+    }
+}
+
+// إغلاق البحث عند الضغط في أي مكان خارج الحقل
+document.addEventListener('click', function(event) {
+    const container = document.querySelector('.search-container');
+    const input = document.getElementById('searchInput');
+    if (!container.contains(event.target)) {
+        input.classList.remove('active');
+    }
+});
