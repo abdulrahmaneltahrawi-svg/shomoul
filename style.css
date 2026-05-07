@@ -144,8 +144,6 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    /* أضفنا خلفية خفيفة جداً لتمييز مكان الزر عند التمرير */
-    background: rgba(255, 255, 255, 0.05); 
 }
 
 .search-btn img {
@@ -153,10 +151,6 @@ header {
     width: 24px !important; /* حجم متناسق أكثر */
     height: 24px !important;
     position: static !important;
-    
-    /* هذا الفلتر يحول الصورة السوداء إلى بيضاء تماماً */
-    filter: brightness(3) invert(0); 
-    
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -342,12 +336,6 @@ header.scrolled .logo p {
 
 header.scrolled a{
   color: black;
-}
-
-header.scrolled .search-btn img {
-    /* تحويل اللون للأبيض ثم عكسه تماماً ليصبح أسود */
-    filter: brightness(0) saturate(100%) !important;
-    transition: filter 0.3s ease;
 }
 
 header.scrolled .contact-btn {

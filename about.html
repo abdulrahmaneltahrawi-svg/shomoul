@@ -28,11 +28,14 @@
   <style>
 /* الحاوية الأساسية */
 .process-section {
-    background: linear-gradient(50deg, #977438 0%, #b38f4d 100%);
-    padding: 80px 0;
-    width: 100%; /* جعل العرض كامل لإعطاء مساحة للتنفس */
+    background: linear-gradient(50deg, #977438 0%, #b38f4d 70%);
+    padding: 70px 0;
+    width: 80%; /* جعل العرض كامل لإعطاء مساحة للتنفس */
+    margin-right: 59px;
     display: flex;
     justify-content: center;
+    border-radius: 50px;
+
 }
 
 .process-wrapper {
@@ -99,6 +102,7 @@
 /* 1. عندما نؤشر على المجموعة: نكبر الأيقونة */
 .process-group:hover .process-icon img {
     transform: scale(1.15) translateY(-5px);
+    filter: brightness(0) invert(1) !important;
 }
 
 /* 2. عندما نؤشر على المجموعة: نظهر الخط تحت النص */

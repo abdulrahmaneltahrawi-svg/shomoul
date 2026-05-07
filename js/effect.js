@@ -4,27 +4,28 @@
         offset: 100, // تبدأ الحركة قبل وصول المستخدم للعنصر بـ 100 بكسل
       });
 
-      window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-        const heroH1 = document.querySelector(".hero-content h1");
-        const heroH2 = document.querySelector(".hero-content h2");
-        const heroImg = document.querySelector(".hero-image");
+window.addEventListener('load', () => {
+    const preloader = document.getElementById("preloader");
+    const heroH1 = document.querySelector(".hero-content h1");
+    const heroH2 = document.querySelector(".hero-content h2");
 
-        // 1. إخفاء شاشة التحميل بعد ثانية واحدة
+    // 1. إخفاء شاشة التحميل (فقط إذا كانت موجودة)
+    if (preloader) {
         setTimeout(() => {
-          preloader.classList.add("loaded");
-
-          // 2. تشغيل حركات الـ Hero بالترتيب
-          setTimeout(() => {
-            heroH1.classList.add("appear");
-          }, 200);
-
-          setTimeout(() => {
-            heroH2.classList.add("appear");
-          }, 400);
-
-          setTimeout(() => {
-            heroImg.classList.add("reveal-img");
-          }, 100);
+            preloader.classList.add("loaded");
         }, 1000);
-      });
+    }
+
+    // 2. تشغيل حركات الـ Hero بالترتيب (فقط إذا كانت موجودة)
+    if (heroH1) {
+        setTimeout(() => {
+            heroH1.classList.add("appear");
+        }, 1200);
+    }
+
+    if (heroH2) {
+        setTimeout(() => {
+            heroH2.classList.add("appear");
+        }, 1400);
+    }
+});
