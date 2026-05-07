@@ -103,8 +103,8 @@ body {
 
 /* الهيدر الرئيسي */
 header {
-  background: rgba(255, 255, 255, 0.05); /* خلفية بيضاء شفافة جداً */
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.212); /* خلفية بيضاء شفافة جداً */
+  backdrop-filter: blur(1px);
   transition: all 0.3s ease;
   border-top: 2px solid #c5a059;
   position: relative; /* Ensure it establishes a stacking context */
@@ -314,7 +314,7 @@ header.scrolled .search-btn img {
   padding: 180px 0 100px 0; 
   
  
-background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
               url('assets/imges/95f4d571c367d4253ba03e9698eef201.jpg');
   
   background-size: cover;
@@ -346,7 +346,7 @@ background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
   border-radius: 24px; /* زوايا منحنية لتعطي مظهر عصري */
   
   /* تأثير الزجاج (التغبيش) خلف الإطار */
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
   
   /* ظل خفيف لتعميق تأثير الإطار */
