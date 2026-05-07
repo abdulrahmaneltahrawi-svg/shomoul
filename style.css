@@ -111,8 +111,7 @@ body {
 
 /* الهيدر الرئيسي */
 header {
-  background: rgba(255, 255, 255, 0.212); /* خلفية بيضاء شفافة جداً */
-  backdrop-filter: blur(1px);
+  background: white;
   transition: all 0.3s ease;
   border-top: 2px solid #c5a059;
   position: relative; /* Ensure it establishes a stacking context */
@@ -128,14 +127,9 @@ header {
     margin: 0 auto;
     direction: rtl; /* التأكد من أن التوزيع يبدأ من اليمين */
     padding: 20px;
+    
 }
-.s-and-l{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
 
-}
 
 
 /* زر البحث */
@@ -307,6 +301,7 @@ a {
 .header-nav ul li a {
   position: relative;
   padding-bottom: 5px;
+  color: black;
 }
 
 .header-nav ul li a::after {
@@ -434,7 +429,7 @@ header.scrolled .contact-btn {
 /* اعطاء الهيرو الالوان */
 .hero {
   /* سحب القسم للأعلى ليمر خلف الهيدر */
-  margin-top: -150px; /* جرب تغيير القيمة بناءً على ارتفاع الهيدر عندك */
+  
 
   /* تقليل البادينج العلوي لرفع النصوص */
   padding: 180px 0 100px 0; 
