@@ -30,7 +30,6 @@
       }
 .wide-image-section {
     width: 100%;            /* تعطي مساحة صغيرة على الجانبين في الجوال */
-    margin: 20px auto;     /* توسيط الحاوية مع مسافة عمودية */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,8 +38,8 @@
 
 .wide-image-section img {
     width: 100%;           /* تجعل الصورة تملأ عرض الحاوية تماماً */
-    min-width: 900px;
-    min-height: 900px;
+    min-width: 500px;
+    min-height: 500px;
     height: auto;          /* تحافظ على التناسب ومنع التمطيط */
     display: block;
     object-fit: cover;     /* تضمن ملء المساحة بشكل جمالي */
@@ -179,8 +178,8 @@
               معايير الجودة والكفاءة.
             </p>
             <div class="hero-buttons">
-              <a href="services.html" class="btn-primary">اكتشف خدماتنا</a>
-              <a href="contact.html" class="btn-secondary">تواصل معنا</a>
+              <a href="services.html" class="btn-primary" data-aos="fade-up" data-aos-duration="500">اكتشف خدماتنا</a>
+              <a href="contact.html" class="btn-secondary"data-aos="fade-right" data-aos-duration="500">تواصل معنا</a>
             </div>
           </div>
           <div class="hero-image" data-aos="fade-left" data-aos-duration="1200">
@@ -327,7 +326,7 @@
             </div>
           </div>
           <a href="services.html" class="view-more-link"
-            >عرض المزيد من الخدمات</a
+            data-aos="fade-zoom">عرض المزيد من الخدمات</a
           >
         </div>
       </section>
