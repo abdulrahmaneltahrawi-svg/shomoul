@@ -152,9 +152,10 @@
     <div id="preloader">
       <div class="loader-content">
         <img
-          src="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg"
+          src="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg "
           alt="Logo"
           class="loader-logo"
+          fetchpriority="high"
         />
         <div class="loader-bar"></div>
       </div>
@@ -164,7 +165,7 @@
       
      
 <section class="hero">
-  <div class="hero-slider">
+  <div class="hero-slider"loading="lazy">
     <div class="slide" style="background-image: url('assets/imges/1920.jpg');"></div>
     <div class="slide" style="background-image: url('assets/imges/video-preview-ar-1.jpg');"></div>
     <div class="slide" style="background-image: url('assets/imges/95f4d571c367d4253ba03e9698eef201.jpg');"></div> 
@@ -630,45 +631,14 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-            AOS.init({
-        duration: 1000, // سرعة الحركة العامة
-        once: true, // تتحرك مرة واحدة فقط عند التنزيل
-        offset: 100, // تبدأ الحركة قبل وصول المستخدم للعنصر بـ 100 بكسل
-      });
-
-      window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-        const heroH1 = document.querySelector(".hero-content h1");
-        const heroH2 = document.querySelector(".hero-content h2");
-        const heroImg = document.querySelector(".hero-image");
-
-        // 1. إخفاء شاشة التحميل بعد ثانية واحدة
-        setTimeout(() => {
-          preloader.classList.add("loaded");
-
-          // 2. تشغيل حركات الـ Hero بالترتيب
-          setTimeout(() => {
-            heroH1.classList.add("appear");
-          }, 200);
-
-          setTimeout(() => {
-            heroH2.classList.add("appear");
-          }, 400);
-
-          setTimeout(() => {
-            heroImg.classList.add("reveal-img");
-          }, 100);
-        }, 1000);
-      });
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/effect.js" defer></script>
 
 
 
 
-    <script src="js/slider.js"></script>
+    <script src="js/slider.js" defer></script>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
