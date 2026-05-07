@@ -285,7 +285,7 @@ header.scrolled a{
   /* تقليل البادينج العلوي لرفع النصوص */
   padding: 180px 0 100px 0; 
   
-  background: #1a1a1a;
+  background: #222222;
   background-image: url('assets/imges/95f4d571c367d4253ba03e9698eef201.jpg');
   background-size: cover;
   background-position: 5% 50%;
@@ -1199,7 +1199,7 @@ footer .container {
   background-color: transparent;
   margin: 0 auto;
   direction: rtl;
-  max-width: 1700px; /* توحيد العرض مع باقي الموقع */
+  max-width: 300px; /* توحيد العرض مع باقي الموقع */
   width: 95%;
   justify-items: center; /* توسيط العناصر في الـ grid */
   text-align: center; /* توسيط النصوص */
@@ -1216,7 +1216,7 @@ footer {
   text-align: center; /* توسيط النصوص */
   margin-bottom: 50px;
   background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
-  padding: 30px 180px;
+  padding: 30px 130px;
   border-radius: 30px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
 }
@@ -1233,6 +1233,7 @@ footer {
   text-transform: uppercase; /* جعل العناوين بأحرف كبيرة */
   letter-spacing: 0.5px; /* إضافة تباعد بين الأحرف */
   text-align: center; /* توسيط العنوان */
+  white-space: nowrap !important;
 }
 
 .footer-content a {
@@ -1251,13 +1252,15 @@ footer {
 .footer-content li {
   margin-bottom: 12px;
   list-style: none;
+  white-space: nowrap !important;
   
 }
 
 .footer-content p {
   margin-bottom: 16px; /* زيادة الهامش السفلي للفقرات */
-  line-height: 1.8;
+  line-height: 1.9;
   color: #94a3b8;
+
 }
 
 .footer-content img {
@@ -1269,7 +1272,7 @@ footer {
 }
 
 .footer-content img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /*قسم سياسة الخصوصية*/
