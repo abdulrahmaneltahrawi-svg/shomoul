@@ -463,6 +463,7 @@ header.scrolled .contact-btn {
   z-index: 1;
   background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
   margin-right: 50px;
+  margin-top: 150px;
   
   /* إضافة الإطار الشفاف */
   border: 1px solid rgba(255, 255, 255, 0.15); /* إطار أبيض شفاف بنسبة 15% */
@@ -480,9 +481,9 @@ header.scrolled .contact-btn {
 /* مجموعة شمول */
 .hero-content h1 {
   display: inline-block; /* لجعل العنوان يظهر على نفس السطر مع ما يليه */
-  font-size:5rem;
-  font-weight: 800;
-  margin-bottom: 24px;
+  font-size:4rem;
+  font-weight: 700;
+  margin-bottom: 28px;
   line-height: 1.2;
   color: #c5a059;
   margin-left: 15px; /* إضافة مسافة بين الكلمتين */
@@ -492,19 +493,19 @@ header.scrolled .contact-btn {
 }
 
 .hero-content h2 {
-  font-size: 3.2rem;
-  font-weight: 700;
+  font-size: 3.0rem;
+  font-weight: 630;
   color: #ffffff;
   margin-bottom: 24px;
 }
 
 .highlight-gold {
   color: #c5a059;
-  font-weight: 600;
+  font-weight: 560;
 }
 
 .hero-content p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.8;
   margin-bottom: 40px;
   max-width: 700px;
