@@ -200,7 +200,7 @@ header {
 
 /* عندما نضيف كلاس active بواسطة الجافاسكريبت */
 .search-input.active {
-    width: 200px; /* طول حقل البحث */
+    width: 150px; /* طول حقل البحث */
     opacity: 1;
     padding: 8px 15px;
     margin-left: 10px;
@@ -237,19 +237,60 @@ a {
 
 
 .contact-btn {
-  background: black;
-  border: 1px solid white;
-  color: white !important;
-  padding: 17px 40px;
-  border-radius: 30px;  
-  text-decoration: none;
-  transition: all 0.3s ease;
+    position: relative; /* ضروري لعمل اللمعة داخل الزر */
+    overflow: hidden;    /* لإخفاء اللمعة عندما تخرج عن حدود الزر */
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 13px 20px;
+    border-radius: 40px;
+    /* أضف خصائص الألوان والحواف الخاصة بك هنا أو اتركها كما هي */
 }
 
+/* تأثير التكبير عند تمرير الماوس */
 .contact-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.25);
+    transform: scale(1.05);
+    
 }
+
+/* إنشاء طبقة اللمعة (الوميض) */
+.contact-btn::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.6), /* قوة اللمعة */
+        rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    right: -100px; /* تبدأ من جهة اليمين لتتجه لليسار */
+    opacity: 0.6;
+}
+
+/* تشغيل حركة اللمعة عند الهوفر فقط */
+.contact-btn:hover::before {
+    animation: shine-left 1.5s ease-out infinite;
+}
+
+/* تعريف حركة اللمعة باتجاه اليسار */
+@keyframes shine-left {
+    0% {
+        right: -100px;
+    }
+    60% {
+        right: 100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+
 .header-nav ul {
   display: flex;
   list-style: none;
@@ -311,6 +352,10 @@ header.scrolled .search-btn img {
     /* تحويل اللون للأبيض ثم عكسه تماماً ليصبح أسود */
     filter: brightness(0) saturate(100%) !important;
     transition: filter 0.3s ease;
+}
+
+header.scrolled .contact-btn {
+    color: white;
 }
 /* اجعل السكشن الرئيسي حاوية نسبية */
 .hero {
@@ -1589,18 +1634,45 @@ footer {
   .header-actions {
     gap: 10px;
   }
+
+  .search-btn img {
+    margin: 0 !important; 
+    width: 24px !important; /* حجم متناسق أكثر */
+    height: 24px !important;
+    position: static !important;
+    
+    /* هذا الفلتر يحول الصورة السوداء إلى بيضاء تماماً */
+    filter: brightness(3) invert(0) !important; 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
   
-  .contact-btn {
-    position: absolute !important;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* توسيط الزر في منتصف الهيدر تماماً */
-    padding: 8px 18px; /* زيادة مساحة الضغط */
-    font-size: 13px; /* تكبير حجم الخط قليلاً */
-    white-space: nowrap;
-    margin: 0 !important;
-    display: inline-block !important; /* ضمان الظهور في كل أحجام الهواتف */
-  }
+ .contact-btn, .button {
+        /* 1. زيادة مساحة الضغط */
+        padding: 12px 24px !important; 
+        color: white !important;
+        
+        /* 2. ضبط حجم الخط ليكون مقروءاً */
+        font-size: 14px !important;
+        
+        /* 3. التأكد من أن الزر لا يأخذ عرض الشاشة كاملاً إلا إذا أردت ذلك */
+        width: fit-content; 
+        margin-left: 120px;
+        white-space: nowrap;
+        
+        /* 4. تقليل قوة الظل في الجوال ليكون الشكل أنظف */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* تحسين حركة اللمعة للجوال */
+    .contact-btn::before, .button::before {
+        width: 60px; /* تقليل عرض اللمعة لتناسب الزر الأصغر */
+    }
+
+    /* إلغاء تأثير التكبير (Scale) عند الهوفر في الجوال 
+       لأن الهوفر في الجوال يسبب تعليق اللون أحياناً */
+    .contact-btn:hover, .button:hover {
+        transform: none !important;
+    }
 
   /* Fix for black line under header on mobile */
   .header-top {
