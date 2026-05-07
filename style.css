@@ -304,18 +304,87 @@ header.scrolled .search-btn img {
     filter: brightness(0) saturate(100%) !important;
     transition: filter 0.3s ease;
 }
+/* اجعل السكشن الرئيسي حاوية نسبية */
+.hero {
+  position: relative;
+  height: 100vh; /* ليغطي الشاشة كاملة */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* تنسيق حاوية الصور الخلفية */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* خلف النص */
+}
+
+/* تنسيق الصور الفردية */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* نستخدم opacity: 0 كحالة افتراضية */
+  opacity: 0;
+  z-index: 1;
+  /* زيادة مدة الأنيميشن لـ 12 ثانية ليعطي وقت كافي للتداخل */
+  animation: smoothFade 12s infinite linear;
+}
+
+/* تأكد أن محتوى النصوص يظهر في المقدمة */
+.hero-container {
+  position: relative;
+  z-index: 2; /* أعلى من الصور */
+  width: 100%;
+}
+
+/* تعتيم خفيف فوق الصور لتوضيح النص الأبيض */
+.hero-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* تفتيح أو تغميق حسب الرغبة */
+  z-index: 1;
+}
+
+/* الأنيميشن الجديد لحل مشكلة الفراغ */
+@keyframes smoothFade {
+  0% {
+    opacity: 0;
+  }
+  /* تظهر الصورة وتثبت */
+  10%, 33% {
+    opacity: 1;
+  }
+  /* تبدأ بالاختفاء تدريجياً بينما الصورة التالية تظهر بالفعل */
+  43%, 100% {
+    opacity: 0;
+  }
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
 
 /* اعطاء الهيرو الالوان */
 .hero {
   /* سحب القسم للأعلى ليمر خلف الهيدر */
-  margin-top: -100px; /* جرب تغيير القيمة بناءً على ارتفاع الهيدر عندك */
-  
+  margin-top: -150px; /* جرب تغيير القيمة بناءً على ارتفاع الهيدر عندك */
+
   /* تقليل البادينج العلوي لرفع النصوص */
   padding: 180px 0 100px 0; 
-  
- 
-background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
-              url('assets/imges/95f4d571c367d4253ba03e9698eef201.jpg');
+    
   
   background-size: cover;
   background-position: 5% 50%;
@@ -357,7 +426,7 @@ background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 /* مجموعة شمول */
 .hero-content h1 {
   display: inline-block; /* لجعل العنوان يظهر على نفس السطر مع ما يليه */
-  font-size:6rem;
+  font-size:5rem;
   font-weight: 800;
   margin-bottom: 24px;
   line-height: 1.2;
@@ -369,7 +438,7 @@ background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 }
 
 .hero-content h2 {
-  font-size: 3.7rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 24px;
@@ -377,11 +446,11 @@ background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 
 .highlight-gold {
   color: #c5a059;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .hero-content p {
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 40px;
   max-width: 700px;
@@ -394,7 +463,7 @@ background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 }
 
 .btn-primary, .btn-secondary {
-  padding: 18px 32px;
+  padding: 12px 22px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
