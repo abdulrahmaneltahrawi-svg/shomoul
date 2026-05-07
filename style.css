@@ -1,3 +1,10 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* يمنع التمرير الجانبي تماماً */
+  margin: 0;
+  padding: 0;
+}
+
 /*البداية من الصفر*/
 * {
   margin: 0;
@@ -13,6 +20,7 @@ body {
   color: #2d3748;
   padding-top: 120px; /* تم زيادة المسافة لتتناسب مع زيادة حجم الشريط العلوي */
   margin-top: 33px;
+  overflow-x: hidden; /* منع التمرير الأفقي الناتج عن أي عنصر بارز */
 }
 /* حاوية الهيدر */
 .header-container {
@@ -570,50 +578,8 @@ header.scrolled .search-btn img {
     line-height: 1;
 }
 
-/* التجاوب مع الجوال */
-/* التجاوب مع الجوال - تحديث شامل */
-@media (max-width: 992px) {
-    .projects-hero {
-        padding: 40px 0; /* تقليل الحشو العلوي */
-    }
 
-    .hero-container1 {
-        flex-direction: column; /* ترتيب العناصر عمودياً */
-        align-items: center;
-        padding: 0 20px;
-    }
 
-    .hero-bg-image {
-        width: 100%; /* الصورة تأخذ كامل العرض */
-        height: 300px; /* تقليل الارتفاع في الجوال */
-        order: 2; /* وضع الصورة في الترتيب الثاني */
-    }
-
-    .title-card-left {
-      opacity: 0;
-        visibility: hidden;
-        pointer-events: none; /* لمنع التفاعل معه باللمس */
-    }
-
-    .title-card-left h1 {
-        font-size: 2.2rem; /* تصغير الخط ليناسب الشاشة */
-        line-height: 1.2;
-    }
-
-    .title-card-left .sub-title {
-        font-size: 1rem;
-    }
-}
-
-/* للشاشات الصغيرة جداً (أقل من 480px) */
-@media (max-width: 480px) {
-    .title-card-left h1 {
-        font-size: 1.8rem;
-    }
-    .hero-bg-image {
-        height: 200px;
-    }
-}
 
 /* Page barr */
 .page-header {
@@ -1678,6 +1644,35 @@ footer {
     gap: 15px;
   }
 
+/* الصندوق الأبيض يخرج من جهة اليسار */
+.title-card-left {
+    position: absolute;
+    top: 50%;
+    left: -20px; /* القيمة بالسالب ليدفع الصندوق لليسار خارج حدود الصورة */
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    padding: 20px 40px;
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.1);
+    z-index: 10;
+    min-width: 280px;
+    text-align: right; /* محاذاة النص داخل الصندوق لليمين */
+}
+
+.title-card-left .sub-title {
+    display: block;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.title-card-left h1 {
+    font-size: 3rem;
+    color: #2b2b3a;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1;
+}
 
   
   header img {
@@ -1697,25 +1692,58 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .hero-bg-image {
+    position: relative;
+    width: 100%; /* ترك مساحة في اليسار ليبرز فيها الصندوق */
+    height: 200px;
+    
+}
+
+.hero-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    
+}
+
+
   .hero {
     height: 100vh;
-    display: flex;
+    display: flex !important;
     align-items: center; /* توسيط البوكس عمودياً */
+    justify-content: center !important; /* توسيط البوكس أفقياً */
     padding-top: 60px;
+  }
+
+  .hero-container {
+    margin-right: auto !important; /* تصفير الهامش اليميني */
+    margin-left: auto !important;  /* ضمان التوسيط */
+    margin-top: 300px;
+    width: 90% !important;
+    padding: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   /* الصندوق الزجاجي */
   .hero-content {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 25px 15px !important; /* تقليل المسافات الداخلية */
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    text-align: center;
   }
 
   .hero-content h1 {
     font-size: 24px !important;
     margin-bottom: 10px;
+    margin-left: 0 !important; /* تصفير المارجن الذي يسبب الانحراف */
+    padding-right: 0 !important;
+    border-right: none !important; /* إزالة الخط الجانبي في الجوال لجمالية التوسيط */
   }
 
   .hero-content h2 {
@@ -1750,25 +1778,7 @@ footer {
 }
 }
 
-@media (max-width: 480px) {
-  .contact-btn {
-    display: inline-block !important; /* إلغاء الإخفاء في الشاشات الصغيرة */
-  }
-  
-  .search-container {
-    display: none;
-  }
-  
-  header img {
-    width: 45px;
-    height: 45px;
-  }
-  
-  header.scrolled img {
-    width: 40px;
-    height: 40px;
-  }
-}
+
 
 
 
@@ -1856,6 +1866,8 @@ footer {
 
   }
 }
+
+
 
 /* زر واتساب العائم */
 .whatsapp-float {

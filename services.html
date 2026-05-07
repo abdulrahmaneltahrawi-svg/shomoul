@@ -159,11 +159,73 @@
       .active-service h3 { color: #fff !important; }
       .active-service .num { color: var(--accent-gold) !important; }
 
-      @media (max-width: 992px) {
-        .services-wrapper { flex-direction: column-reverse; }
-        .reverse-layout .services-wrapper { flex-direction: column-reverse; }
-        .service-preview { min-height: 350px; }
-      }
+/* التنسيق المخصص للهاتف (Responsive Fix) */
+@media (max-width: 768px) {
+    /* 1. تقليل الحشو الخارجي للقسم */
+    .services-container {
+        padding: 20px 10px; /* مساحة أقل على الجوانب */
+    }
+
+    /* 2. ضبط الحاوية الرئيسية */
+    .services-wrapper {
+        flex-direction: column-reverse; /* النص فوق ثم الصورة تحت */
+        min-height: auto; /* إلغاء الـ 100vh لأنها تسبب فراغ كبير */
+        height: auto;
+    }
+
+    /* 3. إصلاح منطقة الصورة */
+    .service-preview {
+        flex: none;
+        width: 100%;
+        height: 300px; /* تحديد ارتفاع ثابت للصورة في الجوال */
+        min-height: 300px;
+    }
+
+    .image-holder {
+        width: 100%; /* ملء العرض بالكامل في الجوال */
+        height: 100%;
+    }
+
+    .service-preview img {
+        object-position: center; /* التأكد من توسط الصورة */
+    }
+
+    .image-overlay {
+        padding: 20px; /* تقليل المسافة داخل البوكس الأسود على الصورة */
+    }
+
+    .image-overlay h2 {
+        font-size: 1.4rem; /* تصغير حجم الخط */
+    }
+
+    /* 4. إصلاح منطقة اختيار الخدمات */
+    .service-selection {
+        padding: 25px 15px; /* تقليل الحشو الداخلي */
+        width: 100%;
+    }
+
+    .category-header span {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .selection-grid {
+        gap: 8px; /* تقليل المسافة بين الأزرار */
+        margin-top: 15px;
+    }
+
+    .select-item {
+        padding: 15px 20px; /* أزرار أصغر لتناسب الشاشة */
+        gap: 10px;
+    }
+
+    .select-item h3 {
+        font-size: 0.95rem; /* تصغير حجم النص */
+    }
+
+    /* 5. عكس الترتيب إذا أردت (اختياري) */
+    /* إذا كنت تريد الصورة فوق والخيارات تحت، استبدل column-reverse بـ column */
+}
     </style>
 
     <section class="services-container" data-aos="fade-up">
