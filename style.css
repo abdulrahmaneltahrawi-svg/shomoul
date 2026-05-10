@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden; /* يمنع التمرير الجانبي تماماً */
   margin: 0;
@@ -50,7 +51,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* From Uiverse.io by misaraadel */ 
+/* From Uiverse.io by misaraadel */
 .socail-media {
   display: flex;
   align-items: center;
@@ -63,7 +64,7 @@ body {
 .socail-media li a {
   width: 35px;
   height: 35px;
- 
+
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -73,7 +74,6 @@ body {
   z-index: 9;
   border: 1px solid white;
 }
-
 
 .socail-media li a::after {
   content: "";
@@ -96,7 +96,6 @@ body {
   opacity: 1;
 }
 
-
 /* الحالة الافتراضية: أيقونة بيضاء */
 .socail-media img {
   width: 25px; /* تصغير قليلاً لترك مساحة داخل المربع */
@@ -114,64 +113,64 @@ body {
 
 /* تنسيق عام لضمان ظهور الأيقونة فوق الخلفية البيضاء */
 .socail-media li a img {
-    position: relative;
-    z-index: 10;
-    pointer-events: none; /* لمنع تداخل اللمس */
-    display: block;
+  position: relative;
+  z-index: 10;
+  pointer-events: none; /* لمنع تداخل اللمس */
+  display: block;
 }
 
 /* حلول الجوال */
 @media (max-width: 768px) {
-    .header-top {
-        flex-direction: column; /* ترتيب العناصر عمودياً لتجنب الازدحام */
-        gap: 12px;
-        padding: 10px 0;
-        height: auto; /* السماح للحاوية بالتوسع لتناسب المحتوى */
-    }
+  .header-top {
+    flex-direction: column; /* ترتيب العناصر عمودياً لتجنب الازدحام */
+    gap: 12px;
+    padding: 10px 0;
+    height: auto; /* السماح للحاوية بالتوسع لتناسب المحتوى */
+  }
 
-    /* إخفاء النصوص الطويلة لترك مساحة */
-    .top-bar-contact a span, 
-    .top-bar-contact .separator {
-        display: none; 
-    }
+  /* إخفاء النصوص الطويلة لترك مساحة */
+  .top-bar-contact a span,
+  .top-bar-contact .separator {
+    display: none;
+  }
 
-    .top-bar-contact {
-        width: 100%;
-        justify-content: center;
-        display: flex;
-        gap: 15px;
-    }
+  .top-bar-contact {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+  }
 
-    .top-bar-contact > span {
-        display: none; /* إخفاء الفاصل الرأسي في الجوال لعدم الحاجة له */
-    }
+  .top-bar-contact > span {
+    display: none; /* إخفاء الفاصل الرأسي في الجوال لعدم الحاجة له */
+  }
 
-    /* تكبير مساحة اللمس للأيقونات في الجوال */
-    .socail-media {
-        gap: 5px;
-        flex-wrap: nowrap; /* منع نزول الأيقونات لسطر جديد */
-    }
+  /* تكبير مساحة اللمس للأيقونات في الجوال */
+  .socail-media {
+    gap: 5px;
+    flex-wrap: nowrap; /* منع نزول الأيقونات لسطر جديد */
+  }
 
-    .socail-media li a {
-        width: 30px; 
-        height: 30px;
-    }
+  .socail-media li a {
+    width: 30px;
+    height: 30px;
+  }
 
-    .socail-media img {
-        width: 18px;
-        height: 18px;
-    }
+  .socail-media img {
+    width: 18px;
+    height: 18px;
+  }
 
-    /* اللوجو في الجوال */
-    header img[alt="shomoul logo"] {
-        width: 200px !important; /* تصغير اللوجو */
-        margin-right: 0 !important;
-    }
+  /* اللوجو في الجوال */
+  header img[alt="shomoul logo"] {
+    width: 200px !important; /* تصغير اللوجو */
+    margin-right: 0 !important;
+  }
 
-    .header-wrapper {
-        justify-content: space-between;
-        padding: 0 10px;
-    }
+  .header-wrapper {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
 }
 
 @keyframes sideClip {
@@ -187,8 +186,6 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-
-
 
 .top-logo {
   white-space: nowrap;
@@ -221,26 +218,26 @@ body {
 }
 
 .top-bar-contact {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* مسافة بين الإيميل والواتساب */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* مسافة بين الإيميل والواتساب */
 }
 
 .top-bar-contact a {
-    display: inline-flex; /* لجعل الرابط مرن ويقبل الترتيب بجانب بعض */
-    align-items: center;  /* توسيط الصورة مع النص عمودياً */
-    text-decoration: none; /* إزالة الخط تحت الرابط */
-    gap: 8px; /* مسافة بسيطة بين الصورة والنص */
-    color: inherit; /* ليأخذ لون النص المحدد مسبقاً */
+  display: inline-flex; /* لجعل الرابط مرن ويقبل الترتيب بجانب بعض */
+  align-items: center; /* توسيط الصورة مع النص عمودياً */
+  text-decoration: none; /* إزالة الخط تحت الرابط */
+  gap: 8px; /* مسافة بسيطة بين الصورة والنص */
+  color: inherit; /* ليأخذ لون النص المحدد مسبقاً */
 }
 
 /* للتحكم في حجم الأيقونات */
 .top-bar-contact img {
-    width: 25px; /* حجم مناسب */
-    height: auto;
-    filter: brightness(0) invert(1); /* هذا الكود يحول أي صورة سوداء إلى أبيض تماماً */
-    opacity: 0.9; /* اختياري: لجعلها أقل سطوعاً قليلاً لتناسب التصميم */
-    margin-top: 3px;
+  width: 25px; /* حجم مناسب */
+  height: auto;
+  filter: brightness(0) invert(1); /* هذا الكود يحول أي صورة سوداء إلى أبيض تماماً */
+  opacity: 0.9; /* اختياري: لجعلها أقل سطوعاً قليلاً لتناسب التصميم */
+  margin-top: 3px;
 }
 
 /* الهيدر الرئيسي */
@@ -248,103 +245,97 @@ header {
   background: white;
   transition: all 0.3s ease;
   position: relative; /* Ensure it establishes a stacking context */
-  
 }
 
 .header-wrapper {
-    display: flex;
-    justify-content: space-between; /* هذا يوزع البحث والقائمة والزر */
-    align-items: center;
-    width: 95%;
-    max-width: 1700px;
-    margin: 0 auto;
-    direction: rtl; /* التأكد من أن التوزيع يبدأ من اليمين */
-    padding: 20px;
-    
+  display: flex;
+  justify-content: space-between; /* هذا يوزع البحث والقائمة والزر */
+  align-items: center;
+  width: 95%;
+  max-width: 1700px;
+  margin: 0 auto;
+  direction: rtl; /* التأكد من أن التوزيع يبدأ من اليمين */
+  padding: 20px;
 }
-
-
 
 /* زر البحث */
 .search-btn {
-    order: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
+  order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .search-btn img {
-    margin: 0 !important; 
-    width: 24px !important; /* حجم متناسق أكثر */
-    height: 24px !important;
-    position: static !important;
-    transition: transform 0.3s ease, filter 0.3s ease;
+  margin: 0 !important;
+  width: 24px !important; /* حجم متناسق أكثر */
+  height: 24px !important;
+  position: static !important;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 /* تأثير عند تمرير الماوس */
 .search-btn:hover {
-    background: rgba(255, 255, 255, 0.15); /* تفتيح الخلفية الدائرية */
+  background: rgba(255, 255, 255, 0.15); /* تفتيح الخلفية الدائرية */
 }
 
 .search-btn:hover img {
-    transform: scale(1.1); /* تكبير الأيقونة قليلاً */
-    /* إذا أردت تحويلها للذهبي عند تمرير الماوس جرب هذا الفلتر: */
-    /* filter: invert(72%) sepia(54%) saturate(452%) hue-rotate(3deg) brightness(92%) contrast(88%); */
+  transform: scale(1.1); /* تكبير الأيقونة قليلاً */
+  /* إذا أردت تحويلها للذهبي عند تمرير الماوس جرب هذا الفلتر: */
+  /* filter: invert(72%) sepia(54%) saturate(452%) hue-rotate(3deg) brightness(92%) contrast(88%); */
 }
 
-
 .search-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    order: 1; /* ليبقى في اليمين كما أردت */
+  display: flex;
+  align-items: center;
+  position: relative;
+  order: 1; /* ليبقى في اليمين كما أردت */
 }
 
 .search-input {
-    width: 0;
-    opacity: 0;
-    border: none;
-    outline: none;
-    padding: 8px 0;
-    border-bottom: 2px solid #d4af37; /* لون ذهبي */
-    background: transparent;
-    color: black;
-    transition: all 0.4s ease;
-    direction: rtl;
+  width: 0;
+  opacity: 0;
+  border: none;
+  outline: none;
+  padding: 8px 0;
+  border-bottom: 2px solid #d4af37; /* لون ذهبي */
+  background: transparent;
+  color: black;
+  transition: all 0.4s ease;
+  direction: rtl;
 }
 
 /* عندما نضيف كلاس active بواسطة الجافاسكريبت */
 .search-input.active {
-    width: 150px; /* طول حقل البحث */
-    opacity: 1;
-    padding: 8px 15px;
-    margin-left: 10px;
+  width: 150px; /* طول حقل البحث */
+  opacity: 1;
+  padding: 8px 15px;
+  margin-left: 10px;
 }
-
 
 /* القائمة في المنتصف */
 .header-nav {
-    order: 2;
-    flex-grow: 1; /* تسمح للقائمة بأخذ مساحة لضمان التوسط */
-    display: flex;
-    justify-content: center;
+  order: 2;
+  flex-grow: 1; /* تسمح للقائمة بأخذ مساحة لضمان التوسط */
+  display: flex;
+  justify-content: center;
 }
 
 /* الأزرار في اليسار */
 .header-actions {
-    order: 3;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-
-
 
 a {
   color: black;
@@ -352,66 +343,61 @@ a {
   transition: all 0.3s ease;
   font-size: 20px;
   font-weight: 500;
-
 }
 
-
-
 .contact-btn {
-    position: relative; /* ضروري لعمل اللمعة داخل الزر */
-    overflow: hidden;    /* لإخفاء اللمعة عندما تخرج عن حدود الزر */
-    transition: all 0.3s ease-in-out;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    padding: 13px 20px;
-    border-radius: 40px;
-    color: white;
-    /* أضف خصائص الألوان والحواف الخاصة بك هنا أو اتركها كما هي */
+  position: relative; /* ضروري لعمل اللمعة داخل الزر */
+  overflow: hidden; /* لإخفاء اللمعة عندما تخرج عن حدود الزر */
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding: 13px 20px;
+  border-radius: 40px;
+  color: white;
+  /* أضف خصائص الألوان والحواف الخاصة بك هنا أو اتركها كما هي */
 }
 
 /* تأثير التكبير عند تمرير الماوس */
 .contact-btn:hover {
-    transform: scale(1.05);
-    
+  transform: scale(1.05);
 }
 
 /* إنشاء طبقة اللمعة (الوميض) */
 .contact-btn::before {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100%;
-    background-image: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0) 30%,
-        rgba(255, 255, 255, 0.6), /* قوة اللمعة */
-        rgba(255, 255, 255, 0) 70%
-    );
-    top: 0;
-    right: -100px; /* تبدأ من جهة اليمين لتتجه لليسار */
-    opacity: 0.6;
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.6),
+    /* قوة اللمعة */ rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  right: -100px; /* تبدأ من جهة اليمين لتتجه لليسار */
+  opacity: 0.6;
 }
 
 /* تشغيل حركة اللمعة عند الهوفر فقط */
 .contact-btn:hover::before {
-    animation: shine-left 1.5s ease-out infinite;
+  animation: shine-left 1.5s ease-out infinite;
 }
 
 /* تعريف حركة اللمعة باتجاه اليسار */
 @keyframes shine-left {
-    0% {
-        right: -100px;
-    }
-    60% {
-        right: 100%;
-    }
-    100% {
-        right: 100%;
-    }
+  0% {
+    right: -100px;
+  }
+  60% {
+    right: 100%;
+  }
+  100% {
+    right: 100%;
+  }
 }
-
 
 .header-nav ul {
   display: flex;
@@ -432,7 +418,7 @@ a {
 }
 
 .header-nav ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -456,18 +442,16 @@ header.scrolled {
   box-shadow: 0 6px 35px rgba(0, 0, 0, 0.12);
 }
 
-
-
 header.scrolled .logo p {
   font-size: 18px; /* تصغير حجم الخط عند التمرير */
 }
 
-header.scrolled a{
+header.scrolled a {
   color: black;
 }
 
 header.scrolled .contact-btn {
-    color: white;
+  color: white;
 }
 /* اجعل السكشن الرئيسي حاوية نسبية */
 .hero {
@@ -513,7 +497,7 @@ header.scrolled .contact-btn {
 
 /* تعتيم خفيف فوق الصور لتوضيح النص الأبيض */
 .hero-slider::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -529,28 +513,34 @@ header.scrolled .contact-btn {
     opacity: 0;
   }
   /* تظهر الصورة وتثبت */
-  10%, 33% {
+  10%,
+  33% {
     opacity: 1;
   }
   /* تبدأ بالاختفاء تدريجياً بينما الصورة التالية تظهر بالفعل */
-  43%, 100% {
+  43%,
+  100% {
     opacity: 0;
   }
 }
 
-.slide:nth-child(1) { animation-delay: 0s; }
-.slide:nth-child(2) { animation-delay: 4s; }
-.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 4s;
+}
+.slide:nth-child(3) {
+  animation-delay: 8s;
+}
 
 /* اعطاء الهيرو الالوان */
 .hero {
   /* سحب القسم للأعلى ليمر خلف الهيدر */
-  
 
   /* تقليل البادينج العلوي لرفع النصوص */
-  padding: 180px 0 100px 0; 
-    
-  
+  padding: 180px 0 100px 0;
+
   background-size: cover;
   background-position: 5% 50%;
   color: white;
@@ -575,24 +565,23 @@ header.scrolled .contact-btn {
   background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
   margin-right: 50px;
   margin-top: 70px;
-  
+
   /* إضافة الإطار الشفاف */
   border: 1px solid rgba(255, 255, 255, 0.15); /* إطار أبيض شفاف بنسبة 15% */
   border-radius: 24px; /* زوايا منحنية لتعطي مظهر عصري */
-  
+
   /* تأثير الزجاج (التغبيش) خلف الإطار */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
-  
+
   /* ظل خفيف لتعميق تأثير الإطار */
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
-
 /* مجموعة شمول */
 .hero-content h1 {
   display: inline-block; /* لجعل العنوان يظهر على نفس السطر مع ما يليه */
-  font-size:4rem;
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: 28px;
   line-height: 1.2;
@@ -604,7 +593,7 @@ header.scrolled .contact-btn {
 }
 
 .hero-content h2 {
-  font-size: 3.0rem;
+  font-size: 3rem;
   font-weight: 630;
   color: #ffffff;
   margin-bottom: 24px;
@@ -628,7 +617,8 @@ header.scrolled .contact-btn {
   flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
   padding: 12px 22px;
   border-radius: 8px;
   font-weight: 600;
@@ -677,67 +667,62 @@ header.scrolled .contact-btn {
 }
 
 .projects-hero {
-    width: 100%;
-    padding: 80px 0;
-    background-color: #fff;
-    overflow: hidden; /* لمنع ظهور شريط تمرير بسبب بروز الصندوق */
+  width: 100%;
+  padding: 80px 0;
+  background-color: #fff;
+  overflow: hidden; /* لمنع ظهور شريط تمرير بسبب بروز الصندوق */
 }
 
 .hero-container1 {
-    width: 100%;
-    max-width: 1700px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-end; /* يدفع حاوية الصورة لليمين */
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end; /* يدفع حاوية الصورة لليمين */
 }
 
 .hero-bg-image {
-    position: relative;
-    width: 85%; /* ترك مساحة في اليسار ليبرز فيها الصندوق */
-    height: 450px;
-    
+  position: relative;
+  width: 85%; /* ترك مساحة في اليسار ليبرز فيها الصندوق */
+  height: 450px;
 }
 
 .hero-bg-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* الصندوق الأبيض يخرج من جهة اليسار */
 .title-card-left {
-    position: absolute;
-    top: 50%;
-    left: -100px; /* القيمة بالسالب ليدفع الصندوق لليسار خارج حدود الصورة */
-    transform: translateY(-50%);
-    background-color: #ffffff;
-    padding: 60px 80px;
-    box-shadow: 15px 15px 40px rgba(0,0,0,0.1);
-    z-index: 10;
-    min-width: 380px;
-    text-align: right; /* محاذاة النص داخل الصندوق لليمين */
+  position: absolute;
+  top: 50%;
+  left: -100px; /* القيمة بالسالب ليدفع الصندوق لليسار خارج حدود الصورة */
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  padding: 60px 80px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 380px;
+  text-align: right; /* محاذاة النص داخل الصندوق لليمين */
 }
 
 .title-card-left .sub-title {
-    display: block;
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 10px;
-    font-weight: 500;
+  display: block;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .title-card-left h1 {
-    font-size: 3.5rem;
-    color: #2b2b3a;
-    margin: 0;
-    font-weight: 800;
-    line-height: 1;
+  font-size: 3.5rem;
+  color: #2b2b3a;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1;
 }
-
-
-
 
 /* Page barr */
 .page-header {
@@ -757,7 +742,7 @@ header.scrolled .contact-btn {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 20px;
-  color: #c5a059;
+  color: #c0c0c0;
 }
 
 .page-header p {
@@ -771,7 +756,7 @@ header.scrolled .contact-btn {
 /* تنسيق جميع الكروت */
 .container {
   max-width: 1700px;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -796,7 +781,7 @@ header.scrolled .contact-btn {
 }
 
 .view-more-link::after {
-  content: '←';
+  content: "←";
   font-size: 1.4rem;
   transition: transform 0.3s ease;
 }
@@ -804,8 +789,6 @@ header.scrolled .contact-btn {
 .view-more-link:hover::after {
   transform: translateX(-8px);
 }
-
-
 
 .section-subtitle {
   display: block;
@@ -821,7 +804,7 @@ header.scrolled .contact-btn {
   /* إضافة هذا السطر للتوسيط */
   margin-left: auto;
   margin-right: auto;
-  
+
   text-align: center;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
@@ -842,17 +825,16 @@ header.scrolled .contact-btn {
   display: flex;
   overflow-x: auto;
   /* منع الكروت من الالتفاف لسطر جديد نهائياً */
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
   gap: 20px;
   padding: 20px 10px;
   /* تحسين سلاسة التمرير باللمس والجوال */
-  -webkit-overflow-scrolling: touch; 
+  -webkit-overflow-scrolling: touch;
   /* منع المستخدم من تحديد النصوص أثناء السحب (عشان ما يعلق السهم) */
-  user-select: none; 
+  user-select: none;
   /* إخفاء السكرول بار */
   scrollbar-width: none;
   cursor: grab;
-  
 }
 
 /* إخفاء شريط التمرير في كروم وسفاري ليبقى التصميم نظيفاً */
@@ -871,7 +853,7 @@ header.scrolled .contact-btn {
   display: flex;
   flex-direction: column;
   /* تفعيل التفاعل للكرت ليعمل الـ Hover والزر */
-  pointer-events: auto; 
+  pointer-events: auto;
   cursor: ew-resize;
 }
 .feature-card img {
@@ -881,17 +863,15 @@ header.scrolled .contact-btn {
 .feature-card:hover {
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
   /* التعديل هنا: استخدم رقمًا بسيطًا وليس وحدات rem */
-  transform: translateY(-10px) scale(1.01)!important;
+  transform: translateY(-10px) scale(1.01) !important;
   /* زِد الرقم لـ 1.1 إذا أردت تكبيراً أوضح، لكن 1.05 تعطي لمسة أنيقة */
   cursor: ew-resize;
   border-color: #c5a059;
 }
 
-
 .feature-icon img {
   width: 100%;
   height: 100%;
-  
 }
 
 .feature-card h3 {
@@ -905,14 +885,13 @@ header.scrolled .contact-btn {
   color: #60636c;
   line-height: 1.6;
   padding: 0 5px;
-
 }
 
 .features-btn {
   color: #c5a059;
   padding: 8px 20px;
   /* الهامش السفلي يضمن بقاء مسافة ثابتة من حافة الكرت، واستخدمنا margin-top: auto لدفعه للأسفل */
-  margin: auto 20px 20px 20px !important; 
+  margin: auto 20px 20px 20px !important;
   width: fit-content;
   border-radius: 50px;
   text-decoration: none;
@@ -926,7 +905,6 @@ header.scrolled .contact-btn {
   align-self: center; /* لتوسيط الزر في منتصف الكرت أفقياً */
 }
 
-
 .features-btn:hover {
   background: #1a1a1a;
   color: #c5a059;
@@ -937,7 +915,7 @@ header.scrolled .contact-btn {
 }
 
 .features-btn::after {
-  content: '←';
+  content: "←";
   font-size: 1.1rem;
   transition: transform 0.3s ease;
 }
@@ -954,8 +932,11 @@ header.scrolled .contact-btn {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* زيادة عرض الكرت لملء الصفحة بشكل أكبر */
-  gap: 30px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(380px, 1fr)
+  ); /* زيادة عرض الكرت لملء الصفحة بشكل أكبر */
+  gap: 20px;
 }
 
 .service-card {
@@ -966,7 +947,8 @@ header.scrolled .contact-btn {
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* ظل خفيف جداً في الحالة العادية */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1036,7 +1018,7 @@ header.scrolled .contact-btn {
 }
 
 .service-link::after {
-  content: '←';
+  content: "←";
   font-size: 0.9rem;
   transition: transform 0.3s ease;
 }
@@ -1044,7 +1026,6 @@ header.scrolled .contact-btn {
 .service-link:hover::after {
   transform: translateX(-5px);
 }
-
 
 /* Company Cards */
 .company-card {
@@ -1119,7 +1100,6 @@ header.scrolled .contact-btn {
   align-items: center;
   padding: 20px 0;
   margin-bottom: 30px;
-
 }
 
 .corporate-grid img {
@@ -1139,7 +1119,7 @@ header.scrolled .contact-btn {
 
 .corporate-grid img:hover {
   transform: scale(1.1);
-   background: white !important ; /* خلفية بيضاء شفافة جداً */
+  background: white !important ; /* خلفية بيضاء شفافة جداً */
 }
 
 /* Company Details Page */
@@ -1229,7 +1209,7 @@ header.scrolled .contact-btn {
 }
 
 .company-services li::before {
-  content: '←';
+  content: "←";
   position: absolute;
   right: 0;
   color: #c5a059;
@@ -1250,9 +1230,7 @@ header.scrolled .contact-btn {
 
 .company-image img:hover {
   transform: translateY(-8px);
-
 }
-
 
 /*التواصل*/
 .company-contact {
@@ -1270,9 +1248,8 @@ header.scrolled .contact-btn {
 
 /*الخدمات التفاعليه*/
 
-
 .logos-ticker-track {
-display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 100px;
   max-width: 1200px;
@@ -1288,7 +1265,6 @@ display: grid;
   object-fit: contain;
   transition: all 0.1s ease;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  
 }
 
 .logos-ticker-track img:hover {
@@ -1296,7 +1272,6 @@ display: grid;
   opacity: 1;
   transform: translateY(-5px);
 }
-
 
 /* About Page */
 .about-content {
@@ -1334,11 +1309,8 @@ display: grid;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   display: block;
   margin-right: auto; /* يدفع الصورة لليسار في وضع RTL */
-  max-width: 100%;    /* يضمن عدم خروج الصورة عن حدود الحاوية في الشاشات الأصغر */
+  max-width: 100%; /* يضمن عدم خروج الصورة عن حدود الحاوية في الشاشات الأصغر */
 }
-
-
-
 
 /* Contact Page */
 .contact-info {
@@ -1482,14 +1454,12 @@ footer {
   margin-bottom: 12px;
   list-style: none;
   white-space: nowrap !important;
-  
 }
 
 .footer-content p {
   margin-bottom: 16px; /* زيادة الهامش السفلي للفقرات */
   line-height: 1.9;
   color: #94a3b8;
-
 }
 
 .footer-content img {
@@ -1523,8 +1493,6 @@ footer {
   padding: 7px;
 }
 
-
-
 /* زر القائمة للموبايل */
 .menu-toggle {
   display: none;
@@ -1550,7 +1518,6 @@ footer {
   background: #b8860b;
 }
 
-
 /* Responsive Updates */
 @media (max-width: 768px) {
   .about-grid,
@@ -1558,33 +1525,33 @@ footer {
   .contact-grid,
   .company-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
-  
+
   .contact-form .form-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .form-container {
     padding: 30px 20px;
   }
-  
+
   .quick-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .quick-btn {
     width: 100%;
     max-width: 280px;
     justify-content: center;
   }
-  
+
   .newsletter-form {
     flex-direction: column;
     max-width: 300px;
   }
-  
+
   .newsletter-form button {
     width: 100%;
   }
@@ -1605,7 +1572,7 @@ footer {
   .newsletter {
     padding: 60px 0;
   }
-  
+
   .about-text h2,
   .hero-content h2,
   .service-info h2,
@@ -1613,7 +1580,7 @@ footer {
   .newsletter h2 {
     font-size: 1.8rem;
   }
-  
+
   .vm-card,
   .team-member,
   .contact-card,
@@ -1621,12 +1588,11 @@ footer {
   .blog-card {
     padding: 30px 20px;
   }
-  
+
   .blog-content {
     padding: 25px 20px;
   }
 }
-
 
 /* Social Media Links Alignment */
 .social-links-list {
@@ -1638,20 +1604,17 @@ footer {
   align-items: center;
   padding: 0;
   margin: 0;
-  
-  }
+}
 
 .social-links-list li {
   list-style: none;
   margin: 0;
-  
-  
 }
 
 .social-links-list a {
   display: flex;
   flex-direction: column; /* جعل النص تحت الأيقونة لشكل أجمل بالعرض */
-  align-items: center; 
+  align-items: center;
   gap: 5px;
   color: #cbd5e1;
   text-decoration: none;
@@ -1662,7 +1625,7 @@ footer {
 
 .social-links-list li {
   list-style: none;
-  margin: 0;  
+  margin: 0;
 }
 
 .social-links-list a:hover {
@@ -1688,10 +1651,10 @@ footer {
     font-size: 13px; /* تكبير الخط ليكون مقروءاً */
     margin: 0; /* إزالة الهوامش التي قد تدفع النص خارج الشاشة في الجوال */
   }
-  .top-bar-contact a{
+  .top-bar-contact a {
     font-size: 11px; /* حجم خط مناسب للجوال */
   }
-  
+
   .header-top {
     display: flex; /* العودة لنظام flex لضمان بقاء العناصر في سطر واحد */
     justify-content: space-between;
@@ -1700,8 +1663,8 @@ footer {
     justify-content: center;
     padding: 10px 15px;
   }
-  
-  .top-container{
+
+  .top-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* السماح للعناصر بالنزول لسطر جديد إذا ضاقت المساحة */
@@ -1711,11 +1674,11 @@ footer {
     padding: 5px 5%; /* تقليل الحشو لرفع الشعار والأيقونات */
     position: relative; /* ضروري لتوسيط الزر مطلقاً */
   }
-  
+
   .menu-toggle {
     display: flex;
   }
-  
+
   .header-nav {
     display: block;
     position: absolute;
@@ -1729,75 +1692,81 @@ footer {
     border-top: none !important; /* إزالة الخط العلوي للقائمة */
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+    transition:
+      max-height 0.4s ease-in-out,
+      opacity 0.3s ease;
     opacity: 0;
     z-index: -1; /* دفعها خلف الهيدر لضمان عدم تداخل ظلالها */
     visibility: hidden; /* منع المتصفح من رندر العنصر وهو مغلق */
   }
-  
+
   .header-nav.active {
     max-height: 100vh;
     opacity: 1;
     visibility: visible;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
   }
-  
+
   .header-nav ul {
     flex-direction: column;
     padding: 20px;
     gap: 10px;
-    
   }
-  
+
   .header-nav ul li a {
     padding: 12px 20px;
     text-align: center;
     display: block;
     color: black;
   }
-  
+
   .header-actions {
     gap: 10px;
   }
 
   .search-btn img {
-    margin: 0 !important; 
+    margin: 0 !important;
     width: 24px !important; /* حجم متناسق أكثر */
     height: 24px !important;
     position: static !important;
-    
+
     /* هذا الفلتر يحول الصورة السوداء إلى بيضاء تماماً */
-    filter: brightness(3) invert(0) !important; 
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-  
- .contact-btn, .button {
-        /* 1. زيادة مساحة الضغط */
-        padding: 12px 24px !important; 
-        color: white !important;
-        
-        /* 2. ضبط حجم الخط ليكون مقروءاً */
-        font-size: 14px !important;
-        
-        /* 3. التأكد من أن الزر لا يأخذ عرض الشاشة كاملاً إلا إذا أردت ذلك */
-        width: fit-content; 
-        margin-left: 120px;
-        white-space: nowrap;
-        
-        /* 4. تقليل قوة الظل في الجوال ليكون الشكل أنظف */
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1) !important;
-    }
+    filter: brightness(3) invert(0) !important;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+  }
 
-    /* تحسين حركة اللمعة للجوال */
-    .contact-btn::before, .button::before {
-        width: 60px; /* تقليل عرض اللمعة لتناسب الزر الأصغر */
-    }
+  .contact-btn,
+  .button {
+    /* 1. زيادة مساحة الضغط */
+    padding: 12px 24px !important;
+    color: white !important;
 
-    /* إلغاء تأثير التكبير (Scale) عند الهوفر في الجوال 
+    /* 2. ضبط حجم الخط ليكون مقروءاً */
+    font-size: 14px !important;
+
+    /* 3. التأكد من أن الزر لا يأخذ عرض الشاشة كاملاً إلا إذا أردت ذلك */
+    width: fit-content;
+    margin-left: 120px;
+    white-space: nowrap;
+
+    /* 4. تقليل قوة الظل في الجوال ليكون الشكل أنظف */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* تحسين حركة اللمعة للجوال */
+  .contact-btn::before,
+  .button::before {
+    width: 60px; /* تقليل عرض اللمعة لتناسب الزر الأصغر */
+  }
+
+  /* إلغاء تأثير التكبير (Scale) عند الهوفر في الجوال 
        لأن الهوفر في الجوال يسبب تعليق اللون أحياناً */
-    .contact-btn:hover, .button:hover {
-        transform: none !important;
-    }
+  .contact-btn:hover,
+  .button:hover {
+    transform: none !important;
+  }
 
   /* Fix for black line under header on mobile */
   .header-top {
@@ -1810,8 +1779,6 @@ footer {
     padding: 0 !important;
     display: flex !important;
   }
-
-
 
   .header-container {
     background-color: transparent !important; /* جعل الحاوية شفافة ليظهر لون الهيدر والبار العلوي */
@@ -1832,46 +1799,42 @@ footer {
     gap: 15px;
   }
 
-/* الصندوق الأبيض يخرج من جهة اليسار */
-.title-card-left {
+  /* الصندوق الأبيض يخرج من جهة اليسار */
+  .title-card-left {
     position: absolute;
     top: 50%;
     left: -20px; /* القيمة بالسالب ليدفع الصندوق لليسار خارج حدود الصورة */
     transform: translateY(-50%);
     background-color: #ffffff;
     padding: 20px 40px;
-    box-shadow: 15px 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
     z-index: 10;
     min-width: 280px;
     text-align: right; /* محاذاة النص داخل الصندوق لليمين */
-}
+  }
 
-.title-card-left .sub-title {
+  .title-card-left .sub-title {
     display: block;
     font-size: 1.1rem;
     color: #666;
     margin-bottom: 10px;
     font-weight: 500;
-}
+  }
 
-.title-card-left h1 {
+  .title-card-left h1 {
     font-size: 3rem;
     color: #2b2b3a;
     margin: 0;
     font-weight: 600;
     line-height: 1;
-}
+  }
 
-  
   header img {
     width: 65px;
     height: 65px;
     margin-left: 15px;
     margin-bottom: -10px; /* جعل الشعار ينزل (يبرز) من الهيدر في الجوال */
-
   }
-  
-
 }
 
 @media (max-width: 768px) {
@@ -1879,17 +1842,14 @@ footer {
     position: relative;
     width: 100%; /* ترك مساحة في اليسار ليبرز فيها الصندوق */
     height: 200px;
-    
-}
+  }
 
-.hero-bg-image img {
+  .hero-bg-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    
-}
-
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
 
   .hero {
     height: 100vh;
@@ -1901,7 +1861,7 @@ footer {
 
   .hero-container {
     margin-right: auto !important; /* تصفير الهامش اليميني */
-    margin-left: auto !important;  /* ضمان التوسيط */
+    margin-left: auto !important; /* ضمان التوسيط */
     margin-top: 300px;
     width: 90% !important;
     padding: 20px !important;
@@ -1952,18 +1912,15 @@ footer {
     font-size: 15px;
     margin: 0 !important;
   }
-  .hero-slider, .slide {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  .hero-slider,
+  .slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
-}
-
-
-
-
 
 /* إزالة الأنيميشن والـ delay */
 
@@ -1971,12 +1928,15 @@ footer {
   .corporate-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @keyframes tickerScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
 }
 
 /* Projects Gallery */
@@ -1987,7 +1947,10 @@ footer {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(900px, 1fr)); /* تكبير كروت المشاريع لتشغل مساحة أكبر */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(900px, 1fr)
+  ); /* تكبير كروت المشاريع لتشغل مساحة أكبر */
   gap: 20px; /* تقليل المسافة بين الكروت */
   margin-top: 40px;
 }
@@ -2036,21 +1999,17 @@ footer {
 .project-images-inner img:hover {
   transform: scale(1.03);
   border: 5px solid #c5a059;
-  box-shadow: 0
+  box-shadow: 0;
 }
-@media(max-width: 670px){
+@media (max-width: 670px) {
   .project-images-inner img {
     max-height: 130px;
   }
 
-    .project-images-inner img:hover {
-  transform: scale(1.2);
-    
-
+  .project-images-inner img:hover {
+    transform: scale(1.2);
   }
 }
-
-
 
 /* زر واتساب العائم */
 .whatsapp-float {
@@ -2082,8 +2041,6 @@ footer {
   height: 35px;
   filter: brightness(0) invert(1); /* تحويل أيقونة الواتساب للون الأبيض */
 }
-
-
 
 .full-width-img {
   width: 100%;
