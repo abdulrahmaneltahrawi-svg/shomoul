@@ -743,7 +743,7 @@ header.scrolled .contact-btn {
   flex-direction: column;
   /* تفعيل التفاعل للكرت ليعمل الـ Hover والزر */
   pointer-events: auto; 
-  cursor: grab;
+  cursor: ew-resize;
 }
 .feature-card img {
   pointer-events: none;
@@ -754,7 +754,7 @@ header.scrolled .contact-btn {
   /* التعديل هنا: استخدم رقمًا بسيطًا وليس وحدات rem */
   transform: translateY(-10px) scale(1.01)!important;
   /* زِد الرقم لـ 1.1 إذا أردت تكبيراً أوضح، لكن 1.05 تعطي لمسة أنيقة */
-  cursor: pointer;
+  cursor: ew-resize;
   border-color: #c5a059;
 }
 
