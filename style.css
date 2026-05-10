@@ -180,7 +180,7 @@ header {
     padding: 8px 0;
     border-bottom: 2px solid #d4af37; /* لون ذهبي */
     background: transparent;
-    color: white;
+    color: black;
     transition: all 0.4s ease;
     direction: rtl;
 }
