@@ -28,13 +28,14 @@
   <style>
 /* الحاوية الأساسية */
 .process-section {
-    background: linear-gradient(50deg, #977438 0%, #b38f4d 70%);
+    background-color: #BC985B; /* اللون الأساسي */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف */
     padding: 70px 0;
     width: 80%; /* جعل العرض كامل لإعطاء مساحة للتنفس */
     margin-right: 59px;
     display: flex;
     justify-content: center;
-    border-radius: 50px;
+    border-radius: 30px;        /* انحناء الزوايا */
 
 }
 
@@ -157,10 +158,11 @@
     .split-container {
       display: flex;
       width: 95%; /* أخذ معظم عرض الشاشة */
-      max-width: 1400px; /* تقليل العرض الأقصى لزيادة التناسق */
+      max-width: 1200px; /* تقليل العرض الأقصى لزيادة التناسق */
       margin: 0 auto;
       align-items: center; /* توسيط المحتوى عمودياً */
       overflow: hidden;
+      gap: 30px;
     }
 
     /* الجانب النصي */
@@ -169,10 +171,11 @@
       padding-right: 50px; /* مسافة بين النص والصورة (في الـ RTL) */
       text-align: right;
       background-color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+      
     
       padding: 60px 40px;
-      border-radius: 0 0 30px 0;
-      border:3px solid #c5a059;
+      
     }
 
     .content-overline {
