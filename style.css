@@ -1307,7 +1307,7 @@ footer .container {
 
 footer {
   background-color: #0f1115; /* أسود فخم مائل للكحلي العميق */
-  border-top: 4px solid #c5a059;
+  border-top: 4px solid #b59773;
   padding: 60px 0 0; /* إزالة الحشو الأفقي للسماح للشريط السفلي بالتمدد بكامل العرض */
   color: #e2e8f0; /* تحديد لون النص الافتراضي للفوتر */
 }
@@ -1325,10 +1325,10 @@ footer {
 .footer-content h3 {
   margin-bottom: 25px;
   font-size: 1.5rem;
-  border-bottom: 3px solid #c5a059; /* زيادة سمك الخط السفلي */
+  border-bottom: 3px solid #b59773; /* زيادة سمك الخط السفلي */
   display: inline-block;
   padding-bottom: 8px;
-  color: #c5a059; /* اللون الذهبي للعناوين */
+  color: #b59773; /* اللون الذهبي للعناوين */
   font-weight: 700;
   position: relative; /* لضمان عمل border-bottom بشكل صحيح */
   text-transform: uppercase; /* جعل العناوين بأحرف كبيرة */
@@ -1345,7 +1345,7 @@ footer {
 }
 
 .footer-content a:hover {
-  color: #c5a059;
+  color: #b59773;
   cursor: pointer;
   transform: translateX(-5px);
 }
@@ -1369,7 +1369,7 @@ footer {
   height: auto;
   filter: brightness(0) invert(1); /* جعل الأيقونات بيضاء لتناسب الخلفية السوداء */
   transition: 0.3s;
-  color: #c5a059;
+  color: #b59773;
 }
 
 .footer-content img:hover {
@@ -1389,7 +1389,7 @@ footer {
 }
 
 .bottom-bar p {
-  color: #c5a059;
+  color: #b59773;
   margin: 0;
   font-size: 13px;
   padding: 7px;
