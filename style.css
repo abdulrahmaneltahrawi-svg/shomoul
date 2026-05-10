@@ -322,12 +322,7 @@ header.scrolled {
   box-shadow: 0 6px 35px rgba(0, 0, 0, 0.12);
 }
 
-header.scrolled img {
-  width: 120px;
-  height: 155px;
-  margin-bottom: -90px; /* تقليل الهامش ليتناسب مع الحجم الأصغر عند السكرول */
-  margin-right: -30px; /* الحفاظ على الإزاحة لليمين بشكل متناسب */
-}
+
 
 header.scrolled .logo p {
   font-size: 18px; /* تصغير حجم الخط عند التمرير */
