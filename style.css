@@ -112,6 +112,68 @@ body {
   z-index: 10;
 }
 
+/* تنسيق عام لضمان ظهور الأيقونة فوق الخلفية البيضاء */
+.socail-media li a img {
+    position: relative;
+    z-index: 10;
+    pointer-events: none; /* لمنع تداخل اللمس */
+    display: block;
+}
+
+/* حلول الجوال */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column; /* ترتيب العناصر عمودياً لتجنب الازدحام */
+        gap: 12px;
+        padding: 10px 0;
+        height: auto; /* السماح للحاوية بالتوسع لتناسب المحتوى */
+    }
+
+    /* إخفاء النصوص الطويلة لترك مساحة */
+    .top-bar-contact a span, 
+    .top-bar-contact .separator {
+        display: none; 
+    }
+
+    .top-bar-contact {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        gap: 15px;
+    }
+
+    .top-bar-contact > span {
+        display: none; /* إخفاء الفاصل الرأسي في الجوال لعدم الحاجة له */
+    }
+
+    /* تكبير مساحة اللمس للأيقونات في الجوال */
+    .socail-media {
+        gap: 5px;
+        flex-wrap: nowrap; /* منع نزول الأيقونات لسطر جديد */
+    }
+
+    .socail-media li a {
+        width: 30px; 
+        height: 30px;
+    }
+
+    .socail-media img {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* اللوجو في الجوال */
+    header img[alt="shomoul logo"] {
+        width: 200px !important; /* تصغير اللوجو */
+        margin-right: 0 !important;
+    }
+
+    .header-wrapper {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+}
+
 @keyframes sideClip {
   0% {
     clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
@@ -1470,7 +1532,8 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
+  margin-left: 10px;
 }
 
 .menu-toggle span {
@@ -1622,17 +1685,20 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   .top-logo {
-    font-size: 7px;
+    font-size: 13px; /* تكبير الخط ليكون مقروءاً */
     margin: 0; /* إزالة الهوامش التي قد تدفع النص خارج الشاشة في الجوال */
   }
   .top-bar-contact a{
-    font-size: 7px;
+    font-size: 11px; /* حجم خط مناسب للجوال */
   }
   
   .header-top {
     display: flex; /* العودة لنظام flex لضمان بقاء العناصر في سطر واحد */
     justify-content: space-between;
     padding: 0 15px;
+    flex-direction: column; /* التأكيد على التنسيق العمودي */
+    justify-content: center;
+    padding: 10px 15px;
   }
   
   .top-container{
@@ -1745,16 +1811,7 @@ footer {
     display: flex !important;
   }
 
-  /* تم فصل التنسيقات لضمان بقاء الشريط العلوي باللون الأسود */
-  header, 
-  header.scrolled {
-    border: 0 !important;
-    box-shadow: none !important;
-    background-color: #ffffff !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    outline: 0 !important;
-  }
+
 
   .header-container {
     background-color: transparent !important; /* جعل الحاوية شفافة ليظهر لون الهيدر والبار العلوي */
@@ -1808,18 +1865,13 @@ footer {
   
   header img {
     width: 65px;
-    height: 90px;
-    margin-top: -5px;
-    margin-right: -15px;
+    height: 65px;
+    margin-left: 15px;
     margin-bottom: -10px; /* جعل الشعار ينزل (يبرز) من الهيدر في الجوال */
-    border: 3px solid #c5a059;
+
   }
   
-  header.scrolled img {
-    width: 50px;
-    margin-bottom: -10px; /* موازنة البروز عند تصغير الحجم في الجوال */
-    margin-right: -10px;
-  }
+
 }
 
 @media (max-width: 768px) {
