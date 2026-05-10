@@ -113,7 +113,7 @@ body {
 header {
   background: white;
   transition: all 0.3s ease;
-  border-top: 2px solid #c5a059;
+  border-top: 2px solid #866f43;
   position: relative; /* Ensure it establishes a stacking context */
   
 }
@@ -1231,7 +1231,7 @@ display: grid;
 
 .contact-card {
   background: white;
-  padding: 90px 20px;
+  padding: 60px 10px;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -1246,12 +1246,12 @@ display: grid;
 .contact-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: #d1b073;
+  border-color: #a1a1a1;
 }
 
 .contact-icon {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   margin: 0 auto 24px;
   background: #1a1a1a;
   border-radius: 50%;
@@ -1262,8 +1262,8 @@ display: grid;
 }
 
 .contact-icon img {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
@@ -1276,13 +1276,13 @@ display: grid;
 }
 
 .contact-card p {
-  color: #64748b;
+  color: #a1a1a1;
   line-height: 1.6;
   margin-bottom: 8px;
 }
 
 .contact-card a {
-  color: #d1b073;
+  color: #4a474a;
   font-weight: 600;
   text-decoration: none;
 }
