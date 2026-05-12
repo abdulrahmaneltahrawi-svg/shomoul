@@ -63,6 +63,8 @@ body {
     object-fit: contain; /* لضمان عدم تشوه الصورة */
     transition: transform 0.3s ease;
     box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(65%);
+   
 }
 
 .social-img:hover {
