@@ -35,14 +35,15 @@ body {
 /* الشريط العلوي */
 .header-top {
   height: 50px; /* زيادة الارتفاع ليعطي مساحة تنفس */
-  background: #111111; /* أسود صلب */
-  color: #ffffff;
+  background: rgb(245, 245, 245); /* أسود صلب */
+  color: rgb(44, 44, 44);
   display: flex;
   justify-content: space-between; /* دفع العناصر للأطراف */
   align-items: center;
   padding: 0 4%; /* مسافة أمان جانبية */
   font-size: 14px;
   width: 100%;
+
 }
 
 .header-top a {
@@ -50,73 +51,22 @@ body {
   font-weight: 500;
   transition: all 0.3s ease;
 }
-
-/* From Uiverse.io by misaraadel */
-.socail-media {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  gap: 10px;
-  list-style: none;
+.social-links {
+    display: flex;
+    gap: 10px; /* المسافة بين الصور */
+    align-items: center;
 }
 
-.socail-media li a {
-  width: 35px;
-  height: 35px;
-
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  position: relative;
-  z-index: 9;
-  border: 1px solid white;
+.social-img {
+    width: 30px;  /* عرض الصورة */
+    height: 30px; /* طول الصورة */
+    object-fit: contain; /* لضمان عدم تشوه الصورة */
+    transition: transform 0.3s ease;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-.socail-media li a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
-  background-color: #fff;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.socail-media li a:hover::after {
-  animation: sideClip 0.5s linear;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  opacity: 1;
-}
-
-/* الحالة الافتراضية: أيقونة بيضاء */
-.socail-media img {
-  width: 25px; /* تصغير قليلاً لترك مساحة داخل المربع */
-  height: 25px;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease; /* تنعيم التحول */
-}
-
-/* الحالة عند الـ Hover: أيقونة سوداء */
-/* لاحظ أننا نطبق الـ hover على الرابط <a> لكي تتغير الأيقونة فوراً */
-.socail-media li a:hover img {
-  filter: brightness(0); /* تصبح سوداء لتظهر فوق الخلفية البيضاء */
-  z-index: 10;
-}
-
-/* تنسيق عام لضمان ظهور الأيقونة فوق الخلفية البيضاء */
-.socail-media li a img {
-  position: relative;
-  z-index: 10;
-  pointer-events: none; /* لمنع تداخل اللمس */
-  display: block;
+.social-img:hover {
+    transform: scale(1.1); /* تكبير بسيط عند مرور الماوس */
 }
 
 /* حلول الجوال */
@@ -198,7 +148,11 @@ body {
 }
 
 .header-top a:hover {
-  color: #c5a059;
+  transform: scale(0.9);
+}
+
+.header-top img:hover {
+  transform: scale(1.1);
 }
 
 .top-logo-link:hover .top-logo {
@@ -215,6 +169,7 @@ body {
 .header-actions-top {
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
 }
 
 .top-bar-contact {
@@ -235,7 +190,6 @@ body {
 .top-bar-contact img {
   width: 25px; /* حجم مناسب */
   height: auto;
-  filter: brightness(0) invert(1); /* هذا الكود يحول أي صورة سوداء إلى أبيض تماماً */
   opacity: 0.9; /* اختياري: لجعلها أقل سطوعاً قليلاً لتناسب التصميم */
   margin-top: 3px;
 }
@@ -257,68 +211,20 @@ header {
   direction: rtl; /* التأكد من أن التوزيع يبدأ من اليمين */
   padding: 20px;
 }
-
-/* زر البحث */
-.search-btn {
+.header-wrapper img{
   order: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: hidden;
 }
 
-.search-btn img {
-  margin: 0 !important;
-  width: 24px !important; /* حجم متناسق أكثر */
-  height: 24px !important;
-  position: static !important;
-  transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
+.header-wrapper img:hover{
+  transform: translateY(1.1px);
+  
+
 }
+
 
 /* تأثير عند تمرير الماوس */
 .search-btn:hover {
   background: rgba(255, 255, 255, 0.15); /* تفتيح الخلفية الدائرية */
-}
-
-.search-btn:hover img {
-  transform: scale(1.1); /* تكبير الأيقونة قليلاً */
-  /* إذا أردت تحويلها للذهبي عند تمرير الماوس جرب هذا الفلتر: */
-  /* filter: invert(72%) sepia(54%) saturate(452%) hue-rotate(3deg) brightness(92%) contrast(88%); */
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  order: 1; /* ليبقى في اليمين كما أردت */
-}
-
-.search-input {
-  width: 0;
-  opacity: 0;
-  border: none;
-  outline: none;
-  padding: 8px 0;
-  border-bottom: 2px solid #d4af37; /* لون ذهبي */
-  background: transparent;
-  color: black;
-  transition: all 0.4s ease;
-  direction: rtl;
-}
-
-/* عندما نضيف كلاس active بواسطة الجافاسكريبت */
-.search-input.active {
-  width: 150px; /* طول حقل البحث */
-  opacity: 1;
-  padding: 8px 15px;
-  margin-left: 10px;
 }
 
 /* القائمة في المنتصف */
@@ -338,11 +244,11 @@ header {
 }
 
 a {
-  color: black;
+  color: rgb(161, 158, 158);
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .contact-btn {
@@ -353,9 +259,10 @@ a {
   align-items: center;
   justify-content: center;
   background-color: black;
-  padding: 13px 20px;
+  padding: 8px 15px;
   border-radius: 40px;
   color: white;
+  order: 2;
   /* أضف خصائص الألوان والحواف الخاصة بك هنا أو اتركها كما هي */
 }
 
@@ -378,7 +285,7 @@ a {
   );
   top: 0;
   right: -100px; /* تبدأ من جهة اليمين لتتجه لليسار */
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 /* تشغيل حركة اللمعة عند الهوفر فقط */
@@ -414,7 +321,7 @@ a {
 .header-nav ul li a {
   position: relative;
   padding-bottom: 5px;
-  color: black;
+  color: rgb(36, 36, 36);
 }
 
 .header-nav ul li a::after {
@@ -424,8 +331,8 @@ a {
   height: 2px;
   bottom: 0;
   right: 0;
-  background-color: #c5a059;
-  transition: width 0.3s ease;
+  background-color: gray;
+  transition: width 0.5s ease;
 }
 
 .header-nav ul li a:hover::after {
@@ -433,7 +340,7 @@ a {
 }
 
 .header-nav ul li a:hover {
-  color: #c5a059;
+  color: gray;
 }
 
 /* تأثير الهيدر عند التمرير */
