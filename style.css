@@ -260,7 +260,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: rgb(34, 34, 34);
   padding: 8px 15px;
   border-radius: 40px;
   color: white;
