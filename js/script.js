@@ -34,7 +34,7 @@ function loadFooter() {
 
 // تأثير التمرير على الهيدر
 function handleScroll() {
-  const header = document.querySelector("header");
+  const header = document.querySelector(".main-header");
   if (header) {
     if (window.scrollY > 50) {
       header.classList.add("scrolled");

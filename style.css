@@ -1,594 +1,81 @@
-html,
+/* تنسيقات عامة */
 body {
-  max-width: 100%;
-  overflow-x: hidden; /* يمنع التمرير الجانبي تماماً */
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-/*البداية من الصفر*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/*تعديل البودي بشكل عام*/
-body {
-  background: white;
-  font-family: "tajawal", sans-serif;
-  scroll-behavior: smooth;
-  color: #2d3748;
-  padding-top: 120px; /* تم زيادة المسافة لتتناسب مع زيادة حجم الشريط العلوي */
-  margin-top: 33px;
-  overflow-x: hidden; /* منع التمرير الأفقي الناتج عن أي عنصر بارز */
-}
-/* حاوية الهيدر */
-.header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10000;
-}
-
-/* الشريط العلوي */
-.header-top {
-  height: 50px; /* زيادة الارتفاع ليعطي مساحة تنفس */
-  background: rgb(245, 245, 245); /* أسود صلب */
-  color: rgb(44, 44, 44);
-  display: flex;
-  justify-content: space-between; /* دفع العناصر للأطراف */
-  align-items: center;
-  padding: 0 4%; /* مسافة أمان جانبية */
-  font-size: 14px;
-  width: 100%;
-
-}
-
-.header-top a {
-  color: #ffffff;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-.social-links {
-    display: flex;
-    gap: 10px; /* المسافة بين الصور */
-    align-items: center;
-}
-
-.social-img {
-    width: 30px;  /* عرض الصورة */
-    height: 30px; /* طول الصورة */
-    object-fit: contain; /* لضمان عدم تشوه الصورة */
-    transition: transform 0.3s ease;
-    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.1);
-    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(65%);
-   
-}
-
-.social-img:hover {
-    transform: scale(1.1); /* تكبير بسيط عند مرور الماوس */
-}
-
-/* حلول الجوال */
-@media (max-width: 768px) {
-  .header-top {
-    flex-direction: column; /* ترتيب العناصر عمودياً لتجنب الازدحام */
-    gap: 12px;
-    padding: 10px 0;
-    height: auto; /* السماح للحاوية بالتوسع لتناسب المحتوى */
-  }
-
-  /* إخفاء النصوص الطويلة لترك مساحة */
-  .top-bar-contact a span,
-  .top-bar-contact .separator {
-    display: none;
-  }
-
-  .top-bar-contact {
+/* الهيدر الشفاف */
+.main-header {
+    position: fixed; /* ليطفو فوق المحتوى/الصورة */
+    top: 0;
+    left: 0;
     width: 100%;
-    justify-content: center;
+    background-color: transparent; /* خلفية شفافة */
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.848);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.container {
     display: flex;
-    gap: 15px;
-  }
-
-  .top-bar-contact > span {
-    display: none; /* إخفاء الفاصل الرأسي في الجوال لعدم الحاجة له */
-  }
-
-  /* تكبير مساحة اللمس للأيقونات في الجوال */
-  .socail-media {
-    gap: 5px;
-    flex-wrap: nowrap; /* منع نزول الأيقونات لسطر جديد */
-  }
-
-  .socail-media li a {
-    width: 30px;
-    height: 30px;
-  }
-
-  .socail-media img {
-    width: 18px;
-    height: 18px;
-  }
-
-  /* اللوجو في الجوال */
-  header img[alt="shomoul logo"] {
-    width: 200px !important; /* تصغير اللوجو */
-    margin-right: 0 !important;
-  }
-
-  .header-wrapper {
-    justify-content: space-between;
-    padding: 0 10px;
-  }
+    justify-content: space-between; /* توزيع العناصر على الأطراف */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-@keyframes sideClip {
-  0% {
-    clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
-  }
-
-  50% {
-    clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
-  }
-
-  100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
+/* تنسيق اللوجو */
+.logo img {
+    height: 120px; /* تحكم في مقاس اللوجو */
+    width: 250px;
 }
 
-.top-logo {
-  white-space: nowrap;
-  margin: 0;
-  color: #ffffff !important;
-  font-weight: 800;
-  font-size: 20px;
-  padding-right: 12px;
-  transition: all 0.3s ease;
+/* تنسيق القائمة */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* المسافة بين الروابط */
+    padding: 0;
 }
 
-.header-top a:hover {
-  transform: scale(0.9);
+.nav-menu ul li a {
+    text-decoration: none;
+    color: white; /* لون النص أبيض كما في الصورة */
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.3s;
 }
 
-.header-top img:hover {
-  transform: scale(1.1);
+.nav-menu ul li a:hover {
+    color: #ccc; /* تأثير عند تمرير الماوس */
 }
 
-.top-logo-link:hover .top-logo {
-  color: #c5a059 !important;
-  text-shadow: 0 0 15px rgba(255, 220, 100, 0.7);
+/* أيقونة البحث */
+.search-icon img {
+ width: 30px;
+ filter: brightness(0) invert(1);
+ margin-left: 50px;
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 25px; /* زيادة المسافة بين العناصر في الشريط العلوي */
-}
-
-.header-actions-top {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
-}
-
-.top-bar-contact {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* مسافة بين الإيميل والواتساب */
-}
-
-.top-bar-contact a {
-  display: inline-flex; /* لجعل الرابط مرن ويقبل الترتيب بجانب بعض */
-  align-items: center; /* توسيط الصورة مع النص عمودياً */
-  text-decoration: none; /* إزالة الخط تحت الرابط */
-  gap: 8px; /* مسافة بسيطة بين الصورة والنص */
-  color: inherit; /* ليأخذ لون النص المحدد مسبقاً */
-}
-
-/* للتحكم في حجم الأيقونات */
-.top-bar-contact img {
-  width: 25px; /* حجم مناسب */
-  height: auto;
-  opacity: 0.9; /* اختياري: لجعلها أقل سطوعاً قليلاً لتناسب التصميم */
-  margin-top: 3px;
-}
-
-/* الهيدر الرئيسي */
-header {
-  background: white;
-  transition: all 0.3s ease;
-  position: relative; /* Ensure it establishes a stacking context */
-}
-
-.header-wrapper {
-  display: flex;
-  justify-content: space-between; /* هذا يوزع البحث والقائمة والزر */
-  align-items: center;
-  width: 95%;
-  max-width: 1700px;
-  margin: 0 auto;
-  direction: rtl; /* التأكد من أن التوزيع يبدأ من اليمين */
-  padding: 20px;
-}
-.header-wrapper img{
-  order: 1;
-}
-
-.header-wrapper img:hover{
-  transform: translateY(1.1px);
-  
-
+/* إضافة السهم الصغير (اختياري) */
+.arrow {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    margin-left: 10px;
+    margin-bottom: 6px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 
-/* تأثير عند تمرير الماوس */
-.search-btn:hover {
-  background: rgba(255, 255, 255, 0.15); /* تفتيح الخلفية الدائرية */
-}
-
-/* القائمة في المنتصف */
-.header-nav {
-  order: 2;
-  flex-grow: 1; /* تسمح للقائمة بأخذ مساحة لضمان التوسط */
-  display: flex;
-  justify-content: center;
-}
-
-/* الأزرار في اليسار */
-.header-actions {
-  order: 3;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-a {
-  color: rgb(161, 158, 158);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.contact-btn {
-  position: relative; /* ضروري لعمل اللمعة داخل الزر */
-  overflow: hidden; /* لإخفاء اللمعة عندما تخرج عن حدود الزر */
-  transition: all 0.3s ease-in-out;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(34, 34, 34);
-  padding: 8px 15px;
-  border-radius: 40px;
-  color: white;
-  order: 2;
-  /* أضف خصائص الألوان والحواف الخاصة بك هنا أو اتركها كما هي */
-}
-
-/* تأثير التكبير عند تمرير الماوس */
-.contact-btn:hover {
-  transform: scale(1.05);
-}
-
-/* إنشاء طبقة اللمعة (الوميض) */
-.contact-btn::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.6),
-    /* قوة اللمعة */ rgba(255, 255, 255, 0) 70%
-  );
-  top: 0;
-  right: -100px; /* تبدأ من جهة اليمين لتتجه لليسار */
-  opacity: 0.9;
-}
-
-/* تشغيل حركة اللمعة عند الهوفر فقط */
-.contact-btn:hover::before {
-  animation: shine-left 1.5s ease-out infinite;
-}
-
-/* تعريف حركة اللمعة باتجاه اليسار */
-@keyframes shine-left {
-  0% {
-    right: -100px;
-  }
-  60% {
-    right: 100%;
-  }
-  100% {
-    right: 100%;
-  }
-}
-
-.header-nav ul {
-  display: flex;
-  list-style: none;
-  font-size: 16px;
-  font-weight: 720;
-  gap: 40px; /* استخدام الفجوات بدلاً من المارجن لتوزيع أدق ومنع الالتصاق */
-}
-
-.header-nav ul li {
-  margin: 0;
-}
-
-.header-nav ul li a {
-  position: relative;
-  padding-bottom: 5px;
-  color: rgb(36, 36, 36);
-}
-
-.header-nav ul li a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  right: 0;
-  background-color: gray;
-  transition: width 0.5s ease;
-}
-
-.header-nav ul li a:hover::after {
-  width: 100%;
-}
-
-.header-nav ul li a:hover {
-  color: gray;
-}
-
-/* تأثير الهيدر عند التمرير */
-header.scrolled {
-  background: white;
-  box-shadow: 0 6px 35px rgba(0, 0, 0, 0.12);
-}
-
-header.scrolled .logo p {
-  font-size: 18px; /* تصغير حجم الخط عند التمرير */
-}
-
-header.scrolled a {
-  color: black;
-}
-
-header.scrolled .contact-btn {
-  color: white;
-}
-/* اجعل السكشن الرئيسي حاوية نسبية */
-.hero {
-  position: relative;
-  height: 100vh; /* ليغطي الشاشة كاملة */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-/* تنسيق حاوية الصور الخلفية */
-.hero-slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* خلف النص */
-}
-
-/* تنسيق الصور الفردية */
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  /* نستخدم opacity: 0 كحالة افتراضية */
-  opacity: 0;
-  z-index: 1;
-  /* زيادة مدة الأنيميشن لـ 12 ثانية ليعطي وقت كافي للتداخل */
-  animation: smoothFade 12s infinite linear;
-}
-
-/* تأكد أن محتوى النصوص يظهر في المقدمة */
-.hero-container {
-  position: relative;
-  z-index: 2; /* أعلى من الصور */
-  width: 100%;
-}
-
-/* تعتيم خفيف فوق الصور لتوضيح النص الأبيض */
-.hero-slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* تفتيح أو تغميق حسب الرغبة */
-  z-index: 1;
-}
-
-/* الأنيميشن الجديد لحل مشكلة الفراغ */
-@keyframes smoothFade {
-  0% {
-    opacity: 0;
-  }
-  /* تظهر الصورة وتثبت */
-  10%,
-  33% {
-    opacity: 1;
-  }
-  /* تبدأ بالاختفاء تدريجياً بينما الصورة التالية تظهر بالفعل */
-  43%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.slide:nth-child(1) {
-  animation-delay: 0s;
-}
-.slide:nth-child(2) {
-  animation-delay: 4s;
-}
-.slide:nth-child(3) {
-  animation-delay: 8s;
-}
-
-/* اعطاء الهيرو الالوان */
-.hero {
-  /* سحب القسم للأعلى ليمر خلف الهيدر */
-
-  /* تقليل البادينج العلوي لرفع النصوص */
-  padding: 180px 0 100px 0;
-
-  background-size: cover;
-  background-position: 5% 50%;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  min-height: 100vh; /* ليغطي كامل ارتفاع الشاشة */
-}
-/* اعطاء الهيرو التنسيق */
-.hero-container {
-  max-width: 650px;
-  width: 95%;
-  margin: 0 auto;
-  padding: 90px 40px; /* زيادة البادينج ليعطي مساحة للإطار */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
-  position: relative;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
-  margin-right: 50px;
-  margin-top: 70px;
-
-  /* إضافة الإطار الشفاف */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* إطار أبيض شفاف بنسبة 15% */
-  border-radius: 24px; /* زوايا منحنية لتعطي مظهر عصري */
-
-  /* تأثير الزجاج (التغبيش) خلف الإطار */
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px);
-
-  /* ظل خفيف لتعميق تأثير الإطار */
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* مجموعة شمول */
-.hero-content h1 {
-  display: inline-block; /* لجعل العنوان يظهر على نفس السطر مع ما يليه */
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 28px;
-  line-height: 1.2;
-  color: #c5a059;
-  margin-left: 15px; /* إضافة مسافة بين الكلمتين */
-  white-space: nowrap;
-  border-right: 6px solid #c5a059; /* إيقونة بصرية من IRD */
-  padding-right: 20px;
-}
-
-.hero-content h2 {
-  font-size: 3rem;
-  font-weight: 630;
-  color: #ffffff;
-  margin-bottom: 24px;
-}
-
-.highlight-gold {
-  color: #c5a059;
-  font-weight: 560;
-}
-
-.hero-content p {
-  font-size: 0.8rem;
-  line-height: 1.8;
-  margin-bottom: 40px;
-  max-width: 700px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-align: center;
-  border: 2px solid transparent;
-}
-
-.btn-primary {
-  background: #c5a059;
-  color: #1a1a1a;
-  border-radius: 0;
-}
-
-.btn-primary:hover {
-  background: #d4b068;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border-color: #c5a059;
-  border-radius: 0;
-}
-
-.btn-secondary:hover {
-  background: #c5a059;
-  color: #1a1a1a;
-  transform: translateY(-3px);
-}
-
-.hero-image {
-  position: relative;
-  display: flex;
-  align-items: end;
-  justify-content: end;
-}
-
-.hero-image img {
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  display: none; /* في ترتيب IRD، الصورة تكون خلفية غامرة وليست بجانب النص */
-}
-
-.projects-hero {
-  width: 100%;
-  padding: 80px 0;
-  background-color: #fff;
-  overflow: hidden; /* لمنع ظهور شريط تمرير بسبب بروز الصندوق */
-}
-
-.hero-container1 {
-  width: 100%;
-  max-width: 1700px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end; /* يدفع حاوية الصورة لليمين */
-}
 
 .hero-bg-image {
   position: relative;
@@ -660,14 +147,6 @@ header.scrolled .contact-btn {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
-}
-
-/* تنسيق جميع الكروت */
-.container {
-  max-width: 1700px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .view-more-link {
@@ -1747,6 +1226,7 @@ footer {
     margin-left: 0 !important; /* تصفير المارجن الذي يسبب الانحراف */
     padding-right: 0 !important;
     border-right: none !important; /* إزالة الخط الجانبي في الجوال لجمالية التوسيط */
+    white-space: normal !important;
   }
 
   .hero-content h2 {
