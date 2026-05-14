@@ -337,24 +337,13 @@
      .section{
       max-width:1200px;
       margin:auto;
-    }
-
-    .small-title{
-      color:#3b82f6;
-      font-size:22px;
-      margin-bottom:10px;
-    }
-
-    .main-title{
-      font-size:52px;
-      font-weight:bold;
-      margin-bottom:40px;
-      color:#111;
+      padding: 40px;
     }
 
     .cards{
       display:flex;
       gap:30px;
+      justify-content: center;
       flex-wrap:wrap;
     }
 
@@ -365,6 +354,11 @@
       border-radius:30px;
       overflow:hidden;
       cursor:pointer;
+    }
+
+       .card :hover{
+        cursor: pointer;
+        background: #020202ab;
     }
 
     .card img{
@@ -400,12 +394,115 @@
     .bottom-title{
       position:absolute;
       bottom:25px;
-      right:25px;
       color:white;
+      background-color: #0f111517;
+      padding: 20px 80px;
       font-size:26px;
       font-weight:bold;
       z-index:2;
     }
+
+
+
+
+    /* =========================
+   CLIENTS SECTION
+========================= */
+
+.clients-section{
+  padding:80px 0;
+  overflow:hidden;
+  text-align:center;
+  position:relative;
+}
+
+/* العنوان الصغير */
+.title-top{
+  background:#3d3d46;
+  color:#fff;
+  display:inline-block;
+  padding:12px 30px;
+  border-radius:12px;
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+/* العنوان الرئيسي */
+.clients-section h2{
+  font-size:70px;
+  color:#2f2f44;
+  margin-bottom:60px;
+}
+
+/* السلايدر */
+.clients-slider{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+/* مسار الحركة */
+.slider-track{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  width:max-content;
+
+  animation:scroll 20s linear infinite;
+}
+
+/* الكروت */
+.client-card{
+
+  background:#efefef;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+}
+
+/* الصور */
+.client-card img{
+  width:100%;
+  object-fit:contain;
+}
+
+/* الحركة */
+@keyframes scroll{
+
+  0%{
+    transform:translateX(0);
+  }
+
+  100%{
+    transform:translateX(-50%);
+  }
+
+}
+
+/* يوقف الحركة عند المرور */
+.clients-slider:hover .slider-track{
+  animation-play-state:paused;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .clients-section h2{
+    font-size:45px;
+  }
+
+  .client-card{
+    width:180px;
+    height:180px;
+  }
+
+}
 
     
     </style>
@@ -710,47 +807,53 @@
 
 
 
-    <section class="partners-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle" data-aos="fade-left" data-aos-duration="1200">ثقتنا في العملاء</span>
-          <h2 data-aos="fade-left" data-aos-duration="1200">العملاء</h2>
-          <p data-aos="fade-left" data-aos-duration="1200">نفتخر بشراكتنا مع كبرى الشركات والمؤسسات في المملكة</p>
-        </div>
-      </div>
-      <div class="logos-ticker">
-        <div class="logos-ticker-track"  data-aos="zoom-in-up">
-          <img
-            src="assets/clients/001-1.jpg"
-            alt="Client - Government Sector"
-          />
-          <img
-            src="assets/clients/002-1.jpg"
-            alt="Client - Industrial Sector"
-          />
-          <img
-            src="assets/clients/003-1.jpg"
-            alt="Client - Commercial Sector"
-          />
-          <img
-            src="assets/clients/004-2.jpg"
-            alt="Client - Construction Sector"
-          />
-          <img src="assets/clients/006-1.jpg" alt="Client - Energy Sector" />
-          <img
-            src="assets/clients/007-1.jpg"
-            alt="Client - Real Estate Sector"
-          />
-          <img
-            src="assets/clients/008-1.jpg"
-            alt="Client - Technology Sector"
-          />
-          <img src="assets/clients/007-1.jpg" alt="Partner" />
-        </div>
-      </div>
-      <a href="clients.html" class="view-more-link">عرض كافة العملاء</a>
-    </section>
+<section class="clients-section">
 
+  <div class="title-top">
+    شمول للإستشارات الهندسية
+  </div>
+
+  <h2>عملاؤنا</h2>
+
+  <!-- السلايدر -->
+  <div class="clients-slider">
+
+    <div class="slider-track">
+
+      <!-- العناصر -->
+      <div class="client-card">
+        <img src="assets/clients/001-1.jpg" alt="">
+      </div>
+
+      <div class="client-card">
+        <img src="assets/clients/016.jpg" alt="">
+      </div>
+
+      <div class="client-card">
+        <img src="assets/clients/027.jpg" alt="">
+      </div>
+
+      <div class="client-card">
+        <img src="assets/clients/026.jpg" alt="">
+      </div>
+
+      <div class="client-card">
+        <img src="assets/clients/018.jpg" alt="">
+      </div>
+
+      <!-- تكرار العناصر عشان الحركة تكون مستمرة -->
+      <div class="client-card">
+        <img src="assets/clients/006-1.jpg" alt="">
+      </div>
+
+
+    </div>
+
+  </div>
+        <div class="more-btn"><a href="clients.html"><button>المزيد من العملاء</button></a></div>
+
+
+</section>
     <!-- زر واتساب العائم -->
     <a
       href="https://api.whatsapp.com/send/?phone=966920031520"
