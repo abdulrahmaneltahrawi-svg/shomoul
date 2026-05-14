@@ -348,15 +348,10 @@ body {
   background: #ffffff;
   padding: 40px 30px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  position: relative;
+  
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+
   border-radius: 15px;
 }
 
@@ -457,8 +452,25 @@ cursor: pointer;
 .more-btn a{
   text-decoration: none;
 }
+
 /* Company Cards */
+
+ .section-company{
+      writing-mode: vertical-rl;
+      background-color: white;
+      border-right: 6px solid #c5a87c;
+      border-radius: 0 30px 30px  0;
+      margin-left: 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .section-company h2{
+      padding: 250px 30px;
+      color: #1a1a1a;
+      
+    }
+    
 .company-card {
+  padding: 20px;
   position: relative;
   display: block;
   text-decoration: none;
@@ -752,7 +764,8 @@ cursor: pointer;
 .contact-info {
   padding: 80px 0 !important;
   background: white;
-  display: block !important; /* لضمان عدم توريث الـ flex من الهيدر */
+  display: flex !important; /* لضمان عدم توريث الـ flex من الهيدر */
+  align-items: center;
   margin-right: 0 !important; /* لمنع الزحف جهة اليسار */
   width: 100%;
   overflow-x: hidden;
@@ -773,10 +786,7 @@ cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   border: 1px solid #e2e8f0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+ 
 }
 
 .contact-card:hover {
