@@ -113,7 +113,7 @@
     position: relative;
     height: 100vh; /* طول القسم، يمكنك تعديله حسب الحاجة */
     width: 100%;
-    background-image: url('assets/imges/MAK_0363-1.png'); /* ضع صورتك هنا */
+    background-image: url('assets/imges/1.png'); /* ضع صورتك هنا */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* اختيار اختياري ليعطي تأثير parallax بسيط */
@@ -180,7 +180,7 @@
 
 .stats-section {
     padding: 80px 0;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/imges/1685887903.jpg');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/imges/ChatGPT Image May 14, 2026, 10_42_22 AM.png');
     background-size: cover;
     background-position: center;
     
@@ -309,6 +309,104 @@
         margin-top: 50px;
     }
 }
+    .wide-image-section{
+      width: 100%;
+      
+    }
+
+    .wide-image-section img{
+      max-height:900px;
+    }
+
+
+    .section-company{
+      writing-mode: vertical-rl;
+      background-color: white;
+      border-right: 6px solid #c5a87c;
+      border-radius: 0 30px 30px  0;
+      margin-left: 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .section-company h2{
+      padding: 250px 30px;
+      color: #1a1a1a;
+      
+    }
+
+
+     .section{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .small-title{
+      color:#3b82f6;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .main-title{
+      font-size:52px;
+      font-weight:bold;
+      margin-bottom:40px;
+      color:#111;
+    }
+
+    .cards{
+      display:flex;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      position:relative;
+      width:350px;
+      height:560px;
+      border-radius:30px;
+      overflow:hidden;
+      cursor:pointer;
+    }
+
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* طبقة التعتيم */
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.1)
+      );
+    }
+
+    /* اسم فوق الصورة */
+    .top-title{
+      position:absolute;
+      top:25px;
+      right:25px;
+      color:white;
+      font-size:30px;
+      font-weight:bold;
+      z-index:2;
+    }
+
+    /* النص السفلي */
+    .bottom-title{
+      position:absolute;
+      bottom:25px;
+      right:25px;
+      color:white;
+      font-size:26px;
+      font-weight:bold;
+      z-index:2;
+    }
+
     
     </style>
     <div id="preloader">
@@ -346,7 +444,7 @@
 <p>
 نحن فخورون دائمًا بكل ما حققناه ونسعى إلى مواصلة طريق التقدم والنمو بناءً على الرؤية المستقبلية للمملكة العربية السعودية ومرتكزات مبنية على أسس سليمة تتبع المعايير الدولية والوطنية ومواكبة التكنولوجيا مع والتركيز على تحقيق النمو المستدام. ومن هذا المنطلق، فإننا نسخر كافة إمكانياتنا لدعم وتطوير كوادرنا البشرية بكافة فئاتها، والتي تعتبر محركنا الأساسي، مع مواصلة التزامنا الكامل تجاه عملائنا وشركائنا ومجتمعنا.
 </p>
-            <a href="#" class="btn-learn-more">معرفة المزيد</a>
+            <a href="about.html" class="btn-learn-more">معرفة المزيد</a>
         </div>
 
         <div class="about-images" data-aos="fade-right">
@@ -444,15 +542,77 @@
       />
     </section>
 
+    
+
+
+    <!-- قسم معرض المشاريع -->
+ <section class="section">
+
+            <div class="section-header">
+          <h2 data-aos="fade-left" data-aos-duration="1200">المشاريع</h2>
+          <p data-aos="fade-left" data-aos-duration="1200">اخر مشاريع شمول</p>
+        </div>
+
+    <div class="cards">
+
+      <!-- الكرت الأول -->
+      <div class="card">
+        <img src="assets/مشاريع/مصنع - شركة عبر البلاد الصناعية/ELEVATION.jpeg" alt="المباني">
+
+        <div class="overlay"></div>
+
+        <div class="top-title">
+          مشاريع الهندسية
+        </div>
+
+        <div class="bottom-title">
+          المباني
+        </div>
+      </div>
+
+      <!-- الكرت الثاني -->
+      <div class="card">
+        <img src="assets/مشاريع/محطة وقود حي احد - شركة العسيس للخدمات البترولية/1.png" alt="النقل">
+
+        <div class="overlay"></div>
+
+        <div class="top-title">
+          مشاريع السلامة
+        </div>
+
+        <div class="bottom-title">
+          النقل
+        </div>
+      </div>
+
+      <!-- الكرت الثالث -->
+      <div class="card">
+        <img src="assets/مشاريع/مستودعات - فيصل بن محمد بن أحمد القاضي/1.png" alt="النفط والغاز">
+
+        <div class="overlay"></div>
+
+        <div class="top-title">
+          مشاريع المصانع
+        </div>
+
+        <div class="bottom-title">
+          الصناعات النفط والغاز
+        </div>
+      </div>
+
+    </div>
+
+    <div class="more-btn"><a href="services.html"><button>المزيد من المشاريع</button></a></div>
+
+  </section>
+
+
+
     <!-- قسم الشركات (شركاء النجاح) بتصميم الشريط المتحرك -->
     <section class="corporate-partners">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-company" data-aos="fade-up">
           <h2>شركاء النجاح</h2>
-          <p>
-            نفتخر بامتلاكنا لمجموعة من الكيانات التي تعمل بتناغم لتقديم خبرات
-            عميقة في مجالات الهندسة، السلامة، البيئة، والخدمات المساندة.
-          </p>
         </div>
         <div class="corporate-grid">
           <a
@@ -500,17 +660,6 @@
             </div>
           </a>
           <a
-            href="view.html?company=shomoul-geo-engineering"
-            class="company-card"
-            data-aos="flip-left"
-          >
-            <img src="assets/companies/g001.jpg" alt="شومول الجيوهندسية" />
-            <div class="company-overlay">
-              <h3>شمول الجيوهندسية</h3>
-              <p>استشارات جيوتقنية</p>
-            </div>
-          </a>
-          <a
             href="view.html?company=shomoul-industrial-engineering"
             class="company-card"
             data-aos="flip-left"
@@ -543,29 +692,23 @@
               <p>حلول تقنية ذكية</p>
             </div>
           </a>
+            <a
+            href="companies.html"
+            class="company-card"
+            data-aos="flip-left"
+          >
+            <img src="assets/imges/b007-Photoroom.jpg" alt="شومول الجيوهندسية" />
+            <div class="company-overlay">
+              <h3>عرض المزيد</h3>
+            </div>
+          </a>
 
       </div>
+
     </section>
 
-    <!-- قسم معرض المشاريع -->
-    <section class="projects-gallery">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle" data-aos="fade-left" data-aos-duration="1200">إنجازاتنا</span>
-          <h2 data-aos="fade-left" data-aos-duration="1200">معرض المشاريع المميزة</h2>
-          <p data-aos="fade-left" data-aos-duration="1200">
-            نستعرض لكم مجموعة من مشاريعنا التي تم تنفيذها بأعلى معايير الجودة
-            والاحترافية.
-          </p>
-        </div>
 
-        
-        </div>
-        <a href="projects.html" class="view-more-link"
-          >عرض المزيد من المشاريع</a
-        >
-      </div>
-    </section>
+
 
     <section class="partners-section">
       <div class="container">
