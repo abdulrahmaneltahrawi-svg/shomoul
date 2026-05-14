@@ -30,6 +30,13 @@ body {
     padding: 0 20px;
 }
 
+/* تخصيص الحاوية داخل الهيدر فقط لتكون Flex */
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* تنسيق اللوجو */
 .logo img {
     height: 120px; /* تحكم في مقاس اللوجو */
@@ -74,6 +81,10 @@ body {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+
+/*serives*/
+
+
 
 
 
@@ -312,35 +323,37 @@ body {
   transform: translateX(-8px);
 }
 
-/* Services Preview */
+
 .services-preview {
   padding: 80px 0;
-  background: white;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/imges/ChatGPT Image May 14, 2026, 09_58_56 AM.png');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(380px, 1fr)
-  ); /* زيادة عرض الكرت لملء الصفحة بشكل أكبر */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .service-card {
   background: #ffffff;
-  padding: 50px 35px; /* زيادة المساحة الداخلية */
+  padding: 40px 30px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  border-radius: 15px;
 }
 
 .service-card:hover {
@@ -415,6 +428,32 @@ body {
   transform: translateX(-5px);
 }
 
+
+
+.more-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 150px;
+}
+
+.more-btn button{
+   padding: 12px 35px;
+    background-color: rgba(59, 59, 59, 0.932);
+    color: #c5a87c;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.more-btn :hover{
+cursor: pointer;
+transition: 300ms;
+}
+.more-btn a{
+  text-decoration: none;
+}
 /* Company Cards */
 .company-card {
   position: relative;
@@ -910,6 +949,7 @@ footer {
 @media (max-width: 768px) {
   .about-grid,
   .service-grid,
+  .services-grid,
   .contact-grid,
   .company-content {
     grid-template-columns: 1fr;
