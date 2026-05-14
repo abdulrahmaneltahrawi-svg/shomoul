@@ -446,6 +446,8 @@ body {
 }
 .more-btn :hover{
 cursor: pointer;
+  transform: translateY(-5px);
+  background: white;
 }
 .more-btn a{
   text-decoration: none;
@@ -880,9 +882,6 @@ footer {
   padding-bottom: 8px;
   color: #b59773; /* اللون الذهبي للعناوين */
   font-weight: 700;
-  position: relative; /* لضمان عمل border-bottom بشكل صحيح */
-  text-transform: uppercase; /* جعل العناوين بأحرف كبيرة */
-  letter-spacing: 0.5px; /* إضافة تباعد بين الأحرف */
   text-align: center; /* توسيط العنوان */
   white-space: nowrap !important;
   
@@ -911,7 +910,6 @@ footer {
 
 .footer-content p {
   margin-bottom: 16px; /* زيادة الهامش السفلي للفقرات */
-  line-height: 1.9;
   color: #94a3b8;
 }
 
