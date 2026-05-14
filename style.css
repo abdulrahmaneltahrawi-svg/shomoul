@@ -841,31 +841,35 @@ cursor: pointer;
 footer .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 50px;
+  gap: 60px;
   background-color: transparent;
   margin: 0 auto;
   direction: rtl;
-  max-width: 1400px; /* تم زيادة العرض ليسمح للأقسام بالظهور بجانب بعضها */
+  max-width: 1200px; /* تم زيادة العرض ليسمح للأقسام بالظهور بجانب بعضها */
   width: 95%;
-  justify-items: center; /* توسيط العناصر في الـ grid */
+  justify-content: center; /* توسيط الشبكة نفسها في المنتصف */
+  justify-items: center; /* توسيط محتويات العناصر داخل الـ grid */
   text-align: center; /* توسيط النصوص */
 }
 
 footer {
   background-color: #0f1115; /* أسود فخم مائل للكحلي العميق */
   border-top: 4px solid #b59773;
-  padding: 60px 0 0; /* إزالة الحشو الأفقي للسماح للشريط السفلي بالتمدد بكامل العرض */
+  padding: 30px 0; /* إزالة الحشو الأفقي للسماح للشريط السفلي بالتمدد بكامل العرض */
   color: #e2e8f0; /* تحديد لون النص الافتراضي للفوتر */
 }
 
 .footer-content {
-  text-align: center; /* توسيط النصوص */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   margin-bottom: 50px;
   background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
-  padding: 30px 60px; /* تقليل البادينج الجانبي لتوفير مساحة */
+  padding: 20px 20px; /* تقليل البادينج الجانبي لتوفير مساحة */
   border-radius: 30px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
-  max-width: 900px;
+  width: 100%;
 }
 
 .footer-content h3 {
@@ -881,6 +885,7 @@ footer {
   letter-spacing: 0.5px; /* إضافة تباعد بين الأحرف */
   text-align: center; /* توسيط العنوان */
   white-space: nowrap !important;
+  
 }
 
 .footer-content a {
@@ -894,11 +899,13 @@ footer {
   color: #b59773;
   cursor: pointer;
   transform: translateX(-5px);
+  transform: scale(1.05); /* تغيير التأثير ليكون تكبير بدلاً من إزاحة جانبية للحفاظ على التوسط */
 }
 
 .footer-content li {
   margin-bottom: 12px;
   list-style: none;
+  padding: 0;
   white-space: nowrap !important;
 }
 
