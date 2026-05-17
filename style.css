@@ -843,7 +843,7 @@ cursor: pointer;
 footer .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 60px;
+  gap: 60px; /* زيادة المسافة بين الصناديق لمنع الالتصاق */
   background-color: transparent;
   margin: 0 auto;
   direction: rtl;
@@ -851,6 +851,7 @@ footer .container {
   width: 95%;
   justify-content: center; /* توسيط الشبكة نفسها في المنتصف */
   justify-items: center; /* توسيط محتويات العناصر داخل الـ grid */
+  align-items: stretch; /* لضمان تساوي ارتفاع الكروت في نفس الصف */
   text-align: center; /* توسيط النصوص */
 }
 
@@ -866,7 +867,6 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 50px;
   background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
   padding: 20px 20px; /* تقليل البادينج الجانبي لتوفير مساحة */
   border-radius: 30px;
@@ -883,8 +883,6 @@ footer {
   color: #b59773; /* اللون الذهبي للعناوين */
   font-weight: 700;
   text-align: center; /* توسيط العنوان */
-  white-space: nowrap !important;
-  
 }
 
 .footer-content a {
@@ -901,11 +899,16 @@ footer {
   transform: scale(1.05); /* تغيير التأثير ليكون تكبير بدلاً من إزاحة جانبية للحفاظ على التوسط */
 }
 
+.footer-content ul {
+  padding: 0; /* تصفير الحشو لضمان توسط العناصر تماماً */
+  margin: 0;
+  list-style: none;
+}
+
 .footer-content li {
   margin-bottom: 12px;
   list-style: none;
   padding: 0;
-  white-space: nowrap !important;
 }
 
 .footer-content p {
