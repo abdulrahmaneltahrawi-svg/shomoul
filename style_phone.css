@@ -59,19 +59,23 @@
     .header-nav ul li a {
         color: #333 !important;
         font-size: 18px !important;
-        padding: 30px !important;
-        display: inline-block !important; /* يمنع تمدد الرابط لكامل العرض */
+        padding: 15px 20px !important;
+        display: block !important;
+        flex: 1;
     }
 
     .dropdown-toggle {
         display: flex;
         align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        cursor: pointer;
+        border-right: 1px solid #f0f0f0; /* إضافة فاصل بسيط بين النص والسهم */
     }
 
     .arrow {
         border-color: #c5a059 !important; /* تغيير لون السهم للذهبي ليظهر على الخلفية البيضاء */
-        margin-bottom: 2px !important;
-        margin-left: 50px;
+        margin: 0 !important;
     }
 
     /* القائمة المنسدلة في الجوال */
