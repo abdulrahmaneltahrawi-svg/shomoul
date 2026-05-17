@@ -928,7 +928,7 @@ footer .container {
   margin: 0 auto;
   direction: rtl;
   max-width: 1200px; /* تم زيادة العرض ليسمح للأقسام بالظهور بجانب بعضها */
-  width: 95%;
+  width: 100%;
   justify-content: center; /* توسيط الشبكة نفسها في المنتصف */
   justify-items: center; /* توسيط محتويات العناصر داخل الـ grid */
   align-items: stretch; /* لضمان تساوي ارتفاع الكروت في نفس الصف */
