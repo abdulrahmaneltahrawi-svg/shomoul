@@ -3,52 +3,164 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg" />
+    <link
+      rel="icon"
+      href="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_phone.css" />
     <title>خدماتنا - مجموعة شمول</title>
     <meta
       name="description"
       content="اكتشف خدمات مجموعة شمول المتكاملة: تصاميم هندسية، رفع مساحي، إشراف فني، استشارات سلامة، ودراسات بيئية وجيوتقنية معتمدة."
     />
     <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="style_phone.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_phone.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
+    <style>
+       /*projects section*/
+      .section {
+        padding: 60px;
+      }
+      .card-filter {
+        position: relative;
+        width: 350px;
+        height: 360px;
+        border-radius: 30px;
+        overflow: hidden;
+        cursor: pointer;
+      }
 
+
+
+      .card-filter img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .card-filter:hover {
+        cursor: pointer;
+        background-color: black;
+      }
+
+
+      
+    </style>
     <div id="header-placeholder"></div>
-        <!-- Page Header -->
+    <!-- Page Header -->
     <section class="page-header">
       <div class="container">
         <h1>مشاريع مجموعة شمول</h1>
       </div>
     </section>
 
+    <!-- قسم معرض المشاريع -->
+    <section class="section">
+      <div class="project-title">
+        <h1>اخر مشاريع شمول</h1>
+      </div>
 
+      <div class="cards">
+        <!-- الكرت الأول -->
+        <div class="card">
+          <img
+            src="assets/مشاريع/مصنع - شركة عبر البلاد الصناعية/ELEVATION.jpeg"
+            alt="المباني"
+          />
 
+          <div class="overlay"></div>
 
+          <div class="top-title">مشاريع الهندسية</div>
 
- 
-        
-      
+          <div class="bottom-title">المباني</div>
+        </div>
 
+        <!-- الكرت الثاني -->
+        <div class="card">
+          <img
+            src="assets/مشاريع/محطة وقود حي احد - شركة العسيس للخدمات البترولية/1.png"
+            alt="النقل"
+          />
+
+          <div class="overlay"></div>
+
+          <div class="top-title">مشاريع السلامة</div>
+
+          <div class="bottom-title">النقل</div>
+        </div>
+
+        <!-- الكرت الثالث -->
+        <div class="card">
+          <img
+            src="assets/مشاريع/مستودعات - فيصل بن محمد بن أحمد القاضي/1.png"
+            alt="النفط والغاز"
+          />
+
+          <div class="overlay"></div>
+
+          <div class="top-title">مشاريع المصانع</div>
+
+          <div class="bottom-title">الصناعات النفط والغاز</div>
+        </div>
       </div>
     </section>
 
-        <!-- زر واتساب العائم -->
-    <a href="https://api.whatsapp.com/send/?phone=966920031520" class="whatsapp-float" target="_blank">
-      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp">
+<!--=============filter projects=============-->
+    <section>
+      <div class="project-title">
+        <h1>تصنيفات مشاريع شمول</h1>
+      </div>
+
+      <div class="cards">
+        <!-- الكرت الأول -->
+        <div class="card-filter">
+          <img
+            src="assets/companies/e007.jpg"
+            alt="المباني"
+          />   
+
+        </div>
+
+        <!-- الكرت الثاني -->
+        <div class="card-filter">
+          <img
+            src="assets/companies/s00-3.jpg"
+            alt="النقل"
+          />
+
+        </div>
+
+        <!-- الكرت الثالث -->
+        <div class="card-filter">
+          <img
+            src="assets/companies/ie06.jpg"
+            alt="النفط والغاز"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- زر واتساب العائم -->
+    <a
+      href="https://api.whatsapp.com/send/?phone=966920031520"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" />
     </a>
-    
-
-
-
 
     <div id="footer-placeholder"></div>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
     <script src="js/effect.js"></script>
   </body>

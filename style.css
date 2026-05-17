@@ -511,6 +511,76 @@ cursor: pointer;
   text-decoration: none;
 }
 
+ /*projects section*/
+      .section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px;
+      }
+
+      .cards {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        position: relative;
+        width: 350px;
+        height: 560px;
+        border-radius: 30px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        cursor: pointer;
+        background: #020202ab;
+      }
+
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* طبقة التعتيم */
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.1)
+        );
+      }
+
+      /* اسم فوق الصورة */
+      .top-title {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        z-index: 2;
+      }
+
+      /* النص السفلي */
+      .bottom-title {
+        position: absolute;
+        bottom: 25px;
+        color: white;
+        background-color: #0f111517;
+        padding: 20px 80px;
+        font-size: 26px;
+        font-weight: bold;
+        z-index: 2;
+      }
+
+      
 /* Company Cards */
 
  .section-company{
