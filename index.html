@@ -111,24 +111,86 @@
 
 .experience-hero {
     position: relative;
-    height: 100vh; /* طول القسم، يمكنك تعديله حسب الحاجة */
+    height: 100vh; /* طول القسم كما هو */
     width: 100%;
-    background-image: url('assets/imges/1.png'); /* ضع صورتك هنا */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* اختيار اختياري ليعطي تأثير parallax بسيط */
+    overflow: hidden; /* ضروري جداً لمنع الصور من الخروج من الحواف أثناء الزوم */
 }
 
-/* طبقة تعتيم خفيفة جداً كما في الصورة لجعل النص واضحاً */
+/* 1. حاوية السلايدشو الجديدة الخلفية */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* تكون خلف طبقة التعتيم والنصوص */
+}
+
+/* 2. التنسيق المشترك للصور الثلاث */
+.hero-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* مخفية في البداية وتظهر بالتبادل */
+    
+    /* استدعاء أنيميشن الـ Fade والـ Zoom معاً (المدة الإجمالية 24 ثانية) */
+    animation: slideShowAndZoom 24s infinite ease-in-out;
+}
+
+/* 3. تعيين الصور الثلاث والـ Delay الخاص بكل واحدة */
+.hero-slideshow .slide-1 {
+    background-image: url('assets/imges/1.png'); /* صورتك الأساسية الأولى */
+    animation-delay: 0s;
+}
+
+.hero-slideshow .slide-2 {
+    background-image: url('assets/imges/MAK_0363-1.png'); /* الثانية */
+    animation-delay: 8s; /* تبدأ بعد 8 ثوانٍ */
+}
+
+.hero-slideshow .slide-3 {
+    background-image: url('assets/imges/1920.jpg'); /* الثالثة */
+    animation-delay: 16s; /* تبدأ بعد 16 ثانية */
+}
+
+/* 4. طبقة التعتيم الخاصة بك مع الحفاظ على التنسيقات وتوسيط العناصر */
 .hero-overlay {
     position: absolute;
-    top:0; left: 0;
+    top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.537); 
+    background: rgba(0, 0, 0, 0.537); /* درجة التعتيم الدقيقة التي اخترتها */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 2; /* فوق الصور وتحت المحتوى النصي */
+}
+
+/* 5. أنيميشن السلايدشو والزوم البطيء المتناسق */
+@keyframes slideShowAndZoom {
+    0% {
+        opacity: 0;
+        transform: scale(1); /* تبدأ بحجمها الطبيعي */
+    }
+    8% {
+        opacity: 1; /* تظهر بالكامل سلاسة (Fade In) */
+    }
+    33.33% {
+        opacity: 1;
+        transform: scale(1.12); /* تكبير بطيء يصل إلى 12% ليعطي تأثير الحركة */
+    }
+    41.66% {
+        opacity: 0; /* تختفي بسلاسة (Fade Out) */
+        transform: scale(1.15);
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .content-box h2 {
@@ -518,11 +580,17 @@
     <div class="page-content">
       
 <section class="experience-hero">
+    <div class="hero-slideshow">
+        <div class="slide slide-1"></div>
+        <div class="slide slide-2"></div>
+        <div class="slide slide-3"></div>
+    </div>
+
     <div class="hero-overlay">
         <div class="content-box">
             <h2 data-aos="fade-down" data-aos-delay="500">مجموعة شمول للإستشارات الهندسية</h2>
             <h3 data-aos="fade-down" data-aos-delay="500">SHOMOUL CONSULTATION GROUP</h3>
-<a href="#about-section" class="btn-about" data-aos="fade-up" data-aos-delay="1500">About Us</a>
+            <a href="#about-section" class="btn-about" data-aos="fade-up" data-aos-delay="1500">About Us</a>
         </div>
     </div>
 </section>
