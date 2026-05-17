@@ -55,6 +55,17 @@ function setupMobileMenu() {
       menuToggle.classList.toggle("active");
     });
 
+    // تفعيل فتح وإغلاق القوائم المنسدلة (الأفرع) عند الضغط
+    const dropdownToggles = headerNav.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const parentLi = this.closest('.has-dropdown');
+        parentLi.classList.toggle('open');
+      });
+    });
+
     // إغلاق القائمة عند النقر خارجها
     document.addEventListener("click", function (event) {
       if (
