@@ -26,6 +26,18 @@
 
   <body>
     <style>
+      .page-header{
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+
+/* صور الهيدر */
+.contact-hero-img{
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
       /* حاوية الخريطة للتوسيط */
       .map-container {
         display: flex;
@@ -129,14 +141,16 @@
         }
       }
 
-      .contactme{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 120px;
-        margin-left: 30px;
-    
-      }
+/* قسم التواصل */
+.contactme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 5%;
+  flex-wrap: wrap;
+  background: #fff;
+}
 
       .contact-section {
         display: flex;
@@ -253,7 +267,13 @@
       </div>
     </section>
 
-    <img src="assets/imges/ChatGPT Image May 17, 2026, 10_54_22 AM.png" alt="">
+
+    <img 
+class="contact-hero-img"
+src="assets/imges/ChatGPT Image May 17, 2026, 10_54_22 AM.png" 
+alt="">
+
+
 
 
     <!-- Contact Info -->
