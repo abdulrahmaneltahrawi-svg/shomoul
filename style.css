@@ -853,6 +853,7 @@ footer .container {
   justify-items: center; /* توسيط محتويات العناصر داخل الـ grid */
   align-items: stretch; /* لضمان تساوي ارتفاع الكروت في نفس الصف */
   text-align: center; /* توسيط النصوص */
+  padding: 50px;
 }
 
 footer {
@@ -895,20 +896,47 @@ footer {
 .footer-content a:hover {
   color: #b59773;
   cursor: pointer;
-  transform: translateX(-5px);
   transform: scale(1.05); /* تغيير التأثير ليكون تكبير بدلاً من إزاحة جانبية للحفاظ على التوسط */
 }
 
 .footer-content ul {
-  padding: 0; /* تصفير الحشو لضمان توسط العناصر تماماً */
+  padding: 0 !important; /* إلغاء أي حشو افتراضي يسبب انحراف النص */
   margin: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* لضمان توسط الروابط تماماً تحت العنوان */
+}
+
+/* تنسيق خاص لقائمة أيقونات التواصل الاجتماعي لتكون في صف واحد */
+.footer-content ul.social-links-list {
+  flex-direction: row; /* جعل الأيقونات في صف واحد */
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 0; /* إزالة الهامش السفلي من قائمة الأيقونات نفسها */
 }
 
 .footer-content li {
   margin-bottom: 12px;
   list-style: none;
   padding: 0;
+  text-align: center;
+}
+
+.footer-content ul.social-links-list li {
+  margin-bottom: 0; /* إزالة الهامش السفلي من عناصر القائمة (الأيقونات) لضمان استقامتها */
+  width: auto; /* السماح للعنصر بأخذ العرض الطبيعي لمحتواه (الأيقونة) */
+}
+
+.footer-content ul.social-links-list a {
+  display: flex;
+  flex-direction: column; /* وضع الأيقونة فوق النص */
+  align-items: center;
+  font-size: 11px; /* تصغير حجم النص لكي لا يزاحم الأيقونات */
+  gap: 5px;
+  color: #94a3b8;
 }
 
 .footer-content p {
