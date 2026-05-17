@@ -152,7 +152,6 @@ body {
 .search-icon img {
  width: 30px;
  filter: brightness(0) invert(1);
- margin-right: 20px; /* استخدام اليمين للتناسب مع الترتيب العربي */
 }
 
 /* إضافة السهم الصغير (اختياري) */
@@ -1065,6 +1064,7 @@ footer {
   cursor: pointer;
   padding: 10px;
   margin-left: 10px;
+  filter: brightness(0) invert(1);
 }
 
 .menu-toggle span {
@@ -1269,13 +1269,13 @@ footer {
 
   /* تصحيح اسم الكلاس وإزالة الهوامش الكبيرة في الجوال */
   .search-icon img {
-    margin: 0 !important;
+    margin-left: 50px;
     width: 22px !important;
     height: 22px !important;
     position: static !important;
 
     /* هذا الفلتر يحول الصورة السوداء إلى بيضاء تماماً */
-    filter: brightness(3) invert(0) !important;
+    filter: brightness(0) invert(1) !important;
     transition:
       transform 0.3s ease,
       filter 0.3s ease;
