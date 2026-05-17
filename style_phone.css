@@ -6,34 +6,48 @@
     }
 
     .logo img {
-        height: 60px !important; /* تصغير اللوجو في الجوال */
+        height: 50px !important; /* تصغير اللوجو أكثر في الجوال */
         width: auto !important;
+        max-width: 150px !important;
     }
 
     .menu-toggle {
         display: flex !important; /* إظهار زر القائمة */
         order: 1;
+        z-index: 1002;
+    }
+
+    .menu-toggle span {
+        background: #1a1a1a !important;
     }
 
     .search-icon {
         order: 3;
-        margin-left: 30px;
+        margin-left: 15px;
+    }
+
+    .search-icon img {
+        width: 25px;
     }
 
     .header-nav {
         display: none; /* مخفية افتراضياً وتظهر عند الضغط عبر JS */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
         background-color: white;
         flex-direction: column;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        padding: 20px 0;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding: 80px 20px 20px;
+        z-index: 1001;
+        overflow-y: auto;
     }
 
     .header-nav.active {
-        display: block;
+        display: flex;
     }
 
     .header-nav ul {
@@ -58,8 +72,8 @@
 
     .header-nav ul li a {
         color: #333 !important;
-        font-size: 18px !important;
-        padding: 15px 20px !important;
+        font-size: 16px !important;
+        padding: 15px 10px !important;
         display: block !important;
         flex: 1;
     }
@@ -68,7 +82,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 20px;
+        padding: 0 10px;
         cursor: pointer;
         border-right: 1px solid #f0f0f0; /* إضافة فاصل بسيط بين النص والسهم */
     }
@@ -85,10 +99,16 @@
         background-color: #f9f9f9 !important;
         box-shadow: none !important;
         display: none !important; /* تظهر فقط عند إضافة كلاس open */
+        padding-right: 20px !important;
     }
 
     .has-dropdown.open .dropdown-menu {
         display: block !important;
+    }
+
+    .dropdown-menu li a {
+        font-size: 14px !important;
+        padding: 10px 15px !important;
     }
 
     /* --- قسم Hero --- */
@@ -107,42 +127,95 @@
         padding: 30px 20px;
         box-shadow: none;
         text-align: center;
+        margin: 0 auto;
     }
 
     .title-card-left h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .title-card-left .sub-title {
+        font-size: 0.9rem;
+    }
+
+    /* Hero section in index.html */
+    .experience-hero {
+        height: 60vh !important;
+    }
+
+    .content-box h2 {
+        font-size: 28px !important;
+        margin-top: 100px !important;
+        line-height: 1.3 !important;
+    }
+
+    .content-box h3 {
+        font-size: 18px !important;
+        line-height: 1.3 !important;
+    }
+
+    .btn-about {
+        padding: 10px 30px !important;
+        font-size: 16px !important;
     }
 
     /* --- العناوين والشبكات --- */
     .section-header {
-        margin: 20px;
-        padding: 20px;
+        margin: 20px 10px;
+        padding: 20px 15px;
     }
 
     .section-header h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .services-grid, 
     .contact-grid, 
     .about-grid {
         grid-template-columns: 1fr !important;
-        padding: 0 20px;
+        padding: 0 15px;
+        gap: 20px !important;
     }
 
     .corporate-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px;
+        gap: 10px;
         padding: 10px;
     }
 
     .corporate-grid img {
-        height: 120px;
+        height: 100px;
+        max-width: 100%;
+    }
+
+    /* Features grid */
+    .features-grid {
+        padding: 15px 5px;
+        gap: 15px;
+    }
+
+    .feature-card {
+        flex: 0 0 280px !important;
+    }
+
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+
+    .features-btn {
+        font-size: 12px;
+        padding: 6px 15px;
     }
 
     /* --- المشاريع --- */
     .projects-grid {
         grid-template-columns: 1fr !important;
+        padding: 0 15px;
     }
 
     .project-images-inner {
@@ -150,40 +223,142 @@
     }
 
     .project-images-inner img {
-        height: 300px;
+        height: 250px;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Cards section */
+    .cards {
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 100% !important;
+        height: 400px !important;
+    }
+
+    .top-title {
+        font-size: 20px !important;
+        top: 15px;
+        right: 15px;
+    }
+
+    .bottom-title {
+        font-size: 18px !important;
+        bottom: 15px;
+        padding: 15px 30px !important;
     }
 
     /* --- الشركة (About) --- */
     .about-image img {
         margin: 20px auto;
+        max-width: 100%;
     }
 
     .stat-card h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    .stat-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Stats section */
+    .stats-section {
+        padding: 40px 0 !important;
+    }
+
+    .stats-grid {
+        gap: 20px !important;
+    }
+
+    .stat-item {
+        min-width: 150px !important;
+    }
+
+    .stat-item h2 {
+        font-size: 2rem !important;
+    }
+
+    .stat-item p {
+        font-size: 0.8rem !important;
+    }
+
+    /* About container */
+    .about-container {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 0 15px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .about-text p {
+        font-size: 0.95rem !important;
+    }
+
+    .about-text .about-subtitle {
+        font-size: 1.2rem !important;
+    }
+
+    .image-wrapper img {
+        height: 300px !important;
+    }
+
+    .img-1, .img-2 {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+
+    .about-images {
+        flex-direction: column;
+        gap: 15px;
     }
 
     /* --- الفوتر --- */
     footer .container {
         grid-template-columns: 1fr !important;
-        gap: 30px;
-        padding: 30px 20px;
+        gap: 20px;
+        padding: 30px 15px;
     }
 
     .footer-content {
-        padding: 20px;
+        padding: 20px 15px;
+    }
+
+    .footer-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-content a {
+        font-size: 0.9rem;
     }
 
     .section-company {
         writing-mode: horizontal-tb;
-        margin: 20px;
+        margin: 20px 10px;
         border-right: none;
         border-top: 6px solid #c5a87c;
         border-radius: 30px;
     }
 
     .section-company h2 {
-        padding: 30px;
+        padding: 20px;
         text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .bottom-bar {
+        padding: 15px 5%;
+    }
+
+    .bottom-bar p {
+        font-size: 11px;
     }
 
     /* زر واتساب */
@@ -192,5 +367,201 @@
         height: 50px;
         bottom: 20px;
         right: 20px;
+    }
+
+    .whatsapp-float img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Page header */
+    .page-header {
+        padding: 80px 0 40px !important;
+    }
+
+    .page-header h1 {
+        font-size: 2rem !important;
+    }
+
+    .page-header p {
+        font-size: 1rem !important;
+        padding: 0 20px;
+    }
+
+    /* Service cards */
+    .service-card {
+        padding: 30px 20px !important;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .service-card p {
+        font-size: 0.95rem !important;
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Contact cards */
+    .contact-card {
+        padding: 40px 15px !important;
+    }
+
+    .contact-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .contact-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Clients section */
+    .clients-section h2 {
+        font-size: 2.5rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    .title-top {
+        font-size: 16px !important;
+        padding: 8px 20px !important;
+    }
+
+    /* More buttons */
+    .more-btn {
+        margin-top: 50px !important;
+    }
+
+    .more-btn button {
+        padding: 10px 25px !important;
+        font-size: 14px !important;
+    }
+
+    /* Wide image */
+    .wide-image-section img {
+        max-height: 400px !important;
+    }
+
+    /* Process section */
+    .process-section {
+        width: 95% !important;
+        margin: 0 auto !important;
+        padding: 40px 20px !important;
+    }
+
+    .process-wrapper {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .process-group {
+        flex-direction: column !important;
+    }
+
+    /* Split section */
+    .split-section {
+        padding: 40px 10px !important;
+    }
+
+    .split-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .split-content {
+        padding: 30px 20px !important;
+    }
+
+    .split-content h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .content-description {
+        font-size: 0.9rem !important;
+    }
+
+    .split-image-wrapper {
+        order: -1 !important;
+    }
+
+    .split-image {
+        max-width: 100% !important;
+    }
+}
+
+/* إضافة تنسيقات للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .header-nav {
+        width: 90%;
+    }
+
+    .logo img {
+        height: 45px !important;
+        max-width: 120px !important;
+    }
+
+    .content-box h2 {
+        font-size: 22px !important;
+        margin-top: 80px !important;
+    }
+
+    .content-box h3 {
+        font-size: 14px !important;
+    }
+
+    .btn-about {
+        padding: 8px 20px !important;
+        font-size: 14px !important;
+    }
+
+    .corporate-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .corporate-grid img {
+        height: 80px;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .stat-item h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .card {
+        height: 350px !important;
+    }
+
+    .top-title {
+        font-size: 16px !important;
+    }
+
+    .bottom-title {
+        font-size: 14px !important;
+        padding: 10px 20px !important;
     }
 }

@@ -49,10 +49,42 @@ function setupMobileMenu() {
   const menuToggle = document.getElementById("menu-toggle");
   const headerNav = document.getElementById("header-nav");
 
+  // إنشاء overlay للقائمة الجانبية
+  const overlay = document.createElement('div');
+  overlay.className = 'menu-overlay';
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  `;
+  document.body.appendChild(overlay);
+
   if (menuToggle && headerNav) {
     menuToggle.addEventListener("click", function () {
       headerNav.classList.toggle("active");
       menuToggle.classList.toggle("active");
+      
+      // إظهار/إخفاء الـ overlay
+      if (headerNav.classList.contains("active")) {
+        overlay.style.display = "block";
+        setTimeout(() => {
+          overlay.style.opacity = "1";
+        }, 10);
+        document.body.style.overflow = "hidden"; // منع التمرير في الخلفية
+      } else {
+        overlay.style.opacity = "0";
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 300);
+        document.body.style.overflow = ""; // إعادة التمرير
+      }
     });
 
     // تفعيل فتح وإغلاق القوائم المنسدلة (الأفرع) عند الضغط
@@ -66,14 +98,31 @@ function setupMobileMenu() {
       });
     });
 
+    // إغلاق القائمة عند النقر على الـ overlay
+    overlay.addEventListener("click", function () {
+      headerNav.classList.remove("active");
+      menuToggle.classList.remove("active");
+      overlay.style.opacity = "0";
+      setTimeout(() => {
+        overlay.style.display = "none";
+      }, 300);
+      document.body.style.overflow = "";
+    });
+
     // إغلاق القائمة عند النقر خارجها
     document.addEventListener("click", function (event) {
       if (
         !headerNav.contains(event.target) &&
-        !menuToggle.contains(event.target)
+        !menuToggle.contains(event.target) &&
+        !overlay.contains(event.target)
       ) {
         headerNav.classList.remove("active");
         menuToggle.classList.remove("active");
+        overlay.style.opacity = "0";
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 300);
+        document.body.style.overflow = "";
       }
     });
   }
