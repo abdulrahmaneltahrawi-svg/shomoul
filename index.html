@@ -73,7 +73,6 @@
         animation: loading 2s infinite;
       }
 
-
       /* الكلاسات التي ستفعلها الجافا سكريبت */
       .appear {
         opacity: 1 !important;
@@ -108,444 +107,435 @@
         }
       }
 
-/*hero========================================*/
-.experience-hero {
-    position: relative;
-    height: 100vh; /* طول القسم كما هو */
-    width: 100%;
-    overflow: hidden; /* ضروري جداً لمنع الصور من الخروج من الحواف أثناء الزوم */
-}
+      /*hero========================================*/
+      .experience-hero {
+        position: relative;
+        height: 100vh; /* طول القسم كما هو */
+        width: 100%;
+        overflow: hidden; /* ضروري جداً لمنع الصور من الخروج من الحواف أثناء الزوم */
+      }
 
-/* 1. حاوية السلايدشو الجديدة الخلفية */
-.hero-slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* تكون خلف طبقة التعتيم والنصوص */
-}
+      /* 1. حاوية السلايدشو الجديدة الخلفية */
+      .hero-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; /* تكون خلف طبقة التعتيم والنصوص */
+      }
 
-/* 2. التنسيق المشترك للصور الثلاث */
-.hero-slideshow .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0; /* مخفية في البداية وتظهر بالتبادل */
-    
-    /* استدعاء أنيميشن الـ Fade والـ Zoom معاً (المدة الإجمالية 24 ثانية) */
-    animation: slideShowAndZoom 24s infinite ease-in-out;
-}
+      /* 2. التنسيق المشترك للصور الثلاث */
+      .hero-slideshow .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0; /* مخفية في البداية وتظهر بالتبادل */
 
-/* 3. تعيين الصور الثلاث والـ Delay الخاص بكل واحدة */
-.hero-slideshow .slide-1 {
-    background-image: url('assets/imges/1.png'); /* صورتك الأساسية الأولى */
-    animation-delay: 0s;
-}
+        /* استدعاء أنيميشن الـ Fade والـ Zoom معاً (المدة الإجمالية 24 ثانية) */
+        animation: slideShowAndZoom 24s infinite ease-in-out;
+      }
 
-.hero-slideshow .slide-2 {
-    background-image: url('assets/imges/MAK_0363-1.png'); /* الثانية */
-    animation-delay: 8s; /* تبدأ بعد 8 ثوانٍ */
-}
+      /* 3. تعيين الصور الثلاث والـ Delay الخاص بكل واحدة */
+      .hero-slideshow .slide-1 {
+        background-image: url("assets/imges/1.png"); /* صورتك الأساسية الأولى */
+        animation-delay: 0s;
+      }
 
-.hero-slideshow .slide-3 {
-    background-image: url('assets/imges/1920.jpg'); /* الثالثة */
-    animation-delay: 16s; /* تبدأ بعد 16 ثانية */
-}
+      .hero-slideshow .slide-2 {
+        background-image: url("assets/imges/MAK_0363-1.png"); /* الثانية */
+        animation-delay: 8s; /* تبدأ بعد 8 ثوانٍ */
+      }
 
-/* 4. طبقة التعتيم الخاصة بك مع الحفاظ على التنسيقات وتوسيط العناصر */
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.537); /* درجة التعتيم الدقيقة التي اخترتها */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 2; /* فوق الصور وتحت المحتوى النصي */
-}
+      .hero-slideshow .slide-3 {
+        background-image: url("assets/imges/1920.jpg"); /* الثالثة */
+        animation-delay: 16s; /* تبدأ بعد 16 ثانية */
+      }
 
-/* 5. أنيميشن السلايدشو والزوم البطيء المتناسق */
-@keyframes slideShowAndZoom {
-    0% {
-        opacity: 0;
-        transform: scale(1); /* تبدأ بحجمها الطبيعي */
-    }
-    8% {
-        opacity: 1; /* تظهر بالكامل سلاسة (Fade In) */
-    }
-    33.33% {
-        opacity: 1;
-        transform: scale(1.12); /* تكبير بطيء يصل إلى 12% ليعطي تأثير الحركة */
-    }
-    41.66% {
-        opacity: 0; /* تختفي بسلاسة (Fade Out) */
-        transform: scale(1.15);
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-
-
-
-
-
-
-
-.content-box h2 {
-    color: #e0e0e0;
-    font-size: 48px; /* حجم الخط عريض وكبير */
-    font-weight: 700;
-    max-width: 800px;
-    margin-top: 200px;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* ظل خفيف للنص لزيادة الوضوح */
-}
-
-.content-box h3 {
-    color: #ffffff;
-    font-size: 28px; /* حجم الخط عريض وكبير */
-    font-weight: 700;
-    max-width: 800px;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* ظل خفيف للنص لزيادة الوضوح */
-}
-
-/* تنسيق الزر الأبيض */
-.btn-about {
-    display: inline-block;
-    padding: 12px 45px;
-    background-color: #ffffff;
-    color: #c5a87c; /* لون النص داخل الزر */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    border-radius: 10px; /* زوايا منحنية كما في الصورة */
-    transition: all 0.3s ease;
-}
-
-.btn-about:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-3px); /* تأثير بسيط عند التمرير */
-}
-
-
-
-
-
-/*about index================================================================*/
-.about-ecg-section {
-    padding: 100px 0;
-    position: relative;
-    background-color: #ffffff;
-    /* إضافة صورة هندسية خفيفة في الخلفية (Watermark) */ 
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: contain;
-    overflow: hidden;
-}
-
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* تقسيم الصفحة لنصفين */
-    gap: 50px;
-    align-items: center;
-}
-
-.about-text .about-subtitle {
-    color: #c5a87c;
-    font-weight: 700;
-    font-size: 28px;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.about-text h2 {
-    font-size: 42px;
-    color: #1a1a1a;
-    font-weight: 800;
-    margin-bottom: 25px;
-    line-height: 1.2;
-}
-
-.about-text p {
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 35px;
-    font-size: 17px;
-}
-
-.btn-learn-more {
-    display: inline-block;
-    padding: 12px 35px;
-    background-color: rgba(59, 59, 59, 0.932);
-    color: #c5a87c;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.btn-learn-more:hover{
-    background:white;
-    border: 1px solid #c5a87c;
-}
-
-
-/* تنسيق الصور المتداخلة */
-.about-images {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 30px; /* زوايا منحنية كبيرة كما في الصورة */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.image-wrapper img:hover{
-  transform: translateY(-7px);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-
-}
-
-.img-1 { width: 250px; margin-top: -40px; } /* صورة مرتفعة قليلاً */
-.img-2 { width: 250px; margin-top: 40px; }  /* صورة نازلة قليلاً */
-
-/* للموبايل */
-@media (max-width: 992px) {
-    .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .about-images {
+      /* 4. طبقة التعتيم الخاصة بك مع الحفاظ على التنسيقات وتوسيط العناصر */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.537
+        ); /* درجة التعتيم الدقيقة التي اخترتها */
+        display: flex;
         justify-content: center;
-        margin-top: 50px;
-    }
-}
+        align-items: center;
+        text-align: center;
+        z-index: 2; /* فوق الصور وتحت المحتوى النصي */
+      }
 
-/*==============shomoul state======================*/
-.stats-section {
-    padding: 80px 0;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/imges/ChatGPT Image May 14, 2026, 10_42_22 AM.png');
-    background-size: cover;
-    background-position: center;
-    
-    color: white;
-    text-align: center;
-}
+      /* 5. أنيميشن السلايدشو والزوم البطيء المتناسق */
+      @keyframes slideShowAndZoom {
+        0% {
+          opacity: 0;
+          transform: scale(1); /* تبدأ بحجمها الطبيعي */
+        }
+        8% {
+          opacity: 1; /* تظهر بالكامل سلاسة (Fade In) */
+        }
+        33.33% {
+          opacity: 1;
+          transform: scale(
+            1.12
+          ); /* تكبير بطيء يصل إلى 12% ليعطي تأثير الحركة */
+        }
+        41.66% {
+          opacity: 0; /* تختفي بسلاسة (Fade Out) */
+          transform: scale(1.15);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
 
-.stats-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap
-}
-.stats-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+      .content-box h2 {
+        color: #e0e0e0;
+        font-size: 48px; /* حجم الخط عريض وكبير */
+        font-weight: 700;
+        max-width: 800px;
+        margin-top: 200px;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* ظل خفيف للنص لزيادة الوضوح */
+      }
 
-.stat-item {
-    flex: 1;
-    min-width: 200px;
-}
+      .content-box h3 {
+        color: #ffffff;
+        font-size: 28px; /* حجم الخط عريض وكبير */
+        font-weight: 700;
+        max-width: 800px;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* ظل خفيف للنص لزيادة الوضوح */
+      }
 
-.stat-icon img {
-    width: 50px;
-    margin-bottom: 15px;
-    filter: brightness(0) invert(1); /* لجعل الأيقونات بيضاء */
-}
+      /* تنسيق الزر الأبيض */
+      .btn-about {
+        display: inline-block;
+        padding: 12px 45px;
+        background-color: #ffffff;
+        color: #c5a87c; /* لون النص داخل الزر */
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 10px; /* زوايا منحنية كما في الصورة */
+        transition: all 0.3s ease;
+      }
 
-.stat-item h2 {
-    font-size: 45px;
-    font-weight: 800;
-    margin: 10px 0;
-    color:white;
-}
+      .btn-about:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-3px); /* تأثير بسيط عند التمرير */
+      }
 
-.stat-item p {
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
+      /*about index================================================================*/
+      .about-ecg-section {
+        padding: 100px 0;
+      }
 
+      .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* تقسيم الصفحة لنصفين */
+        gap: 50px;
+        align-items: center;
+      }
 
-/*wide interior img=====================================*/
-    .wide-image-section{
-      width: 100%;
-      
-    }
+      .about-text .about-subtitle {
+        color: #c5a87c;
+        font-weight: 700;
+        font-size: 28px;
+        display: block;
+        margin-bottom: 15px;
+      }
 
-    .wide-image-section img{
-      max-height:900px;
-    }
+      .about-text h2 {
+        font-size: 42px;
+        color: #1a1a1a;
+        font-weight: 800;
+        margin-bottom: 25px;
+        line-height: 1.2;
+      }
 
-/*projects section*/
-     .section{
-      max-width:1200px;
-      margin:auto;
-      padding: 40px;
-    }
+      .about-text p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 35px;
+        font-size: 17px;
+      }
 
-    .cards{
-      display:flex;
-      gap:30px;
-      justify-content: center;
-      flex-wrap:wrap;
-    }
+      .btn-learn-more {
+        display: inline-block;
+        padding: 12px 35px;
+        background-color: rgba(59, 59, 59, 0.932);
+        color: #c5a87c;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      .btn-learn-more:hover {
+        background: white;
+        border: 1px solid #c5a87c;
+      }
 
-    .card{
-      position:relative;
-      width:350px;
-      height:560px;
-      border-radius:30px;
-      overflow:hidden;
-      cursor:pointer;
-    }
+      /* تنسيق الصور المتداخلة */
+      .about-images {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+      }
 
-       .card :hover{
+      .image-wrapper img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 30px; /* زوايا منحنية كبيرة كما في الصورة */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-wrapper img:hover {
+        transform: translateY(-7px);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .img-1 {
+        width: 250px;
+        margin-top: -40px;
+      } /* صورة مرتفعة قليلاً */
+      .img-2 {
+        width: 250px;
+        margin-top: 40px;
+      } /* صورة نازلة قليلاً */
+
+      /* للموبايل */
+      @media (max-width: 992px) {
+        .about-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .about-images {
+          justify-content: center;
+          margin-top: 50px;
+        }
+      }
+
+      /*==============shomoul state======================*/
+      .stats-section {
+        padding: 80px 0;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("assets/imges/ChatGPT Image May 14, 2026, 10_42_22 AM.png");
+        background-size: cover;
+        background-position: center;
+
+        color: white;
+        text-align: center;
+      }
+
+      .stats-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .stats-grid {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .stat-item {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .stat-icon img {
+        width: 50px;
+        margin-bottom: 15px;
+        filter: brightness(0) invert(1); /* لجعل الأيقونات بيضاء */
+      }
+
+      .stat-item h2 {
+        font-size: 45px;
+        font-weight: 800;
+        margin: 10px 0;
+        color: white;
+      }
+
+      .stat-item p {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      /*wide interior img=====================================*/
+      .wide-image-section {
+        width: 100%;
+      }
+
+      .wide-image-section img {
+        max-height: 900px;
+      }
+
+      /*projects section*/
+      .section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px;
+      }
+
+      .cards {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        position: relative;
+        width: 350px;
+        height: 560px;
+        border-radius: 30px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .card:hover {
         cursor: pointer;
         background: #020202ab;
-    }
+      }
 
-    .card img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-    /* طبقة التعتيم */
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
-        to top,
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.1)
-      );
-    }
+      /* طبقة التعتيم */
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.1)
+        );
+      }
 
-    /* اسم فوق الصورة */
-    .top-title{
-      position:absolute;
-      top:25px;
-      right:25px;
-      color:white;
-      font-size:30px;
-      font-weight:bold;
-      z-index:2;
-    }
+      /* اسم فوق الصورة */
+      .top-title {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        z-index: 2;
+      }
 
-    /* النص السفلي */
-    .bottom-title{
-      position:absolute;
-      bottom:25px;
-      color:white;
-      background-color: #0f111517;
-      padding: 20px 80px;
-      font-size:26px;
-      font-weight:bold;
-      z-index:2;
-    }
+      /* النص السفلي */
+      .bottom-title {
+        position: absolute;
+        bottom: 25px;
+        color: white;
+        background-color: #0f111517;
+        padding: 20px 80px;
+        font-size: 26px;
+        font-weight: bold;
+        z-index: 2;
+      }
 
-    /* =========================
+      /* =========================
    CLIENTS SECTION
 ========================= */
 
-.clients-section{
-  padding:80px 0;
-  overflow:hidden;
-  text-align:center;
-  position:relative;
-}
+      .clients-section {
+        padding: 80px 0;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+      }
 
-/* العنوان الصغير */
-.title-top{
-  background:#3d3d46;
-  color:#fff;
-  display:inline-block;
-  padding:12px 30px;
-  border-radius:12px;
-  font-size:22px;
-  margin-bottom:20px;
-}
+      /* العنوان الصغير */
+      .title-top {
+        background: #3d3d46;
+        color: #fff;
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 12px;
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
 
-/* العنوان الرئيسي */
-.clients-section h2{
-  font-size:70px;
-  color:#2f2f44;
-  margin-bottom:60px;
-}
+      /* العنوان الرئيسي */
+      .clients-section h2 {
+        font-size: 70px;
+        color: #2f2f44;
+        margin-bottom: 60px;
+      }
 
-/* السلايدر */
-.clients-slider{
-  width:100%;
-  overflow:hidden;
-  position:relative;
-}
+      /* السلايدر */
+      .clients-slider {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
 
-/* مسار الحركة */
-.slider-track{
-  display:flex;
-  align-items:center;
-  gap:40px;
-  width:max-content;
+      /* مسار الحركة */
+      .slider-track {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        width: max-content;
 
-  animation:scroll 20s linear infinite;
-}
+        animation: scroll 20s linear infinite;
+      }
 
-/* الكروت */
-.client-card{
+      /* الكروت */
+      .client-card {
+        background: #efefef;
 
-  background:#efefef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+        flex-shrink: 0;
+      }
 
-  flex-shrink:0;
-}
+      /* الصور */
+      .client-card img {
+        width: 100%;
+        object-fit: contain;
+      }
 
-/* الصور */
-.client-card img{
-  width:100%;
-  object-fit:contain;
-}
+      /* الحركة */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
 
-/* الحركة */
-@keyframes scroll{
+        100% {
+          transform: translateX(-50%);
+        }
+      }
 
-  0%{
-    transform:translateX(0);
-  }
-
-  100%{
-    transform:translateX(-50%);
-  }
-
-}
-
-/* يوقف الحركة عند المرور */
-.clients-slider:hover .slider-track{
-  animation-play-state:paused;
-}
-
+      /* يوقف الحركة عند المرور */
+      .clients-slider:hover .slider-track {
+        animation-play-state: paused;
+      }
     </style>
     <!--===============load screen=================-->
     <div id="preloader">
@@ -563,126 +553,165 @@
     <!--===============header=================-->
     <div id="header-placeholder"></div>
 
-
     <!--=============hero section==================-->
-    <div class="page-content">
-<section class="experience-hero">
-    <div class="hero-slideshow">
+
+    <section class="experience-hero">
+      <div class="hero-slideshow">
         <div class="slide slide-1"></div>
         <div class="slide slide-2"></div>
         <div class="slide slide-3"></div>
-    </div>
+      </div>
 
-    <div class="hero-overlay">
+      <div class="hero-overlay">
         <div class="content-box">
-            <h2 data-aos="fade-down" data-aos-delay="500">مجموعة شمول للإستشارات الهندسية</h2>
-            <h3 data-aos="fade-down" data-aos-delay="500">SHOMOUL CONSULTATION GROUP</h3>
-            <a href="#about-section" class="btn-about" data-aos="fade-up" data-aos-delay="1500">About Us</a>
+          <h2 data-aos="fade-down" data-aos-delay="500">
+            مجموعة شمول للإستشارات الهندسية
+          </h2>
+          <h3 data-aos="fade-down" data-aos-delay="500">
+            SHOMOUL CONSULTATION GROUP
+          </h3>
+          <a
+            href="#about-section"
+            class="btn-about"
+            data-aos="fade-up"
+            data-aos-delay="1500"
+            >About Us</a
+          >
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!--=================about shomoul==================-->
-<section class="about-ecg-section">
-    <div class="container about-container">
+    <!--=================about shomoul==================-->
+    <section class="about-ecg-section">
+      <div class="container about-container">
         <div class="about-text" data-aos="fade-left">
-            <span class="about-subtitle" id="about-section" >عن شمول (SCG)</span>
-            <p>
-مجموعة شمول للإستشارات هي مجموعة من الشركات المتخصصة في الاستشارات الهندسية والسلامة والاستشارات القانونية والمالية والإدارية والفنية والإستشارات البيئية والجيوجرافية وأعمال المساحة وفرز الأراضي، باستخدام أحدث التقنيات للوصول إلى أعلى مستويات الخدمات لعملائنا.
-            </p>
-<p>
-نحن فخورون دائمًا بكل ما حققناه ونسعى إلى مواصلة طريق التقدم والنمو بناءً على الرؤية المستقبلية للمملكة العربية السعودية ومرتكزات مبنية على أسس سليمة تتبع المعايير الدولية والوطنية ومواكبة التكنولوجيا مع والتركيز على تحقيق النمو المستدام. ومن هذا المنطلق، فإننا نسخر كافة إمكانياتنا لدعم وتطوير كوادرنا البشرية بكافة فئاتها، والتي تعتبر محركنا الأساسي، مع مواصلة التزامنا الكامل تجاه عملائنا وشركائنا ومجتمعنا.
-</p>
-            <a href="about.html" class="btn-learn-more">معرفة المزيد</a>
+          <span class="about-subtitle" id="about-section">عن شمول (SCG)</span>
+          <p>
+            مجموعة شمول للإستشارات هي مجموعة من الشركات المتخصصة في الاستشارات
+            الهندسية والسلامة والاستشارات القانونية والمالية والإدارية والفنية
+            والإستشارات البيئية والجيوجرافية وأعمال المساحة وفرز الأراضي،
+            باستخدام أحدث التقنيات للوصول إلى أعلى مستويات الخدمات لعملائنا.
+          </p>
+          <p>
+            نحن فخورون دائمًا بكل ما حققناه ونسعى إلى مواصلة طريق التقدم والنمو
+            بناءً على الرؤية المستقبلية للمملكة العربية السعودية ومرتكزات مبنية
+            على أسس سليمة تتبع المعايير الدولية والوطنية ومواكبة التكنولوجيا مع
+            والتركيز على تحقيق النمو المستدام. ومن هذا المنطلق، فإننا نسخر كافة
+            إمكانياتنا لدعم وتطوير كوادرنا البشرية بكافة فئاتها، والتي تعتبر
+            محركنا الأساسي، مع مواصلة التزامنا الكامل تجاه عملائنا وشركائنا
+            ومجتمعنا.
+          </p>
+          <a href="about.html" class="btn-learn-more">معرفة المزيد</a>
         </div>
 
         <div class="about-images" data-aos="fade-right">
-            <div class="image-wrapper img-1">
-                <img src="assets/imges/Screenshot 2026-05-13 163200.png" alt="High Rise Project">
-            </div>
-            <div class="image-wrapper img-2">
-                <img src="assets/imges/Screenshot 2026-05-13 163206.png" alt="Industrial Project">
-            </div>
+          <div class="image-wrapper img-1">
+            <img
+              src="assets/imges/Screenshot 2026-05-13 163200.png"
+              alt="High Rise Project"
+            />
+          </div>
+          <div class="image-wrapper img-2">
+            <img
+              src="assets/imges/Screenshot 2026-05-13 163206.png"
+              alt="Industrial Project"
+            />
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-<!---========================state section============================-->
-<section class="stats-section">
-    <div class="stats-container">
+    <!---========================state section============================-->
+    <section class="stats-section">
+      <div class="stats-container">
         <div class="stats-grid">
-            <div class="stat-item" data-aos="fade-up">
-                <div class="stat-icon"><img src="assets/icons/anniversary.png" alt="icon"></div>
-                <h2 class="counter" data-target="10">+0</h2>
-                <p>سنوات في مجال العمل</p>
+          <div class="stat-item" data-aos="fade-up">
+            <div class="stat-icon">
+              <img src="assets/icons/anniversary.png" alt="icon" />
             </div>
-            
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-icon"><img src="assets/icons/costumer.png" alt="icon"></div>
-                <h2 class="counter" data-target="3000">+0</h2>
-                <p>أعضاء الفريق</p>
+            <h2 class="counter" data-target="10">+0</h2>
+            <p>سنوات في مجال العمل</p>
+          </div>
+
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-icon">
+              <img src="assets/icons/costumer.png" alt="icon" />
+            </div>
+            <h2 class="counter" data-target="3000">+0</h2>
+            <p>أعضاء الفريق</p>
+          </div>
+
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-icon">
+              <img src="assets/icons/support.png" alt="icon" />
+            </div>
+            <h2 class="counter" data-target="5000">+0</h2>
+            <p>العملاء</p>
+          </div>
+
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-icon">
+              <img src="assets/icons/management.png" alt="icon" />
+            </div>
+            <h2 class="counter" data-target="3000">+0</h2>
+            <p>المشاريع</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="services-preview">
+      <div class="page-content">
+        <div class="container">
+          <div class="services-grid">
+            <div class="service-card" id="architecture" data-aos="fade-left">
+              <div class="service-icon">
+                <img
+                  src="assets/icons/buildings_8129177.png"
+                  alt="Architecture"
+                />
+              </div>
+              <h3>التصاميم المعمارية والإنشائية</h3>
+              <p>
+                إعداد المخططات الهندسية المتكاملة للمشاريع السكنية والتجارية بما
+                يتوافق مع كود البناء السعودي.
+              </p>
+              <a href="contact.html" class="service-link">اطلب الخدمة</a>
             </div>
 
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-icon"><img src="assets/icons/support.png" alt="icon"></div>
-                <h2 class="counter" data-target="5000">+0</h2>
-                <p>العملاء</p>
+            <div class="service-card" id="surveying" data-aos="fade-down">
+              <div class="service-icon">
+                <img src="assets/icons/servies.png" alt="Surveying" />
+              </div>
+              <h3>الرفع المساحي والفرز</h3>
+              <p>
+                تقديم خدمات الرفع المساحي الدقيق، فرز الوحدات العقارية، وتحديث
+                الصكوك عبر منصة إحكام وبلدي.
+              </p>
+              <a href="contact.html" class="service-link">اطلب الخدمة</a>
             </div>
 
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-icon"><img src="assets/icons/management.png" alt="icon"></div>
-                <h2 class="counter" data-target="3000">+0</h2>
-                <p>المشاريع</p>
+            <div class="service-card" id="supervision" data-aos="fade-right">
+              <div class="service-icon">
+                <img src="assets/icons/worker.png" alt="Supervision" />
+              </div>
+              <h3>الإشراف الهندسي وإدارة المشاريع</h3>
+              <p>
+                إشراف فني دقيق على كافة مراحل التنفيذ لضمان مطابقة الأعمال
+                للمواصفات الفنية والجودة المطلوبة.
+              </p>
+              <a href="contact.html" class="service-link">اطلب الخدمة</a>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-
-
-
-  <!-- Services Grid Section -->
-<section class="services-preview">
-  <div class="page-content">
-    <div class="container">
-       <div class="services-grid">
-
-        
-    <div class="service-card" id="architecture" data-aos="fade-left">
-        <div class="service-icon">
-            <img src="assets/icons/buildings_8129177.png" alt="Architecture">
+        <div class="more-btn">
+          <a href="services.html"><button>المزيد من الخدمات</button></a>
         </div>
-        <h3>التصاميم المعمارية والإنشائية</h3>
-        <p>إعداد المخططات الهندسية المتكاملة للمشاريع السكنية والتجارية بما يتوافق مع كود البناء السعودي.</p>
-        <a href="contact.html" class="service-link">اطلب الخدمة</a>
-    </div>
+      </div>
+    </section>
 
-    <div class="service-card" id="surveying" data-aos="fade-down">
-        <div class="service-icon">
-            <img src="assets/icons/servies.png" alt="Surveying">
-        </div>
-        <h3>الرفع المساحي والفرز</h3>
-        <p>تقديم خدمات الرفع المساحي الدقيق، فرز الوحدات العقارية، وتحديث الصكوك عبر منصة إحكام وبلدي.</p>
-        <a href="contact.html" class="service-link">اطلب الخدمة</a>
-    </div>
-
-    <div class="service-card" id="supervision" data-aos="fade-right">
-        <div class="service-icon">
-            <img src="assets/icons/worker.png" alt="Supervision">
-        </div>
-        <h3>الإشراف الهندسي وإدارة المشاريع</h3>
-        <p>إشراف فني دقيق على كافة مراحل التنفيذ لضمان مطابقة الأعمال للمواصفات الفنية والجودة المطلوبة.</p>
-        <a href="contact.html" class="service-link">اطلب الخدمة</a>
-    </div>
-       </div>
-    </div>
-    <div class="more-btn"><a href="services.html"><button>المزيد من الخدمات</button></a></div>
-  </div>
-</section>
-
-
-
-<!--================wide imge====================-->
+    <!--================wide imge====================-->
     <section class="wide-image-section">
       <img
         src="assets/imges/3213131.jpg"
@@ -691,71 +720,61 @@
       />
     </section>
 
-    
-
-
     <!-- قسم معرض المشاريع -->
- <section class="section">
+    <section class="section">
+      <div class="section-header">
+        <h2 data-aos="fade-left" data-aos-duration="1200">المشاريع</h2>
+        <p data-aos="fade-left" data-aos-duration="1200">اخر مشاريع شمول</p>
+      </div>
 
-            <div class="section-header">
-          <h2 data-aos="fade-left" data-aos-duration="1200">المشاريع</h2>
-          <p data-aos="fade-left" data-aos-duration="1200">اخر مشاريع شمول</p>
+      <div class="cards">
+        <!-- الكرت الأول -->
+        <div class="card">
+          <img
+            src="assets/مشاريع/مصنع - شركة عبر البلاد الصناعية/ELEVATION.jpeg"
+            alt="المباني"
+          />
+
+          <div class="overlay"></div>
+
+          <div class="top-title">مشاريع الهندسية</div>
+
+          <div class="bottom-title">المباني</div>
         </div>
 
-    <div class="cards">
+        <!-- الكرت الثاني -->
+        <div class="card">
+          <img
+            src="assets/مشاريع/محطة وقود حي احد - شركة العسيس للخدمات البترولية/1.png"
+            alt="النقل"
+          />
 
-      <!-- الكرت الأول -->
-      <div class="card">
-        <img src="assets/مشاريع/مصنع - شركة عبر البلاد الصناعية/ELEVATION.jpeg" alt="المباني">
+          <div class="overlay"></div>
 
-        <div class="overlay"></div>
+          <div class="top-title">مشاريع السلامة</div>
 
-        <div class="top-title">
-          مشاريع الهندسية
+          <div class="bottom-title">النقل</div>
         </div>
 
-        <div class="bottom-title">
-          المباني
+        <!-- الكرت الثالث -->
+        <div class="card">
+          <img
+            src="assets/مشاريع/مستودعات - فيصل بن محمد بن أحمد القاضي/1.png"
+            alt="النفط والغاز"
+          />
+
+          <div class="overlay"></div>
+
+          <div class="top-title">مشاريع المصانع</div>
+
+          <div class="bottom-title">الصناعات النفط والغاز</div>
         </div>
       </div>
 
-      <!-- الكرت الثاني -->
-      <div class="card">
-        <img src="assets/مشاريع/محطة وقود حي احد - شركة العسيس للخدمات البترولية/1.png" alt="النقل">
-
-        <div class="overlay"></div>
-
-        <div class="top-title">
-          مشاريع السلامة
-        </div>
-
-        <div class="bottom-title">
-          النقل
-        </div>
+      <div class="more-btn">
+        <a href="services.html"><button>المزيد من المشاريع</button></a>
       </div>
-
-      <!-- الكرت الثالث -->
-      <div class="card">
-        <img src="assets/مشاريع/مستودعات - فيصل بن محمد بن أحمد القاضي/1.png" alt="النفط والغاز">
-
-        <div class="overlay"></div>
-
-        <div class="top-title">
-          مشاريع المصانع
-        </div>
-
-        <div class="bottom-title">
-          الصناعات النفط والغاز
-        </div>
-      </div>
-
-    </div>
-
-    <div class="more-btn"><a href="services.html"><button>المزيد من المشاريع</button></a></div>
-
-  </section>
-
-
+    </section>
 
     <!-- قسم الشركات (شركاء النجاح) بتصميم الشريط المتحرك -->
     <section class="corporate-partners">
@@ -841,69 +860,60 @@
               <p>حلول تقنية ذكية</p>
             </div>
           </a>
-            <a
-            href="companies.html"
-            class="company-card"
-            data-aos="flip-left"
-          >
-            <img src="assets/imges/b007-Photoroom.jpg" alt="شومول الجيوهندسية" />
+          <a href="companies.html" class="company-card" data-aos="flip-left">
+            <img
+              src="assets/imges/b007-Photoroom.jpg"
+              alt="شومول الجيوهندسية"
+            />
             <div class="company-overlay">
               <h3>عرض المزيد</h3>
             </div>
           </a>
-
+        </div>
       </div>
-
     </section>
 
+    <!---client section-->
 
-<!---client section-->
+    <section class="clients-section">
+      <div class="title-top">شمول للإستشارات الهندسية</div>
 
-<section class="clients-section">
+      <h2>عملاؤنا</h2>
 
-  <div class="title-top">
-    شمول للإستشارات الهندسية
-  </div>
+      <!-- السلايدر -->
+      <div class="clients-slider">
+        <div class="slider-track">
+          <!-- العناصر -->
+          <div class="client-card">
+            <img src="assets/clients/001-1.jpg" alt="" />
+          </div>
 
-  <h2>عملاؤنا</h2>
+          <div class="client-card">
+            <img src="assets/clients/016.jpg" alt="" />
+          </div>
 
-  <!-- السلايدر -->
-  <div class="clients-slider">
+          <div class="client-card">
+            <img src="assets/clients/027.jpg" alt="" />
+          </div>
 
-    <div class="slider-track">
+          <div class="client-card">
+            <img src="assets/clients/026.jpg" alt="" />
+          </div>
 
-      <!-- العناصر -->
-      <div class="client-card">
-        <img src="assets/clients/001-1.jpg" alt="">
+          <div class="client-card">
+            <img src="assets/clients/018.jpg" alt="" />
+          </div>
+
+          <!-- تكرار العناصر عشان الحركة تكون مستمرة -->
+          <div class="client-card">
+            <img src="assets/clients/006-1.jpg" alt="" />
+          </div>
+        </div>
       </div>
-
-      <div class="client-card">
-        <img src="assets/clients/016.jpg" alt="">
+      <div class="more-btn">
+        <a href="clients.html"><button>المزيد من العملاء</button></a>
       </div>
-
-      <div class="client-card">
-        <img src="assets/clients/027.jpg" alt="">
-      </div>
-
-      <div class="client-card">
-        <img src="assets/clients/026.jpg" alt="">
-      </div>
-
-      <div class="client-card">
-        <img src="assets/clients/018.jpg" alt="">
-      </div>
-
-      <!-- تكرار العناصر عشان الحركة تكون مستمرة -->
-      <div class="client-card">
-        <img src="assets/clients/006-1.jpg" alt="">
-      </div>
-
-
-    </div>
-
-  </div>
-        <div class="more-btn"><a href="clients.html"><button>المزيد من العملاء</button></a></div>
-</section>
+    </section>
 
     <!-- زر واتساب العائم -->
     <a
@@ -922,69 +932,70 @@
 
     <script>
       // التأكد من تشغيل التأثيرات بعد تحميل الصفحة بالكامل
-      window.addEventListener('load', function() {
+      window.addEventListener("load", function () {
         // 1. إخفاء شاشة التحميل (Preloader)
-        const preloader = document.getElementById('preloader');
+        const preloader = document.getElementById("preloader");
         if (preloader) {
-          preloader.classList.add('loaded');
+          preloader.classList.add("loaded");
         }
 
         // 2. تشغيل مكتبة AOS للحركات (Animations)
         // بما أنك تستخدم defer، ننتظر التأكد من أن المكتبة جاهزة
-        if (typeof AOS !== 'undefined') {
+        if (typeof AOS !== "undefined") {
           AOS.init({
             duration: 1000, // سرعة الحركة
-            once: true,      // تعمل مرة واحدة فقط
-            offset: 120      // تبدأ الحركة قبل الوصول للعنصر بـ 120 بكسل
+            once: true, // تعمل مرة واحدة فقط
+            offset: 120, // تبدأ الحركة قبل الوصول للعنصر بـ 120 بكسل
           });
         }
       });
 
       // 3. إضافة تأثير تغيير لون الهيدر عند النزول (Scroll)
-      window.addEventListener('scroll', function() {
-        const header = document.querySelector('.main-header');
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".main-header");
         if (header) {
           if (window.scrollY > 50) {
-            header.classList.add('scrolled');
+            header.classList.add("scrolled");
           } else {
-            header.classList.remove('scrolled');
+            header.classList.remove("scrolled");
           }
         }
       });
 
+      const counters = document.querySelectorAll(".counter");
+      const speed = 900; // سرعة العداد (كلما قل الرقم زادت السرعة)
 
-
-      const counters = document.querySelectorAll('.counter');
-const speed = 900; // سرعة العداد (كلما قل الرقم زادت السرعة)
-
-const startCounters = () => {
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText.replace('+', '');
+      const startCounters = () => {
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText.replace("+", "");
             const inc = target / speed;
 
             if (count < target) {
-                counter.innerText = '+' + Math.ceil(count + inc).toLocaleString();
-                setTimeout(updateCount, 15);
+              counter.innerText = "+" + Math.ceil(count + inc).toLocaleString();
+              setTimeout(updateCount, 15);
             } else {
-                counter.innerText = '+' + target.toLocaleString();
+              counter.innerText = "+" + target.toLocaleString();
             }
-        };
-        updateCount();
-    });
-};
+          };
+          updateCount();
+        });
+      };
 
-// تشغيل العداد عند الوصول للقسم باستخدام Intersection Observer
-const statsSection = document.querySelector('.stats-section');
-const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-        startCounters();
-        observer.unobserve(statsSection); // يعمل مرة واحدة فقط
-    }
-}, { threshold: 0.5 });
+      // تشغيل العداد عند الوصول للقسم باستخدام Intersection Observer
+      const statsSection = document.querySelector(".stats-section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            startCounters();
+            observer.unobserve(statsSection); // يعمل مرة واحدة فقط
+          }
+        },
+        { threshold: 0.5 },
+      );
 
-observer.observe(statsSection);
+      observer.observe(statsSection);
     </script>
   </body>
 </html>
