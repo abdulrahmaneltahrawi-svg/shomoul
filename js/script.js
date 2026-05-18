@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadFooter();
 
   initClientSlider();
+  initProjectFilter();
   window.addEventListener("scroll", handleScroll);
   setupSmoothScroll();
   setupScrollAnimations();
@@ -222,4 +223,33 @@ function initClientSlider() {
   }
 
   requestAnimationFrame(step);
+}
+
+// وظيفة فلترة المشاريع
+function initProjectFilter() {
+  const filterTabs = document.querySelectorAll(".filter-item");
+  const projectCards = document.querySelectorAll(".cards .card");
+
+  if (!filterTabs.length || !projectCards.length) return;
+
+  filterTabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      // تحديث الكلاس النشط (Active)
+      filterTabs.forEach((t) => t.classList.remove("active"));
+      this.classList.add("active");
+
+      const category = this.getAttribute("data-category");
+
+      projectCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (category === "all" || category === cardCategory) {
+          card.style.display = "block";
+          card.style.animation = "fadeIn 0.5s ease forwards";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
 }
