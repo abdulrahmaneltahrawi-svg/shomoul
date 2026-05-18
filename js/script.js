@@ -192,14 +192,7 @@ function toggleSearch() {
   }
 }
 
-// إغلاق البحث عند الضغط في أي مكان خارج الحقل
-document.addEventListener("click", function (event) {
-  const container = document.querySelector(".search-container");
-  const input = document.getElementById("searchInput");
-  if (!container.contains(event.target)) {
-    input.classList.remove("active");
-  }
-});
+
 
 // وظيفة تحريك شريط العملاء بشكل لانهائي وسلس
 function initClientSlider() {
