@@ -62,8 +62,7 @@ body {
 
 /* مثال 1: تغيير لون النص فقط للأصفر المطابق لهوية شمول */
 .header-nav ul li a.active {
-  color: #cccbcb ;
-  
+  color: #c5a059 !important; /* اللون الذهبي للرابط النشط */
 }
 
 .nav-menu ul li a:hover {
