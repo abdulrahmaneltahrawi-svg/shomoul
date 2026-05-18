@@ -35,11 +35,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 100px;
 }
 
 /* تنسيق اللوجو */
 .logo img {
-    height: 120px; /* تحكم في مقاس اللوجو */
+    height: 130px; /* تحكم في مقاس اللوجو */
     width: 250px;
 }
 
@@ -49,7 +50,6 @@ body {
     display: flex;
     gap: 25px; /* المسافة بين الروابط */
     padding: 0;
-    margin-left: 170px;
 }
 
 .nav-menu ul li a {
@@ -132,22 +132,70 @@ body {
 }
 
 
-/* أيقونة البحث */
-.search-icon img {
- width: 30px;
- filter: brightness(0) invert(1);
+/* الحاوية التي تجمع الزر والسوشيال ميديا وتضعهم بجانب بعض */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;       /* المسافة الفاصلة بين الزر ومجموعة الأيقونات */
+  direction: rtl;  /* الترتيب من اليمين لليسار */
 }
 
-/* إضافة السهم الصغير (اختياري) */
-.arrow {
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 2px;
-    margin-right: 10px; /* تغيير للهامش الأيمن لتقريب السهم من النص العربي */
-    margin-bottom: 6px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+/* تنسيق زر قدم طلبك الأصفر */
+.btn-submit-request {
+  background-color: #3a3a3a; /* اللون الأصفر من صورتك */
+  color: white;            /* لون الخط داكن عشان يظهر بوضوح */
+  font-family: 'Cairo', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 8px;        /* انحناء أطراف الزر */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;       /* يمنع نزول النص لسطر جديد */
+  display: inline-block;
+}
+
+/* تأثير عند تمرير الماوس فوق الزر الأصفر */
+.btn-submit-request:hover {
+  background-color: #e3f0f43d; /* يغمق الأصفر قليلاً */
+  transform: translateY(-1px); /* حركة خفيفة للأعلى */
+}
+
+/* حاوية الأيقونات الدائرية */
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* المسافة بين الدوائر الرمادية */
+}
+
+/* التنسيق الدائري لكل أيقونة */
+.social-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #f2f2f2; /* لون الخلفية الرمادي الفاتح جداً للدائرة */
+  border-radius: 50%;        /* تحويل الدائرة لشكل دائري كامل */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* حجم الأيقونة (الصورة) داخل الدائرة */
+.social-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.7; /* تخفيف حدة لون الأيقونة ليطابق صورتك */
+}
+
+/* تأثير تمرير الماوس فوق الدائرة الرمادية */
+.social-icon:hover {
+  background-color: #e6e6e6; /* تغميق الرمادي قليلاً */
+  transform: translateY(-2px);
+}
+
+.social-icon:hover img {
+  opacity: 1; /* توضيح الأيقونة بنسبة 100% عند الـ Hover */
 }
 
 
