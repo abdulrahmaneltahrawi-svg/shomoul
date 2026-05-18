@@ -49,6 +49,7 @@ body {
     display: flex;
     gap: 25px; /* المسافة بين الروابط */
     padding: 0;
+    margin-left: 170px;
 }
 
 .nav-menu ul li a {
