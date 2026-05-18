@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
 }
 
 /* تنسيق اللوجو */
@@ -56,8 +56,9 @@ body {
     text-decoration: none;
     color: white; /* لون النص أبيض كما في الصورة */
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     transition: 0.3s;
+    font-family: Cairo, Arial, Helvetica, sans-serif;
 }
 
 /* مثال 1: تغيير لون النص فقط للأصفر المطابق لهوية شمول */
@@ -1141,10 +1142,17 @@ footer {
   color: #94a3b8;
 }
 
+.footer-content ul.social-links-list a:hover {
+  color: #b59773;
+  transform: scale(1.1);
+}
+
+
 .footer-content p {
   margin-bottom: 16px; /* زيادة الهامش السفلي للفقرات */
   color: #94a3b8;
 }
+
 
 .footer-content img {
   width: 30px;
@@ -1156,6 +1164,7 @@ footer {
 
 .footer-content img:hover {
   transform: scale(1.1);
+  filter: brightness(1);
 }
 
 /*قسم سياسة الخصوصية*/
