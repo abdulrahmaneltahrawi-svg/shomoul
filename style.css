@@ -544,7 +544,15 @@ cursor: pointer;
 
       .card:hover {
         cursor: pointer;
-        background: #020202ab;
+      }
+
+      /* تطبيق التعتيم على الطبقة العلوية عند حوم الماوس */
+      .card:hover .overlay {
+        background: rgba(0, 0, 0, 0.6); /* تعتيم أغمق قليلاً عند الحوم */
+      }
+
+      .card:hover img {
+        transform: scale(1.1); /* تكبير بسيط للصورة لإعطاء تأثير احترافي */
       }
 
       .card img {
@@ -552,6 +560,7 @@ cursor: pointer;
         height: 100%;
         object-fit: cover;
         display: block;
+        transition: transform 0.5s ease; /* تنعيم حركة التكبير */
       }
 
       /* طبقة التعتيم */
@@ -563,6 +572,8 @@ cursor: pointer;
           rgba(0, 0, 0, 0.55),
           rgba(0, 0, 0, 0.1)
         );
+        transition: background 0.3s ease; /* تنعيم انتقال اللون */
+        z-index: 1;
       }
 
       /* اسم فوق الصورة */
