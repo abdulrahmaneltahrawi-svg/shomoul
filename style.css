@@ -529,7 +529,7 @@ cursor: pointer;
         gap: 30px;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        flex-direction: center;
         flex-wrap: wrap;
       }
 
