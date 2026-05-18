@@ -26,6 +26,60 @@
   </head>
 
   <body>
+    <style>
+      /* حاوية الفلتر المركزية */
+.projects-filter-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  direction: rtl; /* لترتيب الكلمات من اليمين لليسار */
+}
+
+/* القائمة الأفقية للأصناف */
+.filter-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 25px; /* المسافة بين الكلمات */
+}
+
+/* تنسيق عنصر الصنف المفرد */
+.filter-item {
+  font-size: 21px;
+  font-weight: 500;
+  color: #555555; /* لون رمادي هادئ للكلام غير النشط */
+  cursor: pointer;
+  padding-bottom: 6px;
+  position: relative;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+/* تأثير التمرير (Hover) فوق الصنف */
+.filter-item:hover {
+  color: #000000;
+}
+
+/* تنسيق الصنف النشط (المختار حالياً) ووضع الخط السفلي */
+.filter-item.active {
+  color: #000000; /* لون أسود غامق */
+  font-weight: bold;
+}
+
+/* رسم الخط الأسود السفلي تحت الكلمة النشطة مثل الصورة */
+.filter-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* سماكة الخط */
+  background-color: #333333; /* لون الخط السفلي */
+  border-radius: 2px;
+}
+    </style>
 
     <div id="header-placeholder"></div>
     <!-- Page Header -->
@@ -34,6 +88,22 @@
         <h1>مشاريع مجموعة شمول</h1>
       </div>
     </section>
+
+
+
+<!--=========filter===============-->
+    <div class="projects-filter-container">
+  <ul class="filter-tabs" id="projects-filter-tabs">
+    <li class="filter-item active" data-category="all">ALL</li>
+    <li class="filter-item" data-category="تجاري">ابراج</li>
+    <li class="filter-item" data-category="تعليمي">اداري</li>
+    <li class="filter-item" data-category="حكومي">تجاري</li>
+    <li class="filter-item" data-category="صحي">سكني</li>
+    <li class="filter-item" data-category="ضيافة">طبية</li>
+    <li class="filter-item" data-category="ديني">محطات الوقود</li>
+    <li class="filter-item" data-category="سكني">مستودعات</li>
+  </ul>
+</div>
 
     <!-- قسم معرض المشاريع -->
     <section class="section">

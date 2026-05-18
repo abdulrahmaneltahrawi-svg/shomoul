@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   loadFooter();
 
+  initClientSlider();
   window.addEventListener("scroll", handleScroll);
   setupSmoothScroll();
   setupScrollAnimations();
@@ -181,3 +182,44 @@ document.addEventListener("click", function (event) {
     input.classList.remove("active");
   }
 });
+
+// وظيفة تحريك شريط العملاء بشكل لانهائي وسلس
+function initClientSlider() {
+  const track = document.querySelector(".slider-track");
+  if (!track) return;
+
+  // مضاعفة العناصر مرتين لضمان عدم وجود فراغ
+  const items = Array.from(track.children);
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    track.appendChild(clone);
+  });
+  
+  // مضاعفة إضافية لضمان ملء الشاشات العريضة جداً
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  let speed = 1; // سرعة الحركة (بكسل في كل إطار)
+  let position = 0;
+  let isPaused = false;
+
+  track.addEventListener("mouseenter", () => isPaused = true);
+  track.addEventListener("mouseleave", () => isPaused = false);
+
+  function step() {
+    if (!isPaused) {
+      position += speed;
+      // إذا تحرك الشريط بمقدار ثلث طوله الكلي (لأننا ضاعفنا العناصر 3 مرات)
+      // نقوم بإعادة الصفر لضمان الاستمرارية
+      if (position >= track.scrollWidth / 3) {
+        position = 0;
+      }
+      track.style.transform = `translateX(${position}px)`;
+    }
+    requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}

@@ -420,24 +420,18 @@
         margin-bottom: 60px;
       }
 
-      /* السلايدر */
       .clients-slider {
         width: 100%;
         overflow: hidden;
         position: relative;
+        padding: 20px 0;
       }
 
-      /* مسار الحركة */
       .slider-track {
         display: flex;
         align-items: center;
         gap: 40px;
         width: max-content;
-
-        animation: scroll 20s linear infinite;
-      }
-
-      /* الكروت */
       .client-card {
         background: #efefef;
 
@@ -448,27 +442,11 @@
         flex-shrink: 0;
       }
 
-      /* الصور */
       .client-card img {
         width: 100%;
         object-fit: contain;
       }
-
-      /* الحركة */
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      /* يوقف الحركة عند المرور */
-      .clients-slider:hover .slider-track {
-        animation-play-state: paused;
-      }
+    }
     </style>
     <!--===============load screen=================-->
     <div id="preloader">
