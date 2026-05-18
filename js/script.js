@@ -253,3 +253,27 @@ function initProjectFilter() {
     });
   });
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. الحصول على اسم الملف الحالي من رابط المتصفح (مثلاً: projects.html)
+  const currentPath = window.location.pathname;
+  const pageName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+  // 2. جلب جميع روابط القائمة في الهيدر
+  const navLinks = document.querySelectorAll(".header-nav ul li a");
+
+  navLinks.forEach(link => {
+    // جلب اسم الملف الموجود في الـ href لكل رابط
+    const linkHref = link.getAttribute("href");
+
+    // 3. إذا تطابق اسم ملف الرابط مع اسم الصفحة الحالية، أضف التظليل
+    if (pageName === linkHref) {
+      link.classList.add("active");
+    } else if (pageName === "" && linkHref === "index.html") {
+      // حالة خاصة إذا كان الموقع في الصفحة الرئيسية والرابط فارغ
+      link.classList.add("active");
+    }
+  });
+});

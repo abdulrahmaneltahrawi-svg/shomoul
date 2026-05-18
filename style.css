@@ -60,6 +60,12 @@ body {
     transition: 0.3s;
 }
 
+/* مثال 1: تغيير لون النص فقط للأصفر المطابق لهوية شمول */
+.header-nav ul li a.active {
+  color: #cccbcb ;
+  
+}
+
 .nav-menu ul li a:hover {
     color: #ccc; /* تأثير عند تمرير الماوس */
 }
@@ -136,7 +142,7 @@ body {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;       /* المسافة الفاصلة بين الزر ومجموعة الأيقونات */
+  gap: 10px;       /* المسافة الفاصلة بين الزر ومجموعة الأيقونات */
   direction: rtl;  /* الترتيب من اليمين لليسار */
 }
 
