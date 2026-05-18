@@ -92,6 +92,11 @@ body {
     gap: 0 !important; 
 }
 
+/* إظهار القائمة المنسدلة عند حوم الماوس (للديسكتاب) */
+.nav-menu ul li.has-dropdown:hover .dropdown-menu {
+    display: flex !important;
+}
+
 /* تنسيق عناصر القائمة الداخلية */
 .dropdown-menu li {
     width: 100% !important;
