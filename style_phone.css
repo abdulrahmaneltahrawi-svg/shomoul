@@ -6,8 +6,7 @@
     }
 
     .logo img {
-        height: 50px !important; /* تصغير اللوجو أكثر في الجوال */
-        width: auto !important;
+        width: 1000px !important;
         max-width: 150px !important;
     }
 
@@ -23,7 +22,7 @@
 
     .search-icon {
         order: 3;
-        margin-left: 15px;
+        margin-left: 30px;
     }
 
     .search-icon img {
@@ -42,7 +41,7 @@
         flex-direction: column;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         padding: 80px 20px 20px;
-        z-index: 1001;
+        z-index: 1057;
         overflow-y: auto;
     }
 
