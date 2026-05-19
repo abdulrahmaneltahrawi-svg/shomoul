@@ -153,7 +153,7 @@ body {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;       /* المسافة الفاصلة بين الزر ومجموعة الأيقونات */
+  gap: 25px;       /* المسافة الفاصلة بين الزر ومجموعة الأيقونات */
   direction: rtl;  /* الترتيب من اليمين لليسار */
 }
 
