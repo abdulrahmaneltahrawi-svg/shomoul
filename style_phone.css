@@ -1,52 +1,171 @@
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 15px;
+    }
+}
+
 @media (max-width: 768px) {
+    /* --- عام --- */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 100%;
+    }
+
     /* --- الهيدر والتنقل --- */
     .main-header .container {
-        padding: 10px 15px;
+        position: relative;
+        padding: 8px 15px;
         justify-content: space-between;
+        gap: 8px;
+        flex-wrap: nowrap;
+        min-height: 64px;
+    }
+
+    .main-header .container > a {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        order: 2;
+        min-width: 0;
+    }
+
+    .logo {
+        flex-shrink: 0;
     }
 
     .logo img {
-        width: 1000px !important;
-        max-width: 150px !important;
+        width: auto !important;
+        height: 62px !important;
+        max-width: 155px !important;
+        object-fit: contain;
+    }
+
+  body.menu-open {
+        overflow: hidden;
+    }
+
+    body.menu-open .main-header {
+        z-index: 1070;
     }
 
     .menu-toggle {
-        display: flex !important; /* إظهار زر القائمة */
+        display: flex !important;
         order: 1;
-        z-index: 1002;
+        position: relative;
+        z-index: 1072;
+        margin: 0;
+        padding: 8px;
+        flex-shrink: 0;
+        filter: none !important;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
 
     .menu-toggle span {
+        background: #ffffff !important;
+    }
+
+    .main-header.scrolled .menu-toggle span {
+        background: #ffffff !important;
+    }
+
+    .menu-toggle.active span {
         background: #1a1a1a !important;
     }
 
-    .search-icon {
-        order: 3;
-        margin-left: 30px;
+    .main-header.scrolled .menu-toggle.active span {
+        background: #ffffff !important;
     }
 
-    .search-icon img {
-        width: 25px;
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .header-actions {
+        order: 3;
+        gap: 6px;
+        flex-shrink: 0;
+    }
+
+    .header-socials {
+        display: none;
+    }
+
+    .btn-submit-request {
+        padding: 8px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .menu-overlay.is-visible {
+        pointer-events: auto;
     }
 
     .header-nav {
-        display: none; /* مخفية افتراضياً وتظهر عند الضغط عبر JS */
+        display: none;
         position: fixed;
         top: 0;
         right: 0;
-        width: 80%;
+        width: 85%;
         max-width: 300px;
         height: 100vh;
+        height: 100dvh;
         background-color: white;
         flex-direction: column;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        padding: 80px 20px 20px;
-        z-index: 1057;
+        padding: 70px 20px 20px;
+        z-index: 1071;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        pointer-events: auto;
     }
 
     .header-nav.active {
-        display: flex;
+        display: flex !important;
     }
 
     .header-nav ul {
@@ -81,9 +200,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 10px;
+        padding: 0 12px;
+        min-width: 44px;
+        min-height: 44px;
         cursor: pointer;
-        border-right: 1px solid #f0f0f0; /* إضافة فاصل بسيط بين النص والسهم */
+        border-right: none;
+        border-left: 1px solid #f0f0f0;
+        flex-shrink: 0;
     }
 
     .arrow {
@@ -142,33 +265,52 @@
 
     /* Hero section in index.html */
     .experience-hero {
-        height: 60vh !important;
+        height: 70vh !important;
+        min-height: 420px;
+    }
+
+    .hero-overlay .content-box {
+        padding: 0 20px;
+        max-width: 100%;
     }
 
     .content-box h2 {
-        font-size: 28px !important;
-        margin-top: 100px !important;
-        line-height: 1.3 !important;
+        font-size: 26px !important;
+        margin-top: 0 !important;
+        line-height: 1.35 !important;
+        max-width: 100%;
     }
 
     .content-box h3 {
-        font-size: 18px !important;
-        line-height: 1.3 !important;
+        font-size: 16px !important;
+        line-height: 1.35 !important;
+        margin-top: 10px;
     }
 
     .btn-about {
-        padding: 10px 30px !important;
-        font-size: 16px !important;
+        padding: 10px 28px !important;
+        font-size: 15px !important;
+        margin-top: 20px;
     }
 
     /* --- العناوين والشبكات --- */
     .section-header {
         margin: 20px 10px;
         padding: 20px 15px;
+        overflow: visible !important;
+    }
+
+    .section-header p {
+        line-height: 1.7;
+        overflow: visible;
     }
 
     .section-header h2 {
         font-size: 1.5rem;
+    }
+
+    .services-preview {
+        padding: 50px 0 !important;
     }
 
     .services-grid, 
@@ -179,15 +321,188 @@
         gap: 20px !important;
     }
 
-    .corporate-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px;
-        padding: 10px;
+    /* شركاء النجاح / الشركات - كروت موحدة */
+    .corporate-partners {
+        padding-bottom: 90px !important;
     }
 
-    .corporate-grid img {
-        height: 100px;
+    .corporate-partners .corporate-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-rows: 1fr;
+        align-items: stretch;
+        gap: 10px !important;
+        padding: 0 !important;
+        width: 100%;
+    }
+
+    .corporate-partners .corporate-grid .company-card {
+        display: flex;
+        flex-direction: column;
+        padding: 0 !important;
+        overflow: hidden;
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        margin: 0;
+        background: #1e1e1e;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .corporate-partners .company-card img {
+        height: 148px !important;
+        min-height: 148px;
+        max-height: 148px;
+        width: 100% !important;
         max-width: 100%;
+        object-fit: contain !important;
+        object-position: center;
+        background: #3d3d3d !important;
+        padding: 14px 12px !important;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .corporate-partners .company-card:hover img {
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .corporate-partners .company-overlay {
+        position: relative !important;
+        transform: none !important;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 8px 12px !important;
+        background: #141414 !important;
+        min-height: 72px;
+        max-height: 72px;
+        overflow: hidden;
+    }
+
+    .corporate-partners .company-overlay h3 {
+        font-size: 0.78rem !important;
+        line-height: 1.35;
+        margin-bottom: 4px;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow: visible;
+        color: #c5a059 !important;
+    }
+
+    .corporate-partners .company-overlay p {
+        font-size: 0.68rem !important;
+        line-height: 1.35;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow: visible;
+        opacity: 1;
+        margin: 0;
+        color: #e8e8e8 !important;
+    }
+
+    /* صفحة العملاء */
+    .partners-section {
+        background: #f0f0f0 !important;
+        padding-bottom: 90px !important;
+        overflow: visible;
+    }
+
+    .partners-section .container {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        overflow: visible;
+        box-sizing: border-box;
+    }
+
+    .partners-section .section-header {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 16px auto 24px !important;
+        padding: 24px 18px !important;
+        overflow: hidden !important;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        box-sizing: border-box;
+        min-height: 240px;
+        height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .partners-section .section-header h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 12px;
+        line-height: 1.3;
+        flex-shrink: 0;
+    }
+
+    .partners-section .section-header p {
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
+        overflow: hidden;
+        margin: 0;
+        padding: 0 6px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .partners-section .section-subtitle {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .partners-section .corporate-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 0 24px !important;
+        place-items: center;
+        justify-content: center;
+        background: transparent !important;
+        box-sizing: border-box;
+    }
+
+    .partners-section .corporate-grid > img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 95px !important;
+        min-height: 95px;
+        max-height: 95px;
+        object-fit: contain !important;
+        object-position: center center;
+        background: #ffffff !important;
+        padding: 10px 8px !important;
+        box-sizing: border-box;
+        box-shadow: none;
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+        justify-self: center;
+    }
+
+    .partners-section .corporate-grid > img:hover {
+        transform: none;
+        background: transparent !important;
     }
 
     /* Features grid */
@@ -217,6 +532,15 @@
     .projects-grid {
         grid-template-columns: 1fr !important;
         padding: 0 15px;
+        gap: 24px !important;
+    }
+
+    .projects-gallery {
+        padding: 50px 0 !important;
+    }
+
+    .section {
+        padding: 30px 15px !important;
     }
 
     .project-images-inner {
@@ -231,26 +555,89 @@
         font-size: 1.3rem;
     }
 
-    /* Cards section */
-    .cards {
-        padding: 0 10px;
+    /* Cards section - المشاريع في الرئيسية (3 بجانب بعض) */
+    .section .cards {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        width: 100%;
+        max-width: 100%;
     }
 
-    .card {
+    .section .card-link {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .section .card {
         width: 100% !important;
-        height: 400px !important;
+        height: 145px !important;
+        border-radius: 12px;
+        margin: 0;
     }
 
-    .top-title {
-        font-size: 20px !important;
-        top: 15px;
-        right: 15px;
+    .section .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .bottom-title {
-        font-size: 18px !important;
-        bottom: 15px;
-        padding: 15px 30px !important;
+    .section .top-title {
+        font-size: 10px !important;
+        top: 6px;
+        right: 5px;
+        left: 5px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    .section .bottom-title {
+        font-size: 9px !important;
+        bottom: 6px;
+        right: 5px;
+        left: 5px;
+        padding: 5px 6px !important;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+
+    /* صفحة المشاريع - 3 بجانب بعض */
+    .filter-position {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: stretch;
+    }
+
+    .filter-position > a {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        text-decoration: none;
+    }
+
+    .card-filter {
+        width: 100% !important;
+        height: 140px !important;
+        border-radius: 12px;
+    }
+
+    .card-filter img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-title h1 {
+        font-size: 1.6rem !important;
+        padding: 0 15px;
     }
 
     /* --- الشركة (About) --- */
@@ -340,16 +727,24 @@
         font-size: 0.9rem;
     }
 
+    .corporate-partners .container {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
     .section-company {
         writing-mode: horizontal-tb;
-        margin: 20px 10px;
+        margin: 0 0 10px;
         border-right: none;
         border-top: 6px solid #c5a87c;
-        border-radius: 30px;
+        border-radius: 20px;
+        width: 100%;
     }
 
     .section-company h2 {
-        padding: 20px;
+        padding: 20px !important;
         text-align: center;
         font-size: 1.5rem;
     }
@@ -362,12 +757,17 @@
         font-size: 11px;
     }
 
-    /* زر واتساب */
+    /* زر واتساب - لا يغطي المحتوى */
     .whatsapp-float {
         width: 50px;
         height: 50px;
-        bottom: 20px;
-        right: 20px;
+        bottom: 16px;
+        right: 16px;
+        z-index: 999;
+    }
+
+    main {
+        padding-bottom: 20px;
     }
 
     .whatsapp-float img {
@@ -436,19 +836,58 @@
     }
 
     /* Clients section */
+    .clients-section {
+        padding: 50px 15px !important;
+    }
+
     .clients-section h2 {
-        font-size: 2.5rem !important;
-        margin-bottom: 30px !important;
+        font-size: 2.2rem !important;
+        margin-bottom: 24px !important;
+        padding: 0 10px;
     }
 
     .title-top {
-        font-size: 16px !important;
-        padding: 8px 20px !important;
+        font-size: 14px !important;
+        padding: 8px 16px !important;
+        max-width: 95%;
+    }
+
+    .clients-section .client-card {
+        width: 165px;
+        height: auto;
+        min-height: 95px;
+        padding: 0 !important;
+        background: transparent !important;
+        border-radius: 0;
+        box-shadow: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .clients-section .client-card img {
+        max-height: 88px;
+        width: auto;
+        max-width: 155px;
+        object-fit: contain;
+        background: transparent;
+    }
+
+    .slider-track {
+        gap: 28px;
     }
 
     /* More buttons */
     .more-btn {
-        margin-top: 50px !important;
+        margin-top: 32px !important;
+    }
+
+    .about-container {
+        padding: 0 15px !important;
+    }
+
+    .page-content {
+        padding: 0 15px;
     }
 
     .more-btn button {
@@ -506,6 +945,69 @@
     .split-image {
         max-width: 100% !important;
     }
+
+    /* صفحة التواصل */
+    .contact-hero-img {
+        max-height: 220px;
+        object-fit: cover;
+    }
+
+    .branches-container {
+        padding: 0 15px !important;
+    }
+
+    .branch-item h3 {
+        font-size: 1.4rem !important;
+    }
+
+    .contact-header h2 {
+        font-size: 2rem !important;
+    }
+
+    .contactme {
+        padding: 40px 15px !important;
+        gap: 30px !important;
+    }
+
+    .contact-info {
+        padding: 40px 15px !important;
+    }
+
+    /* صفحة من نحن */
+    .process-section {
+        width: calc(100% - 30px) !important;
+        margin: 0 15px !important;
+        padding: 40px 15px !important;
+    }
+
+    .about-ecg-section {
+        padding: 50px 0 !important;
+    }
+
+    .btn-learn-more {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-images {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    /* تفاصيل الشركة */
+    .company-content {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 0 15px;
+    }
+
+    .company-details {
+        padding: 50px 0 !important;
+    }
 }
 
 /* إضافة تنسيقات للشاشات الصغيرة جداً */
@@ -515,17 +1017,26 @@
     }
 
     .logo img {
-        height: 45px !important;
-        max-width: 120px !important;
+        height: 56px !important;
+        max-width: 140px !important;
+    }
+
+    .btn-submit-request {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .experience-hero {
+        min-height: 360px;
     }
 
     .content-box h2 {
-        font-size: 22px !important;
-        margin-top: 80px !important;
+        font-size: 20px !important;
+        margin-top: 0 !important;
     }
 
     .content-box h3 {
-        font-size: 14px !important;
+        font-size: 13px !important;
     }
 
     .btn-about {
@@ -533,12 +1044,48 @@
         font-size: 14px !important;
     }
 
-    .corporate-grid {
-        grid-template-columns: 1fr !important;
+    .corporate-partners .corporate-grid .company-card {
+        height: 205px;
+        min-height: 205px;
+        max-height: 205px;
     }
 
-    .corporate-grid img {
-        height: 80px;
+    .corporate-partners .company-card img {
+        height: 137px !important;
+        min-height: 137px;
+        max-height: 137px;
+        padding: 10px 8px !important;
+    }
+
+    .corporate-partners .company-overlay {
+        min-height: 68px;
+        max-height: 68px;
+        padding: 8px 6px 10px !important;
+    }
+
+    .corporate-partners .company-overlay h3 {
+        font-size: 0.72rem !important;
+    }
+
+    .corporate-partners .company-overlay p {
+        font-size: 0.62rem !important;
+    }
+
+    .partners-section .section-header {
+        min-height: 220px;
+        height: 220px;
+        padding: 20px 14px !important;
+    }
+
+    .partners-section .section-header h2 {
+        font-size: 1.35rem !important;
+    }
+
+    .partners-section .corporate-grid > img {
+        height: 85px !important;
+        min-height: 85px;
+        max-height: 85px;
+        padding: 8px 6px !important;
     }
 
     .section-header h2 {
@@ -553,16 +1100,54 @@
         font-size: 1.8rem !important;
     }
 
-    .card {
-        height: 350px !important;
+    .section .cards {
+        gap: 5px !important;
     }
 
-    .top-title {
-        font-size: 16px !important;
+    .section .card {
+        height: 125px !important;
     }
 
-    .bottom-title {
-        font-size: 14px !important;
-        padding: 10px 20px !important;
+    .section .top-title {
+        font-size: 9px !important;
+    }
+
+    .section .bottom-title {
+        font-size: 8px !important;
+        padding: 4px 5px !important;
+    }
+
+    .filter-position {
+        gap: 6px !important;
+    }
+
+    .card-filter {
+        height: 120px !important;
+    }
+
+    .clients-section h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .clients-section .client-card {
+        width: 145px;
+        min-height: 85px;
+    }
+
+    .clients-section .client-card img {
+        max-height: 78px;
+        max-width: 135px;
+    }
+
+    .partners-section .section-header {
+        min-height: 200px;
+        height: 200px;
+    }
+
+    .partners-section .corporate-grid > img {
+        height: 78px !important;
+        min-height: 78px;
+        max-height: 78px;
+        padding: 6px 5px !important;
     }
 }

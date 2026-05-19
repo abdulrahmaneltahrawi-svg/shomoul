@@ -43,6 +43,8 @@
 
       #preloader.loaded {
         transform: translateY(-100%); /* تنزاح للأعلى كأنها ستارة */
+        pointer-events: none;
+        visibility: hidden;
       }
 
       .loader-content {
@@ -435,13 +437,13 @@
         align-items: center;
         gap: 40px;
         width: max-content;
-      .client-card {
-        background: #efefef;
+      }
 
+      .client-card {
+        background: transparent;
         display: flex;
         align-items: center;
         justify-content: center;
-
         flex-shrink: 0;
       }
 
@@ -449,7 +451,6 @@
         width: 100%;
         object-fit: contain;
       }
-    }
     </style>
     <!--===============load screen=================-->
     <div id="preloader">
@@ -641,8 +642,8 @@
         <p data-aos="fade-left" data-aos-duration="1200">اخر مشاريع شمول</p>
       </div>
 
-      <a href="project_SEC.html"><div class="cards">
-        <!-- الكرت الأول -->
+      <div class="cards">
+        <a href="project_SEC.html" class="card-link">
         <div class="card" data-aos="fade-up">
           <img
             src="assets/مشاريع/مصنع - شركة عبر البلاد الصناعية/ELEVATION.jpeg"
@@ -656,8 +657,8 @@
           <div class="bottom-title">المباني</div>
         </div></a>
 
-        <!-- الكرت الثاني -->
-        <a href="project_SIC.html"><div class="card" data-aos="fade-up">
+        <a href="project_SIC.html" class="card-link">
+        <div class="card" data-aos="fade-up">
           <img
             src="assets/مشاريع/محطة وقود حي احد - شركة العسيس للخدمات البترولية/1.png"
             alt="النقل"
@@ -670,8 +671,8 @@
           <div class="bottom-title">النقل</div>
         </div></a>
 
-        <!-- الكرت الثالث -->
-        <a href="project_SSC.html"><div class="card" data-aos="fade-down">
+        <a href="project_SSC.html" class="card-link">
+        <div class="card" data-aos="fade-down">
           <img
             src="assets/مشاريع/مستودعات - فيصل بن محمد بن أحمد القاضي/1.png"
             alt="النفط والغاز"
@@ -683,7 +684,8 @@
 
           <div class="bottom-title">الصناعات النفط والغاز</div>
         </div>
-      </div></a>
+        </a>
+      </div>
 
       <div class="more-btn">
         <a href="projects.html"><button>المزيد من المشاريع</button></a>
