@@ -43,6 +43,15 @@
   object-fit: cover;
 }
 
+.contact-hero-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+
+
 
       .branches-section {
         padding: 60px 0;
@@ -119,8 +128,9 @@
         justify-content: center;
         align-items: center;
   
-        background-color: #ffffff;
+        background: url('assets/imges/ChatGPT Image 19 مايو 2026، 01_59_24 م.png');
         font-family: "Cairo", sans-serif;
+        padding: 60px;
       }
 
             /* حاوية الخريطة للتوسيط */
@@ -159,6 +169,10 @@
       .contact-container {
         max-width: 1000px;
         margin: 0 auto;
+        background: white;
+        padding: 60px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
       }
       
 
@@ -253,6 +267,49 @@
           gap: 0;
         }
       }
+
+      /* تخلي العناصر المطلقة تتموضع داخل الخريطة */
+.google-map{
+  position: relative;
+  display: inline-block;
+}
+
+/* البوكس فوق الصورة */
+.inside-map-img{
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  z-index: 5;
+
+  background: rgba(255,255,255,0.95);
+  padding: 12px 18px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+  line-height: normal;
+}
+
+/* أيقونة داخل البوكس */
+.inside-map-img img{
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+/* النص */
+.inside-map-img p{
+  margin: 0;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 700;
+}
     </style>
     <div id="header-placeholder"></div>
 
@@ -264,12 +321,11 @@
       </div>
     </section>
 
-
+<div class="contact-hero-img">
     <img 
-class="contact-hero-img"
 src="assets/imges/ChatGPT Image May 17, 2026, 10_54_22 AM.png" 
-alt="">
-
+alt="hero-map">
+</div>
 
 
 
@@ -336,6 +392,11 @@ alt="">
         href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8"
         target="_blank"
       >
+      <div class="inside-map-img">
+        <img src="assets/icons/placeholder.png" alt="map-icon">
+        <p>مجموعة شمول للإسشارات</p>
+      </div>
+        
         <img
           src="assets/imges/Screenshot 2026-05-06 102157.png"
           alt="Google Map Location"
