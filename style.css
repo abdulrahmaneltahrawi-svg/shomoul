@@ -159,7 +159,7 @@ body {
 
 /* تنسيق زر قدم طلبك الأصفر */
 .btn-submit-request {
-  background-color: #3a3a3a; /* اللون الأصفر من صورتك */
+  background: linear-gradient(rgb(194, 193, 193),rgb(207, 204, 204),rgb(151, 150, 150));
   color: white;            /* لون الخط داكن عشان يظهر بوضوح */
   font-family: 'Cairo', sans-serif;
   font-size: 15px;
@@ -174,7 +174,7 @@ body {
 
 /* تأثير عند تمرير الماوس فوق الزر الأصفر */
 .btn-submit-request:hover {
-  background-color: #e3f0f43d; /* يغمق الأصفر قليلاً */
+  background: linear-gradient(rgba(85, 85, 85, 0.527),rgb(168, 168, 168),rgb(187, 187, 187));
   transform: translateY(-1px); /* حركة خفيفة للأعلى */
 }
 
@@ -189,7 +189,7 @@ body {
 .social-icon {
   width: 36px;
   height: 36px;
-  background-color: #f2f2f2; /* لون الخلفية الرمادي الفاتح جداً للدائرة */
+  background: white;
   border-radius: 50%;        /* تحويل الدائرة لشكل دائري كامل */
   display: flex;
   justify-content: center;
