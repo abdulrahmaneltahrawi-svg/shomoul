@@ -22,6 +22,39 @@
   </head>
 
   <body>
+    <style>
+  .clients-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.clients-grid img {
+  height: 300px;
+  width: auto;
+  filter: none; /* إزالة التأثير الرمادي */
+  transition: 0.3s;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  gap: 20px;
+  border: 1px solid #ccc;
+  /* إزالة الأنيميشن */
+}
+
+.clients-grid img:hover {
+  transform: scale(1.1);
+  background: white !important ; /* خلفية بيضاء شفافة جداً */
+}
+
+    </style>
     <div id="header-placeholder"></div>
 
     <main>
@@ -38,7 +71,6 @@
     <section class="partners-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-subtitle">ثقتنا في العملاء</span>
           <h2>شركاء النجاح</h2>
           <p>
             نحن نؤمن بأن نجاحنا يرتبط بنجاح عملائنا. على مدار سنوات من الخبرة،
@@ -48,7 +80,7 @@
         </div>
       </div>
       <div class="container">
-        <div class="corporate-grid">
+        <div class="clients-grid">
           <img src="assets/clients/001-1.jpg" alt="Partner" data-aos="zoom-out-up" loading="lazy"/>
           <img src="assets/clients/002-1.jpg" alt="Partner" data-aos="zoom-out-up" loading="lazy"/>
           <img src="assets/clients/003-1.jpg" alt="Partner"  data-aos="zoom-out-up"loading="lazy"/>

@@ -39,6 +39,17 @@
         gap: 30px;
         padding: 50px ;
        }
+
+       .card-title{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+       }
+
+       .card-title p{
+        font-weight: bold;
+        font-size: 22px;
+       }
       .card-filter {
         position: relative;
         width: 250px;
@@ -57,9 +68,9 @@
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       }
       .card-filter img:hover {
-        cursor: pointer;  
-        transform: scale(1.1);
+        cursor: pointer;          
         transition: transform 0.4s ease;
+        opacity: 0.5;
       }
 
 
@@ -78,11 +89,15 @@
 <!--=============filter projects=============-->
     <section class="section">
       <div class="project-title" data-aos="fade-right">
-        <h1>تصنيف المشاريع </h1>
+        <h1>تصنيف المشاريع:</h1>
       </div>
 
       <div class="filter-position">
+
         <!-- الكرت الأول -->
+        <div class="card-title">
+
+        <p>المشاريع الهندسية</p>
          <a href="project_SEC.html">
         <div class="card-filter" data-aos="fade-left">
           <img
@@ -91,8 +106,13 @@
           />   
 
         </div></a>
+        </div>
 
         <!-- الكرت الثاني -->
+
+        <div class="card-title">
+
+        <p>مشاريع السلامة</p>
          <a href="project_SSC.html">
         <div class="card-filter" data-aos="fade-up">
           <img
@@ -101,8 +121,12 @@
           />
 
         </div></a>
+        </div>
 
         <!-- الكرت الثالث -->
+         <div class="card-title">
+
+        <p>مشاريع المصانع</p>
          <a href="project_SIC.html">
         <div class="card-filter" data-aos="fade-right">
           <img
@@ -110,6 +134,7 @@
             alt="النفط والغاز"
           />
         </div></a>
+         </div>
       </div>
     </section>
 
