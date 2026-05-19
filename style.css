@@ -729,7 +729,7 @@ cursor: pointer;
 
 /* تصميم قسم الشركات الاستراتيجية (التحالفات) */
 .corporate-partners {
-  padding: 60px 0;
+  padding: 90px 0;
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/imges/ChatGPT Image May 14, 2026, 12_28_07 PM.png');
     background-size: cover;
     background-position: center;
@@ -747,7 +747,7 @@ cursor: pointer;
   gap: 30px;
   justify-items: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 60px 0;
   margin-bottom: 30px;
 }
 
@@ -937,14 +937,14 @@ cursor: pointer;
 }
 
 .about-text h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: #464646;
+  color: #272727;
   margin-bottom: 24px;
 }
 
 .about-text p {
-  color: rgb(119, 119, 119);
+  color: rgb(95, 94, 94);
         font-family: Cairo, Arial, Helvetica, sans-serif;
         line-height: 1.8;
         margin-bottom: 35px;
