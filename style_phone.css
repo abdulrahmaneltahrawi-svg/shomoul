@@ -695,7 +695,7 @@
     }
 
     .image-wrapper img {
-        height: 300px !important;
+        height: 700px !important;
     }
 
     .img-1, .img-2 {
@@ -1077,19 +1077,19 @@
     .corporate-partners .corporate-grid .company-card {
         height: 205px;
         min-height: 205px;
-        max-height: 205px;
+        max-height: 550px;
     }
 
     .corporate-partners .company-card img {
         height: 137px !important;
-        min-height: 137px;
-        max-height: 137px;
+        min-height: 150px;
+        max-height: 150px;
         padding: 10px 8px !important;
     }
 
     .corporate-partners .company-overlay {
-        min-height: 68px;
-        max-height: 68px;
+        min-height: 60px;
+        max-height: 75px;
         padding: 8px 6px 10px !important;
     }
 
