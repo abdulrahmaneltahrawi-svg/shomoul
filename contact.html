@@ -42,41 +42,7 @@
   display: block;
   object-fit: cover;
 }
-      /* حاوية الخريطة للتوسيط */
-      .map-container {
-        display: flex;
-        justify-content: center; /* توسيط أفقي */
-        align-items: center; /* توسيط رأسي إذا كان للحاوية ارتفاع */
-        width: 100%;
-      }
 
-      /* تنسيق الرابط والصورة */
-      .google-map {
-        display: inline-block;
-        overflow: hidden; /* لمنع الصورة من الخروج عن الحدود عند التكبير */
-        border-radius: 12px; /* حواف ناعمة تعطي لمسة عصرية */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease; /* تنعيم الحركة */
-        line-height: 0; /* إزالة الفراغ أسفل الصورة */
-      }
-
-      .google-map img {
-        max-width: 100%; /* لضمان التوافق مع الشاشات الصغيرة */
-        height: auto;
-        transition: filter 0.3s ease; /* تنعيم تأثير الألوان */
-      }
-
-      /* تأثير الهوفر (Hover) */
-      .google-map:hover {
-        transform: scale(1.02); /* تكبير بسيط جداً */
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* زيادة الظل لإعطاء عمق */
-      }
-
-      .google-map:hover img {
-        filter: brightness(0.9); /* تغميق الصورة قليلاً عند الهوفر */
-      }
 
       .branches-section {
         padding: 60px 0;
@@ -146,29 +112,55 @@
       }
 
 /* قسم التواصل */
-.contactme{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  padding: 80px 5%;
-  flex-wrap: wrap;
-  background: #fff;
-}
+
 
       .contact-section {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 30px 0;
+  
         background-color: #ffffff;
         font-family: "Cairo", sans-serif;
+      }
+
+            /* حاوية الخريطة للتوسيط */
+      .map-container {
+        padding: 60px;
+      }
+
+      /* تنسيق الرابط والصورة */
+      .google-map {
+        display: inline-block;
+        overflow: hidden; /* لمنع الصورة من الخروج عن الحدود عند التكبير */
+        border-radius: 12px; /* حواف ناعمة تعطي لمسة عصرية */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease; /* تنعيم الحركة */
+        line-height: 0; /* إزالة الفراغ أسفل الصورة */
+      }
+
+      .google-map img {
+        max-width: 100%; /* لضمان التوافق مع الشاشات الصغيرة */
+        height: auto;
+        transition: filter 0.3s ease; /* تنعيم تأثير الألوان */
+      }
+
+      /* تأثير الهوفر (Hover) */
+      .google-map:hover {
+        transform: scale(1.02); /* تكبير بسيط جداً */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* زيادة الظل لإعطاء عمق */
+      }
+
+      .google-map:hover img {
+        filter: brightness(0.9); /* تغميق الصورة قليلاً عند الهوفر */
       }
 
       .contact-container {
         max-width: 1000px;
         margin: 0 auto;
       }
+      
 
       .contact-header span {
         color: #3a3a2b;
@@ -337,9 +329,8 @@ alt="">
     </section>
 
 
-    <div class="contactme">
-
-    <div class="map-container" data-aos="zoom-out-up">
+    <section class="contact-section" id="contact-form-section">
+      <div class="map-container" data-aos="zoom-out-up">
       <a
         class="google-map"
         href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8"
@@ -351,8 +342,6 @@ alt="">
         />
       </a>
     </div>
-
-    <section class="contact-section" id="contact-form-section">
       <div class="contact-container" data-aos="zoom-in-down">
         <div class="contact-header">
           <span>نموذج التواصل</span>
@@ -410,7 +399,7 @@ alt="">
         </form>
       </div>
     </section>
-</div>
+
 
 
     <section class="branches-section">

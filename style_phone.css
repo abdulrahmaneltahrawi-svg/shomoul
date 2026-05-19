@@ -973,6 +973,40 @@
         padding: 40px 15px !important;
     }
 
+    /* Contact Section (Map and Form) */
+    .contact-section {
+        flex-direction: column !important; /* Stack map and form vertically */
+        padding: 30px 15px !important; /* Add padding to the section itself */
+        align-items: stretch !important; /* Allow children to stretch */
+    }
+
+    .map-container {
+        padding: 20px 0 !important; /* Adjust padding for mobile, remove horizontal padding from container */
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .google-map {
+        width: 100%; /* Ensure the link takes full width */
+    }
+
+    .google-map img {
+        width: 100%; /* Ensure the image fills the container */
+    }
+
+    .contact-container {
+        max-width: 100% !important; /* Allow it to take full width */
+        padding: 0 15px !important; /* Add horizontal padding */
+        margin: 0 auto !important; /* Center it */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Branches Section */
+    .branches-container {
+        padding: 0 15px !important; /* Reduce padding for mobile */
+    }
+
     /* صفحة من نحن */
     .process-section {
         width: calc(100% - 30px) !important;
