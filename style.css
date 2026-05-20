@@ -458,7 +458,7 @@ body {
 /*=======services=======*/
 .services-preview {
   padding: 80px 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/imges/ChatGPT Image May 14, 2026, 09_58_56 AM.png');
+  background: linear-gradient(rgb(224, 224, 224),white);
   background-size: cover;
   background-position: center;
   margin-bottom: 30px;
