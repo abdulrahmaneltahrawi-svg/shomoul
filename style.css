@@ -960,18 +960,18 @@ cursor: pointer;
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
 .contact-card {
   display: flex;
   flex-direction: column;
-  align-items: center;;
-  background: white;
-  padding: 60px 10px;
-  border-radius: 12px;
+  align-items:  center;;
+  background: linear-gradient(rgb(224, 224, 224),white);
+  padding: 50px 5px;
+  border-radius: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   border: 1px solid #e2e8f0;
@@ -979,32 +979,33 @@ cursor: pointer;
 }
 
 .contact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: #a1a1a1;
+  
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
 }
 
 .contact-icon {
-  width: 90px;
-  height: 90px;
+  width: 95px;
+  height: 95px;
   margin: 0 auto 24px;
   background: #1a1a1a;
-  border-radius: 50%;
+  border-radius: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
 }
 
 .contact-icon img {
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
 
 .contact-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 16px;
@@ -1014,6 +1015,7 @@ cursor: pointer;
   color: #464646;
   line-height: 1.6;
   margin-bottom: 8px;
+  font-size: 1.3rem;
 }
 
 .contact-card a {
@@ -1044,7 +1046,7 @@ footer .container {
 }
 
 footer {
-  background: linear-gradient(100deg, #202020 0%, #272727 45%, #565657 70%, #777777 95%, #999999 100%);
+  background: #202020;
   border-top: 4px solid #b59773;
 
   color: #e2e8f0; /* تحديد لون النص الافتراضي للفوتر */
@@ -1123,7 +1125,7 @@ footer {
   align-items: center;
   font-size: 11px; /* تصغير حجم النص لكي لا يزاحم الأيقونات */
   gap: 5px;
-  color: #94a3b8;
+  color: #e2e2e2;
 }
 
 .footer-content ul.social-links-list a:hover {
@@ -1134,16 +1136,16 @@ footer {
 
 .footer-content p {
   margin-bottom: 16px; /* زيادة الهامش السفلي للفقرات */
-  color: #94a3b8;
+  color: #feffff;
 }
 
 
 .footer-content img {
-  width: 30px;
+  width: 40px;
   height: auto;
-  filter: brightness(0) invert(1); /* جعل الأيقونات بيضاء لتناسب الخلفية السوداء */
   transition: 0.3s;
   color: #b59773;
+  border-radius: 12px;
 }
 
 .footer-content img:hover {
