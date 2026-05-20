@@ -159,7 +159,7 @@ body {
 
 /* تنسيق زر قدم طلبك الأصفر */
 .btn-submit-request {
-  background: linear-gradient(rgb(194, 193, 193),rgb(207, 204, 204),rgb(151, 150, 150));
+  background: linear-gradient(rgb(194, 193, 193),rgba(122, 122, 122, 0.747),rgb(145, 144, 144));
   color: white;            /* لون الخط داكن عشان يظهر بوضوح */
   font-family: 'Cairo', sans-serif;
   font-size: 15px;
