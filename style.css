@@ -174,7 +174,7 @@ body {
 
 /* تأثير عند تمرير الماوس فوق الزر الأصفر */
 .btn-submit-request:hover {
-  background: linear-gradient(rgba(85, 85, 85, 0.527),rgb(168, 168, 168),rgb(187, 187, 187));
+  background: linear-gradient(rgb(145, 144, 144),rgba(122, 122, 122, 0.747),rgb(194, 193, 193));
   transform: translateY(-1px); /* حركة خفيفة للأعلى */
 }
 
