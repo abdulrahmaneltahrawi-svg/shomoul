@@ -651,18 +651,6 @@ cursor: pointer;
         z-index: 2;
       }
 
-      /* النص السفلي */
-      .bottom-title {
-        position: absolute;
-        bottom: 25px;
-        color: white;
-        background-color: #0f111517;
-        padding: 20px 80px;
-        font-size: 26px;
-        font-weight: bold;
-        z-index: 2;
-      }
-
       
 /* Company Cards */
     
