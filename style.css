@@ -591,7 +591,7 @@ cursor: pointer;
 
       .cards {
         display: flex;
-        gap: 30px;
+        gap: 20px;
         justify-content: center;
         align-items: center;
         flex-direction: center;
@@ -600,7 +600,7 @@ cursor: pointer;
 
       .card {
         position: relative;
-        width: 560px;
+        width: 360px;
         height: 350px;
         border-radius: 30px;
         overflow: hidden;
