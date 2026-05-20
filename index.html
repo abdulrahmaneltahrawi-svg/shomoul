@@ -118,7 +118,7 @@
       /*hero========================================*/
       .experience-hero {
         position: relative;
-        height: 100vh; /* طول القسم كما هو */
+        height: 130vh; /* طول القسم كما هو */
         width: 100%;
         overflow: hidden; /* ضروري جداً لمنع الصور من الخروج من الحواف أثناء الزوم */
       }
@@ -172,16 +172,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(
-          0,
-          0,
-          0,
-          0.537
-        ); /* درجة التعتيم الدقيقة التي اخترتها */
+        background-color: rgba(0, 0, 0, 0.178);
+  
+        
         display: flex;
         justify-content: center;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        padding-top: 35vh;
         z-index: 2; /* فوق الصور وتحت المحتوى النصي */
       }
 
@@ -207,6 +204,13 @@
         100% {
           opacity: 0;
         }
+      }
+      .content-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+transform: translateY(50px);
       }
 
       .content-box h2 {
@@ -705,9 +709,6 @@
     <!-- قسم الشركات (شركاء النجاح) بتصميم الشريط المتحرك -->
     <section class="corporate-partners">
       <div class="container">
-        <div class="section-company" data-aos="fade-up">
-          <h2>شركاء النجاح</h2>
-        </div>
         <div class="corporate-grid">
           <a
             href="view.html?company=shomoul-engineering-consulting"
@@ -811,29 +812,35 @@
       <div class="clients-slider">
         <div class="slider-track">
           <!-- العناصر -->
-          <div class="client-card">
-            <img src="assets/clients/001-1.jpg" loading="lazy" alt="c1" />
+          <div class="client-card"><a href="https://muhaidib.com/ar/">
+            <img src="assets/clients/001-1.jpg" loading="lazy" alt="c1" /></a>
           </div>
 
           <div class="client-card">
-            <img src="assets/clients/016.jpg" loading="lazy" alt="c2" />
+            <a href="https://www.carrefourksa.com/mafsau/ar">
+            <img src="assets/clients/016.jpg" loading="lazy" alt="c2" /></a>
+          </div>
+
+          
+          <div class="client-card">
+            <a href="https://splonline.com.sa/ar/">
+            <img src="assets/clients/027.jpg" loading="lazy" alt="c3" /></a>
           </div>
 
           <div class="client-card">
-            <img src="assets/clients/027.jpg" loading="lazy" alt="c3" />
+            <a href="https://www.almanahospital.com.sa/ar/">
+            <img src="assets/clients/026.jpg" loading="lazy" alt="c4" /></a>
           </div>
 
           <div class="client-card">
-            <img src="assets/clients/026.jpg" loading="lazy" alt="c4" />
-          </div>
-
-          <div class="client-card">
-            <img src="assets/clients/018.jpg" loading="lazy" alt="c5" />
+            <a href="https://www.abdulla-fouad.com/ar/home/">
+            <img src="assets/clients/018.jpg" loading="lazy" alt="c5" /></a>
           </div>
 
           <!-- تكرار العناصر عشان الحركة تكون مستمرة -->
           <div class="client-card">
-            <img src="assets/clients/006-1.jpg" loading="lazy" alt="c6" />
+            <a href="https://www.ajfc.com.sa/">
+            <img src="assets/clients/006-1.jpg" loading="lazy" alt="c6" /></a>
           </div>
         </div>
       </div>
