@@ -31,47 +31,109 @@
         background: url('assets/imges/8fc9ded9e7854568a69339065cb0187f.jpg');
 
       }
-      
-       /*projects section*/
-       .filter-position{
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        padding: 50px ;
-       }
 
-       .card-title{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-       }
+      /* تنسيق القسم بالكامل */
+.process-section {
+  padding: 80px 0;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #ffffff; /* أو أي خلفية تناسب موقعك */
+  position: relative;
+}
 
-       .card-title p{
-        font-weight: bold;
-        font-size: 22px;
-       }
-      .card-filter {
-        position: relative;
-        width: 250px;
-        height: 260px;
-        border-radius: 30px;
-        overflow: hidden;
-        cursor: pointer;
-        border: 1px solid #d4d4d4;
-      }
+.process-title h2 {
+  font-size: 32px;
+  color: #111;
+  margin: 5px 0 15px;
+}
 
-      .card-filter img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+.process-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 60px auto 0;
+  position: relative; /* ضروري عشان الـ SVG يركب صح */
+  padding: 0 50px;
+}
 
-      }
-      .card-filter img:hover {
-        cursor: pointer;          
-        transition: transform 0.4s ease;
-        opacity: 0.5;
-      }
+/* تنسيق عناصر الخطوات */
+.step-item {
+  flex: 1;
+  z-index: 2; /* عشان تطلع فوق الخط */
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-wrapper {
+  width: 220px;
+  height: 220px;
+  background: #f0efef; /* اللون الأزرق اللي اخترناه من الفوتر */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 25px;
+  border: 4px solid #0c0c0c;
+}
+
+.icon-wrapper:hover{
+  transform: scale(1.1);
+  transition: transform 0.1s ease;
+  cursor: pointer
+}
+
+/* التحكم بالـ SVG وحركته */
+.wave-line {
+  position: absolute;
+  top: 20px; /* يخلي الخط يمر بنص الأيقونات بالظبط */
+  left: 10%;
+  width: 80%;
+  height: 200px;
+  z-index: 1;
+  fill: none;
+}
+
+.wave-line path {
+  stroke: #000000; /* لون الخط */
+  stroke-width: 3px; /* سمك الخط */
+  stroke-dasharray: 6, 6; /* يخليه منقط (طول النقطة 6 بكسل والمسافة 6 بكسل) */
+  animation: moveWave 4s linear infinite; /* تشغيل الحركة المستمرة */
+}
+
+/* الأنيمايشن السحري اللي بيخلي الخط يزحف ويمشي */
+@keyframes moveWave {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -120; /* يحرك النقط باتجاه الأمام */
+  }
+}
+
+.step-img {
+  width: 75%; /* أو 40px عشان تكون مناسبة لحجم الدائرة */
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* تنسيق النصوص */
+.step-item h3 {
+  font-size: 18px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.step-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
 
 
       
@@ -86,57 +148,46 @@
 
 
 <section class="background">
-<!--=============filter projects=============-->
-    <section class="section">
-      <div class="project-title" data-aos="fade-right">
-        <h1>تصنيف المشاريع:</h1>
-      </div>
+<section class="process-section">
+  <div class="process-title">
+    <span>المشاريع</span>
+    <h2>تصنيف المشاريع:</h2>
+    <div class="title-line"></div>
+  </div>
 
-      <div class="filter-position">
+  <div class="process-container">
+    <svg class="wave-line" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <path d="M 0,50 Q 250,0 500,50 T 1000,50" />
+    </svg>
 
-        <!-- الكرت الأول -->
-        <div class="card-title" data-aos="fade-down">
+    <div class="step-item">
+      <div class="icon-wrapper" style="background:linear-gradient(#176fb1,#94c344,#fafaf9);">
+        <a href="project_SEC.html">
+  <img src="assets/icons/technology.png" alt="Choose Service" class="step-img"></a>
+</div>
+      <h3>مشاريع الهندسية</h3>
+  
+    </div>
 
-        <p>المشاريع الهندسية</p>
-         <a href="project_SEC.html">
-        <div class="card-filter" data-aos="fade-left">
-          <img
-            src="assets/imges/Gemini_Generated_Image_95rm3t95rm3t95rm.png"
-            alt="الهندسية"
-          />   
+    <div class="step-item">
+      <div class="icon-wrapper" style="background:linear-gradient(#ec4f29,#f0f0ef);">
+        <a href="project_SSC.html">
+  <img src="assets/icons/labour.png" alt="Choose Service" class="step-img"></a>
+</div>
+      <h3>مشاريع السلامة</h3>
 
-        </div></a>
-        </div>
+    </div>
 
-        <!-- الكرت الثاني -->
-
-        <div class="card-title" data-aos="fade-down">
-
-        <p>مشاريع السلامة</p>
-         <a href="project_SSC.html">
-        <div class="card-filter" data-aos="fade-up">
-          <img
-            src="assets/imges/Gemini_Generated_Image_7l6hy87l6hy87l6h.png"
-            alt="النقل"
-          />
-
-        </div></a>
-        </div>
-
-        <!-- الكرت الثالث -->
-         <div class="card-title" data-aos="fade-down">
-
-        <p>مشاريع المصانع</p>
-         <a href="project_SIC.html">
-        <div class="card-filter" data-aos="fade-right">
-          <img
-            src="assets/imges/Gemini_Generated_Image_6yv6146yv6146yv6.png"
-            alt="النفط والغاز"
-          />
-        </div></a>
-         </div>
-      </div>
-    </section>
+    <div class="step-item">
+      <div class="icon-wrapper" style="background:linear-gradient(#213857,#f26727);">
+        <a href="project_SIC.html">
+  <img src="assets/icons/industrial-park.png" alt="Choose Service" class="step-img"></a>
+</div>
+      <h3>مشاريع المصانع</h3>
+      
+    </div>
+  </div>
+</section>
 
     </section>
 
