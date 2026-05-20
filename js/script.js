@@ -206,7 +206,7 @@ function initClientSlider() {
     track.appendChild(clone);
   });
 
-  let speed = 1;
+  let speed = 2;
   let position = 0;
   let isPaused = false;
 
