@@ -717,14 +717,19 @@
 
     .footer-content {
         padding: 20px 15px;
+        color: #ffffff; /* High contrast white for general text */
     }
 
     .footer-content h3 {
         font-size: 1.2rem;
+        color: #ffffff; /* Bright white for section headings */
+        margin-bottom: 15px;
     }
 
     .footer-content a {
         font-size: 0.9rem;
+        color: #e0e0e0; /* Light gray for links to ensure readability */
+        text-decoration: none;
     }
 
     .corporate-partners .container {
@@ -755,6 +760,7 @@
 
     .bottom-bar p {
         font-size: 11px;
+        color: #bbbbbb; /* Improved contrast for copyright text */
     }
 
     /* زر واتساب - لا يغطي المحتوى */
