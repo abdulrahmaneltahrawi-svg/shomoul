@@ -1,6 +1,6 @@
 @media (max-width: 992px) {
     .projects-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         padding: 0 15px;
     }
 }
@@ -316,7 +316,7 @@
     .services-grid, 
     .contact-grid, 
     .about-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         padding: 0 15px;
         gap: 20px !important;
     }
@@ -530,7 +530,7 @@
 
     /* --- المشاريع --- */
     .projects-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         padding: 0 15px;
         gap: 24px !important;
     }
@@ -544,7 +544,7 @@
     }
 
     .project-images-inner {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .project-images-inner img {
@@ -903,7 +903,7 @@
     }
 
     .process-wrapper {
-        flex-direction: column !important;
+        flex-direction: row !important;
         gap: 30px !important;
     }
 

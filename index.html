@@ -575,9 +575,15 @@ transform: translateY(90px);
     </section>
 
     <!-- Services Grid Section -->
-    <section class="services-preview">
+    <section class="services-preview" >
+      <div class="process-title" style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
+    <h2>الخدمات</h2>
+  </div>
+      
       <div class="page-content">
+        
         <div class="container">
+          
           <div class="services-grid">
             <div class="service-card" id="architecture" data-aos="fade-left">
               <div class="service-icon">
@@ -635,66 +641,43 @@ transform: translateY(90px);
       />
     </section>
 
-    <!-- قسم معرض المشاريع -->
-    <section class="section">
-      <div class="section-header">
-        <h2 data-aos="fade-left" data-aos-duration="1200">المشاريع</h2>
-        <p data-aos="fade-left" data-aos-duration="1200">اخر مشاريع شمول</p>
-      </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-      <div class="cards">
-        <a href="project_SEC.html" class="card-link">
-        <div class="card" data-aos="fade-up">
-          <img
-            src="assets/مشاريع/مصنع - شركة عبر البلاد الصناعية/ELEVATION.jpeg"
-            loading="lazy"
-            alt="المباني"
-          />
+<div class="clients-slider0">
+  <div class="swiper-wrapper">
+    
+    <div class="swiper-slide">
+      <div class="client-logo"><img src="assets/clients/001-1.jpg" alt="العميل 1"></div>
+      <div class="client-logo"><img src="assets/clients/002-1.jpg" alt="العميل 2"></div>
+      <div class="client-logo"><img src="assets/clients/003-1.jpg" alt="العميل 3"></div>
+      <div class="client-logo"><img src="assets/clients/004-2.jpg" alt="العميل 4"></div>
+    </div>
 
-          <div class="overlay"></div>
+    <div class="swiper-slide">
+      <div class="client-logo"><img src="assets/clients/006-1.jpg" alt="العميل 5"></div>
+      <div class="client-logo"><img src="assets/clients/007-1.jpg" alt="العميل 6"></div>
+      <div class="client-logo"><img src="assets/clients/008-1.jpg" alt="العميل 7"></div>
+      <div class="client-logo"><img src="assets/clients/009-1.jpg" alt="العميل 8"></div>
+    </div>
 
-          <div class="top-title">مشاريع الهندسية</div>
+    <div class="swiper-slide">
+      <div class="client-logo"><img src="assets/clients/010-1.jpg" alt="العميل 5"></div>
+      <div class="client-logo"><img src="assets/clients/018.jpg" alt="العميل 6"></div>
+      <div class="client-logo"><img src="assets/clients/022.jpg" alt="العميل 7"></div>
+      <div class="client-logo"><img src="assets/clients/025.jpg" alt="العميل 8"></div>
+    </div>
 
-          <div class="bottom-title">مبنى</div>
-        </div></a>
+  </div>
+  
+  <div class="swiper-pagination"></div>
+</div>
 
-        <a href="project_SIC.html" class="card-link">
-        <div class="card" data-aos="fade-up">
-          <img
-            src="assets/مشاريع/محطة وقود حي احد - شركة العسيس للخدمات البترولية/1.png"
-            loading="lazy"
-            alt="النقل"
-          />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-          <div class="overlay"></div>
 
-          <div class="top-title">مشاريع السلامة</div>
 
-          <div class="bottom-title">محطة</div>
-        </div></a>
 
-        <a href="project_SSC.html" class="card-link">
-        <div class="card" data-aos="fade-down">
-          <img
-            src="assets/مشاريع/مستودعات - فيصل بن محمد بن أحمد القاضي/1.png"
-            loading="lazy"
-            alt="النفط والغاز"
-          />
-
-          <div class="overlay"></div>
-
-          <div class="top-title">مشاريع المصانع</div>
-
-          <div class="bottom-title">مستودع</div>
-        </div>
-        </a>
-      </div>
-
-      <div class="more-btn">
-        <a href="projects.html"><button>المزيد من المشاريع</button></a>
-      </div>
     </section>
-
     <!-- قسم الشركات (شركاء النجاح) بتصميم الشريط المتحرك -->
     <section class="corporate-partners">
       <div class="container">
@@ -917,6 +900,25 @@ transform: translateY(90px);
       );
 
       observer.observe(statsSection);
+
+
+
+
+
+
+//
+      const swiper = new Swiper('.clients-slider0', {
+  loop: true,               // جعل السلايدر يدور بشكل مستمر بدون توقف
+  speed: 800,               // سرعة التبديل والانتقال (بالأجزاء من الثانية)
+  autoplay: {
+    delay: 3000,            // يبقى ظاهراً لمدة 3 ثوانٍ ثم يتبدل
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
     </script>
   </body>
 </html>

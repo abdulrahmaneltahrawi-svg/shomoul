@@ -593,7 +593,7 @@ cursor: pointer;
         gap: 20px;
         justify-content: center;
         align-items: center;
-        flex-direction: center;
+        flex-direction: row;
         flex-wrap: wrap;
       }
 
@@ -1421,4 +1421,153 @@ footer {
   height: 2px; /* سماكة الخط */
   background-color: #333333; /* لون الخط السفلي */
   border-radius: 2px;
+}
+
+/*project*/
+.background{
+          background: linear-gradient(rgba(219, 219, 219, 0.678), rgba(255, 255, 255, 0.863)), url('assets/imges/ChatGPT Image May 20, 2026, 01_34_45 PM.png') center/cover no-repeat ;
+      }
+
+      /* تنسيق القسم بالكامل */
+.process-section {
+  padding: 80px 0;
+  text-align: center;
+  font-family: sans-serif;
+
+  position: relative;
+}
+
+.process-title h2 {
+  font-size: 32px;
+  color: #111;
+  margin: 5px 0 15px;
+}
+
+.process-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 60px auto 0;
+  position: relative; /* ضروري عشان الـ SVG يركب صح */
+  padding: 0 50px;
+}
+
+/* تنسيق عناصر الخطوات */
+.step-item {
+  flex: 1;
+  z-index: 2; /* عشان تطلع فوق الخط */
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-wrapper {
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(rgba(219, 219, 219, 0.6), rgba(214, 214, 214, 0.6)), url('assets/imges/72bfa979629ff59e0733e950f0a89bcb.jpg') center/cover no-repeat;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 25px;
+  border: 4px solid #0c0c0c;
+}
+
+.icon-wrapper:hover{
+  transform: scale(1.1);
+  transition: transform 0.1s ease;
+  cursor: pointer
+}
+
+/* التحكم بالـ SVG وحركته */
+.wave-line {
+  position: absolute;
+  top: 20px; /* يخلي الخط يمر بنص الأيقونات بالظبط */
+  left: 10%;
+  width: 80%;
+  height: 200px;
+  z-index: 1;
+  fill: none;
+}
+
+.wave-line path {
+  stroke: #000000; /* لون الخط */
+  stroke-width: 3px; /* سمك الخط */
+  stroke-dasharray: 6, 6; /* يخليه منقط (طول النقطة 6 بكسل والمسافة 6 بكسل) */
+  animation: moveWave 4s linear infinite; /* تشغيل الحركة المستمرة */
+}
+
+/* الأنيمايشن السحري اللي بيخلي الخط يزحف ويمشي */
+@keyframes moveWave {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -120; /* يحرك النقط باتجاه الأمام */
+  }
+}
+
+.step-img {
+  width: 75%; /* أو 40px عشان تكون مناسبة لحجم الدائرة */
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* تنسيق النصوص */
+.step-item h3 {
+  font-size: 18px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.step-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/*client*/
+/* الحاوية الرئيسية للسلايدر */
+.clients-slider0 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 120px 0;
+  
+}
+
+/* تعديل طريقة عرض المجموعة لتصبح أفقيّة */
+.clients-slider0 .swiper-slide {
+  display: flex !important;      /* إجبار العرض المرن */
+  flex-direction: row !important; /* ترتيب العناصر من اليمين لليسار أفقيًا */
+  justify-content: center;
+  align-items: center;
+  gap: 35px;                    /* المسافة بين الدوائر البيضاء */
+  width: 100% !important;
+}
+
+/* تنسيق الدوائر البيضاء */
+.client-logo {
+  width: 260px;
+  height: 260px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;               /* منع الدوائر من الانضغاط أو تشوه حجمها */
+}
+
+.client-logo img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  border-radius: 50%;
 }
