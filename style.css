@@ -1161,6 +1161,7 @@ footer {
   transition: 0.3s;
   color: #b59773;
   border-radius: 12px;
+  border: 2px solid rgb(161, 161, 161);
 }
 
 .footer-content img:hover {
