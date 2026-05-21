@@ -551,7 +551,7 @@ transform: translateY(90px);
             <div class="stat-icon">
               <img src="assets/icons/costumer.png" alt="icon" loading="lazy"/>
             </div>
-            <h2 class="counter" data-target="1000">+500</h2>
+            <h2 class="counter" data-target="1000">+900</h2>
             <p>أعضاء الفريق</p>
           </div>
 
@@ -567,7 +567,7 @@ transform: translateY(90px);
             <div class="stat-icon">
               <img src="assets/icons/management.png" alt="icon" loading="lazy"/>
             </div>
-            <h2 class="counter" data-target="3000">+0</h2>
+            <h2 class="counter" data-target="3000">+700</h2>
             <p>المشاريع</p>
           </div>
         </div>
@@ -882,7 +882,7 @@ transform: translateY(90px);
 
             if (count < target) {
               counter.innerText = "+" + Math.ceil(count + inc).toLocaleString();
-              setTimeout(updateCount, 1);
+              setTimeout(updateCount, 20);
             } else {
               counter.innerText = "+" + target.toLocaleString();
             }
