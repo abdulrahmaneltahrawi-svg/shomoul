@@ -609,6 +609,7 @@ cursor: pointer;
       .card:hover {
         cursor: pointer;
       }
+      
 
       /* تطبيق التعتيم على الطبقة العلوية عند حوم الماوس */
       .card:hover .overlay {
@@ -622,6 +623,19 @@ cursor: pointer;
         transition: background 0.3s ease; /* تنعيم انتقال اللون */
         z-index: 1;
       }
+
+      .overlay .full-screen {
+        padding: 30px;
+        display: flex;
+        justify-content: flex-end;
+
+}
+
+     .overlay .full-screen img {
+  width: 24px;   /* غيّر الحجم كما تريد */
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
 
       .card:hover img {
         transform: scale(1.1); /* تكبير بسيط للصورة لإعطاء تأثير احترافي */

@@ -40,11 +40,6 @@
   position: relative;
 }
 
-.process-title h2 {
-  font-size: 32px;
-  color: #111;
-  margin: 5px 0 15px;
-}
 
 .process-container {
   display: flex;
@@ -86,40 +81,6 @@
   cursor: pointer
 }
 
-/* التحكم بالـ SVG وحركته */
-.wave-line {
-  position: absolute;
-  top: 20px; /* يخلي الخط يمر بنص الأيقونات بالظبط */
-  left: 10%;
-  width: 80%;
-  height: 200px;
-  z-index: 1;
-  fill: none;
-}
-
-.wave-line path {
-  stroke: #000000; /* لون الخط */
-  stroke-width: 3px; /* سمك الخط */
-  stroke-dasharray: 6, 6; /* يخليه منقط (طول النقطة 6 بكسل والمسافة 6 بكسل) */
-  animation: moveWave 4s linear infinite; /* تشغيل الحركة المستمرة */
-}
-
-/* الأنيمايشن السحري اللي بيخلي الخط يزحف ويمشي */
-@keyframes moveWave {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -120; /* يحرك النقط باتجاه الأمام */
-  }
-}
-
-.step-img {
-  width: 75%; /* أو 40px عشان تكون مناسبة لحجم الدائرة */
-  height: auto;
-  object-fit: contain;
-}
-
 
 /* تنسيق النصوص */
 .step-item h3 {
@@ -155,9 +116,6 @@
   </div>
 
   <div class="process-container">
-    <svg class="wave-line" viewBox="0 0 1000 100" preserveAspectRatio="none">
-      <path d="M 0,50 Q 250,0 500,50 T 1000,50" />
-    </svg>
 
     <div class="step-item">
       <div class="icon-wrapper" >
