@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
   setupSmoothScroll();
   setupScrollAnimations();
-  initLightbox(); // تفعيل ميزة تكبير الصور
 });
 
 // تحميل الهيدر
@@ -258,39 +257,39 @@ function initProjectFilter() {
 
 // وظيفة تكبير الصور (Lightbox)
 document.addEventListener("DOMContentLoaded", function () {
+
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const closeBtn = document.querySelector(".close-btn");
-  
-  // نحدد الكرت بالكامل (الذي يحتوي على الصورة والـ overlay معاً)
   const cards = document.querySelectorAll(".card");
 
-  cards.forEach(card => {
-    // جعل مؤشر الماوس يظهر كيد قابلة للضغط فوق الكرت بالكامل
+  // إذا عناصر اللايت بوكس غير موجودة لا تشغل الكود
+  if (!lightbox || !lightboxImg || !closeBtn) return;
+
+  cards.forEach((card) => {
     card.style.cursor = "pointer";
-    
+
     card.addEventListener("click", function () {
-      // نبحث عن الصورة بداخل هذا الكرت تحديداً عند الضغط عليه
       const img = card.querySelector("img");
+
       if (img) {
         lightbox.style.display = "flex";
         lightboxImg.src = img.src;
-        document.body.style.overflow = "hidden"; // منع حركة الصفحة في الخلفية أثناء التكبير
+        document.body.style.overflow = "hidden";
       }
     });
   });
 
-  // إغلاق عند الضغط على زر X
   closeBtn.addEventListener("click", function () {
     lightbox.style.display = "none";
     document.body.style.overflow = "auto";
   });
 
-  // إغلاق عند الضغط على الخلفية السوداء في أي مكان حول الصورة
   lightbox.addEventListener("click", function (e) {
-    if (e.target !== lightboxImg && e.target !== closeBtn) {
+    if (e.target === lightbox) {
       lightbox.style.display = "none";
       document.body.style.overflow = "auto";
     }
   });
+
 });

@@ -135,36 +135,13 @@
 
             /* حاوية الخريطة للتوسيط */
       .map-container {
-        padding: 60px;
+        padding: 10px;
       }
 
-      /* تنسيق الرابط والصورة */
-      .google-map {
-        display: inline-block;
-        overflow: hidden; /* لمنع الصورة من الخروج عن الحدود عند التكبير */
-        border-radius: 12px; /* حواف ناعمة تعطي لمسة عصرية */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease; /* تنعيم الحركة */
-        line-height: 0; /* إزالة الفراغ أسفل الصورة */
-      }
 
-      .google-map img {
-        max-width: 100%; /* لضمان التوافق مع الشاشات الصغيرة */
-        height: auto;
-        transition: filter 0.3s ease; /* تنعيم تأثير الألوان */
-      }
 
-      /* تأثير الهوفر (Hover) */
-      .google-map:hover {
-        transform: scale(1.02); /* تكبير بسيط جداً */
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* زيادة الظل لإعطاء عمق */
-      }
 
-      .google-map:hover img {
-        filter: brightness(0.9); /* تغميق الصورة قليلاً عند الهوفر */
-      }
+
 
       .contact-container {
         max-width: 1000px;
@@ -397,10 +374,9 @@ alt="hero-map">
         <p>مجموعة شمول للإسشارات</p>
       </div>
         
-        <img
-          src="assets/imges/Screenshot 2026-05-06 102157.png"
-          alt="Google Map Location"
-        />
+        <div class="map-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.934214913363!2d50.1798697!3d26.3286296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e767c98cb2a5%3A0xa646a5dc5e7cf6b2!2z2YXYrNmF2YjYudipINi02YXZiNmEINmE2YTYp9iz2KrYtNin2LHYp9iqIC0gU2hvbW91bCBDb25zdWx0aW5nIEdyb3VwIC0gU0NHICjYp9mE2LTZh9ix2Yog2LPYp9io2YLYp9mLKQ!5e0!3m2!1sen!2ssa!4v1779349854072!5m2!1sen!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
       </a>
     </div>
       <div class="contact-container" data-aos="zoom-in-down">

@@ -1000,6 +1000,12 @@ cursor: pointer;
   filter: brightness(0) invert(1);
 }
 
+.contact-icon:hover {
+  cursor: pointer;
+  transform: translateY(2px);
+  transition: all 0.1s ease ;
+}
+
 .contact-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -1053,7 +1059,8 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05) !important; /* خلفية بيضاء شفافة جداً */
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 20px 20px; /* تقليل البادينج الجانبي لتوفير مساحة */
   border-radius: 30px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* إظهار الظل فقط عند فتح القائمة */
@@ -1072,7 +1079,7 @@ footer {
 }
 
 .footer-content a {
-  color: #cbd5e1;
+  color: #ffffff;
   display: inline-block;
   transition: all 0.3s ease;
   text-decoration: none; /* إزالة الخط تحت الروابط */
@@ -1121,7 +1128,7 @@ footer {
   align-items: center;
   font-size: 11px; /* تصغير حجم النص لكي لا يزاحم الأيقونات */
   gap: 5px;
-  color: #e2e2e2;
+  color: #f1f5f9;
 }
 
 .footer-content ul.social-links-list a:hover {
@@ -1132,7 +1139,7 @@ footer {
 
 .footer-content p {
   margin-bottom: 16px; /* زيادة الهامش السفلي للفقرات */
-  color: #feffff;
+  color: #f8fafc;
 }
 
 
