@@ -337,74 +337,7 @@
         width: 100%;
     }
 
-    .corporate-partners .corporate-grid .company-card {
-        display: flex;
-        flex-direction: column;
-        padding: 0 !important;
-        overflow: hidden;
-        height: 220px;
-        min-height: 220px;
-        max-height: 220px;
-        margin: 0;
-        background: #1e1e1e;
-        border-radius: 10px;
-    
-    }
-
-    .corporate-partners .company-card img {
-        height: 148px !important;
-        min-height: 148px;
-        max-height: 148px;
-        width: 100% !important;
-        max-width: 100%;
-        object-fit: contain !important;
-        object-position: center;
-        padding: 14px 12px !important;
-        box-sizing: border-box;
-        flex-shrink: 0;
-        transform: none !important;
-        filter: none !important;
-    }
-
-    .corporate-partners .company-card:hover img {
-        transform: none !important;
-        filter: none !important;
-    }
-
-    .corporate-partners .company-overlay {
-        position: relative !important;
-        transform: none !important;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px 8px 12px !important;
-        background: #141414 !important;
-        min-height: 72px;
-        max-height: 72px;
-        overflow: hidden;
-    }
-
-    .corporate-partners .company-overlay h3 {
-        font-size: 0.78rem !important;
-        line-height: 1.35;
-        margin-bottom: 4px;
-        white-space: normal;
-        word-wrap: break-word;
-        overflow: visible;
-        color: #c5a059 !important;
-    }
-
-    .corporate-partners .company-overlay p {
-        font-size: 0.68rem !important;
-        line-height: 1.35;
-        white-space: normal;
-        word-wrap: break-word;
-        overflow: visible;
-        opacity: 1;
-        margin: 0;
-        color: #e8e8e8 !important;
-    }
+   
 
     /* صفحة العملاء */
     .partners-section {
@@ -871,7 +804,6 @@
     overflow: hidden;
 
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
@@ -1148,53 +1080,14 @@
         font-size: 14px !important;
     }
 
-    .corporate-partners .corporate-grid .company-card {
-        height: 205px;
-        min-height: 205px;
-        max-height: 550px;
-    }
+    
 
-    .corporate-partners .company-card img {
-        height: 137px !important;
-        min-height: 150px;
-        max-height: 150px;
-        padding: 10px 8px !important;
-    }
-
-    .corporate-partners .company-overlay {
-        min-height: 60px;
-        max-height: 75px;
-        padding: 8px 6px 10px !important;
-    }
-
-    .corporate-partners .company-overlay h3 {
-        font-size: 0.72rem !important;
-    }
-
-    .corporate-partners .company-overlay p {
-        font-size: 0.62rem !important;
-    }
-
-    .partners-section .section-header {
-        min-height: 220px;
-        height: 220px;
-        padding: 20px 14px !important;
-    }
 
     .partners-section .section-header h2 {
         font-size: 1.35rem !important;
     }
 
-    .partners-section .corporate-grid > img {
-        height: 85px !important;
-        min-height: 85px;
-        max-height: 85px;
-        padding: 8px 6px !important;
-    }
 
-    .section-header h2 {
-        font-size: 1.3rem;
-    }
 
     .service-card h3 {
         font-size: 1.1rem !important;
