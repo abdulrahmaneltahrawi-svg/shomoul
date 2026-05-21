@@ -270,8 +270,9 @@
     }
 
     .hero-overlay .content-box {
-        padding: 0 20px;
+        height: 10vh;
         max-width: 100%;
+        font-size: 10px;
     }
 
     .content-box h2 {
@@ -347,7 +348,7 @@
         margin: 0;
         background: #1e1e1e;
         border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    
     }
 
     .corporate-partners .company-card img {
@@ -358,7 +359,6 @@
         max-width: 100%;
         object-fit: contain !important;
         object-position: center;
-        background: #3d3d3d !important;
         padding: 14px 12px !important;
         box-sizing: border-box;
         flex-shrink: 0;
@@ -644,6 +644,7 @@
     .about-image img {
         margin: 20px auto;
         max-width: 100%;
+    
     }
 
     .stat-card h2 {
@@ -796,6 +797,11 @@
     }
 
     /* Service cards */
+    .services-grid {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
     .service-card {
         padding: 30px 20px !important;
     }
@@ -819,28 +825,61 @@
     }
 
     /* Contact cards */
-    .contact-card {
-        padding: 40px 15px !important;
-    }
+    .contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-    .contact-icon {
-        width: 70px;
-        height: 70px;
-    }
+.contact-card {
+    width: 320px;
+    min-height: 260px; /* الطول الثابت */
 
-    .contact-icon img {
-        width: 35px;
-        height: 35px;
-    }
+    padding: 40px 15px !important;
 
-    .contact-card h3 {
-        font-size: 1.1rem;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
-    .contact-card p {
-        font-size: 0.9rem;
-    }
+    text-align: center;
 
+    overflow: hidden;
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+}
+
+.contact-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+.contact-card h3 {
+    font-size: 1.1rem;
+    margin: 15px 0 10px;
+}
+
+.contact-card p {
+    font-size: 0.9rem;
+
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+    .client-logo {
+  width: 70px;
+  height: 70px;
+             /* منع الدوائر من الانضغاط أو تشوه حجمها */
+}
     /* Clients section */
     .clients-section {
         padding: 50px 15px !important;
@@ -1219,4 +1258,27 @@
     .filter-item {
         font-size: 8px !important;
     }
+
+
+
+
+.process-container {
+ 
+  flex-direction: column;
+}
+
+
+
+.icon-wrapper {
+
+  margin-top: 70px;
+}
+
+
+
+/* التحكم بالـ SVG وحركته */
+.wave-line {
+  display: none;
+}
+
 }
