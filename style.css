@@ -723,7 +723,8 @@ cursor: pointer;
 /* تصميم قسم الشركات الاستراتيجية (التحالفات) */
 .corporate-partners {
   padding: 90px 0;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/imges/ChatGPT Image May 14, 2026, 12_28_07 PM.png');
+  background: white;
+  
     background-size: cover;
     background-position: center;
     
