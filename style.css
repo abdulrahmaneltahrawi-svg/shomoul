@@ -161,7 +161,8 @@ body {
 
 /* تنسيق زر قدم طلبك الأصفر */
 .btn-submit-request {
-  color: white;            /* لون الخط داكن عشان يظهر بوضوح */
+  color: rgb(41, 41, 41);            /* لون الخط داكن عشان يظهر بوضوح */
+  background: white;
   font-family: 'Cairo', sans-serif;
   font-size: 14px;
   font-weight: 700;
