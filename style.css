@@ -49,7 +49,7 @@ body {
 .nav-menu ul {
     list-style: none;
     display: flex;
-    gap: 25px; /* المسافة بين الروابط */
+    gap: 20px; /* المسافة بين الروابط */
     padding: 0;
 }
 
@@ -57,9 +57,10 @@ body {
     text-decoration: none;
     color: white; /* لون النص أبيض كما في الصورة */
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     transition: 0.3s;
     font-family: Cairo, Arial, Helvetica, sans-serif;
+    white-space: nowrap;
 }
 
 /* مثال 1: تغيير لون النص فقط للأصفر المطابق لهوية شمول */
@@ -68,7 +69,7 @@ body {
 }
 
 .nav-menu ul li a:hover {
-    color: #ccc; /* تأثير عند تمرير الماوس */
+    color: #c5a059; /* تأثير عند تمرير الماوس */
 }
 
 /* 1. التنسيق الأساسي للعنصر الأب (مهم جداً لعزل القوائم) */
@@ -160,10 +161,9 @@ body {
 
 /* تنسيق زر قدم طلبك الأصفر */
 .btn-submit-request {
-  background: linear-gradient(rgb(194, 193, 193),rgba(122, 122, 122, 0.747),rgb(145, 144, 144));
   color: white;            /* لون الخط داكن عشان يظهر بوضوح */
   font-family: 'Cairo', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
   padding: 10px 22px;
@@ -171,11 +171,12 @@ body {
   transition: background-color 0.3s ease, transform 0.2s ease;
   white-space: nowrap;       /* يمنع نزول النص لسطر جديد */
   display: inline-block;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* تأثير عند تمرير الماوس فوق الزر الأصفر */
 .btn-submit-request:hover {
-  background: linear-gradient(rgb(145, 144, 144),rgba(122, 122, 122, 0.747),rgb(194, 193, 193));
+  background-color: #000000;
   transform: translateY(-1px); /* حركة خفيفة للأعلى */
 }
 
@@ -459,7 +460,7 @@ body {
 /*=======services=======*/
 .services-preview {
   padding: 80px 0;
-  background: linear-gradient(rgba(219, 219, 219, 0.6), rgba(214, 214, 214, 0.6)), url('assets/imges/ChatGPT Image May 20, 2026, 01_34_45 PM.png') center/cover no-repeat;
+  background-color: rgb(243, 241, 241);
   background-size: cover;
   background-position: center;
   gap: 50px;
@@ -467,19 +468,22 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr); /* تقسيم الصف إلى 3 أعمدة متساوية */
+  gap: 90px;
   width: 100%;
   margin: 0 auto;
 }
 
 .service-card {
   background: #ffffff;
-  padding: 40px 30px;
+  padding: 20px 30px;
   text-align: center;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card:hover {
@@ -489,8 +493,8 @@ body {
 }
 
 .service-icon {
-  width: 85px; /* تكبير حجم الأيقونة */
-  height: 85px;
+  width: 80px; /* تكبير حجم الأيقونة */
+  height: 80px;
   margin: 0 auto 30px;
   background: #1a1a1a;
   border-radius: 12px;
@@ -511,7 +515,6 @@ body {
 .service-card h3 {
   font-size: 1.6rem; /* تكبير العنوان */
   font-weight: 800;
-  margin-bottom: 20px;
   color: #1a1a1a;
 }
 
@@ -519,7 +522,6 @@ body {
   color: #475569; /* لون أغمق قليلاً لسهولة القراءة */
   font-size: 1.05rem; /* تكبير النص الوصفي */
   line-height: 1.8;
-  margin-bottom: 30px;
 }
 
 .service-link {
@@ -528,12 +530,13 @@ body {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   padding: 6px 18px;
   border: 1.5px solid #c5a059;
-  margin: auto auto 0; /* يدفع الزر للأسفل ويتوسط أفقياً */
-  width: fit-content; /* جعل الزر على قد الكلام */
+  margin-top: auto; 
+  margin-left: auto;
+  margin-right: auto;
   font-size: 0.85rem;
 }
 
@@ -570,13 +573,14 @@ body {
     color: #c5a87c;
     text-decoration: none;
     border-radius: 8px;
+    font-size: 19px;
     font-weight: 600;
     transition: 0.3s;
 }
 .more-btn :hover{
 cursor: pointer;
-  transform: translateY(-5px);
   background: white;
+  border-radius: 8px;
 }
 .more-btn a{
   text-decoration: none;
@@ -710,7 +714,7 @@ cursor: pointer;
 .company-overlay h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #c5a059;
 }
 
@@ -718,6 +722,7 @@ cursor: pointer;
   font-size: 0.9rem;
   opacity: 0.9;
   margin: 0;
+  margin-bottom: 10px;
 }
 
 /* تصميم قسم الشركات الاستراتيجية (التحالفات) */
@@ -767,7 +772,7 @@ cursor: pointer;
 
 /* Company Details Page */
 .company-details {
-  padding: 80px 0;
+  padding: 90px 0;
   background: #ffffff;
 }
 
@@ -1116,9 +1121,10 @@ footer {
 
 /* تنسيق خاص لقائمة أيقونات التواصل الاجتماعي لتكون في صف واحد */
 .footer-content ul.social-links-list {
-  flex-direction: row; /* جعل الأيقونات في صف واحد */
-  gap: 15px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* تقسيم الصف إلى 3 أعمدة متساوية */
+  align-items: flex-start;
+  gap: 30px;
   flex-wrap: wrap;
   margin-top: 10px;
   margin-bottom: 0; /* إزالة الهامش السفلي من قائمة الأيقونات نفسها */
@@ -1356,7 +1362,7 @@ footer {
   right: 30px;
   width: 60px;
   height: 60px;
-  background: #c5a059;
+  background: green;
   color: white;
   border-radius: 50%;
   text-align: center;
