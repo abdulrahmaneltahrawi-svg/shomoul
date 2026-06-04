@@ -1034,14 +1034,16 @@ cursor: pointer;
 
 .contact-card p {
   color: #464646;
-  line-height: 1.6;
+  line-height: 2.0;
   margin-bottom: 8px;
-  font-size: 1.3rem;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .contact-card a {
   color: #4a474a;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
@@ -1324,13 +1326,64 @@ footer {
   align-items: center;
 }
 
-/* تصميم الصورة داخل الصندوق */
-.lightbox-content {
-  max-width: 85%;
-  max-height: 85%;
+/* New wrapper for image and text */
+.lightbox-inner-content {
+  display: flex; /* Use flexbox for image and text */
+  flex-direction: row-reverse; /* في نظام RTL: الصورة (العنصر الأول) يميناً والنص يساراً */
+  align-items: stretch; /* جعل النص والصورة بنفس الارتفاع */
+  width: 90%;
+  max-width: 1100px;
+  height: 80vh; /* تحديد ارتفاع ثابت للصندوق لضمان التناسق */
+  max-height: 600px;
   border-radius: 8px;
+  background-color: #ffffff; /* إضافة خلفية بيضاء صلبة لبروز النص */
   box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-  animation: zoomIn 0.3s ease; /* تأثير حركة خفيف عند الفتح */
+  animation: zoomIn 0.3s ease;
+  overflow: hidden; /* To contain image and text within rounded corners */
+}
+
+/* Image inside the new wrapper */
+.lightbox-image-wrapper {
+  flex: 1;
+  max-width: 50%; /* تحديد العرض بنصف الصندوق */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: #000; /* خلفية سوداء خلف الصورة لجمالية التصميم */
+  align-self: stretch;
+}
+
+.lightbox-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* جعل الصورة تغطي مساحتها بشكل جمالي */
+}
+
+/* Text content inside the new wrapper */
+.lightbox-text-content {
+  flex: 1;
+  max-width: 50%;
+  padding: 30px;
+  color: #333333; /* تغيير لون الوصف إلى رمادي غامق جداً ليظهر بوضوح */
+  font-family: Cairo, Arial, Helvetica, sans-serif;
+  text-align: right; /* Align text to the right for RTL */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* بدء النص من الأعلى */
+}
+
+.lightbox-text-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #c5a059;
+  font-weight: 800;
+}
+
+.lightbox-text-content p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* زر الإغلاق (X) */
@@ -1349,6 +1402,27 @@ footer {
   color: #bbb;
 }
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .lightbox-inner-content {
+    flex-direction: column; /* Stack image and text vertically */
+    max-width: 95%;
+    max-height: 95%;
+  }
+  .lightbox-image-wrapper {
+    padding: 10px;
+  }
+  .lightbox-text-content {
+    padding: 15px;
+    max-height: 40vh; /* Adjust height for mobile */
+  }
+  .close-btn {
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+  }
+  
+}
 /* تأثير الحركة للانتقال السلس */
 @keyframes zoomIn {
   from { transform: scale(0.8); opacity: 0; }

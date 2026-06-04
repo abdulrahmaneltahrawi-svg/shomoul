@@ -260,11 +260,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
+  // تأكد من أن هذه العناصر موجودة في الـ HTML
+  const lightboxTitle = document.getElementById("lightbox-title");
+  const lightboxDescription = document.getElementById("lightbox-description");
   const closeBtn = document.querySelector(".close-btn");
   const cards = document.querySelectorAll(".card");
 
   // إذا عناصر اللايت بوكس غير موجودة لا تشغل الكود
-  if (!lightbox || !lightboxImg || !closeBtn) return;
+  if (!lightbox || !lightboxImg) return;
 
   cards.forEach((card) => {
     card.style.cursor = "pointer";
@@ -275,15 +278,28 @@ document.addEventListener("DOMContentLoaded", function () {
       if (img) {
         lightbox.style.display = "flex";
         lightboxImg.src = img.src;
+
+        // تحديث النصوص إذا كانت العناصر موجودة في الـ HTML
+        if (lightboxTitle) {
+          const titleText = img.getAttribute("data-title") || img.alt || "";
+          lightboxTitle.textContent = titleText;
+        }
+        if (lightboxDescription) {
+          const descriptionText = img.getAttribute("data-description") || "لا يوجد وصف متاح لهذا المشروع.";
+          lightboxDescription.textContent = descriptionText;
+        }
+
         document.body.style.overflow = "hidden";
       }
     });
   });
 
-  closeBtn.addEventListener("click", function () {
-    lightbox.style.display = "none";
-    document.body.style.overflow = "auto";
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      lightbox.style.display = "none";
+      document.body.style.overflow = "auto";
+    });
+  }
 
   lightbox.addEventListener("click", function (e) {
     if (e.target === lightbox) {
