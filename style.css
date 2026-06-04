@@ -1336,7 +1336,6 @@ footer {
   height: 80vh; /* تحديد ارتفاع ثابت للصندوق لضمان التناسق */
   max-height: 600px;
   border-radius: 8px;
-  background-color: #ffffff; /* إضافة خلفية بيضاء صلبة لبروز النص */
   box-shadow: 0 5px 25px rgba(0,0,0,0.5);
   animation: zoomIn 0.3s ease;
   overflow: hidden; /* To contain image and text within rounded corners */
@@ -1345,7 +1344,7 @@ footer {
 /* Image inside the new wrapper */
 .lightbox-image-wrapper {
   flex: 1;
-  max-width: 50%; /* تحديد العرض بنصف الصندوق */
+  max-width: 100%; /* تحديد العرض بنصف الصندوق */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1363,9 +1362,9 @@ footer {
 /* Text content inside the new wrapper */
 .lightbox-text-content {
   flex: 1;
-  max-width: 50%;
+  max-width: 40%;
   padding: 30px;
-  color: #333333; /* تغيير لون الوصف إلى رمادي غامق جداً ليظهر بوضوح */
+  color: white; /* تغيير لون الوصف إلى رمادي غامق جداً ليظهر بوضوح */
   font-family: Cairo, Arial, Helvetica, sans-serif;
   text-align: right; /* Align text to the right for RTL */
   overflow-y: auto;
@@ -1382,8 +1381,8 @@ footer {
 }
 
 .lightbox-text-content p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
 /* زر الإغلاق (X) */
