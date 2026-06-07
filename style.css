@@ -177,8 +177,9 @@ body {
 
 /* تأثير عند تمرير الماوس فوق الزر الأصفر */
 .btn-submit-request:hover {
-  background-color: #000000;
+  background-color: #b9b9b9;
   transform: translateY(-1px); /* حركة خفيفة للأعلى */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* حاوية الأيقونات الدائرية */
