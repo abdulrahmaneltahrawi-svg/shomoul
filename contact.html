@@ -90,42 +90,42 @@
     <div class="max-w-7xl mx-auto px-5 flex flex-col lg:flex-row gap-10 items-start">
 
       <!-- Map -->
-      <div class="flex-1" data-aos="zoom-out-up">
-        <div class="relative inline-block w-full rounded-2xl overflow-hidden shadow-2xl">
-          <div class="absolute top-2 right-2 z-10 bg-white/95 px-2 py-2 rounded-xl flex items-center gap-2 shadow-lg">
-            <img src="assets/icons/map.png" alt="" class="w-8 h-8 object-contain" />
+      <div class="flex-1 w-full" data-aos="zoom-out-up">
+        <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl">
+          <div class="absolute top-2 right-2 z-10 bg-white/95 px-1 py-1 flex items-center gap-2 shadow-lg">
+            <img src="assets/icons/map.png" alt="" class="w-7 h-7 object-contain" />
             <p class="text-sm font-bold text-gray-700 m-0">مجموعة شمول للاستشارات</p>
           </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.934214913363!2d50.1798697!3d26.3286296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e767c98cb2a5%3A0xa646a5dc5e7cf6b2!2z2YXYrNmF2YjYudipINi02YXZiNmEINmE2YTYp9iz2KrYtNin2LHYp9iqIC0gU2hvbW91bCBDb25zdWx0aW5nIEdyb3VwIC0gU0NHICjYp9mE2LTZh9ix2Yog2LPYp9in2KI!5e0!3m2!1sen!2ssa!4v1779349854072!5m2!1sen!2ssa"
-            width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            class="block">
+            width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            class="block md:h-[420px]">
           </iframe>
         </div>
       </div>
 
       <!-- Form -->
-      <div class="flex-1 bg-white rounded-2xl shadow-2xl p-8 md:p-12" data-aos="zoom-in-down">
+      <div class="flex-1 bg-white rounded-2xl shadow-2xl p-5 sm:p-8 md:p-12 w-full" data-aos="zoom-in-down">
         <span class="text-[#c5a059] text-sm font-bold">نموذج التواصل</span>
-        <h2 class="text-3xl font-black text-gray-700 mt-2 mb-8">تواصل معنا</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-gray-700 mt-2 mb-6 md:mb-8">تواصل معنا</h2>
         <form action="mailto:info@shomoulgroup.com" method="POST" enctype="text/plain">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 mb-6">
-            <div class="mb-6">
+          <div class="mb-6">
+            <div class="mb-5">
               <input type="text" name="First_Name" placeholder="الاسم الأول" required class="underline-input" />
             </div>
-            <div class="mb-6">
+            <div class="mb-5">
               <input type="text" name="Last_Name" placeholder="اسم العائلة" required class="underline-input" />
             </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 mb-6">
-            <div class="mb-6">
+          <div class="mb-6">
+            <div class="mb-5">
               <input type="email" name="Email" placeholder="ايميلك" required class="underline-input" />
             </div>
-            <div class="mb-6">
-              <input type="tel" name="Phone" placeholder="رقمك" class="underline-input" />
+            <div class="mb-5">
+              <input type="tel" name="Phone" placeholder="رقمك" class="underline-input text-right" />
             </div>
           </div>
-          <div class="mb-8">
+          <div class="mb-6">
             <textarea name="Message" rows="3" placeholder="الرسالة *" required class="underline-input resize-none"></textarea>
           </div>
           <button type="submit" class="flex items-center gap-4 text-gray-700 font-bold text-lg hover:text-[#c5a059] transition-colors group">

@@ -1,5 +1,8 @@
-  // Clients Swiper
- window.addEventListener("load", function () {
+// Clients Swiper
+document.addEventListener("DOMContentLoaded", function () {
+  const clientsSlider = document.querySelector(".clients-slider0");
+  if (!clientsSlider) return;
+
   new Swiper(".clients-slider0", {
     loop: true,
     speed: 500,
@@ -12,15 +15,15 @@
       clickable: true,
     },
     slidesPerView: 2,
-    spaceBetween: 20,
+    spaceBetween: 16,
     breakpoints: {
       640: {
         slidesPerView: 3,
-        spaceBetween: 24,
+        spaceBetween: 20,
       },
       1024: {
         slidesPerView: 4,
-        spaceBetween: 30,
+        spaceBetween: 24,
       },
     },
   });
