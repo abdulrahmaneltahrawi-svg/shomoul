@@ -1,73 +1,61 @@
-<header class="main-header">
-  <div class="container">
-    <a href="index.html">
-      <div class="logo">
-        <img
-          src="assets/imges/ChatGPT Image Jun 2, 2026, 01_58_29 PM (1).png"
-          fetchpriority="high"
-          alt="shomoul Logo"
-        />
-      </div>
+<header class="main-header fixed top-0 left-0 w-full z-50 bg-black/85 transition-all duration-300" id="main-header">
+  <div class="max-w-7xl mx-auto px-5 flex justify-between items-center gap-6">
+    <!-- Logo -->
+    <a href="index.html" class="flex-shrink-0">
+      <img src="assets/imges/ChatGPT Image Jun 2, 2026, 01_58_29 PM (1).png" fetchpriority="high" alt="شمول Logo" class="h-24 w-52 object-contain" />
     </a>
 
-    <!-- زر القائمة للهاتف -->
-    <button type="button" class="menu-toggle" id="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- Mobile Toggle -->
+    <button type="button" id="menu-toggle" aria-label="فتح القائمة" aria-expanded="false"
+      class="lg:hidden flex flex-col gap-1.5 p-2 z-50 relative">
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar3"></span>
     </button>
 
-    <nav class="nav-menu header-nav" id="header-nav">
-      <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html">من نحن</a></li>
-
-        <li><a href="services.html">الخدمات</a></li>
-
-        <li class="has-dropdown">
-          <div class="menu-item-link">
-            <a href="projects.html">المشاريع</a>
-            <span class="dropdown-toggle"><i class="arrow down"></i></span>
-          </div>
-          <ul class="dropdown-menu">
-  <li>
-    <a href="project_SEC.html">
-      <span> الهندسية</span>
-      <img src="assets/icons/technology.png" alt="eng">
-    </a>
-  </li>
-
-  <li>
-    <a href="project_SSC.html">
-      <span> السلامة</span>
-      <img src="assets/icons/labour.png" alt="sef">
-    </a>
-  </li>
-
-  <li>
-    <a href="project_SIC.html">
-      <span> المصانع</span>
-      <img src="assets/icons/industrial-park.png" alt="ind">
-    </a>
-  </li>
-</ul>
-
-        <li><a href="companies.html">الشركات</a></li>
-        <li><a href="clients.html">العملاء</a></li>
-        <li><a href="contact.html">التواصل</a></li>
+    <!-- Nav -->
+    <nav id="header-nav"
+      class="hidden lg:flex nav-menu">
+      <ul class="flex gap-5 list-none p-0 m-0">
+        <li><a href="index.html" class="text-white font-bold text-base hover:text-[#c5a059] transition-colors whitespace-nowrap font-cairo">الرئيسية</a></li>
+        <li><a href="about.html" class="text-white font-bold text-base hover:text-[#c5a059] transition-colors whitespace-nowrap font-cairo">من نحن</a></li>
+        <li><a href="services.html" class="text-white font-bold text-base hover:text-[#c5a059] transition-colors whitespace-nowrap font-cairo">الخدمات</a></li>
+        <li><a href="projects.html" class="text-white font-bold text-base hover:text-[#c5a059] transition-colors whitespace-nowrap font-cairo">المشاريع</a></li>
+        <li><a href="companies.html" class="text-white font-bold text-base hover:text-[#c5a059] transition-colors whitespace-nowrap font-cairo">الشركات</a></li>
+        <li><a href="clients.html" class="text-white font-bold text-base hover:text-[#c5a059] transition-colors whitespace-nowrap font-cairo">العملاء</a></li>
+        <li><a href="contact.html" class="text-white font-bold text-base hover:text-[#c5a059] transition-colors whitespace-nowrap font-cairo">التواصل</a></li>
       </ul>
     </nav>
 
-    <div class="header-actions">
-    
-      
-      <div class="header-socials">
-        <a href="https://api.whatsapp.com/send/?phone=966920031520" class="social-icon"><img src="assets/icons/whatsapp.png" alt="Whatsapp" /></a>
-        <a href="https://www.linkedin.com/company/shomoulgroup" class="social-icon"><img src="assets/icons/linkedin.png" alt="Linkedin" /></a>
-        <a href="https://www.instagram.com/shomoul.group" class="social-icon"><img src="assets/icons/instagram.png" alt="Instagram" /></a>
-        <a href="https://www.facebook.com/shomoulgroup" class="social-icon"><img src="assets/icons/facebook.png" alt="Facebook" /></a>
+    <!-- Actions -->
+    <div class="hidden lg:flex items-center gap-5 flex-shrink-0">
+      <div class="flex items-center gap-2">
+        <a href="https://api.whatsapp.com/send/?phone=966920031520" class="w-9 h-9 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-all hover:-translate-y-0.5">
+          <img src="assets/icons/whatsapp.png" alt="Whatsapp" class="w-4 h-4 object-contain opacity-70 hover:opacity-100" />
+        </a>
+        <a href="https://www.linkedin.com/company/shomoulgroup" class="w-9 h-9 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-all hover:-translate-y-0.5">
+          <img src="assets/icons/linkedin.png" alt="Linkedin" class="w-4 h-4 object-contain opacity-70" />
+        </a>
+        <a href="https://www.instagram.com/shomoul.group" class="w-9 h-9 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-all hover:-translate-y-0.5">
+          <img src="assets/icons/instagram.png" alt="Instagram" class="w-4 h-4 object-contain opacity-70" />
+        </a>
+        <a href="https://www.facebook.com/shomoulgroup" class="w-9 h-9 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-all hover:-translate-y-0.5">
+          <img src="assets/icons/facebook.png" alt="Facebook" class="w-4 h-4 object-contain opacity-70" />
+        </a>
       </div>
-      <a href="https://vportal.shomoulgroup.com/" class="btn-submit-request">سجل كمورد</a>
+      <a href="https://vportal.shomoulgroup.com/" class="bg-white text-gray-800 font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-gray-200 transition-all hover:-translate-y-px whitespace-nowrap font-cairo shadow-md">سجل كمورد</a>
     </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-black/95 px-5 py-4 flex-col gap-3">
+    <a href="index.html" class="block text-white font-bold py-2 border-b border-white/10 font-cairo hover:text-[#c5a059]">الرئيسية</a>
+    <a href="about.html" class="block text-white font-bold py-2 border-b border-white/10 font-cairo hover:text-[#c5a059]">من نحن</a>
+    <a href="services.html" class="block text-white font-bold py-2 border-b border-white/10 font-cairo hover:text-[#c5a059]">الخدمات</a>
+    <a href="projects.html" class="block text-white font-bold py-2 border-b border-white/10 font-cairo hover:text-[#c5a059]">المشاريع</a>
+    <a href="companies.html" class="block text-white font-bold py-2 border-b border-white/10 font-cairo hover:text-[#c5a059]">الشركات</a>
+    <a href="clients.html" class="block text-white font-bold py-2 border-b border-white/10 font-cairo hover:text-[#c5a059]">العملاء</a>
+    <a href="contact.html" class="block text-white font-bold py-2 border-b border-white/10 font-cairo hover:text-[#c5a059]">التواصل</a>
+    <a href="https://vportal.shomoulgroup.com/" class="inline-block bg-white text-gray-800 font-bold text-sm px-5 py-2.5 rounded-lg mt-2 font-cairo">سجل كمورد</a>
   </div>
 </header>

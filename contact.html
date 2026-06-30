@@ -1,692 +1,209 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="assets/imges/logo.png"
-    />
-    <title>اتصل بنا - مجموعة شمول</title>
-    <meta
-      name="description"
-      content="تواصل مع مجموعة شمول للحصول على استشارات هندسية معتمدة. فروعنا في الرياض، جدة، والدمام جاهزة لخدمتكم."
-    />
-    <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="style_phone.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/imges/logo.png" />
+  <title>اتصل بنا - مجموعة شمول</title>
+  <meta name="description" content="تواصل مع مجموعة شمول للحصول على استشارات هندسية معتمدة." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { gold: '#c5a059', dark: '#1a1a1a' }, fontFamily: { cairo: ['Cairo', 'Arial', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cairo', Arial, sans-serif; }
+    .underline-input {
+      width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #ccc;
+      background: transparent; font-size: 1rem; color: #333; outline: none;
+      transition: border-color 0.3s; font-family: 'Cairo', sans-serif;
+    }
+    .underline-input:focus { border-bottom-color: #c5a059; }
+    .underline-input::placeholder { color: #999; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <body>
-    <style>
-      html {
-  scroll-behavior: smooth;
-}
-      .page-header{
-  margin-bottom: 0;
-  padding-bottom: 20px;
-}
-
-
-/* صور الهيدر */
-.contact-hero-img{
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.contact-hero-img img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-}
-
-
-
-
-      .branches-section {
-        padding: 60px 0;
-        background-color: #fff;
-        font-family: "Inter", "Cairo", sans-serif;
-      }
-
-      .branches-container {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 0 40px;
-      }
-
-      .branches-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* عمودين */
-        gap: 50px 80px; /* مسافة بين العناصر */
-      }
-
-      .branch-item {
-        border-top: 1px solid #1a1a1a; /* الخط العلوي الأسود */
-        padding-top: 25px;
-      }
-
-      .branch-item h3 {
-        font-size: 2.2rem;
-        color: #1a1a1a;
-        margin-bottom: 20px;
-        font-weight: 500;
-        letter-spacing: -1px;
-        cursor: pointer;
-      }
-
-            .branch-item h3:hover{
-        color: #4a474a;
-      
-      }
-
-      .branch-item a {
-        text-decoration: none;
-      }
-
-
-      .branch-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      .info-group {
-        flex: 1;
-      }
-
-      .info-group strong {
-        display: block;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        color: #000;
-        margin-bottom: 5px;
-      }
-
-      .info-group p {
-        font-size: 1rem;
-        color: #444;
-        line-height: 1.4;
-        margin: 0;
-      }
-
-      /* تحسين للجوال لجعل الفروع تحت بعضها */
-      @media (max-width: 900px) {
-        .info-group a {
-    color: #444; /* اجعلها نفس لون الفقرات أو أي لون آخر */
-    text-decoration: none; /* لإزالة الخط السفلي */
-}
-        .branches-grid {
-          grid-template-columns: 1fr;
-        }
-        .branch-info {
-          flex-direction: column;
-          gap: 15px;
-        }
-      }
-
-/* قسم التواصل */
-
-
-      .contact-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-  
-        background: url('assets/imges/ChatGPT Image 19 مايو 2026، 01_59_24 م.png');
-        font-family: "Cairo", sans-serif;
-        padding: 60px;
-      }
-            /* حاوية الخريطة للتوسيط */
-      .map-container {
-        padding: 10px;
-      }
-
-
-
-
-
-
-      .contact-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        background: white;
-        padding: 60px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-      }
-      
-
-      .contact-header span {
-        color: #3a3a2b;
-        font-size: 0.9rem;
-        font-weight: 600;
-        padding: 10px;
-      }
-
-      .contact-header h2 {
-        font-size: 3rem;
-        color: #4a474a; /* لون أزرق داكن */
-        margin-top: 10px;
-        margin-bottom: 50px;
-      }
-
-      /* تنسيق الحقول */
-      .shomoul-form .form-row {
-        display: flex;
-        gap: 60px;
-        margin-bottom: 30px;
-      }
-
-      .form-group {
-        flex: 1;
-        margin-bottom: 30px;
-        position: relative;
-      }
-
-      .shomoul-form input,
-      .shomoul-form select,
-      .shomoul-form textarea {
-        width: 100%;
-        padding: 15px 0;
-        border: none;
-        border-bottom: 1px solid #ccc; /* خط سفلي فقط مثل الصورة */
-        background: transparent;
-        font-size: 1.1rem;
-        color: #333;
-        outline: none;
-        transition: border-color 0.3s;
-        width: 100%;
-      }
-
-      .shomoul-form input::placeholder,
-      .shomoul-form textarea::placeholder {
-        color: #999;
-      }
-
-      .shomoul-form input:focus,
-      .shomoul-form textarea:focus {
-        border-bottom: 1px solid #866f43;
-      }
-
-      /* تنسيق الزر */
-      .submit-btn {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        margin: 40px;
-        font-size: 1.2rem;
-        color: #4a474a;
-        font-weight: 600;
-        transition: 0.3s;
-      }
-
-      .arrow-circle {
-        width: 50px;
-        height: 50px;
-        background-color: #f4f4f4;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
-      }
-
-      .submit-btn:hover .arrow-circle {
-        background-color: #4a474a;
-        color: #fff;
-        transform: translateX(-10px); /* يتحرك لليسار قليلاً في العربي */
-      }
-
-      /* للتجاوب مع الجوال */
-      @media (max-width: 768px) {
-        .shomoul-form .form-row {
-          flex-direction: column;
-          gap: 0;
-        }
-      }
-
-      /* تخلي العناصر المطلقة تتموضع داخل الخريطة */
-.google-map{
-  position: relative;
-  display: inline-block;
-}
-
-/* البوكس فوق الصورة */
-.inside-map-img{
-  position: absolute;
-
-  top: 20px;
-  right: 20px;
-
-  z-index: 5;
-
-  background: rgba(255,255,255,0.95);
-  padding: 12px 18px;
-  border-radius: 14px;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-
-  line-height: normal;
-}
-
-/* أيقونة داخل البوكس */
-.inside-map-img img{
-  width: 35px;
-  height: 35px;
-  object-fit: contain;
-}
-
-/* النص */
-.inside-map-img p{
-  margin: 0;
-  color: #333;
-  font-size: 1rem;
-  font-weight: 700;
-}
-    </style>
-    <div id="header-placeholder"></div>
-
-    <main>
-            <!-- Page Header -->
-    <section class="page-header">
-      <div class="container">
-        <h1>قسم التواصل</h1>
-      </div>
-    </section>
-
-<div class="contact-hero-img">
-    <img 
-src="assets/imges/ChatGPT Image May 17, 2026, 10_54_22 AM.png" 
-alt="hero-map">
-</div>
-
-
-
-    <!-- Contact Info -->
-    <section class="contact-info" >
-      <div class="container-contact">
-        <div class="contact-grid" >
-          <div class="contact-card" data-aos="flip-down">
-            <a href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8">
-            <div class="contact-icon">
-              <img
-                src="assets/icons/location-color.png"
-                alt="موقعنا"
-                loading="lazy"
-              />
-            </div></a>
-            <h3>الموقع</h3>
-            <p>
-              <a href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8"
-                >العنوان: الخبر، المملكة العربية السعودية</a
-              >
-            </p>
-            <p>الأحد - الخميس: 8:00 ص - 6:00 م</p>
-          </div>
-
-          <div class="contact-card" data-aos="flip-down">
-            <a href="https://api.whatsapp.com/send/?phone=966920031520"">
-            <div class="contact-icon">
-              <img
-                src="assets/icons/whatsapp-color.png"
-                alt="واتساب"
-                loading="lazy"
-              />
-            </div></a>
-            <h3>واتساب</h3>
-            <p>
-              <a href="https://api.whatsapp.com/send/?phone=966920031520"
-                >920031520</a
-              >
-            </p>
-            <p>استشارة سريعة ومباشرة</p>
-          </div>
-          <div class="contact-card" data-aos="flip-down">
-            <a href="mailto:info@shomoulgroup.com">
-            <div class="contact-icon">
-              <img
-                src="assets/icons/mail-color.png"
-                alt="البريد الإلكتروني"
-                loading="lazy"
-              />
-            </div></a>
-            <h3>البريد الإلكتروني</h3>
-            <p>
-              <a href="mailto:info@shomoulgroup.com">info@shomoulgroup.com</a>
-            </p>
-            <p>نرد على جميع الاستفسارات خلال 24 ساعة</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="contact-section" id="contact-form-section">
-      <div class="map-container" data-aos="zoom-out-up">
-      <a
-        class="google-map"
-        href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8"
-        target="_blank"
-      >
-      <div class="inside-map-img">
-        <img src="assets/icons/placeholder.png" alt="map-icon">
-        <p>مجموعة شمول للإسشارات</p>
-      </div>
-        
-        <div class="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.934214913363!2d50.1798697!3d26.3286296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e767c98cb2a5%3A0xa646a5dc5e7cf6b2!2z2YXYrNmF2YjYudipINi02YXZiNmEINmE2YTYp9iz2KrYtNin2LHYp9iqIC0gU2hvbW91bCBDb25zdWx0aW5nIEdyb3VwIC0gU0NHICjYp9mE2LTZh9ix2Yog2LPYp9io2YLYp9mLKQ!5e0!3m2!1sen!2ssa!4v1779349854072!5m2!1sen!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-      </a>
+  <div id="header-placeholder"></div>
+  <!--==========================-->
+  <!-- PAGE HEADER -->
+  <!--==========================-->
+  <section class="pt-32 pb-10 bg-[#1a1a1a] text-white text-center">
+    <div class="max-w-7xl mx-auto px-5">
+      <h1 class="text-4xl md:text-5xl font-black text-gray-300">اتصل بنا</h1>
     </div>
-      <div class="contact-container" data-aos="zoom-in-down">
-        <div class="contact-header">
-          <span>نموذج التواصل</span>
-          <h2>تواصل معنا</h2>
+  </section>
+
+  <!--==========================-->
+  <!-- CONTACT CARDS -->
+  <!--==========================-->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="flex flex-wrap justify-center gap-6"> 
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center w-72 hover:shadow-xl transition-all" data-aos="flip-down">
+          <a href="https://maps.app.goo.gl/gaPvupcYUjr5tbQd8" class="block">
+            <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <img src="assets/icons/placeholder.png" alt="" class="w-8 h-8 object-contain" />
+            </div>
+          </a>
+          <h3 class="font-black text-xl text-[#1a1a1a] mb-2">الموقع</h3>
+          <p class="text-gray-500 text-sm">الخبر، المملكة العربية السعودية</p>
+          <p class="text-gray-400 text-sm mt-1">المقر الرئيسي</p>
         </div>
 
-        <form
-          class="shomoul-form"
-          id="contactForm"
-          action="mailto:info@shomoulgroup.com"
-          method="POST"
-          enctype="text/plain"
-        >
-          <div class="form-row">
-            <div class="form-group">
-              <input
-                type="text"
-                name="First_Name"
-                placeholder="الأسم الأول"
-                required
-              />
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center w-72 hover:shadow-xl transition-all" data-aos="flip-down" data-aos-delay="100">
+          <a href="https://api.whatsapp.com/send/?phone=966920031520">
+            <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <img src="assets/icons/whatsapp-color.png" alt="" class="w-8 h-8 object-contain" />
             </div>
-            <div class="form-group">
-              <input
-                type="text"
-                name="Last_Name"
-                placeholder="اسم العائلة"
-                required
-              />
+          </a>
+          <h3 class="font-black text-xl text-[#1a1a1a] mb-2">واتساب</h3>
+          <p class="text-gray-500 text-sm"><a href="https://api.whatsapp.com/send/?phone=966920031520" class="hover:text-[#c5a059]">920031520</a></p>
+          <p class="text-gray-400 text-sm mt-1">استشارة سريعة ومباشرة</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center w-72 hover:shadow-xl transition-all" data-aos="flip-down" data-aos-delay="200">
+          <a href="mailto:info@shomoulgroup.com">
+            <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <img src="assets/icons/mail-color.png" alt="" class="w-8 h-8 object-contain" />
+            </div>
+          </a>
+          <h3 class="font-black text-xl text-[#1a1a1a] mb-2">البريد الإلكتروني</h3>
+          <p class="text-gray-500 text-sm"><a href="mailto:info@shomoulgroup.com" class="hover:text-[#c5a059]">info@shomoulgroup.com</a></p>
+          <p class="text-gray-400 text-sm mt-1">نرد خلال 24 ساعة</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--==========================-->
+  <!-- MAP + FORM -->
+  <!--==========================-->
+  <section class="py-16" style="background: url('assets/imges/ChatGPT Image 19 مايو 2026، 01_59_24 م.png') center/cover no-repeat;">
+    <div class="max-w-7xl mx-auto px-5 flex flex-col lg:flex-row gap-10 items-start">
+
+      <!-- Map -->
+      <div class="flex-1" data-aos="zoom-out-up">
+        <div class="relative inline-block w-full rounded-2xl overflow-hidden shadow-2xl">
+          <div class="absolute top-2 right-2 z-10 bg-white/95 px-2 py-2 rounded-xl flex items-center gap-2 shadow-lg">
+            <img src="assets/icons/map.png" alt="" class="w-8 h-8 object-contain" />
+            <p class="text-sm font-bold text-gray-700 m-0">مجموعة شمول للاستشارات</p>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.934214913363!2d50.1798697!3d26.3286296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e767c98cb2a5%3A0xa646a5dc5e7cf6b2!2z2YXYrNmF2YjYudipINi02YXZiNmEINmE2YTYp9iz2KrYtNin2LHYp9iqIC0gU2hvbW91bCBDb25zdWx0aW5nIEdyb3VwIC0gU0NHICjYp9mE2LTZh9ix2Yog2LPYp9in2KI!5e0!3m2!1sen!2ssa!4v1779349854072!5m2!1sen!2ssa"
+            width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            class="block">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="flex-1 bg-white rounded-2xl shadow-2xl p-8 md:p-12" data-aos="zoom-in-down">
+        <span class="text-[#c5a059] text-sm font-bold">نموذج التواصل</span>
+        <h2 class="text-3xl font-black text-gray-700 mt-2 mb-8">تواصل معنا</h2>
+        <form action="mailto:info@shomoulgroup.com" method="POST" enctype="text/plain">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 mb-6">
+            <div class="mb-6">
+              <input type="text" name="First_Name" placeholder="الاسم الأول" required class="underline-input" />
+            </div>
+            <div class="mb-6">
+              <input type="text" name="Last_Name" placeholder="اسم العائلة" required class="underline-input" />
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <input type="email" name="Email" placeholder="ايميلك" required />
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 mb-6">
+            <div class="mb-6">
+              <input type="email" name="Email" placeholder="ايميلك" required class="underline-input" />
             </div>
-            <div class="form-group">
-              <input type="tel" name="Phone" placeholder="رقمك" />
+            <div class="mb-6">
+              <input type="tel" name="Phone" placeholder="رقمك" class="underline-input" />
             </div>
           </div>
-
-          <div class="form-group">
-            <textarea
-              name="Message"
-              rows="3"
-              placeholder="الرسالة *"
-              required
-            ></textarea>
+          <div class="mb-8">
+            <textarea name="Message" rows="3" placeholder="الرسالة *" required class="underline-input resize-none"></textarea>
           </div>
-
-          <button type="submit" class="submit-btn">
+          <button type="submit" class="flex items-center gap-4 text-gray-700 font-bold text-lg hover:text-[#c5a059] transition-colors group">
             <span>إرسال الطلب</span>
-            <div class="arrow-circle">→</div>
+            <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-700 group-hover:text-white transition-all group-hover:-translate-x-2">
+              →
+            </div>
           </button>
         </form>
       </div>
-    </section>
 
+    </div>
+  </section>
 
+  <!--==========================-->
+  <!-- BRANCHES -->
+  <!--==========================-->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
 
-    <section class="branches-section">
-      <div class="branches-container">
-        <div class="branches-grid">
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="100">
-            <a href="https://maps.app.goo.gl/qq5kidNQZGJxuUPZ8?g_st=iw">
-            <h3>فرع الإحساء</h3></a>
-            <div class="branch-info" >
-              <div class="info-group" >
-                <strong>العنوان:</strong>
-                <p>
-حي البستان أمام مركز العثيم التجاري، الأحساء، المملكة العربية السعودية
-
-                </p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
+        <div class="border-t border-[#1a1a1a] pt-6" data-aos="zoom-in-up" data-aos-delay="100">
+          <a href="https://maps.app.goo.gl/qq5kidNQZGJxuUPZ8"><h3 class="text-3xl font-medium text-[#1a1a1a] mb-4 hover:text-gray-600 cursor-pointer">فرع الإحساء</h3></a>
+          <div class="flex justify-between gap-4">
+            <div><strong class="block text-xs uppercase text-black mb-1">العنوان:</strong><p class="text-gray-500 text-sm leading-snug">حي البستان أمام مركز العثيم التجاري، الأحساء</p></div>
+            <div><strong class="block text-xs uppercase text-black mb-1 text-left" dir="ltr">ارقام التواصل</strong><p class="text-gray-500 text-sm" dir="ltr">920031520<br />+966540746462<br />+966505825060</p></div>
           </div>
-
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="200">
-            <a href="https://maps.app.goo.gl/7Msa2MHCtCQi7qwLA">
-            <h3>فرع الخبر</h3></a>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>
-8896 شارع الأمير مشاري بن سعود بن عبدالعزيز، حي الاندلس,               </p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-          
-
-          
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="200">
-            <a href="https://maps.app.goo.gl/ENsMrUZvqLURhiUh7">
-            <h3>فرع جدة</h3></a>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>
-                 المكتب رقم 58، مركز القماح للأعمال، شارع البلدية، العزيزية
-
-
-                </p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="300">
-            <a href="https://maps.app.goo.gl/78T5qkwe2ChTcdaT8?g_st=com.google.maps.preview.copy">
-            <h3>فرع الدمام</h3></a>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>
-مجمع الفرقان، طريق الملك فهد، الفيصلية، الدمام 32272
-
-                </p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="400">
-            <a href="https://maps.app.goo.gl/g1diqcdi1Q2H2E2U9?g_st=awb">
-            <h3>فرع الرياض</h3></a>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>حي الملك فيصل، شارع الشيخ حسن بن حسين، المخرج 10
-
-</p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="500">
-            <a href="https://maps.app.goo.gl/tLSEh3FUUpayE8oKA">
-            <h3>فرع الجبيل</h3></a>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>شارع المدينة المنورة، بالقرب من الجبيل مول، المرقاب
-
-</p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-                    <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="500">
-            <a href="https://maps.app.goo.gl/girWsZaE1xmTxh396">
-            <h3>فرع مكة المكرمة</h3></a>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>Al Jamiah, Makkah 24242
-
-</p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="600">
-            <h3>مكتب مصر</h3>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>28C المستثمرين الشمالية، القاهرة الجديدة، مصر
-
-</p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="600">
-            <h3>مكتب الإمارات العربية المتحدة</h3>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>الطابق الثالث، مركز دبي التجاري العالمي، شارع الشيخ زايد
-
-</p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="branch-item" data-aos="zoom-in-up"
-            data-aos-delay="600">
-            <h3>مكتب تركيا</h3>
-            <div class="branch-info">
-              <div class="info-group">
-                <strong>العنوان:</strong>
-                <p>
-حي اكشمستين، عدنان مندريس، شارع وطن، الفاتح، اسطنبول                </p>
-              </div>
-              <div class="info-group">
-                <strong dir="ltr">ارقام التواصل</strong>
-                <p dir="ltr">920031520<br />+966540746462<br />+966505825060</p>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="border-t border-[#1a1a1a] pt-6" data-aos="zoom-in-up" data-aos-delay="200">
+          <a href="https://maps.app.goo.gl/7Msa2MHCtCQi7qwLA"><h3 class="text-3xl font-medium text-[#1a1a1a] mb-4 hover:text-gray-600 cursor-pointer">فرع الخبر</h3></a>
+          <div class="flex justify-between gap-4">
+            <div><strong class="block text-xs uppercase text-black mb-1">العنوان:</strong><p class="text-gray-500 text-sm leading-snug">8896 شارع الأمير مشاري بن سعود، حي الأندلس</p></div>
+            <div><strong class="block text-xs uppercase text-black mb-1 text-left" dir="ltr">ارقام التواصل</strong><p class="text-gray-500 text-sm" dir="ltr">920031520<br />+966540746462<br />+966505825060</p></div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#1a1a1a] pt-6" data-aos="zoom-in-up" data-aos-delay="200">
+          <a href="https://maps.app.goo.gl/ENsMrUZvqLURhiUh7"><h3 class="text-3xl font-medium text-[#1a1a1a] mb-4 hover:text-gray-600 cursor-pointer">فرع جدة</h3></a>
+          <div class="flex justify-between gap-4">
+            <div><strong class="block text-xs uppercase text-black mb-1">العنوان:</strong><p class="text-gray-500 text-sm leading-snug">المكتب رقم 58، مركز القماح للأعمال، شارع البلدية</p></div>
+            <div><strong class="block text-xs uppercase text-black mb-1 text-left" dir="ltr">ارقام التواصل</strong><p class="text-gray-500 text-sm" dir="ltr">920031520<br />+966540746462<br />+966505825060</p></div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#1a1a1a] pt-6" data-aos="zoom-in-up" data-aos-delay="300">
+          <a href="https://maps.app.goo.gl/78T5qkwe2ChTcdaT8"><h3 class="text-3xl font-medium text-[#1a1a1a] mb-4 hover:text-gray-600 cursor-pointer">فرع الدمام</h3></a>
+          <div class="flex justify-between gap-4">
+            <div><strong class="block text-xs uppercase text-black mb-1">العنوان:</strong><p class="text-gray-500 text-sm leading-snug">مجمع الفرقان، طريق الملك فهد، الفيصلية، الدمام 32272</p></div>
+            <div><strong class="block text-xs uppercase text-black mb-1 text-left" dir="ltr">ارقام التواصل</strong><p class="text-gray-500 text-sm" dir="ltr">920031520<br />+966540746462<br />+966505825060</p></div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#1a1a1a] pt-6 md:col-span-2 md:w-1/2" data-aos="zoom-in-up" data-aos-delay="400">
+          <a href="https://maps.app.goo.gl/g1diqcdi1Q2H2E2U9"><h3 class="text-3xl font-medium text-[#1a1a1a] mb-4 hover:text-gray-600 cursor-pointer">فرع الرياض</h3></a>
+          <div class="flex justify-between gap-4">
+            <div><strong class="block text-xs uppercase text-black mb-1">العنوان:</strong><p class="text-gray-500 text-sm leading-snug">حي الملك فيصل، شارع الشيخ حسن بن حسين</p></div>
+            <div><strong class="block text-xs uppercase text-black mb-1 text-left" dir="ltr">ارقام التواصل</strong><p class="text-gray-500 text-sm" dir="ltr">920031520<br />+966540746462<br />+966505825060</p></div>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
+    <!--==========================-->
+  <!-- WHATSAPP FLOAT -->
+    <!--==========================-->
+  <a href="https://api.whatsapp.com/send/?phone=966920031520" class="fixed bottom-8 right-8 w-16 h-16 bg-green-600 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform z-50" target="_blank">
+    <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" class="w-9 h-9 brightness-0 invert" />
+  </a>
 
-    <!-- زر واتساب العائم -->
-    <a
-      href="https://api.whatsapp.com/send/?phone=966920031520"
-      class="whatsapp-float"
-      target="_blank"
-    >
-      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" />
-    </a>
+  <div id="footer-placeholder"></div>
 
-    </main>
-
-    <div id="footer-placeholder"></div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-
-      AOS.init({
-    duration: 1000, // سرعة الحركة (ثانية واحدة)
-    once: true,      // تشتغل الحركة مرة واحدة فقط أثناء النزول
-    offset: 120      // تبدأ الحركة قبل وصولك للعنصر بـ 120 بكسل
-  });
-
-
-      document.getElementById("contactForm").onsubmit = function (e) {
-        // سنسمح للفعل الافتراضي بالحدوث لفتح تطبيق الإيميل
-        const btn = this.querySelector(".submit-btn");
-        const span = btn.querySelector("span");
-
-        span.innerText = "جاري فتح تطبيق البريد...";
-
-        // إعادة النص بعد 3 ثوانٍ
-        setTimeout(() => {
-          span.innerText = "إرسال الطلب";
-        }, 3000);
-      };
-
-    </script>
-
-    <script src="js/script.js"></script>
-  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="js/effect.js" defer></script>
+  <script src="js/components.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/alhayat.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
 </html>

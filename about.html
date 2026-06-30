@@ -1,531 +1,152 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link
-      rel="icon"
-      href="assets/imges/logo.png"
-    />
-    <title>من نحن - مجموعة شمول</title>
-    <meta
-      name="description"
-      content="تعرف على مجموعة شمول الرائدة في الاستشارات الهندسية والمساحية. تاريخنا العريق ورؤيتنا المستقبلية في خدمة المملكة."
-    />
-    <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="style_phone.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/imges/logo.png" />
+  <title>من نحن - مجموعة شمول</title>
+  <meta name="description" content="تعرف على مجموعة شمول الرائدة في الاستشارات الهندسية والمساحية." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { gold: '#c5a059', dark: '#1a1a1a' }, fontFamily: { cairo: ['Cairo', 'Arial', 'sans-serif'] } } }
+    }
+  </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>body { font-family: 'Cairo', Arial, sans-serif; }</style>
+</head>
+<body class="bg-white text-gray-800">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <div id="header-placeholder"></div>
+  <!--==========================-->
+  <!-- PAGE HEADER -->
+  <!--==========================-->
 
-  
-  </head>
-
-  <style>
-    html {
-  scroll-behavior: smooth;
-}
-/* الحاوية الأساسية */
-.process-section {
-    background-color: #BC985B; /* اللون الأساسي */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-    padding: 70px 0;
-    width: 80%; /* جعل العرض كامل لإعطاء مساحة للتنفس */
-    margin-right: 99px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    border-radius: 30px;        /* انحناء الزوايا */
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
-
-}
-
-.process-wrapper {
-    width: 100%;
-    max-width: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/* الحاوية المشتركة للهوفر */
-.process-group {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    cursor: pointer;
-}
-
-.process-item {
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-/* الخط الذي يظهر تحت النص عند الهوفر */
-.process-item p::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: white;
-    transition: all 0.4s ease;
-    transform: translateX(-50%);
-}
-
-.process-icon img {
-    width: 70px;
-    height: auto;
-    transition: all 0.4s ease;
-}
-
-.arrow-circle {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 20px;
-    transition: all 0.4s ease;
-}
-
-.arrow-circle img{
-  width: 30px;
-}
-
-/* >>> السحر هنا: تأثير الهوفر المشترك <<< */
-
-/* 1. عندما نؤشر على المجموعة: نكبر الأيقونة */
-.process-group:hover .process-icon img  {
-    transform: scale(1.15) translateY(-5px);
-    filter: brightness(0) invert(1) !important;
-}
-
-/* 2. عندما نؤشر على المجموعة: نظهر الخط تحت النص */
-.process-group:hover .process-item p::after {
-    width: 80%;
-}
-
-/* 3. عندما نؤشر على المجموعة: نغير لون النص للأبيض */
-.process-group:hover .process-item p {
-    color: white;
-}
-
-/* 4. عندما نؤشر على المجموعة: نغير خلفية السهم ونحركه */
-.process-group:hover .arrow-circle {
-    background-color: rgba(255, 255, 255, 0.5);
-    transform: translateX(-10px); /* تحريك السهم باتجاه اليسار (للعربي) */
-}
-
-/* إخفاء السهم في المجموعة الأخيرة */
-.last-group {
-    flex: 0; /* لكي لا تأخذ مساحة زائدة */
-}
-
-/* تحسينات الجوال */
-@media (max-width: 768px) {
-    .process-wrapper {
-        flex-direction: row;
-        gap: 10px;
-        flex-wrap: nowrap;
-    }
-    .process-group {
-        flex-direction: column;
-    }
-    .process-arrow {
-        transform: rotate(90deg);
-        margin: 20px 0;
-    }
-    .process-item p::after {
-        display: none; /* إخفاء الخط في الجوال لتقليل الزحمة */
-    }
-}
-    /* تنسيق القسم الرئيسي */
-    .split-section {
-      width: 100%;
-      background-color: #f6f8f9; /* لون خلفية فاتح جداً مثل Kent */
-      padding: 80px 0; /* مسافة رأسية مريحة */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* حاوية المحتوى */
-    .split-container {
-      display: flex;
-      width: 95%; /* أخذ معظم عرض الشاشة */
-      max-width: 1200px; /* تقليل العرض الأقصى لزيادة التناسق */
-      margin: 0 auto;
-      align-items: center; /* توسيط المحتوى عمودياً */
-      overflow: hidden;
-      gap: 30px;
-    }
-
-    /* الجانب النصي */
-    .split-content {
-      flex: 1; /* يأخذ نصف المساحة */
-      padding-right: 50px; /* مسافة بين النص والصورة (في الـ RTL) */
-      text-align: right;
-      background-color: white;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-      border-top: 4px solid #c5a059;
-      
-    
-      padding: 60px 40px;
-      
-    }
-
-    .content-overline {
-      color: #c5a059; /* لون ذهبي مثل هويتك */
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-    }
-
-    .split-content h1 {
-      color: #1a1a1a;
-      font-size: 2.8rem; /* خط كبير مثل طلبك */
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 25px;
-    }
-
-    .content-description {
-      color: rgb(119, 119, 119);
-        font-family: Cairo, Arial, Helvetica, sans-serif;
-        line-height: 1.8;
-        margin-bottom: 35px;
-        font-weight: 400;
-        font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 40px;
-    }
-
-    /* تنسيق الزر مثل Kent */
-    .learn-more-btn {
-      display: inline-flex;
-      align-items: center;
-      color: #1a1a1a !important;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
-
-    .learn-more-btn .btn-arrow {
-      margin-right: 15px; /* مسافة بين النص والسهم */
-      transition: transform 0.3s ease;
-    }
-
-    .learn-more-btn:hover {
-      color: #c5a059 !important;
-    }
-
-    .learn-more-btn:hover .btn-arrow {
-      transform: translateX(-10px); /* تحريك السهم لليمين عند التأشير */
-    }
-
-    /* الجانب المصور */
-    .split-image-wrapper {
-      flex: 0.8; /* تقليل المساحة المخصصة للصورة مقارنة بالنص */
-      display: flex;
-      justify-content: flex-end; /* وضع الصورة في أقصى اليسار */
-    }
-
-    .split-image {
-      width: 100%;
-      max-width: 600px; /* تقليل العرض قليلاً لزيادة حدة الصورة (Sharpness) */
-      height: auto;
-      object-fit: cover; /* لضمان عدم تمدد الصورة بشكل غير متناسق */
-      border-radius: 8px; /* اختياري: زوايا مستديرة خفيفة */
-    }
-    .split-image:hover {
-      transform: scale(
-        1.03
-      ); /* تقليل نسبة التكبير عند الحوم للحفاظ على جودة البكسلات */
-      transform: translateY(-15px);
-      transition: transform 0.3s ease;
-      border-radius: 8px; /* اختياري: زوايا مستديرة خفيفة */
-    }
-    /* تحسينات الجوال */
-/* تحسينات الجوال الشاملة */
-@media (max-width: 768px) {
-    /* 1. إصلاح الحاوية الرئيسية */
-    .split-section {
-        padding: 40px 10px; /* تقليل الفراغات العمودية */
-    }
-
-    .split-container {
-        flex-direction: column !important; /* تحويل العناصر لتكون فوق بعضها */
-        width: 100%;
-        gap: 20px;
-    }
-
-    /* 2. إصلاح صندوق النص (المشكلة الأكبر في الصورة) */
-    .split-content {
-        padding: 30px 15px !important; /* تقليل الـ padding ليناسب عرض الجوال */
-        margin: 0 10px; /* ترك مسافة صغيرة عن حواف الشاشة */
-        text-align: center; /* توسيط النص لجمالية أفضل */
-        width: auto;
-        flex: none;
-        order: 2; /* النص يظهر أسفل الصورة */
-    }
-
-    /* إزالة المسافة اليمينية التي قد تدفع النص لليسار في RTL */
-    .split-content {
-        padding-right: 15px !important; 
-    }
-
-    /* 3. ضبط الصورة لتملأ العرض */
-    .split-image-wrapper {
-        width: 100%;
-        justify-content: center;
-        order: 1; /* الصورة تظهر أولاً */
-        padding: 0;
-    }
-
-    .split-image {
-        max-width: 90%; /* عدم جعل الصورة تلتصق بالحواف تماماً */
-        margin: 0 auto;
-    }
-
-    /* 4. تصغير أحجام الخطوط لتناسب الشاشة */
-    .split-content h1 {
-        font-size: 1.8rem; /* تصغير العنوان */
-        margin-bottom: 15px;
-    }
-
-    .content-description {
-        font-size: 0.95rem; /* تصغير الوصف */
-        line-height: 1.6;
-    }
-
-    /* 5. إصلاح قسم "من نحن" العلوي (عنصر الـ grid) */
-    .about-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 15px;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-
-    .about-image img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* إضافة لمسة للهواتف الصغيرة جداً (مثل iPhone SE) */
-@media (max-width: 480px) {
-    .split-content h1 {
-        font-size: 1.5rem;
-    }
-}
-  </style>
-
-  <body>
-    <div id="header-placeholder"></div>
-
-    <main>
-
-
-    <section class="page-header" >
-      <div class="container">
-        <h1>من نحن</h1>
-      </div>
-    </section>
-
-    <section class="about-content">
-      <div class="container">
-        <div class="about-grid">
-         <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
-            <h2 data-aos="fade-left" data-aos-duration="1000">مجموعة شمول للإستشارات الهندسية</h2>
-
-            <p data-aos="fade-left" data-aos-duration="1200">
-              مجموعة شمول للاستشارات (SCG) هي تحالف رائد يضم شركات متخصصة تقدم
-              باقة شاملة من الخدمات الاستشارية.
-            </p>
-
-            <p data-aos="fade-left" data-aos-duration="1300">
-              تشمل خبراتنا الاستشارات الهندسية واستشارات السلامة، والخدمات
-              القانونية والمالية والإدارية والفنية والبيئية والجيوتقنية،
-              بالإضافة إلى حلول مسح الأراضي وتقسيمها. ومن خلال الاستفادة من أحدث
-              التقنيات وأفضل الممارسات، نضمن لعملائنا نتائج استثنائية.
-            </p>
-
-            <p data-aos="fade-left" data-aos-duration="1400">
-              في شركة SCG، نفخر بإرثنا الحافل بالنجاحات، ونلتزم التزامًا راسخًا
-              بالتقدم والابتكار. وانطلاقًا من مبادئنا الراسخة التي تتوافق مع
-              المعايير الدولية والوطنية، نتبنى أحدث التقنيات لتعزيز النمو
-              المستدام. رأس مالنا البشري المتنوع والموهوب هو أثمن ما نملك،
-              ونستثمر فيه باستمرار لتحقيق التميز. ويمتد تفانينا الراسخ ليشمل
-              عملاءنا وشركاءنا والمجتمعات التي نخدمها.
-            </p>
-          </div>
-          <div class="about-image" data-aos="fade-right" data-aos-delay="200">
-            <img
-              src="assets/imges/ChatGPT Image May 19, 2026, 11_12_25 AM.png"
-              alt="مجموعة شمول"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-<section class="process-section" data-aos="zoom-in-up">
-    <div class="process-wrapper">
-        
-        <!-- المجموعة 1: رؤيتنا -->
-        <div class="process-group">
-            <a href="#vision" class="process-item">
-                <div class="process-icon">
-                    <img src="assets/icons/begining.png" alt="start">
-                </div>
-                <p>بداية الرحلة</p>
-      
-            <div class="process-arrow">
-                <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
-                </a>
-            </div>
-        </div>
-
-        <!-- المجموعة 2: رسالتنا -->
-        <div class="process-group">
-            <a href="#mission" class="process-item">
-                <div class="process-icon">
-                    <img src="assets/icons/statistic.png" alt="gorw">
-                </div>
-                <p>النمو و التطور</p>
-    
-            <div class="process-arrow">
-                <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
-                </a>
-            </div>
-            
-        </div>
-
-
-
-
-        
-
-        <!-- المجموعة 3: قيمنا -->
-        <div class="process-group last-group">
-            <a href="#values" class="process-item">
-                <div class="process-icon">
-                    <img src="assets/icons/checked.png" alt="change">
-                </div>
-                <p>التحول الكبير</p>
-            
-                        <div class="process-arrow">
-                <div class="arrow-circle"><img src="assets/icons/right-arrow.png" alt="arrow"></div>
-            </a>
-        </div>
-
+  <section class="pt-32 pb-16 bg-[#1a1a1a] text-white text-center">
+    <div class="max-w-7xl mx-auto px-5">
+      <h1 class="text-4xl md:text-5xl font-black text-gray-300">من نحن</h1>
     </div>
-</section>
+  </section>
 
-
-   
-
-    <section class="split-section" id="vision">
-      <div class="split-container">
-        <div class="split-content" data-aos="fade-left">
-          <p class="content-overline">مجموعة شمول للاستشارات الهندسية</p>
-          <h1>بداية الرحلة</h1>
-          <p class="content-description">
-في منتصف عام 2015، بدأت مجموعة شمول الاستشارية بفتح مكتب لاستشارات السلامة، وذلك بناءً على الاشتراطات التي تفرضها وزارة الشؤون البلدية والقروية والأمانة وفقاً لمعايير السلامة في المملكة، وبدأنا كمؤسسين مع جهة جدية في هذا المجال.
-
-وفي عام 2016، تم تأسيس مكتب الشرف الهندسية، حيث تم في هذا الوقت، بدأنا في تقديم استشارات هندسية متخصصة للعديد من المجالات، مما زاد من خبرتنا وعزز من قدراتنا كفريق عمل محترف.
-
-وفي 2018، استمرت التوسع مع تأسيس مكتب الشرف للاستشارات الإدارية، حيث قمنا بتقديم خدمات متنوعة لشركات والمؤسسات لتحسين أدائها وتطوير إدارتها.          </p>
-
-        </div>
-        <div class="split-image-wrapper" data-aos="fade-right">
-          <img
-            src="assets/imges/s002.jpg"
-            alt="رؤيتنا"
-            class="split-image"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="split-section" id="mission">
-      <div class="split-container">
-        <div class="split-image-wrapper" data-aos="fade-left">
-          <img
-            src="assets/imges/fi06.jpg"
-            alt="رسالتنا"
-            class="split-image"
-          />
-        </div>
-        <div class="split-content" data-aos="fade-right">
-          <p class="content-overline">مجموعة شمول للاستشارات الهندسية</p>
-          <h1>النمو و التطور</h1>
-          <p class="content-description">
-وصلنا لخط التحول في عام 2019، حيث تم دمج جميع المكاتب تحت مظلة واحدة وأصبحت مجموعة الشرف للاستشارات هذه الخطوة الاستراتيجية سمحت لنا بتعزيز التكامل بين الخدمات وتحقيق رؤية شاملة لمستقبلنا.
-
-ثم جاء عام 2020، الذي شهد تحديات جديدة مع جائحة كورونا، بينما كانت هذه الفترة صعبة على الكثير من الشركات في العالم، إلا أننا تمكنا من توظيفها كتجربة للتطور، مما أدى إلى تعزيز العلاقات مع عملائنا وتقديم جميع خدماتنا بشكل إلكتروني عن بعد، مما سمح لنا بالبقاء متصلين مع عملائنا بشكل متكامل والتطور وفق التكنولوجيا الحديثة.          </p>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="split-section" id="values">
-      <div class="split-container">
-        <div class="split-content" data-aos="fade-left">
-          <p class="content-overline">مجموعة شمول للاستشارات الهندسية</p>
-          <h1>التحول الكبير</h1>
-          <p class="content-description">
-            "في عام 2022، جاءت خطوة كبيرة حيث تحولت مجموعة الشهري للاستشارات إلى مجموعة شمول للاستشارات، وتحولت من مجموعة مكاتب إلى شركات متخصصة تضمها المجموعة. قاموا بتوسيع نطاقهم من خلال فتح العديد من الفروع داخل المملكة وخارجها.
-
-وفي عام 2023، واصلت المجموعة توسيع نطاق خدماتها بافتتاح عدة شركات فرعية متخصصة في مختلف مجالات الإستشارات لتقديم الخدمات القانونية والمالية والبيئية والجيولوجية والتصميمات الداخلية والعمارة الحديثة وحلول التكنولوجيا الذكية.
-
-وبالإضافة إلى ذلك، تم فتح العديد من الفروع الجديدة داخل المملكة وخارجها، ما يعكس التوسع المستمر للمجموعة."
+  <main>
+    <!--==========================-->
+    <!-- INTRODUCTION -->
+    <!--==========================-->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-left" data-aos-duration="1000">
+          <h2 class="text-3xl font-black text-[#1a1a1a] mb-5 leading-tight">مجموعة شمول للاستشارات الهندسية</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+مجموعة شمول للاستشارات (SCG) هي تحالف رائد يضم شركات متخصصة تقدم باقة شاملة من الخدمات الاستشارية.
           </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+           تشمل خبراتنا الاستشارات الهندسية واستشارات السلامة، والخدمات القانونية والمالية والإدارية والفنية والبيئية والجيوتقنية، بالإضافة إلى حلول مسح الأراضي وتقسيمها. ومن خلال الاستفادة من أحدث التقنيات وأفضل الممارسات، نضمن لعملائنا نتائج استثنائية.
 
+
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+في شركة SCG، نفخر بإرثنا الحافل بالنجاحات، ونلتزم التزامًا راسخًا بالتقدم والابتكار. وانطلاقًا من مبادئنا الراسخة التي تتوافق مع المعايير الدولية والوطنية، نتبنى أحدث التقنيات لتعزيز النمو المستدام. رأس مالنا البشري المتنوع والموهوب هو أثمن ما نملك، ونستثمر فيه باستمرار لتحقيق التميز. ويمتد تفانينا الراسخ ليشمل عملاءنا وشركاءنا والمجتمعات التي نخدمها.
+
+          </p>
         </div>
-        <div class="split-image-wrapper" data-aos="fade-right">
-          <img
-            src="assets/imges/b003.jpg"
-            alt="قيمنا"
-            class="split-image"
-          />
+        <div data-aos="fade-right" data-aos-delay="200">
+          <img src="assets/imges/ChatGPT Image May 19, 2026, 11_12_25 AM.png" alt="مجموعة شمول" class="w-full rounded-2xl shadow-2xl object-cover h-100" loading="lazy" />
+        </div>
+      </div>
+    </section>
+    <!--==========================-->
+    <!-- JOURNEY STEPS -->
+    <!--==========================-->
+    <section class="py-16 bg-[#BC985B] border-t-[5.5px] border-black" data-aos="zoom-in-up">
+      <div class="max-w-4xl mx-auto px-5 flex flex-wrap justify-center gap-4">
+        <a href="#vision" class="group flex items-center gap-4 bg-white/20 hover:bg-white/40 rounded-2xl px-6 py-4 transition-all duration-300">
+          <img src="assets/icons/begining.png" alt="" class="w-14 h-14 object-contain group-hover:brightness-0 group-hover:invert transition-all" />
+          <span class="text-black font-bold text-lg group-hover:text-white transition-colors">بداية الرحلة</span>
+          
+        </a>
+        <a href="#mission" class="group flex items-center gap-4 bg-white/20 hover:bg-white/40 rounded-2xl px-6 py-4 transition-all duration-300">
+          <img src="assets/icons/statistic.png" alt="" class="w-14 h-14 object-contain group-hover:brightness-0 group-hover:invert transition-all" />
+          <span class="text-black font-bold text-lg group-hover:text-white transition-colors">النمو والتطور</span>
+        </a>
+        <a href="#values" class="group flex items-center gap-4 bg-white/20 hover:bg-white/40 rounded-2xl px-6 py-4 transition-all duration-300">
+          <img src="assets/icons/checked.png" alt="" class="w-14 h-14 object-contain group-hover:brightness-0 group-hover:invert transition-all" />
+          <span class="text-black font-bold text-lg group-hover:text-white transition-colors">التحول الكبير</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="py-20 bg-[#f6f8f9]" id="vision">
+      <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 bg-white border-t-4 border-[#c5a059] shadow-lg p-10 rounded-b-2xl" data-aos="fade-left">
+          <p class="text-[#c5a059] font-bold mb-2 text-sm">مجموعة شمول للاستشارات الهندسية</p>
+          <h2 class="text-3xl font-black text-[#1a1a1a] mb-5">بداية الرحلة</h2>
+          <p class="text-gray-500 leading-relaxed">
+            في منتصف عام 2015، بدأت مجموعة شمول الاستشارية بفتح مكتب لاستشارات السلامة، وذلك بناءً على الاشتراطات التي تفرضها وزارة الشؤون البلدية والقروية والأمانة وفقاً لمعايير السلامة في المملكة.
+            وفي عام 2016، تم تأسيس مكتب الشرف الهندسية، حيث بدأنا في تقديم استشارات هندسية متخصصة للعديد من المجالات.
+            وفي 2018، استمر التوسع مع تأسيس مكتب الشرف للاستشارات الإدارية.
+          </p>
+        </div>
+        <div class="flex-1" data-aos="fade-right">
+          <img src="assets/imges/s002.jpg" alt="بداية الرحلة" class="w-full rounded-2xl shadow-xl object-cover h-90 hover:-translate-y-3 transition-transform duration-300" />
         </div>
       </div>
     </section>
 
-    <a
-      href="https://api.whatsapp.com/send/?phone=966920031520"
-      class="whatsapp-float"
-      target="_blank"
-    >
-      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" />
-    </a>
-</main>
-    <div id="footer-placeholder"></div>
+    <!-- Mission -->
+    <section class="py-20 bg-white" id="mission">
+      <div class="max-w-7xl mx-auto px-5 flex flex-col-reverse md:flex-row items-center gap-10">
+        <div class="flex-1" data-aos="fade-left">
+          <img src="assets/imges/fi06.jpg" alt="النمو والتطور" class="w-full rounded-2xl shadow-xl object-cover h-90 hover:-translate-y-3 transition-transform duration-300" />
+        </div>
+        <div class="flex-1 bg-white border-t-4 border-[#c5a059] shadow-lg p-10 rounded-b-2xl" data-aos="fade-right">
+          <p class="text-[#c5a059] font-bold mb-2 text-sm">مجموعة شمول للاستشارات الهندسية</p>
+          <h2 class="text-3xl font-black text-[#1a1a1a] mb-5">النمو والتطور</h2>
+          <p class="text-gray-500 leading-relaxed">
+            وصلنا لخط التحول في عام 2019، حيث تم دمج جميع المكاتب تحت مظلة واحدة وأصبحت مجموعة الشرف للاستشارات. هذه الخطوة الاستراتيجية سمحت لنا بتعزيز التكامل بين الخدمات.
+            ثم جاء عام 2020 الذي شهد تحديات جديدة مع جائحة كورونا، وتمكنا من توظيفها كتجربة للتطور، مما أدى إلى تعزيز العلاقات مع عملائنا وتقديم جميع خدماتنا بشكل إلكتروني.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Values -->
+    <section class="py-20 bg-[#f6f8f9]" id="values">
+      <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 bg-white border-t-4 border-[#c5a059] shadow-lg p-10 rounded-b-2xl" data-aos="fade-left">
+          <p class="text-[#c5a059] font-bold mb-2 text-sm">مجموعة شمول للاستشارات الهندسية</p>
+          <h2 class="text-3xl font-black text-[#1a1a1a] mb-5">التحول الكبير</h2>
+          <p class="text-gray-500 leading-relaxed">
+            في عام 2022، جاءت خطوة كبيرة حيث تحولت مجموعة الشهري للاستشارات إلى مجموعة شمول للاستشارات، وتحولت من مجموعة مكاتب إلى شركات متخصصة تضمها المجموعة.
+            وفي عام 2023، واصلت المجموعة توسيع نطاق خدماتها بافتتاح عدة شركات فرعية متخصصة في مختلف مجالات الاستشارات لتقديم الخدمات القانونية والمالية والبيئية والجيولوجية وحلول التكنولوجيا الذكية.
+          </p>
+        </div>
+        <div class="flex-1" data-aos="fade-right">
+          <img src="assets/imges/b003.jpg" alt="التحول الكبير" class="w-full rounded-2xl shadow-xl object-cover h-90 hover:-translate-y-3 transition-transform duration-300" />
+        </div>
+      </div>
+    </section>
 
-    <script src="js/script.js"></script>
-    <script src="js/effect.js"></script>
+  </main>
+    <!--================-->
+  <!-- WHATSAPP FLOAT -->
+     <!--==========================-->
 
-  </body>
+  <a href="https://api.whatsapp.com/send/?phone=966920031520" class="fixed bottom-8 right-8 w-16 h-16 bg-green-600 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform z-50" target="_blank">
+    <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" class="w-9 h-9 brightness-0 invert" />
+  </a>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="js/effect.js" defer></script>
+  <script src="js/components.js"></script>
+  <script src="js/alhayat.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
 </html>

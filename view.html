@@ -1,289 +1,174 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="assets/imges/logo.png"
-    />
-    <title>تفاصيل الشركة - مجموعة شمول</title>
-    <meta name="description" content="تعرف على تفاصيل شركات مجموعة شمول وخبراتها المتخصصة" />
-    <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="style_phone.css" />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <div id="header-placeholder"></div>
-
-    <main>
-
-    <!-- Page Header -->
-    <section class="page-header">
-      <div class="container">
-        <h1 id="company-title">تفاصيل الشركة</h1>
-        <p id="company-subtitle">تعرف على خدمات وخبرات الشركة</p>
-      </div>
-    </section>
-
-    <!-- Company Details -->
-    <section class="company-details">
-      <div class="container">
-        <div class="company-content">
-          <div class="company-info">
-            <div class="company-stats">
-              <div class="stat-card">
-                <h2 id="stat-years">20+</h2>
-                <p>سنوات خبرة</p>
-              </div>
-              <div class="stat-card">
-                <h2 id="stat-satisfaction">94%</h2>
-                <p>رضا العملاء</p>
-              </div>
-              <div class="stat-card">
-                <h2 id="stat-projects">1208</h2>
-                <p>مشروع منجز</p>
-              </div>
-            </div>
-            
-            <div class="company-description">
-              <p id="company-description">
-                مجموعة شمول للاستشارات (SCG) هي تحالف رائد يضم شركات متخصصة تقدم باقة شاملة من الخدمات الاستشارية.
-              </p>
-            </div>
-
-            <div class="company-services">
-              <h3>الخدمات تشمل:</h3>
-              <ul id="services-list" data-aos="fade-left">
-                <li>دراسات الجدوى للمشاريع</li>
-                <li>إدارة المشاريع</li>
-                <li>الإشراف على المشاريع</li>
-                <li>المسح والرفع المساحي</li>
-                <li>تقدير وتحديد الكميات</li>
-              </ul>
-            </div>
-          </div>
-
-
-          <div class="company-image">
-            <img id="company-img" src="assets/companies/b007.jpg" alt="شركة شمول" loading="lazy" data-aos="fade-up"/>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/imges/logo.png" />
+  <title>تفاصيل الشركة - مجموعة شمول</title>
+  <meta name="description" content="تعرف على تفاصيل شركات مجموعة شمول وخبراتها المتخصصة" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { gold: '#c5a059', dark: '#1a1a1a' }, fontFamily: { cairo: ['Cairo', 'Arial', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>body { font-family: 'Cairo', Arial, sans-serif; }</style>
+</head>
+<body class="bg-white text-gray-800">
+ 
+  <div id="header-placeholder"></div>
+  <!--==========================-->
+  <!-- PAGE HEADER -->
+  <!--==========================-->
+  <section class="pt-32 pb-16 bg-[#1a1a1a] text-white text-center">
+    <div class="max-w-7xl mx-auto px-5">
+      <h1 id="company-title" class="text-4xl md:text-5xl font-black text-gray-300 mb-4">تفاصيل الشركة</h1>
+      <p id="company-subtitle" class="text-lg text-white/80">تعرف على خدمات وخبرات الشركة</p>
+    </div>
+  </section>
+  <!--==========================-->
+  <!-- COMPANY DETAILS -->
+  <!--==========================-->
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-5">
+ 
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-6 mb-12">
+        <div class="bg-[#1a1a1a] text-white rounded-2xl p-6 text-center shadow-lg" data-aos="fade-up">
+          <h2 id="stat-years" class="text-4xl font-black text-[#c5a059]">20+</h2>
+          <p class="text-gray-300 mt-1 text-sm font-cairo">سنوات خبرة</p>
+        </div>
+        <div class="bg-[#1a1a1a] text-white rounded-2xl p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <h2 id="stat-satisfaction" class="text-4xl font-black text-[#c5a059]">94%</h2>
+          <p class="text-gray-300 mt-1 text-sm font-cairo">رضا العملاء</p>
+        </div>
+        <div class="bg-[#1a1a1a] text-white rounded-2xl p-6 text-center shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <h2 id="stat-projects" class="text-4xl font-black text-[#c5a059]">1208</h2>
+          <p class="text-gray-300 mt-1 text-sm font-cairo">مشروع منجز</p>
         </div>
       </div>
-    </section>
-    </main>
-
-
-    <div id="footer-placeholder"></div>
-
-    <script src="js/script.js"></script>
-    <script>
-      // Company data
-      const companies = {
-        'shomoul-engineering-consulting': {
-          title: 'شمول للاستشارات الهندسية',
-          subtitle: 'رائدة في تقديم الحلول الهندسية المتكاملة',
-          description: 'تأسست شركة شمول الهندسية في عام 2016 كشركة هندسية سعودية تقدم مجموعة واسعة من الخدمات الهندسية. تتميز الشركة بالالتزام بأعلى معايير الجودة والاحترافية في جميع جوانب خدماتها. يسعى الفريق لضمان رضا العملاء الكامل من خلال معالجة كل تفصيل وتسليم المشاريع بأعلى جودة ومستوى من التميز.',
-          image: 'assets/companies/e007.jpg',
-          years: '20+',
-          satisfaction: '94%',
-          projects: '1208',
-          services: [
-            'دراسات الجدوى للمشاريع',
-            'إدارة المشاريع',
-            'الإشراف على المشاريع',
-            'المسح والرفع المساحي',
-            'تقدير وتحديد الكميات',
-            'الهندسة الطبية',
-            'الهندسة الصناعية',
-            'دراسات الهيكل الفولاذي',
-            'التدريب الهندسي',
-            'تقسيم الأراضي والتجزئة',
-            'الموافقات من الجهات المختصة'
-          ]
-        },
-        'shomoul-safety-consulting': {
-          title: 'شمول للاستشارات السلامة',
-          subtitle: 'متخصصة في حلول السلامة المتكاملة',
-          description: 'تأسست في منتصف عام 2015 في الدمام، المملكة العربية السعودية، وتتخصص في تقديم خدمات استشارات السلامة الشاملة. نحن ملتزمون بتوفير بيئة عمل آمنة وضمان الامتثال للمعايير الدولية للسلامة.',
-          image: 'assets/companies/s00-3.jpg',
-          years: '8+',
-          satisfaction: '96%',
-          projects: '856',
-          services: [
-            'دراسات سلامة المباني',
-            'خطط الطوارئ والإخلاء',
-            'تقييم المخاطر',
-            'تدريب على السلامة',
-            'فحص معدات السلامة',
-            'استشارات الدفاع المدني',
-            'شهادات المطابقة'
-          ]
-        },
-        'shomoul-business-consulting': {
-          title: 'شمول للاستشارات التجارية',
-          subtitle: 'تميز بأسلوبها الجريء والممل',
-          description: 'تتميز بأسلوبها الجريء والممل، مدفوعة بالشغف لتقديم نتائج استثنائية وخلق تأثير كبير في السوق. نقدم حلولاً تجارية مبتكرة تساعد عملائنا على تحقيق أهدافهم الاستراتيجية.',
-          image: 'assets/companies/ev07.jpg',
-          years: '10+',
-          satisfaction: '92%',
-          projects: '623',
-          services: [
-            'التخطيط الاستراتيجي',
-            'تحسين الأداء',
-            'استشارات إدارية',
-            'تطوير الأعمال',
-            'دراسات السوق',
-            'تحليل المنافسين'
-          ]
-        },
-        'shomoul-financial-consulting': {
-          title: 'شمول للاستشارات المالية',
-          subtitle: 'رؤية متكاملة للنجاح المستدام',
-          description: 'نتتبنى رؤية متكاملة تهدف إلى تعزيز التنمية المستمرة والنجاح المستدام لعملائنا. نقدم حلولاً مالية مبتكرة تدعم النمو والتطور.',
-          image: 'assets/companies/fi03.jpg',
-          years: '12+',
-          satisfaction: '95%',
-          projects: '445',
-          services: [
-            'التخطيط المالي',
-            'استشارات استثمارية',
-            'تحليل مالي',
-            'إدارة المخاطر المالية',
-            'تقييم الشركات',
-            'دراسات الجدوى المالية'
-          ]
-        },
-        'shomoul-geo-engineering': {
-          title: 'شمول للاستشارات الجيوهندسية',
-          subtitle: 'خبرة في الخدمات الجيولوجية والجيوفيزيائية',
-          description: 'نتخصص في تقديم خدمات جيولوجية وجيوفيزيائية عالية الجودة. نستخدم أحدث التقنيات لتقديم حلول جيوهندسية دقيقة وموثوقة.',
-          image: 'assets/companies/g001.jpg',
-          years: '15+',
-          satisfaction: '93%',
-          projects: '789',
-          services: [
-            'دراسات التربة',
-            'الاستكشاف الجيولوجي',
-            'المسح الجيوفيزيائي',
-            'فحص المواد',
-            'دراسات الأساسات',
-            'استشارات جيوتقنية'
-          ]
-        },
-        'shomoul-industrial-engineering': {
-          title: 'شمول للاستشارات الصناعية',
-          subtitle: 'تحسين كفاءة الأنظمة الصناعية',
-          description: 'نقدم خدمات متخصصة لتحسين كفاءة الأنظمة الصناعية والخدمية. نساعد عملائنا على تحقيق التميز التشغيلي من خلال حلول هندسية صناعية مبتكرة.',
-          image: 'assets/companies/ie06.jpg',
-          years: '18+',
-          satisfaction: '91%',
-          projects: '567',
-          services: [
-            'تحسين العمليات',
-            'هندسة الإنتاج',
-            'الجودة والتحكم',
-            'تصميم المصانع',
-            'تحليل النظام',
-            'استشارات صناعية'
-          ]
-        },
-        'shomoul-legal-consulting': {
-          title: 'شمول للاستشارات القانونية',
-          subtitle: 'الدعم والإرشاد القانوني',
-          description: 'تهدف إلى توفير الدعم والإرشاد اللازم للعملاء. نقدم خدمات قانونية شاملة تدعم قرارات العملاء وتحمي مصالحهم.',
-          image: 'assets/companies/sd08.jpg',
-          years: '14+',
-          satisfaction: '94%',
-          projects: '892',
-          services: [
-            'استشارات قانونية',
-            'صياغة العقود',
-            'التمثيل القانوني',
-            'دراسات قانونية',
-            'حل النزاعات',
-            'استشارات تنظيمية'
-          ]
-        },
-        'shomoul-smart-technology': {
-          title: 'شمول للتقنيات الذكية',
-          subtitle: 'شريك استراتيجي موثوق في الحلول التقنية',
-          description: 'نسعى ليكونا شريكاً استراتيجياً موثوقاً لعملائنا من خلال توفير الحلول التقنية المبتكرة التي تدعم تحولهم الرقمي.',
-          image: 'assets/companies/ss09.jpg',
-          years: '6+',
-          satisfaction: '97%',
-          projects: '334',
-          services: [
-            'الحلول الذكية',
-            'تطوير البرمجيات',
-            'استشارات تقنية',
-            'تحويل رقمي',
-            'أتمتة العمليات',
-            'حلول IoT'
-          ]
-        },
-        'shomoul-design-solutions': {
-          title: 'شمول لحلول التصميم',
-          subtitle: 'استغلال الموارد لتقديم خدمات شاملة',
-          description: 'نستغل مواردنا لتقديم خدمات شاملة تلبي احتياجات العملاء. نقدم حلولاً تصميمية مبتكرة تجمع بين الجودة والابتكار.',
-          image: 'assets/companies/i008.jpg',
-          years: '9+',
-          satisfaction: '93%',
-          projects: '456',
-          services: [
-            'التصميم المعماري',
-            'التصميم الداخلي',
-            'التصميم الجرافيكي',
-            'النمذجة ثلاثية الأبعاد',
-            'الرسومات الهندسية',
-            'استشارات تصميم'
-          ]
-        }
-      };
-
-      // Get company from URL parameter
-      function getCompanyFromUrl() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('company');
+ 
+      <!-- Content Grid -->
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+ 
+        <!-- Left: Info -->
+        <div>
+          <p id="company-description" class="text-gray-600 leading-relaxed text-lg mb-8">
+            مجموعة شمول للاستشارات (SCG) هي تحالف رائد يضم شركات متخصصة تقدم باقة شاملة من الخدمات الاستشارية.
+          </p>
+ 
+          <div>
+            <h3 class="text-xl font-black text-[#1a1a1a] mb-4 border-r-4 border-[#c5a059] pr-3">الخدمات تشمل:</h3>
+            <ul id="services-list" class="space-y-2 list-none p-0 m-0" data-aos="fade-left">
+              <li class="flex items-center gap-2 text-gray-600"><span class="w-2 h-2 bg-[#c5a059] rounded-full flex-shrink-0"></span>دراسات الجدوى للمشاريع</li>
+              <li class="flex items-center gap-2 text-gray-600"><span class="w-2 h-2 bg-[#c5a059] rounded-full flex-shrink-0"></span>إدارة المشاريع</li>
+              <li class="flex items-center gap-2 text-gray-600"><span class="w-2 h-2 bg-[#c5a059] rounded-full flex-shrink-0"></span>الإشراف على المشاريع</li>
+              <li class="flex items-center gap-2 text-gray-600"><span class="w-2 h-2 bg-[#c5a059] rounded-full flex-shrink-0"></span>المسح والرفع المساحي</li>
+              <li class="flex items-center gap-2 text-gray-600"><span class="w-2 h-2 bg-[#c5a059] rounded-full flex-shrink-0"></span>تقدير وتحديد الكميات</li>
+            </ul>
+          </div>
+ 
+          <a href="contact.html" class="inline-block mt-8 px-8 py-3 bg-[#c5a059] text-white font-bold rounded-xl hover:bg-[#b8913f] transition-colors text-lg">تواصل معنا</a>
+        </div>
+ 
+        <!-- Right: Image -->
+        <div data-aos="fade-up">
+          <img id="company-img" src="assets/companies/b007.jpg" alt="شركة شمول" class="w-full rounded-2xl shadow-2xl object-cover h-100" loading="lazy" />
+        </div>
+ 
+      </div>
+    </div>
+  </main>
+ 
+  <div id="footer-placeholder"></div>
+ 
+  <script>
+    const companies = {
+      'shomoul-engineering-consulting': {
+        title: 'شمول للاستشارات الهندسية', subtitle: 'رائدة في تقديم الحلول الهندسية المتكاملة',
+        description: 'تأسست شركة شمول الهندسية في عام 2016 كشركة هندسية سعودية تقدم مجموعة واسعة من الخدمات الهندسية. تتميز الشركة بالالتزام بأعلى معايير الجودة والاحترافية في جميع جوانب خدماتها.',
+        image: 'assets/companies/e007.jpg', years: '20+', satisfaction: '94%', projects: '1208',
+        services: ['دراسات الجدوى للمشاريع','إدارة المشاريع','الإشراف على المشاريع','المسح والرفع المساحي','تقدير وتحديد الكميات','الهندسة الطبية','الهندسة الصناعية','دراسات الهيكل الفولاذي','التدريب الهندسي','تقسيم الأراضي والتجزئة','الموافقات من الجهات المختصة']
+      },
+      'shomoul-safety-consulting': {
+        title: 'شمول للاستشارات السلامة', subtitle: 'متخصصة في حلول السلامة المتكاملة',
+        description: 'تأسست في منتصف عام 2015 في الدمام، المملكة العربية السعودية، وتتخصص في تقديم خدمات استشارات السلامة الشاملة. نحن ملتزمون بتوفير بيئة عمل آمنة وضمان الامتثال للمعايير الدولية للسلامة.',
+        image: 'assets/companies/s00-3.jpg', years: '8+', satisfaction: '96%', projects: '856',
+        services: ['دراسات سلامة المباني','خطط الطوارئ والإخلاء','تقييم المخاطر','تدريب على السلامة','فحص معدات السلامة','استشارات الدفاع المدني','شهادات المطابقة']
+      },
+      'shomoul-business-consulting': {
+        title: 'شمول للاستشارات التجارية', subtitle: 'تميز بأسلوبها الجريء',
+        description: 'نقدم حلولاً تجارية مبتكرة تساعد عملائنا على تحقيق أهدافهم الاستراتيجية.',
+        image: 'assets/companies/ev07.jpg', years: '10+', satisfaction: '92%', projects: '623',
+        services: ['التخطيط الاستراتيجي','تحسين الأداء','استشارات إدارية','تطوير الأعمال','دراسات السوق','تحليل المنافسين']
+      },
+      'shomoul-financial-consulting': {
+        title: 'شمول للاستشارات المالية', subtitle: 'رؤية متكاملة للنجاح المستدام',
+        description: 'نتبنى رؤية متكاملة تهدف إلى تعزيز التنمية المستمرة والنجاح المستدام لعملائنا.',
+        image: 'assets/companies/fi03.jpg', years: '12+', satisfaction: '95%', projects: '445',
+        services: ['التخطيط المالي','استشارات استثمارية','تحليل مالي','إدارة المخاطر المالية','تقييم الشركات','دراسات الجدوى المالية']
+      },
+      'shomoul-geo-engineering': {
+        title: 'شمول للاستشارات الجيوهندسية', subtitle: 'خبرة في الخدمات الجيولوجية والجيوفيزيائية',
+        description: 'نتخصص في تقديم خدمات جيولوجية وجيوفيزيائية عالية الجودة.',
+        image: 'assets/companies/g001.jpg', years: '15+', satisfaction: '93%', projects: '789',
+        services: ['دراسات التربة','الاستكشاف الجيولوجي','المسح الجيوفيزيائي','فحص المواد','دراسات الأساسات','استشارات جيوتقنية']
+      },
+      'shomoul-industrial-engineering': {
+        title: 'شمول للاستشارات الصناعية', subtitle: 'تحسين كفاءة الأنظمة الصناعية',
+        description: 'نقدم خدمات متخصصة لتحسين كفاءة الأنظمة الصناعية والخدمية.',
+        image: 'assets/companies/ie06.jpg', years: '18+', satisfaction: '91%', projects: '567',
+        services: ['تحسين العمليات','هندسة الإنتاج','الجودة والتحكم','تصميم المصانع','تحليل النظام','استشارات صناعية']
+      },
+      'shomoul-legal-consulting': {
+        title: 'شمول للاستشارات القانونية', subtitle: 'الدعم والإرشاد القانوني',
+        description: 'تهدف إلى توفير الدعم والإرشاد اللازم للعملاء.',
+        image: 'assets/companies/sd08.jpg', years: '14+', satisfaction: '94%', projects: '892',
+        services: ['استشارات قانونية','صياغة العقود','التمثيل القانوني','دراسات قانونية','حل النزاعات','استشارات تنظيمية']
+      },
+      'shomoul-smart-technology': {
+        title: 'شمول للتقنيات الذكية', subtitle: 'شريك استراتيجي موثوق في الحلول التقنية',
+        description: 'نسعى لنكون شريكاً استراتيجياً موثوقاً لعملائنا من خلال توفير الحلول التقنية المبتكرة.',
+        image: 'assets/companies/ss09.jpg', years: '6+', satisfaction: '97%', projects: '334',
+        services: ['الحلول الذكية','تطوير البرمجيات','استشارات تقنية','تحويل رقمي','أتمتة العمليات','حلول IoT']
+      },
+      'shomoul-design-solutions': {
+        title: 'شمول لحلول التصميم', subtitle: 'استغلال الموارد لتقديم خدمات شاملة',
+        description: 'نستغل مواردنا لتقديم خدمات شاملة تلبي احتياجات العملاء.',
+        image: 'assets/companies/i008.jpg', years: '9+', satisfaction: '93%', projects: '456',
+        services: ['التصميم المعماري','التصميم الداخلي','التصميم الجرافيكي','النمذجة ثلاثية الأبعاد','الرسومات الهندسية','استشارات تصميم']
       }
-
-      // Load company data
-      function loadCompanyData() {
-        const companyId = getCompanyFromUrl();
-        const company = companies[companyId];
-        
-        if (company) {
-          document.getElementById('company-title').textContent = company.title;
-          document.getElementById('company-subtitle').textContent = company.subtitle;
-          document.getElementById('company-description').textContent = company.description;
-          document.getElementById('company-img').src = company.image;
-          document.getElementById('company-img').alt = company.title;
-          document.getElementById('stat-years').textContent = company.years;
-          document.getElementById('stat-satisfaction').textContent = company.satisfaction;
-          document.getElementById('stat-projects').textContent = company.projects;
-          
-          // Update services list
-          const servicesList = document.getElementById('services-list');
-          servicesList.innerHTML = '';
-          company.services.forEach(service => {
-            const li = document.createElement('li');
-            li.textContent = service;
-            servicesList.appendChild(li);
-          });
-        } else {
-          // Redirect to companies page if company not found
-          window.location.href = 'companies.html';
-        }
-      }
-
-      // Load company data when page loads
-      document.addEventListener('DOMContentLoaded', loadCompanyData);
-    </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="js/effect.js" defer></script>
-  </body>
+    };
+ 
+    function loadCompanyData() {
+      const id = new URLSearchParams(window.location.search).get('company');
+      const c = companies[id];
+      if (!c) { window.location.href = 'companies.html'; return; }
+      document.getElementById('company-title').textContent = c.title;
+      document.getElementById('company-subtitle').textContent = c.subtitle;
+      document.getElementById('company-description').textContent = c.description;
+      document.getElementById('company-img').src = c.image;
+      document.getElementById('company-img').alt = c.title;
+      document.getElementById('stat-years').textContent = c.years;
+      document.getElementById('stat-satisfaction').textContent = c.satisfaction;
+      document.getElementById('stat-projects').textContent = c.projects;
+      const list = document.getElementById('services-list');
+      list.innerHTML = '';
+      c.services.forEach(s => {
+        list.innerHTML += `<li class="flex items-center gap-2 text-gray-600"><span class="w-2 h-2 bg-[#c5a059] rounded-full flex-shrink-0"></span>${s}</li>`;
+      });
+    }
+    document.addEventListener('DOMContentLoaded', loadCompanyData);
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="js/effect.js" defer></script>
+  <script src="js/components.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/alhayat.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
 </html>

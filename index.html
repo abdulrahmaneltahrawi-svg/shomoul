@@ -3,850 +3,610 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="assets/imges/logo.png"
-    />
+    <link rel="icon" href="assets/imges/logo.png" />
+    <link rel="stylesheet" href="style.css" />
     <title>مجموعة شمول - حلول هندسية متكاملة</title>
     <meta
-  name="description"
-  content="مجموعة شمول الرائدة في الاستشارات الهندسية والمساحية بالسعودية."
-/>
-
-<meta
-  property="og:image"
-  content="https://abdulrahmaneltahrawi-svg.github.io/shomoul-main/assets/imges/logo.png"
-/>
-    <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="style_phone.css" />
+      name="description"
+      content="مجموعة شمول الرائدة في الاستشارات الهندسية والمساحية بالسعودية."
+    />
+    <meta
+      property="og:image"
+      content="https://abdulrahmaneltahrawi-svg.github.io/shomoul-main/assets/imges/logo.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { gold: "#c5a059", dark: "#1a1a1a" },
+            fontFamily: { cairo: ["Cairo", "Arial", "sans-serif"] },
+          },
+        },
+      };
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
       rel="stylesheet"
     />
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
-
-  <body>
-    <style>
-      /* تصميم شاشة التحميل */
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #0f1115; /* تم تغيير اللون للأبيض ليتناسب مع اللوجو أو للأسود الفخم حسب التعليق */
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-      }
-
-      #preloader.loaded {
-        transform: translateY(-100%); /* تنزاح للأعلى كأنها ستارة */
-        pointer-events: none;
-        visibility: hidden;
-      }
-
-      .loader-content {
-        text-align: center;
-      }
-
-      .loader-logo {
-        width: 100px;
-        margin-bottom: 20px;
-        animation: pulse 1.5s infinite ease-in-out;
-      }
-
-      .loader-bar {
-        width: 150px;
-        height: 3px;
-        background: rgba(255, 255, 255, 0.1);
-        position: relative;
-        overflow: hidden;
-        border-radius: 5px;
-      }
-
-      .loader-bar::after {
-        content: "";
-        position: absolute;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: #c5a87c; /* لون ذهبي */
-        animation: loading 2s infinite;
-      }
-
-      /* الكلاسات التي ستفعلها الجافا سكريبت */
-      .appear {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-      }
-
-      .reveal-img {
-        clip-path: inset(0 0 0 0) !important;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(0.9);
-          opacity: 0.7;
-        }
-        50% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(0.9);
-          opacity: 0.7;
-        }
-      }
-
-      @keyframes loading {
-        0% {
-          left: -100%;
-        }
-        100% {
-          left: 100%;
-        }
-      }
-
-      /*hero========================================*/
-      .experience-hero {
-        position: relative;
-        height: 130vh; /* طول القسم كما هو */
-        width: 100%;
-        overflow: hidden; /* ضروري جداً لمنع الصور من الخروج من الحواف أثناء الزوم */
-      }
-
-      /* 1. حاوية السلايدشو الجديدة الخلفية */
-      .hero-slideshow {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1; /* تكون خلف طبقة التعتيم والنصوص */
-      }
-
-      /* 2. التنسيق المشترك للصور الثلاث */
-      .hero-slideshow .slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0; /* مخفية في البداية وتظهر بالتبادل */
-
-        /* استدعاء أنيميشن الـ Fade والـ Zoom معاً (المدة الإجمالية 24 ثانية) */
-        animation: slideShowAndZoom 24s infinite ease-in-out;
-      }
-
-      /* 3. تعيين الصور الثلاث والـ Delay الخاص بكل واحدة */
-      .hero-slideshow .slide-1 {
-        background-image: url("assets/imges/ChatGPT Image May 20, 2026, 11_12_45 AM.png"); /* صورتك الأساسية الأولى */
-        animation-delay: 0s;
-      }
-
-      .hero-slideshow .slide-2 {
-        background-image: url("assets/imges/ChatGPT Image May 20, 2026, 11_11_03 AM.png"); /* الثانية */
-        animation-delay: 8s; /* تبدأ بعد 8 ثوانٍ */
-      }
-
-      .hero-slideshow .slide-3 {
-        background-image: url("assets/imges/ChatGPT Image 21 مايو 2026، 10_21_10 ص.png"); /* الثالثة */
-        animation-delay: 16s; /* تبدأ بعد 16 ثانية */
-      }
-
-      /* 4. طبقة التعتيم الخاصة بك مع الحفاظ على التنسيقات وتوسيط العناصر */
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.178);
-  
-        
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 35vh;
-        z-index: 2; /* فوق الصور وتحت المحتوى النصي */
-      }
-
-      /* 5. أنيميشن السلايدشو والزوم البطيء المتناسق */
-      @keyframes slideShowAndZoom {
-        0% {
-          opacity: 0;
-          transform: scale(1); /* تبدأ بحجمها الطبيعي */
-        }
-        8% {
-          opacity: 1; /* تظهر بالكامل سلاسة (Fade In) */
-        }
-        33.33% {
-          opacity: 1;
-          transform: scale(
-            1.12
-          ); /* تكبير بطيء يصل إلى 12% ليعطي تأثير الحركة */
-        }
-        41.66% {
-          opacity: 0; /* تختفي بسلاسة (Fade Out) */
-          transform: scale(1.15);
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-      .content-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-transform: translateY(90px);
-      }
-
-      .content-box h2 {
-        color: #e0e0e0;
-        font-size: 48px; /* حجم الخط عريض وكبير */
-        font-weight: 700;
-        max-width: 800px;
-        margin-top: 200px;
-        line-height: 1.2;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* ظل خفيف للنص لزيادة الوضوح */
-      }
-
-      .content-box h3 {
-        color: #ffffff;
-        font-size: 28px; /* حجم الخط عريض وكبير */
-        font-weight: 700;
-        max-width: 800px;
-        line-height: 1.2;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* ظل خفيف للنص لزيادة الوضوح */
-      }
-
-      /* تنسيق الزر الأبيض */
-      .btn-about {
-        display: inline-block;
-        padding: 12px 45px;
-        background-color: #ffffff;
-        color: #706047; /* لون النص داخل الزر */
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 18px;
-        border-radius: 10px; /* زوايا منحنية كما في الصورة */
-        transition: all 0.3s ease;
-      }
-
-      .btn-about:hover {
-        background-color: #f0f0f0;
-        transform: translateY(-3px); /* تأثير بسيط عند التمرير */
-      }
-
-      /*about index================================================================*/
-      .about-ecg-section {
-        padding: 100px 0;
-      }
-
-      .about-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* تقسيم الصفحة لنصفين */
-        gap: 50px;
-        align-items: center;
-      }
-
-      .about-text .about-subtitle {
-        color: #1a1a1a;
-        font-weight: 700;
-        font-size: 32px;
-        display: block;
-        margin-bottom: 15px;
-      }
-
-      .about-text h2 {
-        font-size: 42px;
-        color: #1a1a1a;
-        font-weight: 800;
-        margin-bottom: 25px;
-        line-height: 1.2;
-      }
-
-      .about-text p {
-        color: rgb(77, 77, 77);
-        font-family: Cairo, Arial, Helvetica, sans-serif;
-        line-height: 1.8;
-        margin-bottom: 35px;
-        font-weight: 400;
-        font-size: 16px;
-      }
-
-      .btn-learn-more {
-        display: inline-block;
-        padding: 12px 35px;
-        background-color: rgba(59, 59, 59, 0.932);
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: 0.3s;
-      }
-      .btn-learn-more:hover {
-        background: white;
-        color: black;
-        border: 1px solid #0f1115;
-      }
-
-      /* تنسيق الصور المتداخلة */
-      .about-images {
-        display: flex;
-        gap: 20px;
-        justify-content: flex-end;
-      }
-
-      .image-wrapper img {
-        width: 100%;
-        height: 450px;
-        object-fit: cover;
-        border-radius: 30px; /* زوايا منحنية كبيرة كما في الصورة */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .image-wrapper img:hover {
-        transform: translateY(-7px);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-
-      .img-1 {
-        width: 250px;
-        margin-top: -40px;
-      } /* صورة مرتفعة قليلاً */
-      .img-2 {
-        width: 250px;
-        margin-top: 40px;
-      } /* صورة نازلة قليلاً */
-
-      /* للموبايل */
-      @media (max-width: 992px) {
-        .about-container {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-        .about-images {
-          justify-content: center;
-          margin-top: 50px;
-        }
-      }
-
-      /*==============shomoul state======================*/
-      .stats-section {
-        padding: 80px 0;
-        background:
-          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-          url("assets/imges/ChatGPT Image May 14, 2026, 10_42_22 AM.png");
-        background-size: cover;
-        background-position: center;
-
-        color: white;
-        text-align: center;
-      }
-
-      .stats-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .stats-grid {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 30px;
-      }
-
-      .stat-item {
-        flex: 1;
-        min-width: 200px;
-      }
-
-      .stat-icon img {
-        width: 50px;
-        margin-bottom: 15px;
-        filter: brightness(0) invert(1); /* لجعل الأيقونات بيضاء */
-      }
-
-      .stat-item h2 {
-        font-size: 45px;
-        font-weight: 800;
-        margin: 10px 0;
-        color: white;
-      }
-
-      .stat-item p {
-        font-size: 16px;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-
-      /*wide interior img=====================================*/
-      .wide-image-section {
-        width: 100%;
-      }
-
-      .wide-image-section img {
-        max-height: 900px;
-      }
-
-     
-      /* =========================
-   CLIENTS SECTION
-========================= */
-
-      .clients-section {
-        padding: 80px 0;
-        overflow: hidden;
-        text-align: center;
-        position: relative;
-      }
-
-      /* العنوان الرئيسي */
-      .clients-section h2 {
-        font-size: 50px;
-        color: #2f2f44;
-        margin-bottom: 60px;
-      }
-
-      .clients-slider {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        padding: 20px 0;
-      }
-
-      .slider-track {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        width: max-content;
-      }
-
-      .client-card {
-        background: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .client-card img {
-        width: 50%;
-        object-fit: cover;
-      }
-    </style>
-    <!--===============load screen=================-->
+  <body class="bg-white text-gray-800">
+    <!--==========================================-->
+    <!-- DOWNLOAD -->
+    <!--==========================================-->
     <div id="preloader">
-      <div class="loader-content">
+      <div class="text-center">
         <img
-          src="assets/imges/468252193_915185700705951_3758363535645392577_n.jpg "
-          alt="Logo"
-          class="loader-logo"
-          fetchpriority="high"
+          src="assets/imges/logo.png"
+          alt="شمول"
+          class="loader-logo w-24 mb-5 mx-auto"
         />
-        <div class="loader-bar"></div>
+        <div class="loader-bar mx-auto"></div>
       </div>
     </div>
 
-    <!--===============header=================-->
     <div id="header-placeholder"></div>
-
-    <!--=============hero section==================-->
-
-    <section class="experience-hero">
-      <div class="hero-slideshow">
+    <!--==========================================-->
+    <!-- HERO -->
+    <!--==========================================-->
+    <section class="relative h-screen overflow-hidden">
+      <div class="hero-slideshow absolute inset-0">
         <div class="slide slide-1"></div>
         <div class="slide slide-2"></div>
-        <div class="slide slide-3"></div>
+      </div>
+      <div
+        class="absolute inset-0 bg-black/20 z-10 flex flex-col items-center justify-center pt-40 px-4"
+      >
+        <h2
+          class="text-white text-4xl md:text-5xl font-black text-center max-w-3xl leading-tight drop-shadow-lg"
+          data-aos="fade-up"
+        >
+          حلول هندسية متكاملة <br />
+          <span class="inline-block mt-2">لبناء مستقبل أفضل </span>
+        </h2>
+        <h3
+          class="text-white text-xl md:text-2xl font-bold text-center mt-4 drop-shadow-lg"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          مجموعة شمول — الشريك الاستراتيجي للمشاريع الكبرى
+        </h3>
+        <a
+          href="about.html"
+          class="mt-8 inline-block px-10 py-3 bg-white text-[#706047] font-bold text-lg rounded-xl hover:bg-gray-100 transition-all hover:-translate-y-1"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          تعرف علينا
+        </a>
+      </div>
+    </section>
+
+    <!--==========================================-->
+    <!-- ABOUT -->
+    <!--==========================================-->
+    <section class="py-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col-reverse lg:flex-row-reverse items-center justify-between gap-16">
+
+      <!-- الصور -->
+      <div class="relative w-full lg:w-1/2 h-auto lg:h-[620px]">
+
+        <!-- على الجوال: الصورتان جنباً إلى جنب -->
+        <div class="flex lg:hidden gap-4 justify-center">
+          <img
+            src="assets/imges/Screenshot 2026-05-13 163206.png"
+            alt=""
+            class="w-[47%] h-[320px] object-cover rounded-[25px] shadow-2xl"
+          />
+          <img
+            src="assets/imges/Screenshot 2026-05-13 163200.png"
+            alt=""
+            class="w-[47%] h-[320px] object-cover rounded-[25px] shadow-2xl"
+          />
+        </div>
+
+        <!-- على الكمبيوتر: التصميم الأصلي بـ absolute -->
+        <div class="hidden lg:block relative h-[620px]">
+          <img
+            src="assets/imges/Screenshot 2026-05-13 163206.png"
+            alt=""
+            class="absolute left-8 bottom-10 w-[250px] h-[480px] object-cover rounded-[35px] shadow-2xl"
+          />
+          <img
+            src="assets/imges/Screenshot 2026-05-13 163200.png"
+            alt=""
+            class="absolute left-[300px] top-0 w-[250px] h-[480px] object-cover rounded-[35px] shadow-2xl"
+          />
+        </div>
       </div>
 
-      <div class="hero-overlay">
-        <div class="content-box">
-          <h2 data-aos="fade-down" data-aos-delay="500">
-            مجموعة شمول للإستشارات الهندسية
+      <!-- النص -->
+      <div class="w-full lg:w-1/2 text-right">
+        <h2 class="text-3xl font-extrabold text-[#222] leading-tight mb-8">
+          مجموعة شمول للاستشارات الهندسية
+        </h2>
+
+        <p class="text-gray-700 leading-9 mb-8 text-md">
+          مجموعة شمول للإستشارات هي مجموعة من الشركات المتخصصة في الاستشارات
+          الهندسية والسلامة والاستشارات القانونية والمالية والإدارية والفنية
+          والاستشارات البيئية والجيوجرافية وأعمال المساحة وفرز الأراضي،
+          باستخدام أحدث التقنيات للوصول إلى أعلى مستويات الخدمات لعملائنا.
+        </p>
+
+        <p class="text-gray-700 leading-9 text-md mb-5">
+          نحن فخورون دائمًا بكل ما حققناه ونسعى إلى مواصلة طريق التقدم
+          والنمو بناءً على الرؤية المستقبلية للمملكة العربية السعودية
+          ومرتكزات مبنية على أسس سليمة تتبع المعايير الدولية والوطنية
+          ومواكبة التكنولوجيا مع التركيز على تحقيق النمو المستدام.
+        </p>
+
+            <a
+              href="about.html"
+              class="inline-flex items-center justify-center bg-[#4d4d4d] text-white font-bold px-10 py-4 rounded-xl hover:bg-[#c5a059] transition duration-300"
+            >
+              معرفة المزيد
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================================-->
+    <!-- STATS -->
+    <!--==========================================-->
+    <section class="stats-section relative py-28 overflow-hidden">
+      <!-- الخلفية -->
+      <div class="absolute inset-0">
+        <img
+          src="assets/imges/ChatGPT Image May 14, 2026, 10_42_22 AM.png"
+          class="w-full h-full object-cover"
+          alt=""
+        />
+        <div class="absolute inset-0 bg-black/80"></div>
+      </div>
+
+      <!-- المحتوى -->
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+          <!-- مشروع -->
+          <div data-aos="fade-up">
+            <img
+              src="assets/icons/management.png"
+              class="w-16 h-16 mx-auto mb-8 invert"
+            />
+
+            <h2 class="text-white text-6xl font-extrabold">
+              <span class="counter" data-target="3560">0</span>+
+            </h2>
+
+            <p class="text-white text-2xl font-bold mt-10">المشاريع</p>
+          </div>
+
+          <!-- العملاء -->
+          <div data-aos="fade-up" data-aos-delay="100">
+            <img
+              src="assets/icons/support.png"
+              class="w-16 h-16 mx-auto mb-8 invert"
+            />
+
+            <h2 class="text-white text-6xl font-extrabold">
+              <span class="counter" data-target="1061">0</span>+
+            </h2>
+
+            <p class="text-white text-2xl font-bold mt-10">العملاء</p>
+          </div>
+
+          <!-- أعضاء الفريق -->
+          <div data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="assets/icons/costumer.png"
+              class="w-16 h-16 mx-auto mb-8 invert"
+            />
+
+            <h2 class="text-white text-6xl font-extrabold">
+              <span class="counter" data-target="830">0</span>+
+            </h2>
+
+            <p class="text-white text-2xl font-bold mt-10">أعضاء الفريق</p>
+          </div>
+
+          <!-- سنوات الخبرة -->
+          <div data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="assets/icons/anniversary.png"
+              class="w-16 h-16 mx-auto mb-8 invert"
+            />
+
+            <h2 class="text-white text-6xl font-extrabold">
+              <span class="counter" data-target="10">0</span>+
+            </h2>
+
+            <p class="text-white text-2xl font-bold mt-10">
+              سنوات في مجال العمل
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================================-->
+    <!-- SERVICES PREVIEW -->
+    <!--==========================================-->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-5">
+        <div
+          class="text-center mb-14 bg-white rounded-t-3xl border-t-8 border-[#c5a059] shadow-xl py-8 px-6"
+        >
+          <h2 class="text-3xl md:text-4xl font-black text-[#1a1a1a]">
+            خدماتنا
           </h2>
-          <h3 data-aos="fade-down" data-aos-delay="500">
-            SHOMOUL CONSULTATION GROUP
-          </h3>
+          <p class="text-gray-500 mt-3 text-lg">
+            حلول هندسية واستشارية متكاملة
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-white rounded-2xl shadow-lg p-7 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group"
+            data-aos="fade-left"
+          >
+            <div
+              class="w-16 h-16 bg-[#c5a059]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#c5a059]/20 transition-colors"
+            >
+              <img
+                src="assets/icons/prototype.png"
+                alt=""
+                class="w-9 h-9 object-contain"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">
+              التصاميم المعمارية والإنشائية
+            </h3>
+            <p class="text-gray-500 leading-relaxed text-sm">
+              إعداد المخططات الهندسية المتكاملة للمشاريع السكنية والتجارية بما
+              يتوافق مع كود البناء السعودي.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-block mt-4 text-[#c5a059] font-bold hover:underline text-sm"
+              >اطلب الخدمة ←</a
+            >
+          </div>
+
+          <div
+            class="bg-white rounded-2xl shadow-lg p-7 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group"
+            data-aos="fade-down"
+          >
+            <div
+              class="w-16 h-16 bg-[#c5a059]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#c5a059]/20 transition-colors"
+            >
+              <img
+                src="assets/icons/servies.png"
+                alt=""
+                class="w-9 h-9 object-contain"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">
+              الرفع المساحي والفرز
+            </h3>
+            <p class="text-gray-500 leading-relaxed text-sm">
+              تقديم خدمات الرفع المساحي الدقيق، فرز الوحدات العقارية، وتحديث
+              الصكوك عبر منصة إحكام وبلدي.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-block mt-4 text-[#c5a059] font-bold hover:underline text-sm"
+              >اطلب الخدمة ←</a
+            >
+          </div>
+
+          <div
+            class="bg-white rounded-2xl shadow-lg p-7 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group"
+            data-aos="fade-right"
+          >
+            <div
+              class="w-16 h-16 bg-[#c5a059]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#c5a059]/20 transition-colors"
+            >
+              <img
+                src="assets/icons/worker.png"
+                alt=""
+                class="w-9 h-9 object-contain"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">
+              الإشراف الهندسي وإدارة المشاريع
+            </h3>
+            <p class="text-gray-500 leading-relaxed text-sm">
+              إشراف فني دقيق على كافة مراحل التنفيذ لضمان مطابقة الأعمال
+              للمواصفات الفنية والجودة المطلوبة.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-block mt-4 text-[#c5a059] font-bold hover:underline text-sm"
+              >اطلب الخدمة ←</a
+            >
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
           <a
-            href="#about-section"
-            class="btn-about"
-            data-aos="fade-up"
-            data-aos-delay="1500"
-            >من نحن</a
+            href="services.html"
+            class="inline-block px-10 py-3 bg-[#1a1a1a] text-white font-bold rounded-xl hover:bg-[#333] transition-colors text-lg font-cairo"
+            >المزيد من الخدمات</a
           >
         </div>
       </div>
     </section>
 
-    <!--=================about shomoul==================-->
-    <section class="about-ecg-section">
-      <div class="container about-container">
-        <div class="about-text" data-aos="fade-left">
-          <span class="about-subtitle" id="about-section">مجموعة شمول للاستشارات الهندسية</span>
-          <p>
-            مجموعة شمول للإستشارات هي مجموعة من الشركات المتخصصة في الاستشارات
-            الهندسية والسلامة والاستشارات القانونية والمالية والإدارية والفنية
-            والإستشارات البيئية والجيوجرافية وأعمال المساحة وفرز الأراضي،
-            باستخدام أحدث التقنيات للوصول إلى أعلى مستويات الخدمات لعملائنا.
-          </p>
-          <p>
-            نحن فخورون دائمًا بكل ما حققناه ونسعى إلى مواصلة طريق التقدم والنمو
-            بناءً على الرؤية المستقبلية للمملكة العربية السعودية ومرتكزات مبنية
-            على أسس سليمة تتبع المعايير الدولية والوطنية ومواكبة التكنولوجيا مع
-            والتركيز على تحقيق النمو المستدام. ومن هذا المنطلق، فإننا نسخر كافة
-            إمكانياتنا لدعم وتطوير كوادرنا البشرية بكافة فئاتها، والتي تعتبر
-            محركنا الأساسي، مع مواصلة التزامنا الكامل تجاه عملائنا وشركائنا
-            ومجتمعنا.
-          </p>
-          <a href="about.html" class="btn-learn-more">معرفة المزيد</a>
-        </div>
-
-        <div class="about-images" data-aos="fade-right">
-          <div class="image-wrapper img-1">
-            <img
-              src="assets/imges/Screenshot 2026-05-13 163200.png" loading="lazy"
-              alt="High Rise Project"
-            />
-          </div>
-          <div class="image-wrapper img-2">
-            <img
-              src="assets/imges/Screenshot 2026-05-13 163206.png" loading="lazy"
-              alt="Industrial Project"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!---========================state section============================-->
-    <section class="stats-section">
-      <div class="stats-container">
-        <div class="stats-grid">
-          <div class="stat-item" data-aos="fade-up">
-            <div class="stat-icon">
-              <img src="assets/icons/anniversary.png" alt="icon" loading="lazy"/>
-            </div>
-            <h2 class="counter" data-target="10">+0</h2>
-            <p>سنوات في مجال العمل</p>
-          </div>
-
-          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-icon">
-              <img src="assets/icons/costumer.png" alt="icon" loading="lazy"/>
-            </div>
-            <h2 class="counter" data-target="830">+800</h2>
-            <p>أعضاء الفريق</p>
-          </div>
-
-          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-icon">
-              <img src="assets/icons/support.png" alt="icon" loading="lazy"/>
-            </div>
-            <h2 class="counter" data-target="1061">+900</h2>
-            <p>العملاء</p>
-          </div>
-
-          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-icon">
-              <img src="assets/icons/management.png" alt="icon" loading="lazy"/>
-            </div>
-            <h2 class="counter" data-target="3560">+700</h2>
-            <p>المشاريع</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Grid Section -->
-    <section class="services-preview" >
-      <div class="process-title" style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
-    <h2>الخدمات</h2>
-  </div>
-      
-      <div class="page-content">
-        
-        <div class="container">
-          
-          <div class="services-grid">
-            <div class="service-card" id="architecture" data-aos="fade-left">
-              <div class="service-icon">
-                <img
-                  src="assets/icons/buildings_8129177.png" loading="lazy"
-                  alt="Architecture"
-                />
-              </div>
-              <h3>التصاميم المعمارية والإنشائية</h3>
-              <p>
-                إعداد المخططات الهندسية المتكاملة للمشاريع السكنية والتجارية بما
-                يتوافق مع كود البناء السعودي.
-              </p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
-
-            <div class="service-card" id="surveying" data-aos="fade-down">
-              <div class="service-icon">
-                <img src="assets/icons/servies.png" loading="lazy" alt="Surveying" />
-              </div>
-              <h3>الرفع المساحي والفرز</h3>
-              <p>
-                تقديم خدمات الرفع المساحي الدقيق، فرز الوحدات العقارية، وتحديث
-                الصكوك عبر منصة إحكام وبلدي.
-              </p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
-
-            <div class="service-card" id="supervision" data-aos="fade-right">
-              <div class="service-icon">
-                <img src="assets/icons/worker.png" loading="lazy" alt="Supervision" />
-              </div>
-              <h3>الإشراف الهندسي وإدارة المشاريع</h3>
-              <p>
-                إشراف فني دقيق على كافة مراحل التنفيذ لضمان مطابقة الأعمال
-                للمواصفات الفنية والجودة المطلوبة.
-              </p>
-              <a href="contact.html" class="service-link">اطلب الخدمة</a>
-            </div>
-          </div>
-        </div>
-        <div class="more-btn">
-          <a href="services.html"><button>المزيد من الخدمات</button></a>
-        </div>
-      </div>
-    </section>
-
-    <!--================wide imge====================-->
-    <section class="wide-image-section">
+    <!--==========================================-->
+    <!-- WIDE IMAGE -->
+    <!--==========================================-->
+    <section>
       <img
-        src="assets/imges/ChatGPT Image May 20, 2026, 04_29_10 PM.png" 
+        src="assets/imges/ChatGPT Image May 20, 2026, 04_29_10 PM.png"
         loading="lazy"
         alt="مجموعة شمول من الداخل"
-        class="full-width-img"
+        class="w-full max-h-[550px] object-cover block"
       />
     </section>
-     <!---client section-->
 
-    <section class="clients-section">
-
-      <h2>الهيئات المعتمدة</h2>
-
-      <!-- السلايدر -->
-      <div class="clients-slider">
+    <!--==========================================-->
+    <!-- CERTIFIED BODIES SLIDER -->
+    <!--==========================================-->
+    <section class="py-16 bg-gray-50">
+      <h2
+        class="text-center text-3xl font-black text-[#1a1a1a] mb-10 font-cairo"
+      >
+        الهيئات المعتمدة
+      </h2>
+      <div class="overflow-hidden w-full relative">
         <div class="slider-track">
-          <!-- العناصر -->
-          <div class="client-card"><a href="">
-            <img src="assets/الهيئات/مركز التحكيم التجاري لدول مجلس التعاون الخليجي.jpg" loading="lazy" alt="c1" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/مركز التحكيم التجاري لدول مجلس التعاون الخليجي.jpg"
+              loading="lazy"
+              alt="هيئة"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
-
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/بلدي.jpg" loading="lazy" alt="c2" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/بلدي.jpg"
+              loading="lazy"
+              alt="بلدي"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
-
-          
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/Sabic.jpg" loading="lazy" alt="c3" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/Sabic.jpg"
+              loading="lazy"
+              alt="Sabic"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
-
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/Sap.jpg" loading="lazy" alt="c4" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/Sap.jpg"
+              loading="lazy"
+              alt="SAP"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
-
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/مدن .jpg" loading="lazy" alt="c5" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/مدن .jpg"
+              loading="lazy"
+              alt="مدن"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
-
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/Tasnee.jpg" loading="lazy" alt="c6" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/Tasnee.jpg"
+              loading="lazy"
+              alt="Tasnee"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
-
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/شركة المياه الوطنية.jpg" loading="lazy" alt="c7" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/شركة المياه الوطنية.jpg"
+              loading="lazy"
+              alt="المياه"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
-
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/ChatGPT Image Jun 7, 2026, 09_49_43 AM (1).png" loading="lazy" alt="c8" /></a>
-          </div>
-
-
-          <!-- تكرار العناصر عشان الحركة تكون مستمرة -->
-          <div class="client-card">
-            <a href="">
-            <img src="assets/الهيئات/وزارة الدفاع السعودي.jpg" loading="lazy" alt="c6" /></a>
+          <div
+            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+          >
+            <img
+              src="assets/alhayat/وزارة الدفاع السعودي.jpg"
+              loading="lazy"
+              alt="الدفاع"
+              class="max-w-full max-h-full object-contain"
+            />
           </div>
         </div>
       </div>
-      <div class="more-btn">
-      </div>
     </section>
 
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-<div class="clients-slider0">
-  <h2 class="clinet-title" style="display: flex; align-items: center; justify-content: center; font-size: 50px; color: #2f2f44;">العملاء</h2>
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <div class="client-logo"><img src="assets/clients/001-1.jpg" alt="العميل 1"></div>
-      <div class="client-logo"><img src="assets/clients/002-1.jpg" alt="العميل 2"></div>
-      <div class="client-logo"><img src="assets/clients/003-1.jpg" alt="العميل 3"></div>
-      <div class="client-logo"><img src="assets/clients/004-2.jpg" alt="العميل 4"></div>
-    </div>
-
-    <div class="swiper-slide">
-      <div class="client-logo"><img src="assets/clients/006-1.jpg" alt="العميل 5"></div>
-      <div class="client-logo"><img src="assets/clients/007-1.png" alt="العميل 6"></div>
-      <div class="client-logo"><img src="assets/clients/008-1.jpg" alt="العميل 7"></div>
-      <div class="client-logo"><img src="assets/clients/009-1.jpg" alt="العميل 8"></div>
-    </div>
-
-    <div class="swiper-slide">
-      <div class="client-logo"><img src="assets/clients/010-1.jpg" alt="العميل 5"></div>
-      <div class="client-logo"><img src="assets/clients/011.jpg" alt="العميل 6"></div>
-      <div class="client-logo"><img src="assets/clients/025.jpg" alt="العميل 7"></div>
-      <div class="client-logo"><img src="assets/clients/013.jpg" alt="العميل 8"></div>
-    </div>
-
-    <div class="swiper-slide">
-      <div class="client-logo"><img src="assets/clients/014.jpg" alt="العميل 5"></div>
-      <div class="client-logo"><img src="assets/clients/015.jpg" alt="العميل 6"></div>
-      <div class="client-logo"><img src="assets/clients/016.jpg" alt="العميل 7"></div>
-      <div class="client-logo"><img src="assets/clients/017.jpg" alt="العميل 8"></div>
-    </div>
-
-    <div class="swiper-slide">
-      <div class="client-logo"><img src="assets/clients/018.jpg" alt="العميل 5"></div>
-      <div class="client-logo"><img src="assets/clients/019.jpg" alt="العميل 6"></div>
-      <div class="client-logo"><img src="assets/clients/020.jpg" alt="العميل 7"></div>
-      <div class="client-logo"><img src="assets/clients/023.jpg" alt="العميل 8"></div>
-    </div>
-
-  </div>
-  
-  <div class="swiper-pagination"></div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-   
-    <!-- زر واتساب العائم -->
+    <!--==========================================-->
+    <!-- CLIENTS SWIPER -->
+    <!--==========================================-->
+    <section class="py-16">
+      <h2
+        class="text-center text-3xl font-black text-[#1a1a1a] mb-10 font-cairo"
+      >
+        العملاء
+      </h2>
+      <div class="clients-slider0 swiper max-w-7xl mx-auto px-5">
+        <div class="swiper-wrapper mb-10">
+          <div class="swiper-slide flex justify-center items-center gap-6">
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/001-1.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/002-1.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/003-1.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/004-2.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center gap-6">
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/006-1.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/007-1.png"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/008-1.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/009-1.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center gap-6">
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/010-1.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/011.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/025.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+            <div
+              class="w-56 h-56 bg-white rounded-full shadow-lg flex items-center justify-center p-4"
+            >
+              <img
+                src="assets/clients/013.jpg"
+                alt="عميل"
+                class="max-w-[75%] max-h-[75%] object-contain rounded-full"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-20"></div>
+      </div>
+    </section>
+    <!--==========================================-->
+    <!-- WHATSAPP FLOAT -->
+    <!--==========================================-->
     <a
       href="https://api.whatsapp.com/send/?phone=966920031520"
-      class="whatsapp-float"
+      class="fixed bottom-8 right-8 w-16 h-16 bg-green-600 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform z-50"
       target="_blank"
     >
-      <img src="assets/icons/whatsapp-color.png" alt="WhatsApp" loading="lazy" />
+      <img
+        src="assets/icons/whatsapp-color.png"
+        alt="WhatsApp"
+        class="w-9 h-9 brightness-0 invert"
+        loading="lazy"
+      />
     </a>
 
     <div id="footer-placeholder"></div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/effect.js" defer></script>
+    <script src="js/components.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/alhayat.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/lightbox.js" defer></script>
     <script src="js/script.js" defer></script>
-
-    <script>
-      // التأكد من تشغيل التأثيرات بعد تحميل الصفحة بالكامل
-      window.addEventListener("load", function () {
-        // 1. إخفاء شاشة التحميل (Preloader)
-        const preloader = document.getElementById("preloader");
-        if (preloader) {
-          preloader.classList.add("loaded");
-        }
-
-        // 2. تشغيل مكتبة AOS للحركات (Animations)
-        // بما أنك تستخدم defer، ننتظر التأكد من أن المكتبة جاهزة
-        if (typeof AOS !== "undefined") {
-          AOS.init({
-            duration: 1000, // سرعة الحركة
-            once: true, // تعمل مرة واحدة فقط
-            offset: 120, // تبدأ الحركة قبل الوصول للعنصر بـ 120 بكسل
-          });
-        }
-      });
-
-      // 3. إضافة تأثير تغيير لون الهيدر عند النزول (Scroll)
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector(".main-header");
-        if (header) {
-          if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-          } else {
-            header.classList.remove("scrolled");
-          }
-        }
-      });
-
-      const counters = document.querySelectorAll(".counter");
-      const speed = 900; // سرعة العداد (كلما قل الرقم زادت السرعة)
-
-      const startCounters = () => {
-        counters.forEach((counter) => {
-          const updateCount = () => {
-            const target = +counter.getAttribute("data-target");
-            const count = +counter.innerText.replace("+", "");
-            const inc = target / speed;
-
-            if (count < target) {
-              counter.innerText = "+" + Math.ceil(count + inc).toLocaleString();
-              setTimeout(updateCount, 20);
-            } else {
-              counter.innerText = "+" + target.toLocaleString();
-            }
-          };
-          updateCount();
-        });
-      };
-
-      // تشغيل العداد عند الوصول للقسم باستخدام Intersection Observer
-      const statsSection = document.querySelector(".stats-section");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            startCounters();
-            observer.unobserve(statsSection); // يعمل مرة واحدة فقط
-          }
-        },
-        { threshold: 0.5 },
-      );
-
-      observer.observe(statsSection);
-
-
-//
-      const swiper = new Swiper('.clients-slider0', {
-  loop: true,               // جعل السلايدر يدور بشكل مستمر بدون توقف
-  speed: 800,               // سرعة التبديل والانتقال (بالأجزاء من الثانية)
-  autoplay: {
-    delay: 3000,            // يبقى ظاهراً لمدة 3 ثوانٍ ثم يتبدل
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-    </script>
+    <script src="js/hero.js"></script>
+    <script src="js/counter.js" defer></script>
   </body>
 </html>
