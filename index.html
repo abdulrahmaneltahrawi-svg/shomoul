@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/imges/logo.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>مجموعة شمول - حلول هندسية متكاملة</title>
     <meta
       name="description"
@@ -14,17 +15,7 @@
       property="og:image"
       content="https://abdulrahmaneltahrawi-svg.github.io/shomoul-main/assets/imges/logo.png"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { gold: "#c5a059", dark: "#1a1a1a" },
-            fontFamily: { cairo: ["Cairo", "Arial", "sans-serif"] },
-          },
-        },
-      };
-    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -98,32 +89,32 @@
           class="flex flex-col-reverse lg:flex-row-reverse items-center justify-between gap-16"
         >
           <!-- الصور -->
-          <div class="relative w-full lg:w-1/2 h-auto lg:h-[620px]">
+          <div class="relative w-full lg:w-1/2 h-auto lg:h-155">
             <!-- على الجوال: الصورتان جنباً إلى جنب -->
             <div class="flex lg:hidden gap-4 justify-center">
               <img
                 src="assets/imges/Screenshot 2026-05-13 163206.png"
                 alt=""
-                class="w-[47%] h-[320px] object-cover rounded-[25px] shadow-2xl"
+                class="w-[47%] h-80 object-cover rounded-[25px] shadow-2xl"
               />
               <img
                 src="assets/imges/Screenshot 2026-05-13 163200.png"
                 alt=""
-                class="w-[47%] h-[320px] object-cover rounded-[25px] shadow-2xl"
+                class="w-[47%] h-80 object-cover rounded-[25px] shadow-2xl"
               />
             </div>
 
             <!-- على الكمبيوتر: التصميم الأصلي بـ absolute -->
-            <div class="hidden lg:block relative h-[620px]">
+            <div class="hidden lg:block relative h-155">
               <img
                 src="assets/imges/Screenshot 2026-05-13 163206.png"
                 alt=""
-                class="absolute left-8 bottom-10 w-[250px] h-[480px] object-cover rounded-[35px] shadow-2xl"
+                class="absolute left-8 bottom-10 w-62.5 h-120 object-cover rounded-[35px] shadow-2xl"
               />
               <img
                 src="assets/imges/Screenshot 2026-05-13 163200.png"
                 alt=""
-                class="absolute left-[300px] top-0 w-[250px] h-[480px] object-cover rounded-[35px] shadow-2xl"
+                class="absolute left-75 top-0 w-62.5 h-120 object-cover rounded-[35px] shadow-2xl"
               />
             </div>
           </div>
@@ -248,7 +239,7 @@
           <img src="assets/icons/layout.png" class="w-10 h-10 object-contain" alt="icon">
         </div>
         <p class="text-gray-700 font-semibold mb-4 text-sm">فرز الوحدات العقارية للأغراض السكنية والتجارية.</p>
-        <ul class="space-y-3 mb-8 text-gray-500 text-sm flex-grow">
+        <ul class="space-y-3 mb-8 text-gray-500 text-sm grow">
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>فرز الوحدات العقارية</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>مخططات الفرز وأهميتها في تنظيم العقارات: دور مكتب أباك للاستشارات الهندسية</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>شهادة الفرز</li>
@@ -267,7 +258,7 @@
           <img src="assets/icons/tool-outline.png" class="w-10 h-10 object-contain" alt="icon">
         </div>
         <p class="text-gray-700 font-semibold mb-4 text-sm">إشراف هندسي دقيق لتحقيق أعلى مستويات الجودة والتنظيم والتنفيذ.</p>
-        <ul class="space-y-3 mb-8 text-gray-500 text-sm flex-grow">
+        <ul class="space-y-3 mb-8 text-gray-500 text-sm grow">
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>إشراف هندسي دقيق لتحقيق أعلى مستويات الجودة</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>متابعة تنفيذ المشاريع وفق المواصفات المعتمدة</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>ضمان الالتزام بالجدول الزمني والتكاليف المحددة</li>
@@ -285,7 +276,7 @@
           <img src="assets/icons/prototype.png" class="w-10 h-10 object-contain" alt="icon">
         </div>
         <p class="text-gray-700 font-semibold mb-4 text-sm">خدمات تصميم داخلي وخارجي إبداعية وعملية.</p>
-        <ul class="space-y-3 mb-8 text-gray-500 text-sm flex-grow">
+        <ul class="space-y-3 mb-8 text-gray-500 text-sm grow">
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>تصميم داخلي</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>خدمة تصميم خارجي</li>
           <li class="flex items-center"><span class="w-2 h-2 bg-[#c5a059] rounded-full ml-3"></span>تصميم ديكور</li>
@@ -310,7 +301,7 @@
         src="assets/imges/ChatGPT Image May 20, 2026, 04_29_10 PM.png"
         loading="lazy"
         alt="مجموعة شمول من الداخل"
-        class="w-full max-h-[550px] object-cover block"
+        class="w-full max-h-137.5 object-cover block"
       />
     </section>
 
@@ -326,7 +317,7 @@
       <div class="overflow-hidden w-full relative">
         <div class="slider-track">
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/مركز التحكيم التجاري لدول مجلس التعاون الخليجي.jpg"
@@ -336,7 +327,7 @@
             />
           </div>
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/بلدي.jpg"
@@ -346,7 +337,7 @@
             />
           </div>
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/Sabic.jpg"
@@ -356,7 +347,7 @@
             />
           </div>
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/Sap.jpg"
@@ -366,7 +357,7 @@
             />
           </div>
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/مدن .jpg"
@@ -376,7 +367,7 @@
             />
           </div>
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/Tasnee.jpg"
@@ -386,7 +377,7 @@
             />
           </div>
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/شركة المياه الوطنية.jpg"
@@ -396,7 +387,7 @@
             />
           </div>
           <div
-            class="flex-shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
+            class="shrink-0 w-56 h-32 bg-white rounded-xl shadow flex items-center justify-center p-5 border border-gray-100"
           >
             <img
               src="assets/alhayat/وزارة الدفاع السعودي.jpg"
