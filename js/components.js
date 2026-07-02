@@ -1,7 +1,8 @@
 // ===== Header & Navigation =====
 
 function loadHeader() {
-  return fetch("components/header.html")
+  // أضف / في البداية لتثبيت المسار عند الجذر
+  return fetch("/shomoul-main/components/header.html") 
     .then((r) => r.text())
     .then((data) => {
       const placeholder = document.getElementById("header-placeholder");
@@ -11,7 +12,8 @@ function loadHeader() {
 }
 
 function loadFooter() {
-  fetch("components/footer.html")
+  // أضف / في البداية أيضاً
+  fetch("/shomoul-main/components/footer.html")
     .then((r) => r.text())
     .then((data) => {
       const placeholder = document.getElementById("footer-placeholder");

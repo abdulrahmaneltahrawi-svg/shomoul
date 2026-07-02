@@ -4,14 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/imges/logo.png" />
+  <link rel="stylesheet" href="dist/style.css" />
   <title>المشاريع - مجموعة شمول</title>
   <meta name="description" content="استعرض أبرز مشاريع مجموعة شمول في المجالات الهندسية والسلامة والمصانع." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: { colors: { gold: '#c5a059', dark: '#1a1a1a' }, fontFamily: { cairo: ['Cairo', 'Arial', 'sans-serif'] } } }
-    }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
@@ -45,13 +40,13 @@
       <!-- Filter Buttons -->
       <div class="flex flex-wrap justify-center gap-5 mb-12" data-aos="fade-up">
         <button class="filter-item active px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="all">الكل</button>
-        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="engineering">ابراج</button>
-        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="safety">اداري</button>
+        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="tower">ابراج</button>
+        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="company">اداري</button>
         <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="industrial">تجاري</button>
-        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="industrial">سكني</button>
-        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="industrial">طبية</button>
-        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="industrial">محطات الوقود</button>
-        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="industrial">مستودعات</button>
+        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="residential">سكني</button>
+        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="medical">طبية</button>
+        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="NAFT">محطات الوقود</button>
+        <button class="filter-item px-5 py-2 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-[#c5a059] hover:text-white transition-colors cursor-pointer" data-category="repository">مستودعات</button>
 
       </div>
 
@@ -59,65 +54,117 @@
       <div class="cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Engineering -->
-        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="engineering" data-aos="fade-up">
-          <img src="assets/project/engineering1.jpg" alt="مشروع هندسي 1" class="w-full h-52 object-cover" loading="lazy"
-               data-title="مشروع تطوير مجمع سكني"
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="tower" data-aos="fade-up">
+          <img src="assets/p/ChatGPT Image Jul 2, 2026, 08_23_15 AM.png" alt="مشروع 1" class="w-full h-55 object-cover" loading="lazy"
                data-description="تصميم وإشراف على مجمع سكني متكامل بمساحة 50,000 م² في المنطقة الشرقية." />
           <div class="p-5">
-            <h3 class="font-black text-[#1a1a1a] mb-2">مشروع تطوير مجمع سكني</h3>
-            <p class="text-gray-500 text-sm">تصميم وإشراف على مجمع سكني متكامل</p>
+            <p class="text-gray-500 text-sm">تصميم وإشراف على مجمع سكني متكامل بمساحة 50,000 م² في المنطقة الشرقية</p>
           </div>
         </div>
 
-        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="engineering" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/project/engineering2.jpg" alt="مشروع هندسي 2" class="w-full h-52 object-cover" loading="lazy"
-               data-title="مشروع مبنى إداري"
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="tower" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/ChatGPT Image Jul 2, 2026, 08_21_14 AM.png" alt="مشروع 2" class="w-full h-55 object-cover" loading="lazy"
                data-description="تصميم وتنفيذ مبنى إداري مكون من 8 طوابق في الخبر." />
           <div class="p-5">
-            <h3 class="font-black text-[#1a1a1a] mb-2">مشروع مبنى إداري</h3>
-            <p class="text-gray-500 text-sm">مبنى إداري مكون من 8 طوابق</p>
+            <p class="text-gray-500 text-sm">تصميم وتنفيذ مبنى إداري مكون من 8 طوابق في الخبر</p>
           </div>
         </div>
 
-        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="engineering" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/project/engineering3.jpg" alt="مشروع هندسي 3" class="w-full h-52 object-cover" loading="lazy"
-               data-title="مشروع جسر"
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="NAFT" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/p/ChatGPT Image 2 يوليو 2026، 08_36_46 ص.png" alt="مشروع هندسي 3" class="w-full h-55 object-cover" loading="lazy"
                data-description="تصميم جسر بطول 500 متر يربط بين طريقين رئيسيين." />
           <div class="p-5">
-            <h3 class="font-black text-[#1a1a1a] mb-2">مشروع جسر</h3>
-            <p class="text-gray-500 text-sm">تصميم جسر بطول 500 متر</p>
+            <p class="text-gray-500 text-sm">تصميم جسر بطول 500 متر يربط بين طريقين رئيسيين</p>
           </div>
         </div>
 
         <!-- Safety -->
-        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="safety" data-aos="fade-up" data-aos-delay="50">
-          <img src="assets/project/safety1.jpg" alt="مشروع سلامة 1" class="w-full h-52 object-cover" loading="lazy"
-               data-title="استشارات سلامة لمستشفى"
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="NAFT" data-aos="fade-up" data-aos-delay="50">
+          <img src="assets/p/ChatGPT Image 2 يوليو 2026، 08_40_00 ص.png" alt="مشروع سلامة 1" class="w-full h-55 object-cover" loading="lazy"
                data-description="تصميم واعتماد خطط السلامة والطوارئ لمستشفى بسعة 200 سرير." />
           <div class="p-5">
-            <h3 class="font-black text-[#1a1a1a] mb-2">استشارات سلامة لمستشفى</h3>
-            <p class="text-gray-500 text-sm">خطط السلامة والطوارئ</p>
+            <p class="text-gray-500 text-sm">تصميم واعتماد خطط السلامة والطوارئ لمستشفى بسعة 200 سرير</p>
           </div>
         </div>
 
-        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="safety" data-aos="fade-up" data-aos-delay="150">
-          <img src="assets/project/safety2.jpg" alt="مشروع سلامة 2" class="w-full h-52 object-cover" loading="lazy"
-               data-title="نظام سلامة لمول تجاري"
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="company" data-aos="fade-up" data-aos-delay="150">
+          <img src="assets/p/ChatGPT Image 2 يوليو 2026، 08_32_35 ص.png" alt="مشروع سلامة 2" class="w-full h-55 object-cover" loading="lazy"
                data-description="تركيب أنظمة إنذار وإطفاء حريق لمول تجاري بمساحة 30,000 م²." />
           <div class="p-5">
-            <h3 class="font-black text-[#1a1a1a] mb-2">نظام سلامة لمول تجاري</h3>
-            <p class="text-gray-500 text-sm">أنظمة إنذار وإطفاء حريق</p>
+            <p class="text-gray-500 text-sm">تركيب أنظمة إنذار وإطفاء حريق لمول تجاري بمساحة 30,000 م²</p>
           </div>
         </div>
 
         <!-- Industrial -->
-        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="industrial" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/project/industrial1.jpg" alt="مشروع صناعي 1" class="w-full h-52 object-cover" loading="lazy"
-               data-title="مشروع مصنع بتروكيماويات"
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="company" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/ChatGPT Image Jul 2, 2026, 08_26_11 AM.png" alt="مشروع صناعي 1" class="w-full h-55 object-cover" loading="lazy"
                data-description="استشارات هندسية لمصنع بتروكيماويات في المنطقة الصناعية." />
           <div class="p-5">
-            <h3 class="font-black text-[#1a1a1a] mb-2">مشروع مصنع بتروكيماويات</h3>
-            <p class="text-gray-500 text-sm">استشارات هندسية لمصنع</p>
+            <p class="text-gray-500 text-sm">استشارات هندسية لمصنع بتروكيماويات في المنطقة الصناعية</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="medical" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/ChatGPT Image 2 يوليو 2026، 09_11_17 ص.png" alt="مشروع طبي 1" class="w-full h-55 object-cover" loading="lazy"
+               data-description="تصميم وتجهيز مركز طبي متخصص وفق أعلى معايير السلامة." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">تصميم وتجهيز مركز طبي متخصص وفق أعلى معايير السلامة</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="medical" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/ChatGPT Image 2 يوليو 2026، 08_46_34 ص.png" alt="مشروع طبي 2" class="w-full h-55 object-cover" loading="lazy"
+               data-description="إشراف هندسي على توسعة مبنى طبي وتجهيزاته الفنية." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">إشراف هندسي على توسعة مبنى طبي وتجهيزاته الفنية</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="repository" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/ChatGPT Image 2 يوليو 2026، 08_49_51 ص.png" alt="مشروع مستودعات 1" class="w-full h-55 object-cover" loading="lazy"
+               data-description="تصميم وتنفيذ مستودعات لوجستية بمواصفات تخزين عالية." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">تصميم وتنفيذ مستودعات لوجستية بمواصفات تخزين عالية</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="repository" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/ChatGPT Image 2 يوليو 2026، 08_51_05 ص.png" alt="مشروع مستودعات 2" class="w-full h-55 object-cover" loading="lazy"
+               data-description="إدارة وتنفيذ مشروع مستودع صناعي متعدد الاستخدامات." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">إدارة وتنفيذ مشروع مستودع صناعي متعدد الاستخدامات</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="industrial" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/WhatsApp Image 2026-07-02 at 8.48.10 AM (1).jpeg" alt="مشروع تجاري 1" class="w-full h-55 object-cover" loading="lazy"
+               data-description="تصميم وتنفيذ منشأة تجارية بحلول هندسية متكاملة." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">تصميم وتنفيذ منشأة تجارية بحلول هندسية متكاملة</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="industrial" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/WhatsApp Image 2026-07-02 at 8.48.10 AM.jpeg" alt="مشروع تجاري 2" class="w-full h-55 object-cover" loading="lazy"
+               data-description="إشراف هندسي كامل على مشروع منشأة تجارية." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">إشراف هندسي كامل على مشروع منشأة تجارية</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="residential" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/WhatsApp Image 2026-07-02 at 8.48.10 AM (2).jpeg" alt="مشروع سكني 1" class="w-full h-55 object-cover" loading="lazy"
+               data-description="تصميم وتنفيذ وحدات سكنية بمعايير جودة عالية." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">تصميم وتنفيذ وحدات سكنية بمعايير جودة عالية</p>
+          </div>
+        </div>
+
+        <div class="card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-category="residential" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/p/WhatsApp Image 2026-07-02 at 8.48.11 AM.jpeg" alt="مشروع سكني 2" class="w-full h-55 object-cover" loading="lazy"
+               data-description="إدارة وتنفيذ مشروع سكني متكامل الخدمات." />
+          <div class="p-5">
+            <p class="text-gray-500 text-sm">إدارة وتنفيذ مشروع سكني متكامل الخدمات</p>
           </div>
         </div>
 
@@ -133,7 +180,6 @@
         <img id="lightbox-img" src="" alt="Preview" class="w-full rounded-2xl shadow-2xl" />
       </div>
       <div class="md:w-1/2 text-white text-right">
-        <h3 id="lightbox-title" class="text-3xl font-black mb-4"></h3>
         <p id="lightbox-description" class="text-gray-300 text-lg leading-relaxed"></p>
       </div>
     </div>

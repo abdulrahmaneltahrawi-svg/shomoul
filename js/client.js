@@ -1,4 +1,3 @@
-// Clients Swiper
 document.addEventListener("DOMContentLoaded", function () {
   const clientsSlider = document.querySelector(".clients-slider0");
   if (!clientsSlider) return;
@@ -14,16 +13,16 @@ document.addEventListener("DOMContentLoaded", function () {
       el: ".swiper-pagination",
       clickable: true,
     },
-    slidesPerView: 2,
-    spaceBetween: 16,
+    slidesPerView: 2, // عدد العرض في الجوال
+    spaceBetween: 10, // المسافة في الجوال
     breakpoints: {
-      640: {
+      540: {
         slidesPerView: 3,
-        spaceBetween: 20,
+        spaceBetween: 24,
       },
       1024: {
         slidesPerView: 4,
-        spaceBetween: 24,
+        spaceBetween: 20, // المسافة التي اخترتها في الكود الثاني
       },
     },
   });
